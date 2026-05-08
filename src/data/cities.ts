@@ -29,7 +29,7 @@ export const CITIES_DATA: Record<string, CityData> = {
     },
     seoKeywords: { 
       en: 'Digital Marketing Riyadh, SEO Agency Riyadh, Web Design Riyadh, Marketing Company Saudi Arabia', 
-      ar: 'شركة تسويق الكتروني بالرياض, وكالة تسويق الرياض, شركة سيو الرياض, تصميم مواقع الرياض, اعلانات جوجل الرياض, إعلانات جوجل, عرض الصورة كاملة, الصورة كاملة إعلانات' 
+      ar: 'شركة تسويق الكتروني بالرياض, وكالة تسويق الرياض, شركة سيو الرياض, تصميم مواقع الرياض, اعلانات جوجل الرياض, إعلانات جوجل' 
     },
     heroTitle: { 
       en: 'Digital Marketing Agency in Riyadh', 
@@ -43,7 +43,7 @@ export const CITIES_DATA: Record<string, CityData> = {
       en: 'Riyadh is the beating heart of Saudi Arabia\'s economy. To stand out in this highly competitive market, you need a digital marketing partner who understands the local landscape. Nashar Hub provides tailored marketing solutions for Riyadh-based businesses, focusing on maximizing ROI and driving targeted local traffic.',
       ar: 'الرياض هي القلب النابض للاقتصاد السعودي. للتميز في هذا السوق التنافسي، تحتاج إلى شريك تسويق رقمي يفهم طبيعة السوق المحلي. نشار هب تقدم حلولاً تسويقية مخصصة للشركات في الرياض، مع التركيز على تعظيم العائد على الاستثمار وجذب العملاء المحتملين.'
     },
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463877.312429139!2d46.93188941093125!3d24.725455371569533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1710000000000!5m2!1sen!2seg',
+    mapEmbedUrl: '',
     coordinates: { lat: 24.7136, lng: 46.6753 },
     addressLocality: { en: 'Riyadh', ar: 'الرياض' },
     addressRegion: { en: 'Riyadh Province', ar: 'منطقة الرياض' }
@@ -75,7 +75,7 @@ export const CITIES_DATA: Record<string, CityData> = {
       en: 'Jeddah is a vibrant commercial hub. We help Jeddah businesses connect with their target audience through hyper-local SEO, engaging social media marketing, and conversion-optimized web design. Whether you are a local shop or a growing enterprise, we have the right strategy for you.',
       ar: 'جدة هي مركز تجاري حيوي. نحن نساعد الشركات في جدة على التواصل مع جمهورها المستهدف من خلال السيو المحلي الدقيق، والتسويق الجذاب عبر وسائل التواصل الاجتماعي، وتصميم المواقع المحسنة للتحويل. سواء كنت متجراً محلياً أو شركة متنامية، لدينا الاستراتيجية المناسبة لك.'
     },
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237685.1557161875!2d39.33516641566487!3d21.543486374465454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d01fb1137e59%3A0xe059579737b118ab!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1710000000001!5m2!1sen!2seg',
+    mapEmbedUrl: '',
     coordinates: { lat: 21.4858, lng: 39.1925 },
     addressLocality: { en: 'Jeddah', ar: 'جدة' },
     addressRegion: { en: 'Makkah Province', ar: 'منطقة مكة المكرمة' }
@@ -107,7 +107,7 @@ export const CITIES_DATA: Record<string, CityData> = {
       en: 'The Eastern Province is a key industrial and commercial region. Nashar Hub empowers Dammam-based businesses to establish a strong digital footprint. From B2B lead generation on LinkedIn to local SEO for retail businesses, we deliver measurable results.',
       ar: 'المنطقة الشرقية هي منطقة صناعية وتجارية رئيسية. نشار هب تمكّن الشركات في الدمام من تأسيس بصمة رقمية قوية. من توليد العملاء المحتملين للشركات (B2B) على لينكد إن إلى السيو المحلي لأعمال التجزئة، نحن نقدم نتائج ملموسة.'
     },
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114312.42598579974!2d50.18349071077755!3d26.399250275825224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e813524c9145%3A0xc3540ce78d5ce05f!2sDammam%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1710000000002!5m2!1sen!2seg',
+    mapEmbedUrl: '',
     coordinates: { lat: 26.4207, lng: 50.0888 },
     addressLocality: { en: 'Dammam', ar: 'الدمام' },
     addressRegion: { en: 'Eastern Province', ar: 'المنطقة الشرقية' }
@@ -139,7 +139,7 @@ export const CITIES_DATA: Record<string, CityData> = {
       en: 'Mecca presents unique opportunities for businesses catering to both locals and millions of visitors. Our digital marketing strategies for Mecca focus on high visibility in local searches, effective Google Maps optimization, and targeted advertising to capture high-intent customers.',
       ar: 'تقدم مكة المكرمة فرصاً فريدة للشركات التي تخدم السكان المحليين وملايين الزوار. تركز استراتيجياتنا للتسويق الرقمي في مكة على الظهور العالي في عمليات البحث المحلية، والتحسين الفعال لخرائط جوجل، والإعلانات المستهدفة لجذب العملاء ذوي النية الشرائية العالية.'
     },
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118905.48512530596!2d39.9056811468172!3d21.422510250069006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b4ced818775%3A0x98ab2469cf70c9ce!2sMakkah%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1710000000003!5m2!1sen!2seg',
+    mapEmbedUrl: '',
     coordinates: { lat: 21.3891, lng: 39.8579 },
     addressLocality: { en: 'Mecca', ar: 'مكة المكرمة' },
     addressRegion: { en: 'Makkah Province', ar: 'منطقة مكة المكرمة' }

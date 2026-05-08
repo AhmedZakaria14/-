@@ -2,15 +2,23 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+    
+    <!-- DNS Prefetch للموارد الخارجية -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+
+    <!-- Apple & PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="نشار هب" />
+    <meta name="application-name" content="نشار هب" />
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Language & Region -->
+    <meta http-equiv="content-language" content="ar-SA" />
     
     <!-- Optimize Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,20 +35,31 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": ["Organization", "MarketingAgency"],
+          "@type": ["Organization", "MarketingAgency", "LocalBusiness"],
           "@id": "https://nasharhub.com/#organization",
-          "name": "Nashar Hub",
-          "alternateName": "نشار هب",
+          "name": "نشار هب",
+          "alternateName": "Nashar Hub",
           "url": "https://nasharhub.com",
-          "logo": "https://nasharhub.com/logo.png",
-          "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-          "description": "Professional Digital Marketing Agency providing SEO, PPC, Web Development, and Social Media services to businesses in the GCC and MENA region.",
-          "email": "Info@nasharhub.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://nasharhub.com/favicon.svg",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://nasharhub.com/og-image.jpg",
+          "description": "وكالة تسويق رقمي متخصصة في إعلانات جوجل، تحسين محركات البحث SEO، وتصميم المواقع والمتاجر الإلكترونية في المملكة العربية السعودية.",
+          "email": "info@nasharhub.com",
+          "telephone": "+201010742430",
           "priceRange": "$$",
+          "currenciesAccepted": "SAR",
+          "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+          "inLanguage": ["ar", "en"],
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Riyadh",
-            "addressRegion": "Riyadh Province",
+            "streetAddress": "طريق الملك فهد",
+            "addressLocality": "الرياض",
+            "addressRegion": "منطقة الرياض",
+            "postalCode": "12214",
             "addressCountry": "SA"
           },
           "geo": {
@@ -48,83 +67,93 @@
             "latitude": 24.7136,
             "longitude": 46.6753
           },
-          "contactPoint": [
-            {
-              "@type": "ContactPoint",
-              "telephone": "+201010742430",
-              "contactType": "customer service",
-              "areaServed": "SA",
-              "availableLanguage": ["Arabic", "English"]
-            },
-            {
-              "@type": "ContactPoint",
-              "telephone": "+20-10-10742430",
-              "contactType": "technical support",
-              "areaServed": ["EG", "SA", "AE"],
-              "availableLanguage": ["Arabic", "English"]
-            }
-          ],
-          "areaServed": [
-            {
-              "@type": "City",
-              "name": "Riyadh"
-            },
-            {
-              "@type": "City",
-              "name": "Jeddah"
-            },
-            {
-              "@type": "Country",
-              "name": "Saudi Arabia"
-            },
-            {
-              "@type": "Country",
-              "name": "United Arab Emirates"
-            },
-            {
-              "@type": "Country",
-              "name": "Egypt"
-            }
-          ],
           "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Sunday",
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday"
-            ],
+            "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
             "opens": "09:00",
             "closes": "18:00"
           },
+          "areaServed": [
+            {"@type": "City", "name": "الرياض"},
+            {"@type": "City", "name": "جدة"},
+            {"@type": "City", "name": "الدمام"},
+            {"@type": "City", "name": "مكة المكرمة"},
+            {"@type": "City", "name": "المدينة المنورة"},
+            {"@type": "Country", "name": "المملكة العربية السعودية"}
+          ],
           "sameAs": [
             "https://www.facebook.com/nasharhub",
             "https://www.instagram.com/nasharhub",
             "https://www.linkedin.com/company/nasharhub",
-            "https://twitter.com/nasharhub"
+            "https://twitter.com/nasharhub",
+            "https://www.tiktok.com/@nasharhub"
           ],
-          "knowsAbout": [
-            "Search Engine Optimization (SEO)",
-            "Pay Per Click (PPC)",
-            "Web Development",
-            "Social Media Marketing",
-            "Content Strategy",
-            "Google Ads",
-            "Meta Ads",
-            "TikTok Ads",
-            "Snapchat Ads"
-          ]
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "خدمات التسويق الرقمي",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "إعلانات جوجل",
+                  "description": "إدارة حملات إعلانات جوجل بأعلى عائد استثمار",
+                  "url": "https://nasharhub.com/paid-ads-services"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "تحسين محركات البحث SEO",
+                  "description": "استراتيجيات سيو متكاملة للتصدر في نتائج جوجل",
+                  "url": "https://nasharhub.com/seo-services"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "تصميم المواقع والمتاجر الإلكترونية",
+                  "description": "تصميم مواقع احترافية ومتاجر سلة وزد وووكومرس",
+                  "url": "https://nasharhub.com/web-dev-services"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "إعلانات سناب شات وتيك توك وميتا",
+                  "description": "إدارة الحملات الإعلانية على منصات التواصل الاجتماعي"
+                }
+              }
+            ]
+          }
         },
         {
-          "@type": "Person",
-          "@id": "https://nasharhub.com/#founder",
-          "name": "Nashar Hub Founder",
-          "jobTitle": "CEO & Founder",
-          "worksFor": {
+          "@type": "WebSite",
+          "@id": "https://nasharhub.com/#website",
+          "url": "https://nasharhub.com",
+          "name": "نشار هب للتسويق الرقمي",
+          "inLanguage": "ar",
+          "publisher": {
             "@id": "https://nasharhub.com/#organization"
           },
-          "url": "https://nasharhub.com"
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://nasharhub.com/blog?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://nasharhub.com/#webpage",
+          "url": "https://nasharhub.com",
+          "name": "نشار هب | وكالة تسويق رقمي في السعودية - إعلانات جوجل وسيو",
+          "description": "نشار هب وكالة تسويق رقمي في الرياض متخصصة في إعلانات جوجل، تحسين محركات البحث SEO، وتصميم المواقع والمتاجر.",
+          "isPartOf": {"@id": "https://nasharhub.com/#website"},
+          "about": {"@id": "https://nasharhub.com/#organization"},
+          "inLanguage": "ar"
         }
       ]
     }
@@ -136,44 +165,35 @@
     <link rel="alternate" hreflang="ar-SA" href="https://nasharhub.com/" />
     <link rel="alternate" hreflang="en" href="https://nasharhub.com/" />
     <link rel="alternate" hreflang="x-default" href="https://nasharhub.com/" />
-    <title>نشار هب | إعلانات جوجل - عرض الصورة كاملة لنجاحك</title>
-    <meta name="description" content="نشار هب وكالة تسويق رقمي متخصصة في إعلانات جوجل. شاهد عرض الصورة كاملة لنتائجنا، حيث نقدم الصورة كاملة إعلانات جوجل لزيادة مبيعاتك." />
-    <meta name="keywords" content="تسويق رقمي, سيو, إعلانات جوجل, عرض الصورة كاملة, جوجل إعلانات, الصورة كاملة إعلانات" />
     
-    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <title>نشار هب | وكالة تسويق رقمي في السعودية - إعلانات جوجل وسيو</title>
+    <meta name="description" content="نشار هب وكالة تسويق رقمي في الرياض متخصصة في إعلانات جوجل، تحسين محركات البحث SEO، وتصميم المواقع والمتاجر الإلكترونية. نتائج حقيقية وعائد استثمار مضمون لعملك في السعودية." />
+    
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nasharhub.com/" />
-    <meta property="og:title" content="نشار هب | إعلانات جوجل - عرض الصورة كاملة لنجاحك" />
-    <meta property="og:description" content="نشار هب وكالة تسويق رقمي متخصصة في إعلانات جوجل. شاهد عرض الصورة كاملة لنتائجنا، حيث نقدم الصورة كاملة إعلانات جوجل لزيادة مبيعاتك." />
+    <meta property="og:title" content="نشار هب | وكالة تسويق رقمي في السعودية - إعلانات جوجل وسيو" />
+    <meta property="og:description" content="نشار هب وكالة تسويق رقمي في الرياض متخصصة في إعلانات جوجل، تحسين محركات البحث SEO، وتصميم المواقع والمتاجر. نتائج حقيقية وعائد استثمار مضمون." />
     <meta property="og:image" content="https://nasharhub.com/og-image.jpg" />
-    <meta property="og:site_name" content="Nashar Hub" />
-    <meta property="og:locale" content="ar_SA" />
-    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="نشار هب - وكالة تسويق رقمي في السعودية" />
+    <meta property="og:locale" content="ar_AR" />
+    <meta property="og:site_name" content="نشار هب للتسويق الرقمي" />
+    <meta property="og:updated_time" content="2026-05-08T00:00:00+03:00" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://nasharhub.com/" />
-    <meta name="twitter:title" content="نشار هب | إعلانات جوجل - عرض الصورة كاملة لنجاحك" />
-    <meta name="twitter:description" content="نشار هب وكالة تسويق رقمي متخصصة في إعلانات جوجل. شاهد عرض الصورة كاملة لنتائجنا، حيث نقدم الصورة كاملة إعلانات جوجل لزيادة مبيعاتك." />
+    <meta name="twitter:site" content="@nasharhub" />
+    <meta name="twitter:creator" content="@nasharhub" />
+    <meta name="twitter:title" content="نشار هب | وكالة تسويق رقمي في السعودية - إعلانات جوجل وسيو" />
+    <meta name="twitter:description" content="نشار هب وكالة تسويق رقمي في الرياض متخصصة في إعلانات جوجل، تحسين محركات البحث SEO، وتصميم المواقع والمتاجر. نتائج حقيقية وعائد استثمار مضمون." />
     <meta name="twitter:image" content="https://nasharhub.com/og-image.jpg" />
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2TNE154YD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-N2TNE154YD');
-      gtag('config', 'AW-17891968462');
-    </script>
     <!--app-head-->
 </head>
   <body class="bg-white text-light-text antialiased font-arabic text-slate-900">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="root">
       <!-- SEO Fallback Content & Loading Screen -->
       <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8fafc; font-family: system-ui, sans-serif; text-align: center; padding: 20px;">
@@ -183,20 +203,21 @@
         <main style="max-width: 800px; text-align: right; direction: rtl; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
           <h1 style="color: #0f172a; font-size: 32px; margin-bottom: 15px; font-weight: 800;">نشار هب - وكالة تسويق رقمي متكاملة | Nashar Hub</h1>
           <p style="color: #475569; line-height: 1.8; margin-bottom: 20px; font-size: 18px;">
-            نشار هب هي أفضل شركة تسويق إلكتروني وتصميم مواقع في السعودية. نحن متخصصون في تقديم حلول رقمية متكاملة تشمل إعلانات جوجل (Google Ads)، تحسين محركات البحث (SEO)، وتطوير المتاجر الإلكترونية لزيادة مبيعاتك. معنا، ستحصل على عرض الصورة كاملة لنجاحك الرقمي.
+            نشار هب هي أفضل شركة تسويق إلكتروني وتصميم مواقع في السعودية. نحن متخصصون في تقديم حلول رقمية متكاملة تشمل إعلانات جوجل (Google Ads)، تحسين محركات البحث (SEO)، وتطوير المتاجر الإلكترونية لزيادة مبيعاتك. معنا، ستحصل على حلول تسويق رقمي متكاملة لنجاحك.
           </p>
           
           <h2 style="color: #0f172a; font-size: 24px; margin-bottom: 15px; font-weight: 700;">خدماتنا الرئيسية في التسويق الرقمي</h2>
           <ul style="color: #475569; line-height: 1.8; margin-bottom: 25px; text-align: right; padding-right: 20px; list-style-type: disc;">
-            <li style="margin-bottom: 10px;"><strong>إعلانات جوجل والحملات الممولة (PPC):</strong> ضاعف إيراداتك بسرعة مع إعلانات جوجل، سناب شات، تيك توك، وميتا. نحن ندير ميزانيتك الإعلانية باحترافية لضمان أعلى عائد على الاستثمار (ROAS). نقدم لك الصورة كاملة إعلانات لضمان وصولك للجمهور المستهدف.</li>
+            <li style="margin-bottom: 10px;"><strong>إعلانات جوجل والحملات الممولة (PPC):</strong> ضاعف إيراداتك بسرعة مع إعلانات جوجل، سناب شات، تيك توك، وميتا. نحن ندير ميزانيتك الإعلانية باحترافية لضمان أعلى عائد على الاستثمار (ROAS). نضمن وصولك للجمهور المستهدف بدقة عالية.</li>
             <li style="margin-bottom: 10px;"><strong>تحسين محركات البحث (SEO):</strong> تصدر نتائج البحث الأولى في جوجل. نقدم استراتيجيات السيو الداخلي (On-Page)، الخارجي (Off-Page)، والتقني (Technical SEO) لزيادة الزيارات المجانية لموقعك بشكل مستدام.</li>
             <li style="margin-bottom: 10px;"><strong>تصميم وتطوير المواقع والمتاجر:</strong> نبني تجارب رقمية آمنة وقابلة للتوسع. تصميم متاجر إلكترونية احترافية (سلة، زد، ووكومرس) ومواقع تعريفية للشركات تحول الزوار إلى عملاء فعليين.</li>
           </ul>
 
           <h2 style="color: #0f172a; font-size: 24px; margin-bottom: 15px; font-weight: 700;">لماذا تختار نشار هب؟</h2>
           <p style="color: #475569; line-height: 1.8; margin-bottom: 25px;">
-            نحن نعتمد على البيانات والتحليلات الدقيقة في كل خطوة. فريقنا من الخبراء يقدم لك استراتيجيات مخصصة تناسب أهدافك التجارية في السوق السعودي، ونغطي كافة المدن بما فيها الرياض، جدة، الدمام، مكة المكرمة، والمدينة المنورة. نحن نؤمن بالشفافية والنتائج الملموسة، ولا نقدم وعوداً فارغة.
+            نحن نعتمد على البيانات والتحليلات الدقيقة في كل خطوة. فريقنا من الخبراء يقدم لك استراتيجيات مخصصة تناسب أهدافك التجارية في السوق السعودي، ونغطي كافة المدن بما فيها الرياض، جدة، الدمام، مكة المكرمة، والمدينة المنورة. نحن نؤمن بالشفافية والنتائج الملموسة، ولا نقدم وعوداً فارغة ونتائجنا الحقيقية المحققة لعملائنا هي ما يميزنا.
           </p>
+
 
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 25px;">
             <h3 style="color: #0f172a; font-size: 20px; margin-bottom: 10px; font-weight: 700;">تواصل معنا</h3>

@@ -37,7 +37,7 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ lang, isPage = false }
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               {lang === 'en' 
                 ? 'We don\'t just promise results; we deliver them. Here is how we have helped businesses like yours scale.' 
-                : 'نحن لا نعد بالنتائج فقط؛ بل نحققها. إليك كيف ساعدنا شركات مثلك على التوسع والنمو من خلال إعلانات جوجل وجوجل إعلانات، لترى عرض الصورة كاملة لنجاحك.'}
+                : 'نحن لا نعد بالنتائج فقط؛ بل نحققها. إليك كيف ساعدنا شركات مثلك على التوسع والنمو.'}
             </p>
           </div>
         </Reveal>

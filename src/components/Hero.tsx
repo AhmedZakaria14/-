@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 md:px-0 font-medium animate-fade-in-up opacity-0 delay-200">
-              {lang === 'en' ? UI_TEXT.heroSubtitle.en : 'وكالة تسويق رقمي رائدة في السعودية. متخصصون في إطلاق إعلانات جوجل، جوجل إعلانات، وتصميم مواقع إلكترونية احترافية. معنا سترى عرض الصورة كاملة لنجاحك، حيث نقدم الصورة كاملة إعلانات لزيادة مبيعاتك.'}
+              {lang === 'en' ? UI_TEXT.heroSubtitle.en : 'وكالة تسويق رقمي رائدة في السعودية. متخصصون في إطلاق إعلانات جوجل، منصات التواصل، وتصميم مواقع إلكترونية احترافية. معنا ستحصل على نمو مستدام لزيادة مبيعاتك وتعزيز تواجدك الرقمي.'}
             </p>
 
             <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'} animate-fade-in-up opacity-0 delay-300`}>

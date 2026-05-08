@@ -3,7 +3,7 @@ import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Routes, Route, useLocation, useNavigate, useParams, Outlet } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-const LazyCustomCursor = lazy(() => import('@/components/CustomCursor').then(m => ({ default: m.CustomCursor })));
+import { CustomCursor } from '@/components/CustomCursor';
 import { BottomNav } from '@/components/BottomNav';
 import { Language } from './types';
 
@@ -78,12 +78,12 @@ function App() {
     // Set home page title
     if (location.pathname === '/') {
       const title = lang === 'en' 
-        ? 'Nashar Hub | Digital Marketing Agency in Saudi Arabia | SEO, Google & Meta Ads' 
-        : 'نشار هب | إعلانات جوجل وعرض الصورة كاملة لنجاحك الرقمي';
+        ? 'Nashar Hub | Digital Marketing Agency in Saudi Arabia | Google Ads & SEO' 
+        : 'نشار هب | وكالة تسويق رقمي في السعودية - إعلانات جوجل وسيو';
       
       const description = lang === 'en'
-        ? 'Professional Digital Marketing Agency providing SEO, PPC, Web Development, and Social Media services in the GCC and MENA region.'
-        : 'نشار هب (Nashar Hub) وكالة تسويق رقمي متكاملة لخدمات إعلانات جوجل، جوجل إعلانات، وتصميم المتاجر والمواقع الإلكترونية في السعودية والخليج. احصل على الصورة كاملة إعلانات لزيادة مبيعاتك.';
+        ? 'Nashar Hub is a leading digital marketing agency in Saudi Arabia specializing in Google Ads, SEO, and web design. Real results and guaranteed ROI for your business.'
+        : 'نشار هب وكالة تسويق رقمي في الرياض متخصصة في إعلانات جوجل، تحسين محركات البحث SEO، وتصميم المواقع والمتاجر. نتائج حقيقية وعائد استثمار مضمون لعملك في السعودية.';
       
       updateSEO({
         title,
@@ -201,7 +201,7 @@ function App() {
 
   const PublicLayout = () => (
     <>
-      {mounted && <LazyCustomCursor />}
+      <CustomCursor />
       <Navbar lang={lang} setLang={setLang} />
       
       <main className="min-h-screen">

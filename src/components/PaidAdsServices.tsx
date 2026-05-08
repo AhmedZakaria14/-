@@ -16,9 +16,9 @@ export const PaidAdsServices: React.FC<PaidAdsServicesProps> = ({ lang, onBack, 
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const title = lang === 'en' ? 'Paid Ads Services & PPC Management | Nashar Hub' : 'أفضل شركة إدارة حملات إعلانية ممولة في السعودية | إعلانات جوجل - عرض الصورة كاملة';
-    const description = lang === 'en' ? 'Scale your revenue with high-performance Google Ads, Meta Ads, TikTok, and Snapchat campaigns.' : 'ضاعف إيراداتك مع أفضل شركة إدارة إعلانات ممولة. ندير إعلانات جوجل، جوجل إعلانات، سناب شات، تيك توك، وميتا باحترافية. معنا سترى عرض الصورة كاملة لنجاحك.';
-    const keywords = lang === 'en' ? 'Paid Ads, PPC Management, Google Ads Agency, Social Media Ads' : 'اعلانات ممولة, ادارة حملات اعلانية, إعلانات جوجل, عرض الصورة كاملة, جوجل إعلانات, الصورة كاملة إعلانات';
+    const title = lang === 'en' ? 'Paid Ads Services & PPC Management | Nashar Hub' : 'شركة إدارة حملات إعلانية ممولة في السعودية | نشار هب';
+    const description = lang === 'en' ? 'Scale your revenue with high-performance Google Ads, Meta Ads, TikTok, and Snapchat campaigns.' : 'شركة إدارة إعلانات ممولة في السعودية. ندير حملات إعلانات جوجل، سناب شات، تيك توك، وميتا لزيادة المبيعات وعائد الاستثمار.';
+    const keywords = lang === 'en' ? 'Paid Ads, PPC Management, Google Ads Agency, Social Media Ads' : 'اعلانات ممولة, ادارة حملات اعلانية, إعلانات جوجل, سناب شات, تيك توك, شركة تسويق, السعودية';
 
     updateSEO({
       title,
@@ -216,7 +216,7 @@ export const PaidAdsServices: React.FC<PaidAdsServicesProps> = ({ lang, onBack, 
             <MousePointerClick size={40} className="text-purple-400" />
           </div>
           <HeadingTag className="text-4xl md:text-6xl font-black mb-6 tracking-tight">
-            {lang === 'en' ? 'Scale Your Revenue Fast' : 'ضاعف إيراداتك بسرعة مع إعلانات جوجل - عرض الصورة كاملة'}
+            {lang === 'en' ? 'Scale Your Revenue Fast' : 'ضاعف إيراداتك بسرعة مع إعلانات جوجل'}
           </HeadingTag>
           <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
             {lang === 'en' 

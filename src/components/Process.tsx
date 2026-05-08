@@ -32,7 +32,7 @@ export const Process: React.FC<ProcessProps> = ({ lang, isPage = false }) => {
             <p className="text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed">
               {lang === 'en'
                 ? 'Our proven methodology is designed to take your business from where it is today to where you want it to be. We follow a structured, four-step process that ensures clarity, efficiency, and measurable results at every stage. By combining strategic planning with expert execution, we help you navigate the complexities of digital marketing and web development with confidence.'
-                : 'تم تصميم منهجيتنا المجربة لنقل عملك من حيث هو اليوم إلى حيث تريد أن يكون. نحن نتبع عملية منظمة من أربع خطوات تضمن الوضوح والكفاءة والنتائج الملموسة في كل مرحلة. من خلال الجمع بين التخطيط الاستراتيجي والتنفيذ الخبير، نساعدك على التنقل في تعقيدات التسويق الرقمي مثل إعلانات جوجل وتطوير الويب بثقة، لنقدم لك عرض الصورة كاملة لنجاحك.'}
+                : 'تم تصميم منهجيتنا المجربة لنقل عملك من حيث هو اليوم إلى حيث تريد أن يكون. نحن نتبع عملية منظمة من أربع خطوات تضمن الوضوح والكفاءة والنتائج الملموسة في كل مرحلة. من خلال الجمع بين التخطيط الاستراتيجي والتنفيذ الخبير، نساعدك على التنقل في تعقيدات التسويق الرقمي وتطوير الويب بثقة.'}
             </p>
           </div>
         </Reveal>

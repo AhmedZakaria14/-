@@ -129,13 +129,13 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, isPage = false }) =>
           <HeadingTag className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
             {lang === 'en' ? 'Featured ' : 'أبرز '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              {lang === 'en' ? 'Projects' : 'مشاريعنا - عرض الصورة كاملة'}
+              {lang === 'en' ? 'Projects' : 'مشاريعنا'}
             </span>
           </HeadingTag>
           <p className="text-lg text-slate-600 mb-8 leading-relaxed">
             {lang === 'en' 
               ? 'Explore our recent success stories across web development, local SEO, and paid advertising. Each project represents a unique challenge we\'ve overcome through strategic thinking, creative design, and technical excellence. We don\'t just build websites; we build engines for growth.' 
-              : 'اكتشف قصص نجاحنا الأخيرة في تطوير المواقع، تحسين خرائط جوجل، والحملات الإعلانية الممولة. يمثل كل مشروع تحدياً فريداً تغلبا عليه من خلال التفكير الاستراتيجي والتصميم الإبداعي والتميز التقني. نحن لا نبني مواقع ويب فحسب؛ نحن نبني محركات للنمو. شاهد الصورة كاملة إعلانات جوجل وغيرها من الإنجازات.'}
+              : 'اكتشف قصص نجاحنا الأخيرة في تطوير المواقع، تحسين خرائط جوجل، والحملات الإعلانية الممولة. يمثل كل مشروع تحدياً فريداً تغلبا عليه من خلال التفكير الاستراتيجي والتصميم الإبداعي والتميز التقني. نحن لا نبني مواقع ويب فحسب؛ نحن نبني محركات للنمو.'}
           </p>
           <p className="text-base text-slate-500 leading-relaxed">
             {lang === 'en'

@@ -16,9 +16,9 @@ export const SEOServices: React.FC<SEOServicesProps> = ({ lang, onBack, isPage =
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const title = lang === 'en' ? 'Advanced SEO Services & Organic Growth | Nashar Hub' : 'أفضل شركة سيو وتحسين محركات البحث في السعودية | نشار هب';
-    const description = lang === 'en' ? 'Dominate search rankings with our comprehensive SEO strategies including On-Page, Off-Page, and Technical SEO. Serving all of KSA.' : 'تصدر نتائج البحث مع أفضل شركة سيو في السعودية. نقدم استراتيجيات السيو الداخلي، الخارجي، والتقني في الرياض، جدة، الدمام وكافة المدن. بالإضافة إلى إعلانات جوجل.';
-    const keywords = lang === 'en' ? 'SEO Services, On-Page SEO, Off-Page SEO, Technical SEO, SEO Case Study, Organic Growth, Search Engine Optimization' : 'شركة سيو, خدمات سيو, تحسين محركات البحث, سيو داخلي, سيو خارجي, تصدر نتائج البحث, خبير سيو الرياض, سيو جدة, سيو الدمام, شركة سيو السعودية, إعلانات جوجل, جوجل إعلانات, عرض الصورة كاملة';
+    const title = lang === 'en' ? 'Advanced SEO Services & Organic Growth | Nashar Hub' : 'خدمات السيو SEO في السعودية | نشار هب - تصدر جوجل';
+    const description = lang === 'en' ? 'Dominate search rankings with our comprehensive SEO strategies including On-Page, Off-Page, and Technical SEO. Serving all of KSA.' : 'خدمات تحسين محركات البحث SEO المتكاملة في السعودية. سيو داخلي وخارجي وتقني لتصدر نتائج جوجل وزيادة الزيارات المجانية.';
+    const keywords = lang === 'en' ? 'SEO Services, On-Page SEO, Off-Page SEO, Technical SEO, SEO Case Study, Organic Growth, Search Engine Optimization' : 'شركة سيو, خدمات سيو, تحسين محركات البحث, سيو داخلي, سيو خارجي, تصدر نتائج البحث, خبير سيو الرياض, سيو جدة, سيو الدمام, شركة سيو السعودية, سيو';
 
     updateSEO({
       title,

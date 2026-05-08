@@ -36,7 +36,7 @@ export const Blog: React.FC<BlogProps> = ({ lang, onBack }) => {
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               {lang === 'en' 
                 ? 'Insights and strategies for digital growth in the Saudi market.' 
-                : 'رؤى واستراتيجيات للنمو الرقمي في السوق السعودي. اكتشف أسرار إعلانات جوجل وجوجل إعلانات، واحصل على عرض الصورة كاملة لنجاحك.'}
+                : 'رؤى واستراتيجيات للنمو الرقمي في السوق السعودي. اكتشف أحدث مقالاتنا حول التسويق وإعلانات جوجل.'}
             </p>
           </div>
         </Reveal>

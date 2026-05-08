@@ -127,8 +127,8 @@ export const CityLandingPage: React.FC<CityLandingPageProps> = ({ lang, onBack }
               
               <div className="space-y-6">
                 {[
-                  { icon: Target, title: lang === 'ar' ? 'استهداف دقيق' : 'Precise Targeting', desc: lang === 'ar' ? 'نصل لعملائك المحتملين في مدينتك بدقة عالية من خلال إعلانات جوجل وجوجل إعلانات.' : 'We reach your potential customers in your city with high precision.' },
-                  { icon: TrendingUp, title: lang === 'ar' ? 'زيادة المبيعات' : 'Increase Sales', desc: lang === 'ar' ? 'حملات مصممة خصيصاً لزيادة التحويلات والمبيعات مع عرض الصورة كاملة لنتائجك.' : 'Campaigns specifically designed to increase conversions and sales.' },
+                  { icon: Target, title: lang === 'ar' ? 'استهداف دقيق' : 'Precise Targeting', desc: lang === 'ar' ? 'نصل لعملائك المحتملين في مدينتك بدقة عالية.' : 'We reach your potential customers in your city with high precision.' },
+                  { icon: TrendingUp, title: lang === 'ar' ? 'زيادة المبيعات' : 'Increase Sales', desc: lang === 'ar' ? 'حملات مصممة خصيصاً لزيادة التحويلات والمبيعات مع تقارير شفافة لنتائجك.' : 'Campaigns specifically designed to increase conversions and sales.' },
                   { icon: Globe, title: lang === 'ar' ? 'سيو محلي' : 'Local SEO', desc: lang === 'ar' ? 'تصدر نتائج البحث المحلية في خرائط جوجل ومحرك البحث.' : 'Dominate local search results in Google Maps and Search.' }
                 ].map((feature, idx) => (
                   <div key={idx} className="flex gap-4">
@@ -142,21 +142,6 @@ export const CityLandingPage: React.FC<CityLandingPageProps> = ({ lang, onBack }
                   </div>
                 ))}
               </div>
-            </div>
-            
-            {/* Map Embed */}
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-slate-100">
-              <iframe 
-                src={data.mapEmbedUrl}
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title={`Map of ${data.name.en}`}
-                className="absolute inset-0"
-              ></iframe>
             </div>
           </div>
         </div>

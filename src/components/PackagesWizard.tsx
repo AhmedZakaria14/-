@@ -162,7 +162,7 @@ const ServiceStep = ({ lang, onSelect }: { lang: Language, onSelect: (s: 'ads' |
           <Target size={40} />
         </div>
         <h3 className="text-2xl font-black text-slate-900 mb-3">
-          {lang === 'en' ? 'Ads Management' : 'إدارة الإعلانات - إعلانات جوجل'}
+          {lang === 'en' ? 'Ads Management' : 'إدارة الإعلانات'}
         </h3>
         <p className="text-slate-500 font-medium">
           {lang === 'en' ? 'Scale your sales on Meta, TikTok, and Google' : 'ضاعف مبيعاتك على منصات التواصل وجوجل'}

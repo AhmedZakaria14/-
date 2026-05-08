@@ -158,7 +158,7 @@ export const PlatformDetail: React.FC<PlatformDetailProps> = ({ platformId, lang
               <p className="text-slate-300 text-sm mb-6 leading-relaxed">
                 {lang === 'en' 
                   ? 'Maximize your ad ROI with a custom-built website or Salla store designed for conversions.' 
-                  : 'لتحقيق أقصى استفادة من حملاتك الإعلانية، مثل إعلانات جوجل وجوجل إعلانات، تأكد من أن موقعك الإلكتروني مصمم لزيادة التحويلات. تعرف على خدمات تصميم المواقع الإلكترونية لدينا لتحصل على عرض الصورة كاملة.'}
+                  : 'لتحقيق أقصى استفادة من حملاتك الإعلانية، تأكد من أن موقعك الإلكتروني مصمم لزيادة التحويلات. تعرف على خدمات تصميم المواقع الإلكترونية ومتاجر سلة.'}
               </p>
               <button 
                 onClick={onWebsiteClick}

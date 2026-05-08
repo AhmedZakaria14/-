@@ -16,9 +16,9 @@ export const WebDevServices: React.FC<WebDevServicesProps> = ({ lang, onBack, is
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const title = lang === 'en' ? 'Web Design & Development Company in Saudi Arabia | Nashar Hub' : 'تصميم وبرمجة مواقع ومتاجر إلكترونية في السعودية | نشار هب';
-    const description = lang === 'en' ? 'Build a high-performance website that converts. We specialize in custom React/Next.js development, Salla/Zid store customization, and corporate websites across KSA.' : 'أفضل شركة تصميم مواقع وبرمجة متاجر إلكترونية بالسعودية. متخصصون في برمجة المواقع الخاصة، وتصميم متاجر سلة وزد في الرياض وكافة أنحاء المملكة.';
-    const keywords = lang === 'en' ? 'Web Design Saudi Arabia, E-commerce Development, Salla Store Design, React Developers Riyadh, Corporate Website Design, UI/UX Design Agency' : 'شركة تصميم مواقع, شركة برمجة مواقع, تصميم متاجر الكترونية, تصميم متجر سلة, تصميم موقع تعريفي, تصميم مواقع بالرياض, برمجة مواقع بجدة, تصميم متاجر بالدمام, شركة تصميم مواقع بالسعودية';
+    const title = lang === 'en' ? 'Web Design & Development Company in Saudi Arabia | Nashar Hub' : 'شركة تصميم مواقع ومتاجر إلكترونية في السعودية | نشار هب';
+    const description = lang === 'en' ? 'Build a high-performance website that converts. We specialize in custom React/Next.js development, Salla/Zid store customization, and corporate websites across KSA.' : 'شركة تصميم مواقع وبرمجة متاجر إلكترونية في السعودية. متخصصون في المتاجر (سلة، زد) والمواقع التعريفية وبرمجة React/Next.js في الرياض وجدة.';
+    const keywords = lang === 'en' ? 'Web Design Saudi Arabia, E-commerce Development, Salla Store Design, React Developers Riyadh, Corporate Website Design, UI/UX Design Agency' : 'شركة تصميم مواقع, برمجة مواقع, تصميم متاجر الكترونية, تصميم متجر سلة, متجر زد, تصميم موقع تعريفي, الرياض, السعودية, ويب ديفلوبر';
 
     updateSEO({
       title,
@@ -117,7 +117,7 @@ export const WebDevServices: React.FC<WebDevServicesProps> = ({ lang, onBack, is
           <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10">
             {lang === 'en' 
               ? 'Your website is your most powerful sales tool. We build secure, scalable, and stunning digital experiences that drive growth and turn visitors into loyal customers.'
-              : 'موقعك هو أقوى أداة مبيعات لديك. نحن نبني تجارب رقمية آمنة وقابلة للتوسع ومذهلة تدفع النمو وتحول الزوار إلى عملاء مخلصين. مع خدماتنا، ستحصل على عرض الصورة كاملة لنجاحك الرقمي، متكاملة مع إعلانات جوجل وجوجل إعلانات.'}
+              : 'موقعك هو أقوى أداة مبيعات لديك. نحن نبني تجارب رقمية آمنة وقابلة للتوسع ومذهلة تدفع النمو وتحول الزوار إلى عملاء مخلصين لنجاحك الرقمي.'}
           </p>
           
           {/* Added Image Section */}

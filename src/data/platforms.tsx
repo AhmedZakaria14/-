@@ -22,9 +22,9 @@ export const HELPER_ICONS: Record<string, React.FC<any>> = {
 export const PLATFORMS_DATA: any = {
   'google': {
     name: 'Google Ads',
-    seoTitle: { en: 'Google Ads Management Agency | Nashar Hub', ar: 'أفضل شركة إدارة حملات إعلانات جوجل | عرض الصورة كاملة' },
-    seoDesc: { en: 'Maximize your ROI with expert Google Ads management. We target high-intent keywords to drive immediate results.', ar: 'ضاعف مبيعاتك مع أفضل وكالة إدارة إعلانات جوجل. نقوم بإعداد وإدارة حملات شبكة البحث، إعلانات يوتيوب، والشبكة الإعلانية باستهداف دقيق للعملاء المحتملين لضمان أعلى عائد على الاستثمار (ROI). معنا سترى عرض الصورة كاملة لنجاحك.' },
-    seoKeywords: { en: 'Google Ads, PPC Agency, Search Ads, YouTube Ads, Display Ads', ar: 'اعلانات جوجل, ادارة حملات جوجل, شركة اعلانات جوجل, اعلانات يوتيوب, تسويق عبر محركات البحث, SEM, وكالة تسويق رقمي, اعلانات جوجل ممولة, شركة تسويق الكتروني, عرض الصورة كاملة, الصورة كاملة إعلانات, جوجل إعلانات' },
+    seoTitle: { en: 'Google Ads Management Agency | Nashar Hub', ar: 'أفضل شركة إدارة حملات إعلانات جوجل | نشار هب' },
+    seoDesc: { en: 'Maximize your ROI with expert Google Ads management. We target high-intent keywords to drive immediate results.', ar: 'ضاعف مبيعاتك مع أفضل وكالة إدارة إعلانات جوجل. نقوم بإعداد وإدارة حملات شبكة البحث، إعلانات يوتيوب، والشبكة الإعلانية باستهداف دقيق للعملاء المحتملين لضمان أعلى عائد على الاستثمار (ROI).' },
+    seoKeywords: { en: 'Google Ads, PPC Agency, Search Ads, YouTube Ads, Display Ads', ar: 'اعلانات جوجل, ادارة حملات جوجل, شركة اعلانات جوجل, اعلانات يوتيوب, تسويق عبر محركات البحث, SEM, وكالة تسويق رقمي, اعلانات جوجل ممولة, شركة تسويق الكتروني' },
     icon: Globe,
     theme: 'blue',
     gradient: 'from-[#4285F4] via-[#EA4335] to-[#FBBC05]',

@@ -108,7 +108,7 @@ export const WhyUs: React.FC<WhyUsProps> = ({ lang, isPage = false }) => {
               <p className="text-base text-slate-500 mb-12 leading-relaxed">
                 {lang === 'en'
                   ? 'By combining cutting-edge technology with creative marketing strategies, we help our clients dominate their respective markets. Whether you are a startup looking to make a mark or an established enterprise aiming for further expansion, our team of experts is here to guide you every step of the way. We pride ourselves on transparency, integrity, and delivering results that exceed expectations.'
-                  : 'من خلال الجمع بين أحدث التقنيات واستراتيجيات التسويق الإبداعية مثل إعلانات جوجل وجوجل إعلانات، نساعد عملائنا على السيطرة على أسواقهم الخاصة. سواء كنت شركة ناشئة تتطلع إلى ترك بصمة أو مؤسسة قائمة تهدف إلى مزيد من التوسع، فإن فريق الخبراء لدينا هنا لإرشادك في كل خطوة على الطريق لتحصل على عرض الصورة كاملة لنجاحك. نحن نفخر بالشفافية والنزاهة وتقديم النتائج التي تتجاوز التوقعات.'}
+                  : 'من خلال الجمع بين أحدث التقنيات واستراتيجيات التسويق الإبداعية، نساعد عملائنا على السيطرة على أسواقهم الخاصة. سواء كنت شركة ناشئة تتطلع إلى ترك بصمة أو مؤسسة قائمة تهدف إلى مزيد من التوسع، فإن فريق الخبراء لدينا هنا لإرشادك في كل خطوة على الطريق لتحصل على نجاحك المرجو. نحن نفخر بالشفافية والنزاهة وتقديم النتائج التي تتجاوز التوقعات.'}
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" role="list">

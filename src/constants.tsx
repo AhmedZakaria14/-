@@ -85,7 +85,7 @@ export const FAQS: FAQItem[] = [
     question: { en: 'Which platforms are best for my business?', ar: 'ما هي المنصات الأفضل لمشروعي؟' },
     answer: { 
       en: 'It depends on your niche. B2B works best on LinkedIn/Google. E-commerce thrives on Meta/TikTok/Snapchat. We will advise you during the audit.', 
-      ar: 'يعتمد ذلك على مجالك. الأعمال بين الشركات (B2B) تنجح في لينكد إن أو إعلانات جوجل. المتاجر الإلكترونية تزدهر في ميتا/تيك توك/سناب شات. سننصحك بالأفضل خلال مرحلة التدقيق لنقدم لك عرض الصورة كاملة.' 
+      ar: 'يعتمد ذلك على مجالك. الأعمال بين الشركات (B2B) تنجح في لينكد إن أو إعلانات جوجل. المتاجر الإلكترونية تزدهر في ميتا/تيك توك/سناب شات. سننصحك بالأفضل خلال مرحلة التدقيق.' 
     }
   },
   {
@@ -117,11 +117,11 @@ export const SERVICES: Service[] = [
     title: { en: 'Paid Media Buying', ar: 'إدارة إعلانات جوجل والحملات الإعلانية' },
     description: { 
       en: 'Strategic ad campaigns on Meta, Google, TikTok, and SnapChat designed to maximize ROAS.', 
-      ar: 'حملات إعلانية استراتيجية عبر جوجل إعلانات، ميتا، تيك توك وسناب شات. نقدم لك عرض الصورة كاملة لتعظيم العائد على الإنفاق.' 
+      ar: 'حملات إعلانية استراتيجية عبر إعلانات جوجل، ميتا، تيك توك وسناب شات. نقدم لك خطة متكاملة لتعظيم العائد على الإنفاق.' 
     },
     detailedInfo: {
       en: 'Instant Traffic • High ROAS • Precision Targeting • Scaling',
-      ar: 'زيارات فورية • الصورة كاملة إعلانات • استهداف دقيق • توسيع النطاق'
+      ar: 'زيارات فورية • عائد مرتفع • استهداف دقيق • توسيع النطاق'
     },
     icon: 'Target',
   },
@@ -218,11 +218,11 @@ export const TESTIMONIALS: Testimonial[] = [
 export const UI_TEXT: Translation = {
   heroTitle: {
     en: "The Leading Digital Marketing Agency in Saudi Arabia",
-    ar: "أفضل شركة تسويق إلكتروني بالسعودية | إعلانات جوجل - عرض الصورة كاملة"
+    ar: "أفضل شركة تسويق إلكتروني بالسعودية"
   },
   heroSubtitle: {
     en: "We are a top-tier digital marketing agency serving Riyadh, Jeddah, Dammam, and all of KSA. We specialize in high-ROI paid ads, custom web design, and Salla store creation to multiply your sales.",
-    ar: "وكالة تسويق رقمي رائدة في السعودية. متخصصون في إطلاق إعلانات جوجل، جوجل إعلانات، وتصميم مواقع إلكترونية احترافية. معنا سترى عرض الصورة كاملة لنجاحك، حيث نقدم الصورة كاملة إعلانات لزيادة مبيعاتك."
+    ar: "وكالة تسويق رقمي رائدة في السعودية. متخصصون في إطلاق الحملات الإعلانية، وتصميم مواقع إلكترونية احترافية. معنا ستحصل على نمو مستدام لزيادة مبيعاتك وتعزيز تواجدك الرقمي."
   },
   getStarted: {
     en: "Start Your Growth",

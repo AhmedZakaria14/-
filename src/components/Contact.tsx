@@ -70,14 +70,6 @@ export const Contact: React.FC<ContactProps> = ({ lang, isPage = false }) => {
                   <div>
                     <h3 className="text-slate-900 font-bold text-lg mb-1">{lang === 'en' ? 'Visit Us' : 'زرنا'}</h3>
                     <p className="text-slate-500 text-sm md:text-base mb-2">{lang === 'en' ? 'Cairo, Egypt' : 'القاهرة، مصر'}</p>
-                    <a 
-                      href="https://www.google.com/maps/search/?api=1&query=Nashar+Hub" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary text-sm font-bold hover:underline inline-flex items-center gap-1"
-                    >
-                      {lang === 'en' ? 'Find us on Google Maps' : 'اعثر علينا على خرائط جوجل'}
-                    </a>
                   </div>
                 </div>
               </div>

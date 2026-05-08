@@ -168,7 +168,7 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
                 <p className="text-slate-500">
                   {lang === 'en' 
                     ? 'Boost your new website with our Paid Ads services (Google, Meta, Snapchat) to maximize your ROI.' 
-                    : 'هل تحتاج إلى إعلانات جوجل أو إعلانات ممولة (سناب شات، تيك توك) لمتجرك الجديد؟ عزز نتائجك بحملات إعلانية مصممة خصيصاً لك لترى عرض الصورة كاملة لنجاحك.'}
+                    : 'هل تحتاج إلى إعلانات جوجل أو حملات ممولة (سناب شات، تيك توك) لمتجرك الجديد؟ عزز نتائجك بحملات إعلانية مصممة خصيصاً لك.'}
                 </p>
               </div>
 
