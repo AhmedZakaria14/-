@@ -1,0 +1,253 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: users
+    // Document ID: userId
+    // Fields:
+    //   - role: string ("admin")
+    //
+    // Collection: clients
+    // Document ID: auto-generated
+    // Fields:
+    //   - name: string (required)
+    //   - email: string (required)
+    //   - phone: string (required)
+    //   - status: string (required, enum)
+    //   - plan: string (required)
+    //   - joinDate: string (required)
+    //   - notes: string (optional)
+    //   - createdAt: number (required)
+    //
+    // Collection: tasks
+    // Document ID: auto-generated
+    // Fields:
+    //   - title: string (required)
+    //   - description: string (required)
+    //   - status: string (required, enum)
+    //   - clientId: string (required)
+    //   - dueDate: string (required)
+    //   - createdAt: number (required)
+    //
+    // Collection: invoices
+    // Document ID: auto-generated
+    // Fields:
+    //   - description: string (required)
+    //   - clientId: string (required)
+    //   - date: string (required)
+    //   - amount: number (required)
+    //   - status: string (required, enum)
+    //   - createdAt: number (required)
+    //
+    // Collection: leads
+    // Document ID: auto-generated
+    // Fields:
+    //   - name: string (required)
+    //   - company: string (required)
+    //   - email: string (required)
+    //   - phone: string (required)
+    //   - status: string (required, enum)
+    //   - value: number (required)
+    //   - notes: string (optional)
+    //   - date: string (required)
+    //   - createdAt: number (required)
+    //
+    // Collection: events
+    // Document ID: auto-generated
+    // Fields:
+    //   - title: string (required)
+    //   - date: string (required)
+    //   - type: string (required, enum)
+    //   - description: string (optional)
+    //   - createdAt: number (required)
+    //
+    // Collection: settings
+    // Document ID: "general"
+    // Fields:
+    //   - siteName: string (required)
+    //   - contactEmail: string (required)
+    //   - contactPhone: string (required)
+    //   - address: string (required)
+    //   - socialLinks: map (optional)
+    //
+    // Collection: clientNotes
+    // Document ID: auto-generated
+    // Fields:
+    //   - clientId: string (required)
+    //   - text: string (required)
+    //   - date: string (required)
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.email == "azeco77@gmail.com" || 
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin')
+      );
+    }
+
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+
+    function isValidClient(data) {
+      return hasRequiredFields(['name', 'email', 'phone', 'status', 'plan', 'joinDate', 'createdAt']) &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
+             data.email is string && data.email.size() < 100 &&
+             data.phone is string && data.phone.size() < 50 &&
+             data.status in ['Active', 'Pending', 'Inactive'] &&
+             data.plan is string && data.plan.size() < 100 &&
+             data.joinDate is string && data.joinDate.size() < 50 &&
+             data.createdAt is number &&
+             (!('notes' in data) || (data.notes is string && data.notes.size() < 5000));
+    }
+
+    function isValidTask(data) {
+      return hasRequiredFields(['title', 'description', 'status', 'clientId', 'dueDate', 'createdAt']) &&
+             data.title is string && data.title.size() > 0 && data.title.size() < 200 &&
+             data.description is string && data.description.size() < 5000 &&
+             data.status in ['To Do', 'In Progress', 'Done'] &&
+             data.clientId is string && data.clientId.size() > 0 && data.clientId.size() < 100 &&
+             data.dueDate is string && data.dueDate.size() < 50 &&
+             data.createdAt is number;
+    }
+
+    function isValidInvoice(data) {
+      return hasRequiredFields(['description', 'clientId', 'date', 'amount', 'status', 'createdAt']) &&
+             data.description is string && data.description.size() > 0 && data.description.size() < 500 &&
+             data.clientId is string && data.clientId.size() > 0 && data.clientId.size() < 100 &&
+             data.date is string && data.date.size() < 50 &&
+             data.amount is number && data.amount >= 0 &&
+             data.status in ['Paid', 'Unpaid'] &&
+             data.createdAt is number;
+    }
+
+    function isValidLead(data) {
+      return hasRequiredFields(['name', 'company', 'email', 'phone', 'status', 'value', 'date', 'createdAt']) &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
+             data.company is string && data.company.size() < 100 &&
+             data.email is string && data.email.size() < 100 &&
+             data.phone is string && data.phone.size() < 50 &&
+             data.status in ['New', 'Contacted', 'Qualified', 'Proposal', 'Won', 'Lost'] &&
+             data.value is number && data.value >= 0 &&
+             data.date is string && data.date.size() < 50 &&
+             data.createdAt is number &&
+             (!('notes' in data) || (data.notes is string && data.notes.size() < 5000));
+    }
+
+    function isValidEvent(data) {
+      return hasRequiredFields(['title', 'date', 'type', 'createdAt']) &&
+             data.title is string && data.title.size() > 0 && data.title.size() < 200 &&
+             data.date is string && data.date.size() < 50 &&
+             data.type in ['Meeting', 'Deadline', 'Reminder'] &&
+             data.createdAt is number &&
+             (!('description' in data) || (data.description is string && data.description.size() < 5000));
+    }
+
+    function isValidSettings(data) {
+      return hasRequiredFields(['siteName', 'contactEmail', 'contactPhone', 'address']) &&
+             data.siteName is string && data.siteName.size() > 0 && data.siteName.size() < 100 &&
+             data.contactEmail is string && data.contactEmail.size() < 100 &&
+             data.contactPhone is string && data.contactPhone.size() < 50 &&
+             data.address is string && data.address.size() < 500 &&
+             (!('socialLinks' in data) || data.socialLinks is map);
+    }
+
+    function isValidClientNote(data) {
+      return hasRequiredFields(['clientId', 'text', 'date']) &&
+             data.clientId is string && data.clientId.size() > 0 && data.clientId.size() < 100 &&
+             data.text is string && data.text.size() > 0 && data.text.size() < 5000 &&
+             data.date is string && data.date.size() < 50;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /users/{userId} {
+      allow read: if isAdmin() || request.auth.uid == userId;
+      allow create: if (isAdmin() || request.auth.uid == userId) && 
+                    hasRequiredFields(['role']) && 
+                    request.resource.data.role in ['admin', 'user'];
+      allow update: if (isAdmin() || request.auth.uid == userId) && 
+                    (request.resource.data.role == resource.data.role || isAdmin());
+      allow delete: if isAdmin() && request.auth.uid != userId; // Cannot delete self
+    }
+
+    match /clients/{clientId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && isValidClient(request.resource.data);
+      allow update: if isAdmin() && isValidClient(request.resource.data) && 
+                    request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isAdmin();
+    }
+
+    match /tasks/{taskId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && isValidTask(request.resource.data);
+      allow update: if isAdmin() && isValidTask(request.resource.data) && 
+                    request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isAdmin();
+    }
+
+    match /invoices/{invoiceId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && isValidInvoice(request.resource.data);
+      allow update: if isAdmin() && isValidInvoice(request.resource.data) && 
+                    request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isAdmin();
+    }
+
+    match /leads/{leadId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && isValidLead(request.resource.data);
+      allow update: if isAdmin() && isValidLead(request.resource.data) && 
+                    request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isAdmin();
+    }
+
+    match /events/{eventId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && isValidEvent(request.resource.data);
+      allow update: if isAdmin() && isValidEvent(request.resource.data) && 
+                    request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isAdmin();
+    }
+
+    match /settings/{docId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && docId == 'general' && isValidSettings(request.resource.data);
+      allow update: if isAdmin() && docId == 'general' && isValidSettings(request.resource.data);
+      allow delete: if false; // Settings should not be deleted
+    }
+
+    match /clientNotes/{noteId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && isValidClientNote(request.resource.data);
+      allow update: if isAdmin() && isValidClientNote(request.resource.data) && 
+                    request.resource.data.date == resource.data.date;
+      allow delete: if isAdmin();
+    }
+  }
+}

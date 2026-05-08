@@ -1,0 +1,140 @@
+{
+  "entities": {
+    "Client": {
+      "title": "Client",
+      "description": "A client of the agency",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "status": { "type": "string", "enum": ["Active", "Pending", "Inactive"] },
+        "plan": { "type": "string" },
+        "joinDate": { "type": "string", "format": "date" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "email", "phone", "status", "plan", "joinDate", "createdAt"]
+    },
+    "Task": {
+      "title": "Task",
+      "description": "A task associated with a client",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string", "enum": ["To Do", "In Progress", "Done"] },
+        "clientId": { "type": "string" },
+        "dueDate": { "type": "string", "format": "date" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["title", "description", "status", "clientId", "dueDate", "createdAt"]
+    },
+    "Invoice": {
+      "title": "Invoice",
+      "description": "An invoice for a client",
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "clientId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "amount": { "type": "number" },
+        "status": { "type": "string", "enum": ["Paid", "Unpaid"] },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["description", "clientId", "date", "amount", "status", "createdAt"]
+    },
+    "Lead": {
+      "title": "Lead",
+      "description": "A potential client",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "company": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "status": { "type": "string", "enum": ["New", "Contacted", "Qualified", "Proposal", "Won", "Lost"] },
+        "value": { "type": "number" },
+        "notes": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "company", "email", "phone", "status", "value", "date", "createdAt"]
+    },
+    "Event": {
+      "title": "Event",
+      "description": "A calendar event",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "type": { "type": "string", "enum": ["Meeting", "Deadline", "Reminder"] },
+        "description": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["title", "date", "type", "createdAt"]
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Global agency settings",
+      "type": "object",
+      "properties": {
+        "siteName": { "type": "string" },
+        "contactEmail": { "type": "string", "format": "email" },
+        "contactPhone": { "type": "string" },
+        "address": { "type": "string" },
+        "socialLinks": {
+          "type": "object",
+          "properties": {
+            "facebook": { "type": "string" },
+            "twitter": { "type": "string" },
+            "instagram": { "type": "string" },
+            "linkedin": { "type": "string" }
+          }
+        }
+      },
+      "required": ["siteName", "contactEmail", "contactPhone", "address"]
+    },
+    "ClientNote": {
+      "title": "ClientNote",
+      "description": "A note associated with a client",
+      "type": "object",
+      "properties": {
+        "clientId": { "type": "string" },
+        "text": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" }
+      },
+      "required": ["clientId", "text", "date"]
+    }
+  },
+  "firestore": {
+    "clients": {
+      "schema": { "$ref": "#/entities/Client" },
+      "description": "Collection of all clients"
+    },
+    "clientNotes": {
+      "schema": { "$ref": "#/entities/ClientNote" },
+      "description": "Collection of all client notes"
+    },
+    "tasks": {
+      "schema": { "$ref": "#/entities/Task" },
+      "description": "Collection of all tasks"
+    },
+    "invoices": {
+      "schema": { "$ref": "#/entities/Invoice" },
+      "description": "Collection of all invoices"
+    },
+    "leads": {
+      "schema": { "$ref": "#/entities/Lead" },
+      "description": "Collection of all leads"
+    },
+    "events": {
+      "schema": { "$ref": "#/entities/Event" },
+      "description": "Collection of all events"
+    },
+    "settings": {
+      "schema": { "$ref": "#/entities/Settings" },
+      "description": "Global settings document"
+    }
+  }
+}
