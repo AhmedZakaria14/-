@@ -20,79 +20,61 @@ export const PaidAdsServices: React.FC<PaidAdsServicesProps> = ({ lang, onBack, 
     const description = lang === 'en' ? 'Scale your revenue with high-performance Google Ads, Meta Ads, TikTok, and Snapchat campaigns.' : 'شركة إدارة إعلانات ممولة في السعودية. ندير حملات إعلانات جوجل، سناب شات، تيك توك، وميتا لزيادة المبيعات وعائد الاستثمار.';
     const keywords = lang === 'en' ? 'Paid Ads, PPC Management, Google Ads Agency, Social Media Ads' : 'اعلانات ممولة, ادارة حملات اعلانية, إعلانات جوجل, سناب شات, تيك توك, شركة تسويق, السعودية';
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": lang === 'en' ? "What is the best advertising platform in Saudi Arabia?" : "ما هي أفضل منصة إعلانية في السعودية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'en' 
+              ? "The best platform depends on your target audience and goals. Google Ads is excellent for high-intent searches, while Snapchat and TikTok are highly effective for reaching younger demographics and driving brand awareness in Saudi Arabia. Meta (Instagram/Facebook) remains a strong all-rounder." 
+              : "تعتمد أفضل منصة على جمهورك المستهدف وأهدافك. إعلانات جوجل ممتازة لعمليات البحث ذات النية العالية، بينما سناب شات وتيك توك فعالان للغاية للوصول إلى الفئات العمرية الشابة وزيادة الوعي بالعلامة التجارية في السعودية. تظل ميتا (إنستغرام/فيسبوك) خياراً قوياً شاملاً."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": lang === 'en' ? "What is the required budget to start paid ads?" : "كم الميزانية المطلوبة للبدء في الإعلانات الممولة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'en' 
+              ? "We recommend a starting budget that allows for sufficient data collection and testing, typically around $1,000 to $3,000 per month depending on the industry and platforms used. We optimize this budget to maximize your return." 
+              : "نوصي بميزانية أولية تسمح بجمع بيانات واختبارات كافية، وعادة ما تتراوح بين 1000 إلى 3000 دولار شهرياً اعتماداً على الصناعة والمنصات المستخدمة. نحن نحسن هذه الميزانية لتعظيم العائد."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": lang === 'en' ? "How do you guarantee the success of ad campaigns?" : "كيف تضمنون نجاح الحملات الإعلانية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'en' 
+              ? "We rely on data-driven strategies, continuous A/B testing, precise audience targeting, and advanced conversion tracking. While no one can guarantee specific numbers, our methodology consistently delivers high ROAS for our clients." 
+              : "نعتمد على استراتيجيات مبنية على البيانات، واختبار A/B المستمر، واستهداف دقيق للجمهور، وتتبع متقدم للتحويلات. على الرغم من أنه لا يمكن لأحد ضمان أرقام محددة، إلا أن منهجيتنا تحقق باستمرار عائداً عالياً على الإنفاق الإعلاني (ROAS) لعملائنا."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": lang === 'en' ? "What is the expected Return on Ad Spend (ROAS)?" : "ما هو العائد على الإنفاق الإعلاني (ROAS) المتوقع؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'en' 
+              ? "ROAS varies widely by industry, product margin, and campaign maturity. Our goal is always to achieve a profitable ROAS that scales your business. We set realistic benchmarks during our initial strategy phase." 
+              : "يختلف العائد على الإنفاق الإعلاني (ROAS) بشكل كبير حسب الصناعة، وهامش ربح المنتج، ونضج الحملة. هدفنا دائماً هو تحقيق عائد مربح ينمي عملك. نضع معايير واقعية خلال مرحلة الاستراتيجية الأولية."
+          }
+        }
+      ]
+    };
+
     updateSEO({
       title,
       description,
       keywords,
       url: 'https://nasharhub.com/paid-ads-services',
-      image: 'https://nasharhub.com/og-image.jpg'
+      image: 'https://nasharhub.com/og-image.jpg',
+      structuredData: faqSchema
     });
-
-    // Inject FAQPage Schema
-    const schemaId = 'faq-schema-ads';
-    let script = document.getElementById(schemaId);
-    if (!script) {
-      script = document.createElement('script');
-      script.id = schemaId;
-      script.setAttribute('type', 'application/ld+json');
-      
-      const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": lang === 'en' ? "What is the best advertising platform in Saudi Arabia?" : "ما هي أفضل منصة إعلانية في السعودية؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": lang === 'en' 
-                ? "The best platform depends on your target audience and goals. Google Ads is excellent for high-intent searches, while Snapchat and TikTok are highly effective for reaching younger demographics and driving brand awareness in Saudi Arabia. Meta (Instagram/Facebook) remains a strong all-rounder." 
-                : "تعتمد أفضل منصة على جمهورك المستهدف وأهدافك. إعلانات جوجل ممتازة لعمليات البحث ذات النية العالية، بينما سناب شات وتيك توك فعالان للغاية للوصول إلى الفئات العمرية الشابة وزيادة الوعي بالعلامة التجارية في السعودية. تظل ميتا (إنستغرام/فيسبوك) خياراً قوياً شاملاً."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": lang === 'en' ? "What is the required budget to start paid ads?" : "كم الميزانية المطلوبة للبدء في الإعلانات الممولة؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": lang === 'en' 
-                ? "We recommend a starting budget that allows for sufficient data collection and testing, typically around $1,000 to $3,000 per month depending on the industry and platforms used. We optimize this budget to maximize your return." 
-                : "نوصي بميزانية أولية تسمح بجمع بيانات واختبارات كافية، وعادة ما تتراوح بين 1000 إلى 3000 دولار شهرياً اعتماداً على الصناعة والمنصات المستخدمة. نحن نحسن هذه الميزانية لتعظيم العائد."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": lang === 'en' ? "How do you guarantee the success of ad campaigns?" : "كيف تضمنون نجاح الحملات الإعلانية؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": lang === 'en' 
-                ? "We rely on data-driven strategies, continuous A/B testing, precise audience targeting, and advanced conversion tracking. While no one can guarantee specific numbers, our methodology consistently delivers high ROAS for our clients." 
-                : "نعتمد على استراتيجيات مبنية على البيانات، واختبار A/B المستمر، واستهداف دقيق للجمهور، وتتبع متقدم للتحويلات. على الرغم من أنه لا يمكن لأحد ضمان أرقام محددة، إلا أن منهجيتنا تحقق باستمرار عائداً عالياً على الإنفاق الإعلاني (ROAS) لعملائنا."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": lang === 'en' ? "What is the expected Return on Ad Spend (ROAS)?" : "ما هو العائد على الإنفاق الإعلاني (ROAS) المتوقع؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": lang === 'en' 
-                ? "ROAS varies widely by industry, product margin, and campaign maturity. Our goal is always to achieve a profitable ROAS that scales your business. We set realistic benchmarks during our initial strategy phase." 
-                : "يختلف العائد على الإنفاق الإعلاني (ROAS) بشكل كبير حسب الصناعة، وهامش ربح المنتج، ونضج الحملة. هدفنا دائماً هو تحقيق عائد مربح ينمي عملك. نضع معايير واقعية خلال مرحلة الاستراتيجية الأولية."
-            }
-          }
-        ]
-      };
-      
-      script.textContent = JSON.stringify(faqSchema);
-      document.head.appendChild(script);
-    }
-
-    return () => {
-      const existingScript = document.getElementById(schemaId);
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
   }, [lang]);
 
   const faqs = [

@@ -70,6 +70,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
                 <li><a href="#stats" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Why Nashar Hub?' : 'لماذا نشار هب؟'}</a></li>
                 <li><a href="#process" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Our Process' : 'كيف نعمل'}</a></li>
                 <li><a href="/blog" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Blog' : 'المدونة'}</a></li>
+                <li><a href="/ai" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'AI context' : 'معلومات الـ AI'}</a></li>
                 <li><a href="#contact" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Start a Project' : 'ابدأ مشروعك'}</a></li>
                 <li><a href="#" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Careers' : 'الوظائف'}</a></li>
              </ul>

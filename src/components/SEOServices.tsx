@@ -20,79 +20,61 @@ export const SEOServices: React.FC<SEOServicesProps> = ({ lang, onBack, isPage =
     const description = lang === 'en' ? 'Dominate search rankings with our comprehensive SEO strategies including On-Page, Off-Page, and Technical SEO. Serving all of KSA.' : 'خدمات تحسين محركات البحث SEO المتكاملة في السعودية. سيو داخلي وخارجي وتقني لتصدر نتائج جوجل وزيادة الزيارات المجانية.';
     const keywords = lang === 'en' ? 'SEO Services, On-Page SEO, Off-Page SEO, Technical SEO, SEO Case Study, Organic Growth, Search Engine Optimization' : 'شركة سيو, خدمات سيو, تحسين محركات البحث, سيو داخلي, سيو خارجي, تصدر نتائج البحث, خبير سيو الرياض, سيو جدة, سيو الدمام, شركة سيو السعودية, سيو';
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": lang === 'en' ? "How do I improve my website ranking on Google?" : "كيف أحسن ترتيب موقعي في جوجل؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'en' 
+              ? "Improving your Google ranking requires a combination of Technical SEO (fast loading, mobile-friendly), On-Page SEO (optimizing content for target keywords), and Off-Page SEO (building high-quality backlinks). We provide a comprehensive strategy covering all these aspects." 
+              : "تحسين ترتيب موقعك يتطلب مزيجاً من السيو التقني (سرعة الموقع، التوافق مع الجوال)، السيو الداخلي (تحسين المحتوى للكلمات المفتاحية المستهدفة)، والسيو الخارجي (بناء روابط خلفية عالية الجودة). نحن نقدم استراتيجية شاملة تغطي كل هذه الجوانب."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": lang === 'en' ? "How long does SEO take to show results?" : "كم يستغرق السيو للظهور في الصفحة الأولى؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'en' 
+              ? "SEO is a long-term strategy. Typically, you can start seeing noticeable improvements in 3 to 6 months, depending on your website's current state, industry competitiveness, and the targeted keywords." 
+              : "السيو هو استراتيجية طويلة المدى. عادةً، يمكنك البدء في رؤية تحسن ملحوظ خلال 3 إلى 6 أشهر، اعتماداً على حالة موقعك الحالية، والمنافسة في مجالك، والكلمات المفتاحية المستهدفة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": lang === 'en' ? "Is SEO better or Paid Ads?" : "هل السيو أفضل أم الإعلانات الممولة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'en' 
+              ? "Both are important. Paid ads provide immediate traffic and sales, while SEO builds sustainable, long-term organic traffic that reduces your overall customer acquisition cost over time. We recommend a combined approach." 
+              : "كلاهما مهم. توفر الإعلانات الممولة زيارات ومبيعات فورية، بينما يبني السيو زيارات مجانية مستدامة وطويلة المدى تقلل من تكلفة الاستحواذ على العملاء بمرور الوقت. نوصي بنهج يجمع بين الاثنين."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": lang === 'en' ? "What is the cost of SEO services in Saudi Arabia?" : "ما هي تكلفة خدمات السيو في السعودية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": lang === 'en' 
+              ? "The cost varies based on the scope of work, website size, and market competition. We offer customized packages tailored to your specific business goals and budget to ensure maximum ROI." 
+              : "تختلف التكلفة بناءً على حجم العمل، وحجم الموقع، والمنافسة في السوق. نحن نقدم باقات مخصصة تتناسب مع أهداف عملك وميزانيتك لضمان أقصى عائد على الاستثمار."
+          }
+        }
+      ]
+    };
+
     updateSEO({
       title,
       description,
       keywords,
       url: 'https://nasharhub.com/seo-services',
-      image: 'https://nasharhub.com/og-image.jpg'
+      image: 'https://nasharhub.com/og-image.jpg',
+      structuredData: faqSchema
     });
-
-    // Inject FAQPage Schema
-    const schemaId = 'faq-schema-seo';
-    let script = document.getElementById(schemaId);
-    if (!script) {
-      script = document.createElement('script');
-      script.id = schemaId;
-      script.setAttribute('type', 'application/ld+json');
-      
-      const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": lang === 'en' ? "How do I improve my website ranking on Google?" : "كيف أحسن ترتيب موقعي في جوجل؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": lang === 'en' 
-                ? "Improving your Google ranking requires a combination of Technical SEO (fast loading, mobile-friendly), On-Page SEO (optimizing content for target keywords), and Off-Page SEO (building high-quality backlinks). We provide a comprehensive strategy covering all these aspects." 
-                : "تحسين ترتيب موقعك يتطلب مزيجاً من السيو التقني (سرعة الموقع، التوافق مع الجوال)، السيو الداخلي (تحسين المحتوى للكلمات المفتاحية المستهدفة)، والسيو الخارجي (بناء روابط خلفية عالية الجودة). نحن نقدم استراتيجية شاملة تغطي كل هذه الجوانب."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": lang === 'en' ? "How long does SEO take to show results?" : "كم يستغرق السيو للظهور في الصفحة الأولى؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": lang === 'en' 
-                ? "SEO is a long-term strategy. Typically, you can start seeing noticeable improvements in 3 to 6 months, depending on your website's current state, industry competitiveness, and the targeted keywords." 
-                : "السيو هو استراتيجية طويلة المدى. عادةً، يمكنك البدء في رؤية تحسن ملحوظ خلال 3 إلى 6 أشهر، اعتماداً على حالة موقعك الحالية، والمنافسة في مجالك، والكلمات المفتاحية المستهدفة."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": lang === 'en' ? "Is SEO better or Paid Ads?" : "هل السيو أفضل أم الإعلانات الممولة؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": lang === 'en' 
-                ? "Both are important. Paid ads provide immediate traffic and sales, while SEO builds sustainable, long-term organic traffic that reduces your overall customer acquisition cost over time. We recommend a combined approach." 
-                : "كلاهما مهم. توفر الإعلانات الممولة زيارات ومبيعات فورية، بينما يبني السيو زيارات مجانية مستدامة وطويلة المدى تقلل من تكلفة الاستحواذ على العملاء بمرور الوقت. نوصي بنهج يجمع بين الاثنين."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": lang === 'en' ? "What is the cost of SEO services in Saudi Arabia?" : "ما هي تكلفة خدمات السيو في السعودية؟",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": lang === 'en' 
-                ? "The cost varies based on the scope of work, website size, and market competition. We offer customized packages tailored to your specific business goals and budget to ensure maximum ROI." 
-                : "تختلف التكلفة بناءً على حجم العمل، وحجم الموقع، والمنافسة في السوق. نحن نقدم باقات مخصصة تتناسب مع أهداف عملك وميزانيتك لضمان أقصى عائد على الاستثمار."
-            }
-          }
-        ]
-      };
-      
-      script.textContent = JSON.stringify(faqSchema);
-      document.head.appendChild(script);
-    }
-
-    return () => {
-      const existingScript = document.getElementById(schemaId);
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
   }, [lang]);
 
   const faqs = [

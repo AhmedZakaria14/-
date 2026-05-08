@@ -1,6 +1,7 @@
 import React from 'react';
 import { hydrateRoot, createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
 import App from './App';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -14,9 +15,11 @@ if (!rootElement) {
 
 const app = (
   <ErrorBoundary>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
   </ErrorBoundary>
 );
 

@@ -20,12 +20,31 @@ export const WebDevServices: React.FC<WebDevServicesProps> = ({ lang, onBack, is
     const description = lang === 'en' ? 'Build a high-performance website that converts. We specialize in custom React/Next.js development, Salla/Zid store customization, and corporate websites across KSA.' : 'شركة تصميم مواقع وبرمجة متاجر إلكترونية في السعودية. متخصصون في المتاجر (سلة، زد) والمواقع التعريفية وبرمجة React/Next.js في الرياض وجدة.';
     const keywords = lang === 'en' ? 'Web Design Saudi Arabia, E-commerce Development, Salla Store Design, React Developers Riyadh, Corporate Website Design, UI/UX Design Agency' : 'شركة تصميم مواقع, برمجة مواقع, تصميم متاجر الكترونية, تصميم متجر سلة, متجر زد, تصميم موقع تعريفي, الرياض, السعودية, ويب ديفلوبر';
 
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": lang === 'en' ? "Web Development & Design" : "تصميم وتطوير المواقع",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://nasharhub.com/#organization"
+      },
+      "areaServed": [
+        {"@type": "Country", "name": "Saudi Arabia"}
+      ],
+      "description": description,
+      "offers": {
+        "@type": "Offer",
+        "description": lang === 'en' ? "Custom web development and e-commerce solutions in Saudi Arabia" : "خدمات تصميم الويب وتطوير المتاجر الإلكترونية في السعودية"
+      }
+    };
+
     updateSEO({
       title,
       description,
       keywords,
       url: 'https://nasharhub.com/web-dev-services',
-      image: 'https://nasharhub.com/og-image.jpg'
+      image: 'https://nasharhub.com/og-image.jpg',
+      structuredData: serviceSchema
     });
   }, [lang]);
 

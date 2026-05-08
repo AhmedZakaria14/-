@@ -36,6 +36,7 @@ const BlogPost = lazy(() => import('@/components/BlogPost').then(m => ({ default
 const PlatformDetail = lazy(() => import('@/components/PlatformDetail').then(m => ({ default: m.PlatformDetail })));
 const CityLandingPage = lazy(() => import('@/components/CityLandingPage').then(m => ({ default: m.CityLandingPage })));
 const NotFound = lazy(() => import('@/components/NotFound').then(m => ({ default: m.NotFound })));
+const AIPage = lazy(() => import('@/components/AIPage').then(m => ({ default: m.AIPage })));
 
 // Lazy load below-the-fold components for the home page
 const LazyServices = lazy(() => import('@/components/Services').then(m => ({ default: m.Services })));
@@ -239,6 +240,10 @@ function App() {
           <Route path="/saudi" element={<SaudiLandingPage />} />
           <Route path="/saudi/:city" element={<CityLandingPage lang={lang} onBack={handleBackToMain} />} />
           
+          <Route path="/ai" element={<AIPage lang={lang} />} />
+          <Route path="/llm" element={<AIPage lang={lang} />} />
+          <Route path="/about-for-ai" element={<AIPage lang={lang} />} />
+
           <Route path="/seo-services" element={<SEOServices lang={lang} onBack={handleBackToMain} />} />
           <Route path="/paid-ads-services" element={<PaidAdsServices lang={lang} onBack={handleBackToMain} />} />
           <Route path="/web-dev-services" element={<WebDevServices lang={lang} onBack={handleBackToMain} />} />
