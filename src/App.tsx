@@ -261,6 +261,9 @@ function App() {
               <Suspense fallback={<div className="py-20 flex justify-center"><div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div></div>}>
                 <LazyServices lang={lang} onSEOClick={handleSEOClick} onPaidAdsClick={handlePaidAdsClick} onWebDevClick={handleWebDevClick} />
                 <LazyPortfolio lang={lang} />
+                <div id="packages" className="hidden md:block scroll-mt-20">
+                  <PackagesWizard lang={lang} onBack={handleBackToMain} isPage={false} />
+                </div>
                 <LazyProcess lang={lang} />
                 <LazyWhyUs lang={lang} />
                 <LazyClientLogos lang={lang} />

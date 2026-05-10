@@ -8,6 +8,7 @@ export interface NavItem {
     ar: string;
   };
   href: string;
+  desktopOnly?: boolean;
 }
 
 export interface Service {

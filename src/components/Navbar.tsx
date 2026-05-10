@@ -157,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
         aria-hidden={!isOpen}
       >
         <div className="px-4 pt-4 pb-6 space-y-2">
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.filter(item => !item.desktopOnly).map((item) => (
               <a
                 key={item.key}
                 href={item.href}
