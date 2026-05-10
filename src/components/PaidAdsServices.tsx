@@ -255,64 +255,6 @@ export const PaidAdsServices: React.FC<PaidAdsServicesProps> = ({ lang, onBack, 
         </div>
       </div>
 
-      {/* Case Study Section */}
-      <div className="max-w-5xl mx-auto px-6 mt-24">
-        <div className="text-center mb-12">
-          <span className="text-purple-600 font-bold tracking-wider uppercase text-sm mb-2 block">
-            {lang === 'en' ? 'Success Story' : 'قصة نجاح'}
-          </span>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900">
-            {lang === 'en' ? 'PPC Case Study' : 'دراسة حالة إعلانات'}
-          </h2>
-        </div>
-
-        <div className="bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 overflow-hidden flex flex-col md:flex-row">
-          <div className="md:w-1/3 bg-slate-900 p-10 text-white flex flex-col justify-center">
-            <Award size={48} className="text-purple-400 mb-6" />
-            <h3 className="text-2xl font-bold mb-2">{caseStudy.client[lang]}</h3>
-            <p className="text-slate-400 mb-8">{caseStudy.industry[lang]}</p>
-            
-            <div className="space-y-6">
-              <div>
-                <span className="block text-xs text-slate-500 uppercase tracking-wider mb-1">{lang === 'en' ? 'Duration' : 'المدة'}</span>
-                <span className="font-bold text-lg">{caseStudy.duration[lang]}</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="md:w-2/3 p-10 md:p-12">
-            <div className="mb-8">
-            <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                <TrendingUp className="text-rose-500" size={24} />
-                {lang === 'en' ? 'The Challenge' : 'التحدي'}
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                {caseStudy.challenge[lang]}
-              </p>
-            </div>
-            
-            <div className="mb-10">
-              <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                <Zap className="text-amber-500" size={24} />
-                {lang === 'en' ? 'Our Solution' : 'الحل'}
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                {caseStudy.solution[lang]}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {caseStudy.results.map((result, idx) => (
-                <div key={idx} className="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100">
-                  <span className="block text-2xl md:text-3xl font-black text-purple-600 mb-1">{result.metric}</span>
-                  <span className="block text-xs font-bold text-slate-500">{result.label[lang]}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* FAQ Section */}
       <div className="max-w-4xl mx-auto px-6 mt-24">
         <div className="text-center mb-12">
