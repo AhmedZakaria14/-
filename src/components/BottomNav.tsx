@@ -35,7 +35,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ lang, onPlatformSelect, on
   const rightNavItems = [
     {
       id: 'packages',
-      label: { en: 'Packages', ar: 'باقات إعلانات جوجل' },
+      label: { en: 'Packages', ar: 'باقات الاعلانات والمواقع' },
       icon: Package,
       isAction: true,
       onClick: () => {
