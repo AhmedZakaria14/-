@@ -7,7 +7,6 @@ export const NAV_ITEMS: NavItem[] = [
   { key: 'home', label: { en: 'Home', ar: 'الرئيسية' }, href: '/#home' },
   { key: 'services', label: { en: 'Services', ar: 'خدماتنا' }, href: '/#services' },
   { key: 'packages', label: { en: 'Packages', ar: 'الباقات' }, href: '/#packages', desktopOnly: true },
-  { key: 'portfolio', label: { en: 'Results', ar: 'نتائج عملاءنا' }, href: '/#portfolio' },
   { key: 'process', label: { en: 'Process', ar: 'آلية العمل' }, href: '/#process' },
   { key: 'blog', label: { en: 'Blog', ar: 'المدونة' }, href: '/blog' },
   { key: 'stats', label: { en: 'Why Us', ar: 'لماذا نحن' }, href: '/#stats' },

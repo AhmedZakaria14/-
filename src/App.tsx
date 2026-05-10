@@ -40,7 +40,6 @@ const AIPage = lazy(() => import('@/components/AIPage').then(m => ({ default: m.
 
 // Lazy load below-the-fold components for the home page
 const LazyServices = lazy(() => import('@/components/Services').then(m => ({ default: m.Services })));
-const LazyPortfolio = lazy(() => import('@/components/Portfolio').then(m => ({ default: m.Portfolio })));
 const LazyProcess = lazy(() => import('@/components/Process').then(m => ({ default: m.Process })));
 const LazyWhyUs = lazy(() => import('@/components/WhyUs').then(m => ({ default: m.WhyUs })));
 const LazyClientLogos = lazy(() => import('@/components/ClientLogos').then(m => ({ default: m.ClientLogos })));
@@ -260,7 +259,6 @@ function App() {
               <Hero lang={lang} />
               <Suspense fallback={<div className="py-20 flex justify-center"><div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div></div>}>
                 <LazyServices lang={lang} onSEOClick={handleSEOClick} onPaidAdsClick={handlePaidAdsClick} onWebDevClick={handleWebDevClick} />
-                <LazyPortfolio lang={lang} />
                 <div id="packages" className="hidden md:block scroll-mt-20">
                   <PackagesWizard lang={lang} onBack={handleBackToMain} isPage={false} />
                 </div>
