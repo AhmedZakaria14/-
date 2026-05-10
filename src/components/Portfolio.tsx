@@ -124,12 +124,12 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, isPage = false }) =>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary font-bold text-sm mb-6 border border-primary/10">
             <Sparkles size={16} />
-            {lang === 'en' ? 'Our Portfolio' : 'معرض أعمالنا'}
+            {lang === 'en' ? 'Client Results' : 'نتائج العملاء'}
           </div>
           <HeadingTag className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
-            {lang === 'en' ? 'Featured ' : 'أبرز '}
+            {lang === 'en' ? 'Some of our ' : 'بعض نتائج '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              {lang === 'en' ? 'Projects' : 'مشاريعنا'}
+              {lang === 'en' ? 'Clients\' Results' : 'عملاءنا'}
             </span>
           </HeadingTag>
           <p className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -139,8 +139,8 @@ export const Portfolio: React.FC<PortfolioProps> = ({ lang, isPage = false }) =>
           </p>
           <p className="text-base text-slate-500 leading-relaxed">
             {lang === 'en'
-              ? 'Our portfolio showcases our ability to deliver high-quality results across various industries. From local businesses in Saudi Arabia to international brands, we apply the same level of dedication and expertise to every client. Our focus is always on creating value and driving measurable outcomes that help our clients stay ahead of the competition.'
-              : 'يعرض معرض أعمالنا قدرتنا على تقديم نتائج عالية الجودة في مختلف الصناعات. من الشركات المحلية في المملكة العربية السعودية إلى العلامات التجارية الدولية، نطبق نفس المستوى من التفاني والخبرة لكل عميل. تركيزنا دائمًا على خلق القيمة وتحقيق نتائج ملموسة تساعد عملائنا على البقاء في صدارة المنافسة.'}
+              ? 'These results showcase our ability to deliver high-quality outcomes across various industries. From local businesses in Saudi Arabia to international brands, we apply the same level of dedication and expertise to every client. Our focus is always on creating value and driving measurable outcomes that help our clients stay ahead of the competition.'
+              : 'تعرض هذه النتائج قدرتنا على تقديم جودة عالية في مختلف الصناعات. من الشركات المحلية في المملكة العربية السعودية إلى العلامات التجارية الدولية، نطبق نفس المستوى من التفاني والخبرة لكل عميل. تركيزنا دائمًا على خلق القيمة وتحقيق نتائج ملموسة تساعد عملائنا على البقاء في صدارة المنافسة.'}
           </p>
         </div>
 
