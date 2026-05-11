@@ -75,26 +75,40 @@ function App() {
       document.body.style.fontFamily = '"Outfit", ui-sans-serif, system-ui, sans-serif';
     }
 
-    // Set home page title
-    if (location.pathname === '/') {
-      const title = lang === 'en' 
+    // Set page title and SEO metadata based on current path
+    const path = location.pathname;
+    let seoConfig = {
+      title: lang === 'en' ? 'Nashar Hub | Digital Marketing Agency in Saudi Arabia' : 'نشار هب | وكالة تسويق رقمي في السعودية',
+      description: lang === 'en' ? 'Nashar Hub is a top digital marketing agency in Saudi Arabia specializing in Google Ads, SEO, and Ecommerce.' : 'نشار هب وكالة تسويق رقمي رائدة في السعودية متخصصة في سيو وإعلانات جوجل وتصميم المتاجر.',
+      url: `https://nasharhub.com${path === '/' ? '' : path}`,
+      image: 'https://nasharhub.com/og-image.jpg'
+    };
+
+    if (path === '/') {
+      seoConfig.title = lang === 'en' 
         ? 'Nashar Hub | Digital Marketing Agency in Saudi Arabia | Google Ads & SEO' 
         : 'نشار هب | وكالة تسويق رقمي في السعودية - إعلانات جوجل وسيو';
-      
-      const description = lang === 'en'
+      seoConfig.description = lang === 'en'
         ? 'Nashar Hub is a leading digital marketing agency in Saudi Arabia specializing in Google Ads, SEO, and web design. Real results and guaranteed ROI for your business.'
         : 'نشار هب وكالة تسويق رقمي في الرياض متخصصة في إعلانات جوجل، تحسين محركات البحث SEO، وتصميم المواقع والمتاجر. نتائج حقيقية وعائد استثمار مضمون لعملك في السعودية.';
-      
-      updateSEO({
-        title,
-        description,
-        url: 'https://nasharhub.com/',
-        image: 'https://nasharhub.com/og-image.jpg'
-      });
+    } else if (path === '/saudi') {
+      seoConfig.title = lang === 'en' ? 'Digital Marketing in Saudi Arabia | News & Insights | Nashar Hub' : 'التسويق الرقمي في السعودية | خدمات ونتائج ملموسة | نشار هب';
+    } else if (path === '/seo-services') {
+      seoConfig.title = lang === 'en' ? 'SEO Services in Saudi Arabia | Rank #1 on Google | Nashar Hub' : 'خدمات السيو في السعودية | تصدر نتائج بحث جوجل | نشار هب';
+    } else if (path === '/paid-ads-services') {
+      seoConfig.title = lang === 'en' ? 'Google Ads Agency Saudi Arabia | High ROAS Campaigns | Nashar Hub' : 'وكالة إعلانات جوجل في السعودية | حملات بعائد استثمار مرتفع | نشار هب';
+    } else if (path === '/web-dev-services') {
+      seoConfig.title = lang === 'en' ? 'Web Design & Ecommerce Development Saudi Arabia | Nashar Hub' : 'تصميم مواقع وتطوير متاجر إلكترونية في السعودية | نشار هب';
+    } else if (path === '/packages') {
+      seoConfig.title = lang === 'en' ? 'Google Ads & Web Packages | Pricing in Saudi Arabia | Nashar Hub' : 'باقات إعلانات جوجل وتصميم المواقع | أسعار تنافسية | نشار هب';
+    } else if (path === '/blog') {
+      seoConfig.title = lang === 'en' ? 'Marketing Blog & Strategy | Nashar Hub' : 'مدونة التسويق والاستراتيجية | نشار هب';
     }
 
+    updateSEO(seoConfig);
+
     // Update canonical and hreflang tags for the current route
-    const currentUrl = `https://nasharhub.com${location.pathname === '/' ? '' : location.pathname}`;
+    const currentUrl = seoConfig.url;
     
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {

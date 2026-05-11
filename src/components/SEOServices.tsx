@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Language } from '../types';
 import { ArrowLeft, ArrowRight, Search, BarChart3, Globe, Zap, CheckCircle2, TrendingUp, Award, Target } from 'lucide-react';
 import { updateSEO } from '../utils/seo';
+import { Breadcrumb } from './Breadcrumb';
 
 interface SEOServicesProps {
   lang: Language;
@@ -184,6 +185,14 @@ export const SEOServices: React.FC<SEOServicesProps> = ({ lang, onBack, isPage =
 
   return (
     <div className="min-h-screen bg-slate-50 pb-20">
+      {/* Breadcrumb - Added for SEO */}
+      <div className="max-w-7xl mx-auto px-6 pt-24 -mb-16 relative z-30">
+        <Breadcrumb 
+          lang={lang} 
+          items={[{ label: lang === 'en' ? 'SEO Services' : 'خدمات السيو في السعودية', href: '/seo-services' }]} 
+        />
+      </div>
+
       {/* Hero Section */}
       <div className="relative bg-slate-900 text-white pt-24 pb-32 overflow-hidden rounded-b-[3rem]">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>

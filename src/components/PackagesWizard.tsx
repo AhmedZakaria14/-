@@ -11,6 +11,7 @@ import {
   Filter
 } from 'lucide-react';
 import { updateSEO } from '../utils/seo';
+import { Breadcrumb } from './Breadcrumb';
 
 interface PackagesWizardProps {
   lang: Language;
@@ -47,13 +48,23 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
     <div className="min-h-screen bg-slate-50 flex flex-col pt-24 pb-20">
       {/* Header */}
       <header className="bg-transparent">
-        <div className="max-w-7xl mx-auto px-4 h-20 flex items-center">
-          <button 
-            onClick={onBack}
-            className="p-2 hover:bg-slate-200 rounded-full transition-colors text-slate-600 shadow-sm"
-          >
-            {isRTL ? <ArrowRight size={24} /> : <ArrowLeft size={24} />}
-          </button>
+        <div className="max-w-7xl mx-auto px-4">
+          {isPage && (
+            <div className="mb-4">
+              <Breadcrumb 
+                lang={lang} 
+                items={[{ label: lang === 'en' ? 'Pricing Packages' : 'باقات الأسعار', href: '/packages' }]} 
+              />
+            </div>
+          )}
+          <div className="h-20 flex items-center">
+            <button 
+              onClick={onBack}
+              className="p-2 hover:bg-slate-200 rounded-full transition-colors text-slate-600 shadow-sm"
+            >
+              {isRTL ? <ArrowRight size={24} /> : <ArrowLeft size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 

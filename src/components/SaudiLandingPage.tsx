@@ -3,6 +3,7 @@ import { CheckCircle, Monitor, Smartphone, Zap, ArrowLeft, MessageCircle, Send, 
 import { Logo } from './Logo';
 import { CLIENTS } from './ClientLogos';
 import { updateSEO } from '../utils/seo';
+import { Breadcrumb } from './Breadcrumb';
 
 export const SaudiLandingPage: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', service: '' });
@@ -20,7 +21,7 @@ export const SaudiLandingPage: React.FC = () => {
       title,
       description,
       keywords,
-      url: 'https://nasharhub.com/saudi-arabia',
+      url: 'https://nasharhub.com/saudi',
       image: 'https://nasharhub.com/og-image.jpg'
     });
   }, []);
@@ -44,10 +45,17 @@ export const SaudiLandingPage: React.FC = () => {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "نشار هب - شركة تصميم مواقع وتسويق رقمي",
-            "image": "https://nasharhub.com/logo.png",
+            "@type": "ProfessionalService",
+            "name": "نشار هب - شركة تسويق الكتروني وتصميم مواقع",
+            "image": "https://nasharhub.com/og-image.jpg",
             "description": "نشار هب هي أفضل شركة تسويق إلكتروني وتصميم مواقع بالسعودية. نقدم خدمات إعلانات جوجل، سيو، وبرمجة المتاجر في الرياض وكافة أنحاء المملكة.",
+            "url": "https://nasharhub.com",
+            "telephone": "+201010742430",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "EG"
+            },
             "areaServed": [
               { "@type": "City", "name": "الرياض" },
               { "@type": "City", "name": "جدة" },
@@ -55,20 +63,19 @@ export const SaudiLandingPage: React.FC = () => {
               { "@type": "City", "name": "مكة المكرمة" },
               { "@type": "City", "name": "المدينة المنورة" },
               { "@type": "City", "name": "الخبر" },
-              { "@type": "City", "name": "أبها" },
-              { "@type": "City", "name": "تبوك" },
-              { "@type": "City", "name": "القصيم" },
-              { "@type": "City", "name": "الطائف" }
+              { "@type": "Country", "name": "المملكة العربية السعودية" }
             ],
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "SA"
-            },
-            "telephone": "+20 10 10742430",
-            "priceRange": "$$"
+            "openingHours": "Mo-Fr 09:00-18:00"
           })
         }}
       />
+
+      <div className="max-w-7xl mx-auto px-6 pt-24 -mb-16 relative z-30">
+        <Breadcrumb 
+          lang="ar" 
+          items={[{ label: 'التسويق الرقمي في السعودية', href: '/saudi' }]} 
+        />
+      </div>
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-32 overflow-hidden">
@@ -206,23 +213,17 @@ export const SaudiLandingPage: React.FC = () => {
 
         <div className="relative w-full flex overflow-x-hidden" dir="ltr">
           <div className="animate-marquee flex gap-12 px-6 whitespace-nowrap items-center">
-            {marqueeItems.map((client, index) => {
-              if ('component' in client && client.component) {
-                const LogoComponent = client.component;
-                return (
-                  <a 
-                    key={`${client.id}-${index}`} 
-                    href={client.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="relative shrink-0 group h-24 w-auto min-w-[180px] flex items-center justify-center transition-all duration-300 hover:scale-110 filter grayscale hover:grayscale-0 opacity-70 hover:opacity-100"
-                  >
-                    <LogoComponent />
-                  </a>
-                );
-              }
-              return null;
-            })}
+            {marqueeItems.map((client, index) => (
+              <a 
+                key={index} 
+                href={client.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-full bg-slate-50 border border-slate-200 text-slate-700 font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 text-base shadow-sm shrink-0"
+              >
+                {client.nameAr || client.name}
+              </a>
+            ))}
           </div>
         </div>
       </section>

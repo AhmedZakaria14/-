@@ -4,13 +4,13 @@ import { NavItem, Service, Testimonial, Translation, ProcessStep, FAQItem } from
 import { Globe, BarChart3, Code, Search, Zap, Target, Users, Mail, Phone, MapPin, Sparkles, Layout, Smartphone, TrendingUp, Microscope, Compass, Rocket, Repeat } from 'lucide-react';
 
 export const NAV_ITEMS: NavItem[] = [
-  { key: 'home', label: { en: 'Home', ar: 'الرئيسية' }, href: '/#home' },
-  { key: 'services', label: { en: 'Services', ar: 'خدماتنا' }, href: '/#services' },
-  { key: 'packages', label: { en: 'Packages', ar: 'الباقات' }, href: '/#packages', desktopOnly: true },
-  { key: 'process', label: { en: 'Process', ar: 'آلية العمل' }, href: '/#process' },
-  { key: 'blog', label: { en: 'Blog', ar: 'المدونة' }, href: '/blog' },
-  { key: 'stats', label: { en: 'Why Us', ar: 'لماذا نحن' }, href: '/#stats' },
-  { key: 'contact', label: { en: 'Contact', ar: 'تواصل معنا' }, href: '/#contact' },
+  { key: 'home', label: { en: 'Nashar Hub Home', ar: 'الرئيسية نُشار هب' }, href: '/#home' },
+  { key: 'services', label: { en: 'SEO & Ads Services', ar: 'خدمات السيو والإعلانات' }, href: '/#services' },
+  { key: 'packages', label: { en: 'Pricing Packages', ar: 'باقات الأسعار' }, href: '/#packages', desktopOnly: true },
+  { key: 'process', label: { en: 'How We Work', ar: 'آلية العمل الاحترافية' }, href: '/#process' },
+  { key: 'blog', label: { en: 'Marketing Blog', ar: 'مدونة التسويق الرقمي' }, href: '/blog' },
+  { key: 'stats', label: { en: 'Why Choose Us', ar: 'لماذا وكالة نشار؟' }, href: '/#stats' },
+  { key: 'contact', label: { en: 'Get Free Audit', ar: 'احصل على تدقيق مجاني' }, href: '/#contact' },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [

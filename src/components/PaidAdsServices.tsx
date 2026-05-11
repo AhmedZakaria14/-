@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Language } from '../types';
 import { ArrowLeft, ArrowRight, Target, BarChart3, Zap, CheckCircle2, TrendingUp, Award, Smartphone, MousePointerClick } from 'lucide-react';
 import { updateSEO } from '../utils/seo';
+import { Breadcrumb } from './Breadcrumb';
 
 interface PaidAdsServicesProps {
   lang: Language;
@@ -184,6 +185,14 @@ export const PaidAdsServices: React.FC<PaidAdsServicesProps> = ({ lang, onBack, 
 
   return (
     <div className="min-h-screen bg-slate-50 pb-20">
+      {/* Breadcrumb - Added for SEO */}
+      <div className="max-w-7xl mx-auto px-6 pt-24 -mb-16 relative z-30">
+        <Breadcrumb 
+          lang={lang} 
+          items={[{ label: lang === 'en' ? 'Paid Ads' : 'إعلانات جوجل الممولة', href: '/paid-ads-services' }]} 
+        />
+      </div>
+
       {/* Hero Section */}
       <div className="relative bg-slate-900 text-white pt-24 pb-32 overflow-hidden rounded-b-[3rem]">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>

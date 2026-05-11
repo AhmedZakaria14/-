@@ -146,7 +146,7 @@ export const WhyUs: React.FC<WhyUsProps> = ({ lang, isPage = false }) => {
                 <div className="relative rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl">
                    <img 
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" 
-                    alt={lang === 'en' ? 'Digital marketing performance metrics and data analysis' : 'مقاييس أداء التسويق الرقمي وتحليل البيانات'}
+                    alt={lang === 'en' ? 'Detailed digital marketing performance metrics chart showing organic traffic growth for Saudi business' : 'رسم بياني يوضح نمو الزيارات المجانية وتحليلات الأداء لشركة سعودية مع نشار هب'}
                     className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                     width="600"
                     height="800"

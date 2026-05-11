@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Language } from '../types';
 import { ArrowLeft, ArrowRight, Code, Smartphone, Zap, CheckCircle2, Layout, Database, ShoppingCart, Globe } from 'lucide-react';
 import { updateSEO } from '../utils/seo';
+import { Breadcrumb } from './Breadcrumb';
 
 interface WebDevServicesProps {
   lang: Language;
@@ -117,6 +118,14 @@ export const WebDevServices: React.FC<WebDevServicesProps> = ({ lang, onBack, is
 
   return (
     <div className="min-h-screen bg-slate-50 pb-20">
+      {/* Breadcrumb - Added for SEO */}
+      <div className="max-w-7xl mx-auto px-6 pt-24 -mb-16 relative z-30">
+        <Breadcrumb 
+          lang={lang} 
+          items={[{ label: lang === 'en' ? 'Web Development' : 'تصميم وتطوير المواقع', href: '/web-dev-services' }]} 
+        />
+      </div>
+
       {/* Hero Section */}
       <div className="relative bg-slate-900 text-white pt-24 pb-32 overflow-hidden rounded-b-[3rem]">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"></div>

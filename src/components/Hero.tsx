@@ -97,7 +97,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-100 bg-white transform rotate-1 hover:rotate-0 transition-transform duration-500">
                     <img 
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" 
-                      alt={lang === 'en' ? "Digital marketing analytics dashboard showing growth" : "فريق عمل نشار هب - أفضل شركة تسويق إلكتروني في السعودية والرياض"} 
+                      alt={lang === 'en' ? "Digital marketing analytics dashboard for a Saudi agency" : "لوحة تحليلات التسويق الرقمي توضح نمو الأرباح لشركة سعودية مع نشار هب"} 
                       className="w-full h-auto object-cover opacity-95"
                       width="600"
                       height="400"

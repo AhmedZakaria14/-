@@ -5,6 +5,7 @@ import { blogPosts } from '../data/blog';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Calendar, User } from 'lucide-react';
 import { Reveal } from './Reveal';
+import { Breadcrumb } from './Breadcrumb';
 
 interface BlogProps {
   lang: Language;
@@ -28,6 +29,12 @@ export const Blog: React.FC<BlogProps> = ({ lang, onBack }) => {
   return (
     <div className="min-h-screen bg-slate-50 pt-24 pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="mb-12">
+          <Breadcrumb 
+            lang={lang} 
+            items={[{ label: lang === 'en' ? 'Blog' : 'المدونة', href: '/blog' }]} 
+          />
+        </div>
         <Reveal>
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">

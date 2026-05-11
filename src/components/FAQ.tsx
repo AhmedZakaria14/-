@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
 import { FAQS, UI_TEXT } from '../constants';
 import { Reveal } from './Reveal';
 import { Plus, Minus, MessageCircleQuestion } from 'lucide-react';
+import { updateSEO } from '../utils/seo';
 
 interface FAQProps {
   lang: Language;
@@ -16,6 +17,29 @@ export const FAQ: React.FC<FAQProps> = ({ lang, isPage = false }) => {
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  useEffect(() => {
+    if (isPage) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": FAQS.map(faq => ({
+          "@type": "Question",
+          "name": faq.question[lang],
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer[lang]
+          }
+        }))
+      };
+
+      updateSEO({
+        title: lang === 'en' ? 'Frequently Asked Questions | Nashar Hub' : 'الأسئلة الشائعة | نشار هب - استشارات تسويقية',
+        description: lang === 'en' ? 'Find answers to common questions about our SEO, web development, and digital marketing services in Saudi Arabia.' : 'إجابات على الأسئلة الشائعة حول خدمات السيو، وتطوير المواقع، والتسويق الرقمي في السعودية.',
+        structuredData: faqSchema
+      });
+    }
+  }, [isPage, lang]);
 
   return (
     <section className="py-20 bg-white relative">

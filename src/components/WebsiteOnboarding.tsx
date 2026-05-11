@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, ArrowLeft, Check, Globe, Megaphone, Send } from 'lucide-react';
 import { Language } from '../types';
 import { updateSEO } from '../utils/seo';
+import { Breadcrumb } from './Breadcrumb';
 
 interface WebsiteOnboardingProps {
   lang: Language;
@@ -103,17 +104,25 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
     <div className="min-h-screen bg-slate-50 flex flex-col pt-24">
       {/* Header */}
       <div className="bg-transparent">
-        <div className="max-w-lg mx-auto px-4 h-16 flex items-center justify-between">
-          <button 
-            onClick={handleBack}
-            className="p-2 hover:bg-slate-200 rounded-full transition-colors text-slate-600"
-          >
-            {isRTL ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
-          </button>
-          <HeadingTag className="font-bold text-lg text-slate-900">
-            {lang === 'en' ? 'Order Your Website' : 'اطلب موقعك'}
-          </HeadingTag>
-          <div className="w-9" /> {/* Spacer for centering */}
+        <div className="max-w-lg mx-auto px-4">
+          <div className="mb-4">
+            <Breadcrumb 
+              lang={lang} 
+              items={[{ label: lang === 'en' ? 'Order Website' : 'اطلب موقعك', href: '/website-onboarding' }]} 
+            />
+          </div>
+          <div className="h-16 flex items-center justify-between">
+            <button 
+              onClick={handleBack}
+              className="p-2 hover:bg-slate-200 rounded-full transition-colors text-slate-600"
+            >
+              {isRTL ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
+            </button>
+            <HeadingTag className="font-bold text-lg text-slate-900">
+              {lang === 'en' ? 'Order Your Website' : 'اطلب موقعك'}
+            </HeadingTag>
+            <div className="w-9" /> {/* Spacer for centering */}
+          </div>
         </div>
       </div>
 
