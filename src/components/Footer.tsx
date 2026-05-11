@@ -44,17 +44,9 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></span>
              </h4>
              <ul className="space-y-3">
-                <li><a href="#services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'PPC Management Services' : 'إدارة الحملات الإعلانية - إعلانات جوجل'}</a></li>
-                <li>
-                  {onSEOClick ? (
-                    <button onClick={onSEOClick} className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block text-left rtl:text-right w-full">
-                      {lang === 'en' ? 'SEO & Organic Ranking' : 'خدمات تحسين محركات البحث SEO'}
-                    </button>
-                  ) : (
-                    <a href="#services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'SEO & Organic Ranking' : 'خدمات تحسين محركات البحث SEO'}</a>
-                  )}
-                </li>
-                <li><a href="#services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Custom Web Development' : 'تصميم وتطوير المواقع والمتاجر'}</a></li>
+                <li><a href="/paid-ads-services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'PPC Management Services' : 'إدارة الحملات الإعلانية - إعلانات جوجل'}</a></li>
+                <li><a href="/seo-services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Professional SEO Services' : 'خدمات تحسين محركات البحث SEO'}</a></li>
+                <li><a href="/web-dev-services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Custom Web Development' : 'تصميم وتطوير المواقع والمتاجر'}</a></li>
                 <li><a href="#services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Social Media Strategy' : 'استراتيجيات التواصل الاجتماعي'}</a></li>
                 <li><a href="#services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Content Marketing' : 'تسويق بالمحتوى'}</a></li>
              </ul>
