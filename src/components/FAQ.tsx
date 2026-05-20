@@ -18,31 +18,34 @@ export const FAQ: React.FC<FAQProps> = ({ lang, isPage = false }) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question[lang],
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer[lang]
+      }
+    }))
+  };
+
   useEffect(() => {
     if (isPage) {
-      const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": FAQS.map(faq => ({
-          "@type": "Question",
-          "name": faq.question[lang],
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer[lang]
-          }
-        }))
-      };
-
       updateSEO({
         title: lang === 'en' ? 'Frequently Asked Questions | Nashar Hub' : 'الأسئلة الشائعة | نشار هب - استشارات تسويقية',
         description: lang === 'en' ? 'Find answers to common questions about our SEO, web development, and digital marketing services in Saudi Arabia.' : 'إجابات على الأسئلة الشائعة حول خدمات السيو، وتطوير المواقع، والتسويق الرقمي في السعودية.',
-        structuredData: faqSchema
       });
     }
   }, [isPage, lang]);
 
   return (
     <section className="py-20 bg-white relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Reveal>

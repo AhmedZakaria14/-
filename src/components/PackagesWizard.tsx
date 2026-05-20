@@ -109,35 +109,36 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Basic Package */}
+            {/* Informational Website Package */}
             <div className="bg-white rounded-[2.5rem] p-8 md:p-10 border-2 border-slate-100 shadow-sm hover:border-blue-500 transition-all flex flex-col">
                <h3 className="text-2xl font-black text-slate-900 mb-2">
-                 {lang === 'en' ? 'Business Website' : 'الأساسية - موقع الأعمال'}
+                 {lang === 'en' ? 'Informational Website' : 'موقع إلكتروني تعريفي'}
                </h3>
                <p className="text-slate-500 font-medium mb-6">
-                 {lang === 'en' ? 'Everything you need to launch online' : 'كل ما تحتاجه للانطلاق رقمياً'}
+                 {lang === 'en' ? 'A complete professional website to showcase your services and products' : 'موقع إلكتروني متكامل مصمم لعرض خدماتك ومنتجاتك بشكل احترافي'}
                </p>
                <div className="mb-6">
-                 <span className="text-sm font-bold text-slate-400 block mb-1">
-                   {lang === 'en' ? 'Starts from' : 'تبدأ من'}
-                 </span>
                  <div className="flex items-baseline gap-2">
-                   <span className="text-4xl font-black text-blue-600">299</span>
-                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR / month' : 'ر.س / شهر'}</span>
+                   <span className="text-4xl font-black text-blue-600">800</span>
+                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR / One-time payment' : 'ر.س / دفعة واحدة'}</span>
                  </div>
-                 <p className="text-sm text-amber-600 font-bold mt-2 bg-amber-50 inline-block px-3 py-1 rounded-full border border-amber-100">
-                   {lang === 'en' ? 'Equals 3,588 SAR annually' : 'يعادل 3,588 ر.س سنوياً'}
+                 <p className="text-sm text-slate-500 font-bold mt-2">
+                   {lang === 'en' ? 'Annual renewal (from year 2): 290 SAR' : 'التجديد السنوي (من السنة الثانية): 290 ريال'}
                  </p>
                </div>
                
                <div className="space-y-4 mb-8 flex-1">
                  {[
-                   lang === 'en' ? 'Full website design (within a week)' : 'تصميم الموقع كامل (خلال أسبوع)',
-                   lang === 'en' ? 'All operational hosting resources' : 'جميع موارد الاستضافة التشغيلية',
-                   lang === 'en' ? 'Custom professional domain' : 'دومين احترافي مخصص',
-                   lang === 'en' ? 'Professional Email (1 Year)' : 'بريد إلكتروني احترافي (سنة)',
-                   lang === 'en' ? 'Continuous technical support' : 'دعم فني مستمر',
-                   lang === 'en' ? 'Unlimited code modifications' : 'تعديلات على الكود غير محدودة'
+                   lang === 'en' ? 'Responsive design on all devices' : 'تصميم متجاوب على جميع الأجهزة',
+                   lang === 'en' ? 'Up to 7 main pages' : 'حتى 7 صفحات رئيسية',
+                   lang === 'en' ? 'Interactive contact forms' : 'نماذج تواصل تفاعلية',
+                   lang === 'en' ? 'Search Engine Optimization (SEO)' : 'تحسين محركات البحث (SEO)',
+                   lang === 'en' ? 'Free SSL security certificate' : 'شهادة أمان SSL مجانية',
+                   lang === 'en' ? 'Easy content management dashboard' : 'لوحة تحكم سهلة لإدارة المحتوى',
+                   lang === 'en' ? 'Fast and secure hosting' : 'استضافة سريعة وآمنة',
+                   lang === 'en' ? '1 month free technical support' : 'دعم فني شهر مجاني',
+                   lang === 'en' ? 'First year hosting free' : 'استضافة السنة الأولى مجانًا',
+                   lang === 'en' ? 'Free dashboard training' : 'تدريب مجاني على لوحة التحكم'
                  ].map((feat, i) => (
                    <div key={i} className="flex items-start gap-3">
                      <CheckCircle2 size={20} className="text-blue-500 mt-0.5 shrink-0" />
@@ -146,42 +147,48 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                  ))}
                </div>
                
-               <ContactButton lang={lang} packageName={lang === 'en' ? 'Business Website' : 'الباقة الأساسية للمواقع'} />
+               <ContactButton lang={lang} packageName={lang === 'en' ? 'Informational Website' : 'موقع إلكتروني تعريفي'} />
             </div>
 
-            {/* Pro Package */}
+            {/* Real Estate Website Package */}
             <div className="bg-blue-50/50 rounded-[2.5rem] p-8 md:p-10 border-2 border-blue-500 shadow-lg relative flex flex-col transform md:-translate-y-4">
                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-blue-600 text-white text-[12px] font-black uppercase tracking-widest rounded-full shadow-lg whitespace-nowrap">
                   {lang === 'en' ? 'Most Popular' : 'الأكثر طلباً'}
                </div>
                
                <h3 className="text-2xl font-black text-slate-900 mb-2 mt-2">
-                 {lang === 'en' ? 'Website + SEO & Ads' : 'موقع + SEO وإعلانات'}
+                 {lang === 'en' ? 'Real Estate Website' : 'موقع عقاري احترافي'}
                </h3>
                <p className="text-slate-500 font-medium mb-6">
-                 {lang === 'en' ? 'Complete Digital Marketing Bundle' : 'حزمة التسويق الرقمي المتكاملة'}
+                 {lang === 'en' ? 'A professional real estate website to showcase projects and capture leads' : 'موقع عقاري مصمم لعرض المشاريع وجمع بيانات العملاء وتسويق العقارات'}
                </p>
                <div className="mb-6">
-                 <span className="text-sm font-bold text-slate-400 block mb-1">
-                   {lang === 'en' ? 'Starts from' : 'تبدأ من'}
-                 </span>
                  <div className="flex items-baseline gap-2">
-                   <span className="text-4xl font-black text-blue-600">799</span>
-                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR / month' : 'ر.س / شهر'}</span>
+                   <span className="text-4xl font-black text-blue-600">1,500</span>
+                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR / One-time payment' : 'ر.س / دفعة واحدة'}</span>
                  </div>
-                 <p className="text-sm text-green-600 font-bold mt-2 bg-green-50/80 inline-block px-3 py-1 rounded-full border border-green-100">
-                   {lang === 'en' ? 'Equals 9,588 SAR annually' : 'يعادل 9,588 ر.س سنوياً'}
+                 <p className="text-sm text-slate-500 font-bold mt-2">
+                   {lang === 'en' ? 'Annual renewal (from year 2): 290 SAR' : 'التجديد السنوي (من السنة الثانية): 290 ريال'}
                  </p>
                </div>
                
                <div className="space-y-4 mb-8 flex-1">
                  {[
-                   lang === 'en' ? 'All Basic Package Features' : 'كل مزايا الباقة الأساسية',
-                   lang === 'en' ? 'Monthly SEO Optimization' : 'تحسين SEO شهري',
-                   lang === 'en' ? 'Google Business Profile Management' : 'إدارة Google Business Profile',
-                   lang === 'en' ? 'Paid Ads (Campaign Management)' : 'إعلانات مدفوعة (إدارة الحملات)',
-                   lang === 'en' ? 'Detailed Monthly Performance Reports' : 'تقارير أداء تفصيلية شهرية',
-                   lang === 'en' ? 'Monthly Marketing Consultation' : 'استشارة تسويقية شهرية'
+                   lang === 'en' ? 'Multiple real estate project listings' : 'عرض مشاريع عقارية متعددة بتفاصيل شاملة',
+                   lang === 'en' ? 'Professional photo and video gallery per project' : 'معرض صور وفيديوهات احترافي لكل مشروع',
+                   lang === 'en' ? 'Lead capture forms for potential clients' : 'نماذج جمع بيانات العملاء المحتملين (Leads)',
+                   lang === 'en' ? 'Interactive maps for project locations' : 'خرائط تفاعلية لموقع المشاريع',
+                   lang === 'en' ? 'Consultation or site visit booking system' : 'نظام حجز استشارة أو زيارة موقع',
+                   lang === 'en' ? 'WhatsApp integration for instant communication' : 'تكامل مع WhatsApp للتواصل الفوري',
+                   lang === 'en' ? 'Dashboard to manage projects and clients' : 'لوحة تحكم لإدارة المشاريع والعملاء',
+                   lang === 'en' ? 'Detailed visitor and inquiry reports' : 'تقارير تفصيلية عن الزوار والاستفسارات',
+                   lang === 'en' ? 'Real Estate SEO optimization' : 'تحسين محركات البحث للعقارات (Real Estate SEO)',
+                   lang === 'en' ? 'High-performance hosting' : 'استضافة عالية الأداء',
+                   lang === 'en' ? 'Free Saudi domain (.sa)' : 'دومين سعودي (.sa) مجاني',
+                   lang === 'en' ? 'SSL security certificate' : 'شهادة SSL للأمان',
+                   lang === 'en' ? '1 month free technical support' : 'دعم فني شهر مجاني',
+                   lang === 'en' ? 'Comprehensive system training' : 'تدريب شامل على النظام',
+                   lang === 'en' ? 'Custom design reflecting your brand identity' : 'تصميم مخصص يعكس هويتك'
                  ].map((feat, i) => (
                    <div key={i} className="flex items-start gap-3">
                      <CheckCircle2 size={20} className="text-blue-600 mt-0.5 shrink-0" />
@@ -190,7 +197,7 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                  ))}
                </div>
                
-               <ContactButton lang={lang} packageName={lang === 'en' ? 'Website + SEO & Ads' : 'موقع + SEO وإعلانات'} primary />
+               <ContactButton lang={lang} packageName={lang === 'en' ? 'Real Estate Website' : 'موقع عقاري احترافي'} primary />
             </div>
           </div>
         </section>

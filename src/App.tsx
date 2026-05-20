@@ -79,18 +79,18 @@ function App() {
     const path = location.pathname;
     let seoConfig = {
       title: lang === 'en' ? 'Nashar Hub | Digital Marketing Agency in Saudi Arabia' : 'نشار هب | وكالة تسويق رقمي في السعودية',
-      description: lang === 'en' ? 'Nashar Hub is a top digital marketing agency in Saudi Arabia specializing in Google Ads, SEO, and Ecommerce.' : 'نشار هب وكالة تسويق رقمي رائدة في السعودية متخصصة في سيو وإعلانات جوجل وتصميم المتاجر.',
+      description: lang === 'en' ? 'Nashar Hub is a top digital marketing agency in Saudi Arabia specializing in Google Ads, SEO, and Ecommerce.' : 'نشار هب وكالة تسويق رقمي في الرياض وجدة. سيو، إعلانات جوجل، وتصميم مواقع. احصل على أعلى عائد استثمار لعملك مع أفضل شركة تسويق في السعودية. تواصل الآن!',
       url: `https://nasharhub.com${path === '/' ? '' : path}`,
       image: 'https://nasharhub.com/og-image.jpg'
     };
 
     if (path === '/') {
       seoConfig.title = lang === 'en' 
-        ? 'Nashar Hub | Digital Marketing Agency in Saudi Arabia | Google Ads & SEO' 
-        : 'نشار هب | وكالة تسويق رقمي في السعودية - إعلانات جوجل وسيو';
+        ? 'Nashar Hub | Digital Marketing Agency in Saudi Arabia' 
+        : 'نشار هب | تسويق رقمي وسيو في السعودية';
       seoConfig.description = lang === 'en'
-        ? 'Nashar Hub is a leading digital marketing agency in Saudi Arabia specializing in Google Ads, SEO, and web design. Real results and guaranteed ROI for your business.'
-        : 'نشار هب وكالة تسويق رقمي في الرياض متخصصة في إعلانات جوجل، تحسين محركات البحث SEO، وتصميم المواقع والمتاجر. نتائج حقيقية وعائد استثمار مضمون لعملك في السعودية.';
+        ? 'Nashar Hub is a top digital marketing agency in Saudi Arabia. We offer Google Ads, SEO & Web Design with high ROI.'
+        : 'نشار هب | وكالة تسويق رقمي في الرياض وجدة. سيو، إعلانات جوجل، وتصميم مواقع. احصل على أعلى عائد استثمار لعملك مع أفضل شركة تسويق في السعودية. تواصل الآن!';
     } else if (path === '/saudi') {
       seoConfig.title = lang === 'en' ? 'Digital Marketing in Saudi Arabia | News & Insights | Nashar Hub' : 'التسويق الرقمي في السعودية | خدمات ونتائج ملموسة | نشار هب';
     } else if (path === '/seo-services') {
@@ -100,7 +100,7 @@ function App() {
     } else if (path === '/web-dev-services') {
       seoConfig.title = lang === 'en' ? 'Web Design & Ecommerce Development Saudi Arabia | Nashar Hub' : 'تصميم مواقع وتطوير متاجر إلكترونية في السعودية | نشار هب';
     } else if (path === '/packages') {
-      seoConfig.title = lang === 'en' ? 'Google Ads & Web Packages | Pricing in Saudi Arabia | Nashar Hub' : 'باقات إعلانات جوجل وتصميم المواقع | أسعار تنافسية | نشار هب';
+      seoConfig.title = lang === 'en' ? 'Web & Ads Packages | Pricing in Saudi Arabia | Nashar Hub' : 'باقات إعلانات جوجل وتصميم المواقع | أسعار تنافسية | نشار هب';
     } else if (path === '/blog') {
       seoConfig.title = lang === 'en' ? 'Marketing Blog & Strategy | Nashar Hub' : 'مدونة التسويق والاستراتيجية | نشار هب';
     }

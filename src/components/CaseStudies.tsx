@@ -53,6 +53,8 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ lang, isPage = false }
                     src={study.image} 
                     alt={study.title[lang]} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    width="400"
+                    height="200"
                     loading="lazy"
                     decoding="async"
                     referrerPolicy="no-referrer"
