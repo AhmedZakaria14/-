@@ -83,57 +83,65 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-6">
-            <div className="flex items-baseline space-x-2">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-5">
+            <div className="flex items-center space-x-1 xl:space-x-2 rtl:space-x-reverse">
               {NAV_ITEMS.map((item) => (
                 <a
                   key={item.key}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-slate-700 hover:text-primary hover:bg-slate-50 focus:text-primary focus:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all px-4 py-2 rounded-full text-base font-medium"
+                  className="text-slate-700 hover:text-primary hover:bg-slate-50 focus:text-primary focus:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all px-3 xl:px-4 py-2 rounded-full text-sm font-bold xl:text-base whitespace-nowrap"
                 >
                   {item.label[lang]}
                 </a>
               ))}
             </div>
             
-            <div className="h-6 w-px bg-slate-200 mx-2" aria-hidden="true"></div>
+            <div className="h-6 w-px bg-slate-200 mx-1 xl:mx-2" aria-hidden="true"></div>
             
             <button
               type="button"
               onClick={toggleLang}
               onKeyDown={handleKeyDown}
-              className="flex items-center gap-2 text-slate-700 hover:text-primary focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-full px-3 py-1 transition-colors font-medium"
+              className="flex items-center gap-1.5 xl:gap-2 text-slate-700 hover:text-primary focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-full px-2 xl:px-3 py-1 transition-colors font-bold text-sm xl:text-base"
               aria-label={lang === 'en' ? 'Switch to Arabic' : 'التحويل للغة الإنجليزية'}
               title={lang === 'en' ? 'Switch to Arabic' : 'التحويل للغة الإنجليزية'}
             >
-              <Globe size={20} aria-hidden="true" />
-              <span lang={lang === 'en' ? 'ar' : 'en'}>{lang === 'en' ? 'العربية' : 'English'}</span>
+              <Globe size={18} className="xl:w-5 xl:h-5" aria-hidden="true" />
+              <span lang={lang === 'en' ? 'ar' : 'en'}>{lang === 'en' ? 'العربية' : 'EN'}</span>
             </button>
             <a 
               href="#contact" 
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-primary/30"
+              className="bg-primary hover:bg-primary-dark text-white px-5 xl:px-6 py-2 xl:py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-primary/30 whitespace-nowrap"
             >
-              {lang === 'en' ? 'Let\'s Talk' : 'تحدث معنا'}
+              {lang === 'en' ? 'Free Audit' : 'استشارة مجانية'}
             </a>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-3">
              <button
               type="button"
               onClick={toggleLang}
               onKeyDown={handleKeyDown}
-              className="text-slate-700 font-bold focus:outline-none focus:ring-2 focus:ring-primary rounded-lg px-2 py-1"
+              className="flex items-center gap-1.5 text-slate-700 font-bold focus:outline-none focus:ring-2 focus:ring-primary rounded-lg px-2 py-1 bg-slate-50 border border-slate-100"
               aria-label={lang === 'en' ? 'Switch to Arabic' : 'التحويل للغة الإنجليزية'}
             >
+              <Globe size={16} aria-hidden="true" />
               <span lang={lang === 'en' ? 'ar' : 'en'} aria-hidden="true">{lang === 'en' ? 'AR' : 'EN'}</span>
             </button>
+            <a 
+              href="#contact" 
+              onClick={(e) => handleNavClick(e, '#contact')}
+              className="bg-primary text-white px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap hover:bg-primary-dark transition-colors sm:block hidden"
+            >
+              {lang === 'en' ? 'Audit' : 'استشارة'}
+            </a>
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-700 p-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
+              className="text-slate-700 p-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-lg bg-slate-50 border border-slate-100"
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen 
