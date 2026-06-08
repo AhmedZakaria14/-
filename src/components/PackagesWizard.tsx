@@ -109,36 +109,26 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Informational Website Package */}
+            {/* Launch Package */}
             <div className="bg-white rounded-[2.5rem] p-8 md:p-10 border-2 border-slate-100 shadow-sm hover:border-blue-500 transition-all flex flex-col">
                <h3 className="text-2xl font-black text-slate-900 mb-2">
-                 {lang === 'en' ? 'Informational Website' : 'موقع إلكتروني تعريفي'}
+                 {lang === 'en' ? 'Launch Package' : 'باقة الانطلاق'}
                </h3>
                <p className="text-slate-500 font-medium mb-6">
-                 {lang === 'en' ? 'A complete professional website to showcase your services and products' : 'موقع إلكتروني متكامل مصمم لعرض خدماتك ومنتجاتك بشكل احترافي'}
+                 {lang === 'en' ? 'Create a landing page suitable for offering one or multiple services, including (Home - Services - Contact Us).' : 'إنشاء صفحة هبوط (Landing page) مناسبة لتقديم خدمة واحدة أو عدة خدمات، تشمل؛ (صفحة رئيسية - خدمات - تواصل معنا).'}
                </p>
                <div className="mb-6">
                  <div className="flex items-baseline gap-2">
                    <span className="text-4xl font-black text-blue-600">800</span>
-                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR / One-time payment' : 'ر.س / دفعة واحدة'}</span>
+                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR' : 'ريال'}</span>
                  </div>
-                 <p className="text-sm text-slate-500 font-bold mt-2">
-                   {lang === 'en' ? 'Annual renewal (from year 2): 290 SAR' : 'التجديد السنوي (من السنة الثانية): 290 ريال'}
-                 </p>
                </div>
                
                <div className="space-y-4 mb-8 flex-1">
                  {[
-                   lang === 'en' ? 'Responsive design on all devices' : 'تصميم متجاوب على جميع الأجهزة',
-                   lang === 'en' ? 'Up to 7 main pages' : 'حتى 7 صفحات رئيسية',
-                   lang === 'en' ? 'Interactive contact forms' : 'نماذج تواصل تفاعلية',
-                   lang === 'en' ? 'Search Engine Optimization (SEO)' : 'تحسين محركات البحث (SEO)',
-                   lang === 'en' ? 'Free SSL security certificate' : 'شهادة أمان SSL مجانية',
-                   lang === 'en' ? 'Easy content management dashboard' : 'لوحة تحكم سهلة لإدارة المحتوى',
-                   lang === 'en' ? 'Fast and secure hosting' : 'استضافة سريعة وآمنة',
-                   lang === 'en' ? '1 month free technical support' : 'دعم فني شهر مجاني',
-                   lang === 'en' ? 'First year hosting free' : 'استضافة السنة الأولى مجانًا',
-                   lang === 'en' ? 'Free dashboard training' : 'تدريب مجاني على لوحة التحكم'
+                   lang === 'en' ? 'Create Google Ads campaign + 1 month free management' : 'تقديم خدمة إنشاء إعلان ممول على جوجل + متابعة لمدة شهر مجاناً',
+                   lang === 'en' ? 'One free landing page revision for one month' : 'تعديل واحدة على صفحة الهبوط لمدة شهر مجاناً',
+                   lang === 'en' ? 'Hosting + Custom Domain with SSL for one year' : 'استضافة + دومين خاص مع حماية SSL لمدة سنة'
                  ].map((feat, i) => (
                    <div key={i} className="flex items-start gap-3">
                      <CheckCircle2 size={20} className="text-blue-500 mt-0.5 shrink-0" />
@@ -147,48 +137,33 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                  ))}
                </div>
                
-               <ContactButton lang={lang} packageName={lang === 'en' ? 'Informational Website' : 'موقع إلكتروني تعريفي'} />
+               <ContactButton lang={lang} packageName={lang === 'en' ? 'Launch Package' : 'باقة الانطلاق'} />
             </div>
 
-            {/* Real Estate Website Package */}
+            {/* Professional Package */}
             <div className="bg-blue-50/50 rounded-[2.5rem] p-8 md:p-10 border-2 border-blue-500 shadow-lg relative flex flex-col transform md:-translate-y-4">
                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-blue-600 text-white text-[12px] font-black uppercase tracking-widest rounded-full shadow-lg whitespace-nowrap">
                   {lang === 'en' ? 'Most Popular' : 'الأكثر طلباً'}
                </div>
                
                <h3 className="text-2xl font-black text-slate-900 mb-2 mt-2">
-                 {lang === 'en' ? 'Real Estate Website' : 'موقع عقاري احترافي'}
+                 {lang === 'en' ? 'Professional Package' : 'باقة الاحتراف'}
                </h3>
                <p className="text-slate-500 font-medium mb-6">
-                 {lang === 'en' ? 'A professional real estate website to showcase projects and capture leads' : 'موقع عقاري مصمم لعرض المشاريع وجمع بيانات العملاء وتسويق العقارات'}
+                 {lang === 'en' ? 'Create a multi-page website or online store to present the content you want, whether services, products, or company profile.' : 'إنشاء موقع أو متجر إلكتروني متعدد الصفحات، يتيح لك تقديم المحتوى الذي تريده سواء كان خدمات، منتجات، أو محتوى تعريفي بشركتك.'}
                </p>
                <div className="mb-6">
                  <div className="flex items-baseline gap-2">
                    <span className="text-4xl font-black text-blue-600">1,500</span>
-                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR / One-time payment' : 'ر.س / دفعة واحدة'}</span>
+                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR' : 'ريال'}</span>
                  </div>
-                 <p className="text-sm text-slate-500 font-bold mt-2">
-                   {lang === 'en' ? 'Annual renewal (from year 2): 290 SAR' : 'التجديد السنوي (من السنة الثانية): 290 ريال'}
-                 </p>
                </div>
                
                <div className="space-y-4 mb-8 flex-1">
                  {[
-                   lang === 'en' ? 'Multiple real estate project listings' : 'عرض مشاريع عقارية متعددة بتفاصيل شاملة',
-                   lang === 'en' ? 'Professional photo and video gallery per project' : 'معرض صور وفيديوهات احترافي لكل مشروع',
-                   lang === 'en' ? 'Lead capture forms for potential clients' : 'نماذج جمع بيانات العملاء المحتملين (Leads)',
-                   lang === 'en' ? 'Interactive maps for project locations' : 'خرائط تفاعلية لموقع المشاريع',
-                   lang === 'en' ? 'Consultation or site visit booking system' : 'نظام حجز استشارة أو زيارة موقع',
-                   lang === 'en' ? 'WhatsApp integration for instant communication' : 'تكامل مع WhatsApp للتواصل الفوري',
-                   lang === 'en' ? 'Dashboard to manage projects and clients' : 'لوحة تحكم لإدارة المشاريع والعملاء',
-                   lang === 'en' ? 'Detailed visitor and inquiry reports' : 'تقارير تفصيلية عن الزوار والاستفسارات',
-                   lang === 'en' ? 'Real Estate SEO optimization' : 'تحسين محركات البحث للعقارات (Real Estate SEO)',
-                   lang === 'en' ? 'High-performance hosting' : 'استضافة عالية الأداء',
-                   lang === 'en' ? 'Free Saudi domain (.sa)' : 'دومين سعودي (.sa) مجاني',
-                   lang === 'en' ? 'SSL security certificate' : 'شهادة SSL للأمان',
-                   lang === 'en' ? '1 month free technical support' : 'دعم فني شهر مجاني',
-                   lang === 'en' ? 'Comprehensive system training' : 'تدريب شامل على النظام',
-                   lang === 'en' ? 'Custom design reflecting your brand identity' : 'تصميم مخصص يعكس هويتك'
+                   lang === 'en' ? '5 Free SEO Articles for one month' : 'تقديم 5 مقالات SEO لمدة شهر مجاناً',
+                   lang === 'en' ? '3 Free website revisions for one month' : 'تقديم 3 تعديلات على الموقع لمدة شهر مجاناً',
+                   lang === 'en' ? 'Hosting + Custom Domain with SSL for one year' : 'استضافة + دومين خاص مع حماية SSL لمدة سنة'
                  ].map((feat, i) => (
                    <div key={i} className="flex items-start gap-3">
                      <CheckCircle2 size={20} className="text-blue-600 mt-0.5 shrink-0" />
@@ -197,7 +172,7 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                  ))}
                </div>
                
-               <ContactButton lang={lang} packageName={lang === 'en' ? 'Real Estate Website' : 'موقع عقاري احترافي'} primary />
+               <ContactButton lang={lang} packageName={lang === 'en' ? 'Professional Package' : 'باقة الاحتراف'} primary />
             </div>
           </div>
         </section>
