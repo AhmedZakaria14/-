@@ -31,8 +31,8 @@ const PaidAdsServices = lazy(() => import('@/components/PaidAdsServices').then(m
 const WebDevServices = lazy(() => import('@/components/WebDevServices').then(m => ({ default: m.WebDevServices })));
 const WebsiteOnboarding = lazy(() => import('@/components/WebsiteOnboarding').then(m => ({ default: m.WebsiteOnboarding })));
 const PackagesWizard = lazy(() => import('@/components/PackagesWizard').then(m => ({ default: m.PackagesWizard })));
-const Blog = lazy(() => import('@/components/Blog').then(m => ({ default: m.Blog })));
-const BlogPost = lazy(() => import('@/components/BlogPost').then(m => ({ default: m.BlogPost })));
+import { Blog } from '@/components/Blog';
+import { BlogPost } from '@/components/BlogPost';
 const PlatformDetail = lazy(() => import('@/components/PlatformDetail').then(m => ({ default: m.PlatformDetail })));
 const CityLandingPage = lazy(() => import('@/components/CityLandingPage').then(m => ({ default: m.CityLandingPage })));
 const NotFound = lazy(() => import('@/components/NotFound').then(m => ({ default: m.NotFound })));

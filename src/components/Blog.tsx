@@ -48,16 +48,30 @@ export const Blog: React.FC<BlogProps> = ({ lang, onBack }) => {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {blogPosts.map((post, index) => (
-            <Reveal key={post.id} delay={index * 100}>
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
-                <Link to={`/blog/${post.slug}`} className="block relative h-64 overflow-hidden shrink-0">
-                  <img 
-                    src={post.image} 
-                    alt={post.title[lang]} 
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-                  />
+        {blogPosts.length === 0 ? (
+          <Reveal>
+            <div className="text-center py-20 bg-white rounded-3xl border border-slate-100 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-800 mb-4 tracking-tight">
+                {lang === 'en' ? 'No Articles Yet' : 'لا توجد مقالات الآن'}
+              </h2>
+              <p className="text-slate-500 mb-8 max-w-md mx-auto">
+                {lang === 'en' 
+                  ? 'We are currently preparing exciting content and will publish new articles soon. Stay tuned!' 
+                  : 'نحن نقوم حالياً بتجهيز محتوى متميز، وسيتم نشر مقالات جديدة قريباً.'}
+              </p>
+            </div>
+          </Reveal>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {blogPosts.map((post, index) => (
+              <Reveal key={post.id} delay={index * 100}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
+                  <Link to={`/blog/${post.slug}`} className="block relative h-64 overflow-hidden shrink-0">
+                    <img 
+                      src={post.image} 
+                      alt={post.title[lang]} 
+                      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                    />
                 </Link>
                 <div className="p-8 flex flex-col flex-grow">
                   <div className="flex items-center text-sm text-slate-500 mb-4 gap-4">
@@ -100,7 +114,8 @@ export const Blog: React.FC<BlogProps> = ({ lang, onBack }) => {
               </div>
             </Reveal>
           ))}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
