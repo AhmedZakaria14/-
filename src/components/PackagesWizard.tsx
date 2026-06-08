@@ -127,7 +127,7 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                <div className="space-y-4 mb-8 flex-1">
                  {[
                    lang === 'en' ? 'Create Google Ads campaign + 1 month free management' : 'تقديم خدمة إنشاء إعلان ممول على جوجل + متابعة لمدة شهر مجاناً',
-                   lang === 'en' ? 'One free landing page revision for one month' : 'تعديل واحدة على صفحة الهبوط لمدة شهر مجاناً',
+                   lang === 'en' ? 'One free landing page revision for one month' : 'تعديل واحد على صفحة الهبوط لمدة شهر مجاناً',
                    lang === 'en' ? 'Hosting + Custom Domain with SSL for one year' : 'استضافة + دومين خاص مع حماية SSL لمدة سنة'
                  ].map((feat, i) => (
                    <div key={i} className="flex items-start gap-3">
