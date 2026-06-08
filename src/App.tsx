@@ -90,7 +90,7 @@ function App() {
         : 'نشار هب | أفضل شركة تسويق رقمي وتصميم مواقع في السعودية';
       seoConfig.description = lang === 'en'
         ? 'Nashar Hub is your trusted partner for digital growth. We specialize in SEO, Google Ads, and professional web development in Saudi Arabia to drive high ROI.'
-        : 'نشار هب الشريك الأمثل لنمو أعمالك! نقدم استراتيجيات تسويق رقمي متكاملة، تحسين محركات البحث (SEO)، إدارة إعلانات جوجل، وتصميم مواقع ومتاجر إلكترونية احترافية في الرياض والمملكة لتحقيق أعلى عائد استثمار.';
+        : 'نشار هب للتسويق الرقمي في السعودية. نقدم استراتيجيات سيو، إعلانات جوجل، وتصميم مواقع ومتاجر احترافية لضمان أعلى عائد استثمار لعملك.';
     } else if (path === '/saudi') {
       seoConfig.title = lang === 'en' ? 'Digital Marketing in Saudi Arabia | News & Insights | Nashar Hub' : 'التسويق الرقمي في السعودية | خدمات ونتائج ملموسة | نشار هب';
     } else if (path === '/seo-services') {
@@ -237,7 +237,7 @@ function App() {
   );
 
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></div></div>}>
+    <Suspense fallback={null}>
       <Routes>
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminLayout />}><Route index element={<Dashboard />} /></Route>
@@ -271,7 +271,7 @@ function App() {
           <Route path="/" element={
             <div className="main-content">
               <Hero lang={lang} />
-              <Suspense fallback={<div className="py-20 flex justify-center"><div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div></div>}>
+              <Suspense fallback={null}>
                 <LazyServices lang={lang} onSEOClick={handleSEOClick} onPaidAdsClick={handlePaidAdsClick} onWebDevClick={handleWebDevClick} />
                 <div id="packages" className="hidden md:block scroll-mt-20">
                   <PackagesWizard lang={lang} onBack={handleBackToMain} isPage={false} />

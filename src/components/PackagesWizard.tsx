@@ -27,15 +27,17 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
   const [activeTab, setActiveTab] = useState<TabType>('all');
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    updateSEO({
-      title: lang === 'en' ? 'Pricing Packages | Nashar Hub' : 'باقات الأسعار | نشار هب',
-      description: lang === 'en' ? 'Explore our flexible pricing packages for digital marketing and web development services.' : 'استكشف باقات الأسعار المرنة لخدمات التسويق الرقمي وتطوير المواقع.',
-      keywords: lang === 'en' ? 'Pricing, Packages, Digital Marketing Cost, Web Development Packages' : 'باقات الأسعار, تكلفة التسويق الرقمي, باقات تصميم المواقع',
-      url: 'https://nasharhub.com/packages',
-      image: 'https://nasharhub.com/og-image.jpg'
-    });
-  }, [lang]);
+    if (isPage) {
+      window.scrollTo(0, 0);
+      updateSEO({
+        title: lang === 'en' ? 'Pricing Packages | Nashar Hub' : 'باقات الأسعار | نشار هب',
+        description: lang === 'en' ? 'Explore our flexible pricing packages for digital marketing and web development services.' : 'استكشف باقات الأسعار المرنة لخدمات التسويق الرقمي وتطوير المواقع.',
+        keywords: lang === 'en' ? 'Pricing, Packages, Digital Marketing Cost, Web Development Packages' : 'باقات الأسعار, تكلفة التسويق الرقمي, باقات تصميم المواقع',
+        url: 'https://nasharhub.com/packages',
+        image: 'https://nasharhub.com/og-image.jpg'
+      });
+    }
+  }, [lang, isPage]);
 
   const tabs: { id: TabType; label: string }[] = [
     { id: 'all', label: lang === 'en' ? 'All Packages' : 'الكل' },
