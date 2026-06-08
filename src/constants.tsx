@@ -53,59 +53,45 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const FAQS: FAQItem[] = [
   {
-    question: { en: 'What is the minimum budget to start?', ar: 'ما هي أقل ميزانية للبدء؟' },
+    question: { en: 'What are the website design packages and their costs?', ar: 'ما هي باقات تصميم المواقع وتكلفتها؟' },
     answer: { 
-      en: 'We recommend a minimum ad spend of $1,000/month to generate statistically significant data and results, but we have packages for startups as well.', 
-      ar: 'نوصي بإنفاق إعلاني لا يقل عن 3,750 ريال شهرياً للحصول على بيانات ونتائج دقيقة إحصائياً، ولكن لدينا باقات مخصصة للشركات الناشئة أيضاً.' 
+      en: 'We offer two main packages: The Launch Package for 800 SAR, which includes a landing page (Home, Services, Contact), and the Professional Package for 1500 SAR, which includes a multi-page website or online store.', 
+      ar: 'نقدم باقتين رئيسيتين: باقة الانطلاق بسعر 800 ريال وتشمل تصميم صفحة هبوط (رئيسية، خدمات، تواصل)، وباقة الاحتراف بسعر 1500 ريال وتشمل تصميم موقع أو متجر إلكتروني متعدد الصفحات.' 
     }
   },
   {
-    question: { en: 'How long does it take to see results?', ar: 'كم من الوقت يستغرق ظهور النتائج؟' },
+    question: { en: 'What is included in the website packages?', ar: 'ماذا تشمل باقات المواقع الإلكترونية؟' },
     answer: { 
-      en: 'For Paid Ads, you can see traffic immediately and leads within 48-72 hours. SEO and organic growth typically take 3-6 months.', 
-      ar: 'بالنسبة للإعلانات الممولة، يمكنك رؤية الزيارات فوراً والعملاء المحتملين خلال 48-72 ساعة. أما الـ SEO والنمو الطبيعي فيستغرق عادة 3-6 أشهر.' 
+      en: 'Both packages include hosting and a custom domain with an SSL certificate for one year. The Launch package includes setting up a Google Ads campaign with one month of free management, and the Professional package includes 5 free SEO articles for a month.', 
+      ar: 'تشمل جميع باقاتنا الاستضافة والدومين الخاص مع حماية SSL لمدة سنة. بالإضافة إلى تقديم خدمة إنشاء إعلان ممول على جوجل مع متابعة لمدة شهر مجاناً في باقة الانطلاق، و 5 مقالات SEO لمدة شهر مجاناً في باقة الاحتراف.' 
     }
   },
   {
-    question: { en: 'Do you offer long-term contracts?', ar: 'هل تطلبون عقوداً طويلة الأمد؟' },
+    question: { en: 'Do you offer modifications after the website is launched?', ar: 'هل توفرون تعديلات على الموقع بعد الإطلاق؟' },
     answer: { 
-      en: 'We operate on a month-to-month basis because we believe our results should keep you with us, not a contract.', 
-      ar: 'نحن نعمل بنظام شهري لأننا نؤمن بأن نتائجنا هي ما يجب أن يبقيك معنا، وليس العقود الملزمة.' 
+      en: 'Yes, the Launch package includes one free landing page revision for one month, while the Professional package includes up to 3 website revisions for a month.', 
+      ar: 'نعم، نوفر تعديلاً واحداً مجانياً لمدة شهر في باقة الانطلاق، ونوفر 3 تعديلات مجانية لمدة شهر في باقة الاحتراف.' 
     }
   },
   {
-    question: { en: 'Do you create the ad creatives?', ar: 'هل تقومون بتصميم الإعلانات؟' },
+    question: { en: 'How long does it take to see results from marketing activities?', ar: 'كم من الوقت يستغرق ظهور النتائج من التسويق؟' },
     answer: { 
-      en: 'Yes! We have an in-house creative team that designs high-converting visuals and writes persuasive copy.', 
-      ar: 'نعم! لدينا فريق إبداعي داخلي يقوم بتصميم صور وفيديوهات عالية الجودة وكتابة نصوص إعلانية مقنعة.' 
+      en: 'For Paid Ads, you can see traffic immediately and leads within a few days. SEO and organic growth typically take a few months to build sustainable authority.', 
+      ar: 'بالنسبة للإعلانات الممولة (مثل إعلانات جوجل المشمولة في باقاتنا)، يمكنك رؤية الزيارات والتفاعلات بشكل فوري. أما تحسين محركات البحث والنمو الطبيعي فيستغرق عادة بضعة أشهر.' 
     }
   },
   {
-    question: { en: 'Which platforms are best for my business?', ar: 'ما هي المنصات الأفضل لمشروعي؟' },
+    question: { en: 'Do you create the ad creatives and manage SEO?', ar: 'هل تقومون بإدارة الحملات الإعلانية ومقالات الـ SEO؟' },
     answer: { 
-      en: 'It depends on your niche. B2B works best on LinkedIn/Google. E-commerce thrives on Meta/TikTok/Snapchat. We will advise you during the audit.', 
-      ar: 'يعتمد ذلك على مجالك. الأعمال بين الشركات (B2B) تنجح في لينكد إن أو إعلانات جوجل. المتاجر الإلكترونية تزدهر في ميتا/تيك توك/سناب شات. سننصحك بالأفضل خلال مرحلة التدقيق.' 
+      en: 'Yes! We handle the ad creation and management, as well as SEO content writing as included in our respective packages.', 
+      ar: 'نعم! نقوم بإنشاء الإعلانات وإدارتها باحترافية، كما نقدم كتابة مقالات متوافقة مع الـ SEO حسب الباقة التي تختارها.' 
     }
   },
   {
     question: { en: 'What is SEO and why is it important?', ar: 'ما هو الـ SEO ولماذا هو مهم؟' },
     answer: { 
-      en: 'SEO (Search Engine Optimization) is the process of improving your website to increase its visibility in search engines like Google. It is crucial because it helps you attract organic, high-quality traffic without paying for every click, building long-term authority and trust.', 
-      ar: 'الـ SEO (تحسين محركات البحث) هو عملية تحسين موقعك لزيادة ظهوره في محركات البحث مثل جوجل. إنه أمر بالغ الأهمية لأنه يساعدك على جذب زيارات طبيعية وعالية الجودة دون الدفع مقابل كل نقرة، مما يبني سلطة وثقة طويلة الأمد.' 
-    }
-  },
-  {
-    question: { en: 'Can you help with e-commerce websites?', ar: 'هل يمكنك المساعدة في المتاجر الإلكترونية؟' },
-    answer: { 
-      en: 'Absolutely! We specialize in e-commerce growth, from building high-performance Shopify or custom stores to running targeted ad campaigns that drive sales and maximize your return on investment.', 
-      ar: 'بالتأكيد! نحن متخصصون في نمو المتاجر الإلكترونية، بدءاً من بناء متاجر شوبيفاي أو متاجر مخصصة عالية الأداء إلى تشغيل حملات إعلانية مستهدفة تزيد من المبيعات وتعظم عائد استثمارك.' 
-    }
-  },
-  {
-    question: { en: 'What makes your agency different?', ar: 'ما الذي يجعل وكالتكم مختلفة؟' },
-    answer: { 
-      en: 'We are data-driven and results-oriented. Unlike traditional agencies that focus on vanity metrics, we focus on what matters most: your bottom line. We use advanced analytics and a performance-first approach to ensure every dollar you spend contributes to your growth.', 
-      ar: 'نحن نعتمد على البيانات ونركز على النتائج. على عكس الوكالات التقليدية التي تركز على المقاييس الشكلية، نحن نركز على ما يهم أكثر: أرباحك النهائية. نحن نستخدم تحليلات متقدمة ونهجاً يركز على الأداء لضمان أن كل دولار تنفقه يساهم في نموك.' 
+      en: 'SEO (Search Engine Optimization) is the process of improving your website to increase its visibility in search engines like Google. It helps you attract organic, high-quality traffic, building long-term authority and trust.', 
+      ar: 'الـ SEO (تحسين محركات البحث) هو عملية تحسين موقعك لزيادة ظهوره في محركات البحث مثل جوجل. إنه أمر بالغ الأهمية لأنه يساعدك على جذب زيارات طبيعية وعالية الجودة، مما يبني ثقة طويلة الأمد.' 
     }
   }
 ];
