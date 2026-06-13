@@ -70,8 +70,8 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
            .marquee-track:hover { animation-play-state: paused; }
            
            @keyframes marquee { 
-             0% { transform: translateX(0); } 
-             100% { transform: translateX(-33.3333333333%); } 
+             0% { transform: translateX(-33.3333333333%); } 
+             100% { transform: translateX(0); } 
            }
            
            .logo-card {
