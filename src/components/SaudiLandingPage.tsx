@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CheckCircle, Monitor, Smartphone, Zap, ArrowLeft, MessageCircle, Send, Users, Target, Award } from 'lucide-react';
 import { Logo } from './Logo';
 import { CLIENTS } from './ClientLogos';
+const LazyClientLogos = React.lazy(() => import('./ClientLogos').then(m => ({ default: m.ClientLogos })));
 import { updateSEO } from '../utils/seo';
 import { Breadcrumb } from './Breadcrumb';
 
@@ -34,9 +35,6 @@ export const SaudiLandingPage: React.FC = () => {
     const msg = encodeURIComponent(`طلب جديد من الموقع:\nالاسم: ${formData.name}\nرقم الجوال: ${formData.phone}\nالخدمة المطلوبة: ${formData.service}`);
     window.open(`https://wa.me/${CONTACT_NUMBER.replace(/\s/g, '')}?text=${msg}`, '_blank');
   };
-
-  // Duplicate for seamless marquee
-  const marqueeItems = [...CLIENTS, ...CLIENTS];
 
   return (
     <div className="min-h-screen bg-slate-50 font-arabic text-slate-900 selection:bg-secondary/30" dir="rtl">
@@ -204,29 +202,8 @@ export const SaudiLandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Marquee Section */}
-      <section className="py-20 bg-white border-y border-slate-200 overflow-hidden">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-black text-slate-900 mb-4">شركاء النجاح</h2>
-          <p className="text-slate-500">نفخر بثقة العديد من الشركات والمؤسسات الرائدة</p>
-        </div>
-
-        <div className="relative w-full flex overflow-x-hidden" dir="ltr">
-          <div className="animate-marquee flex gap-12 px-6 whitespace-nowrap items-center">
-            {marqueeItems.map((client, index) => (
-              <a 
-                key={index} 
-                href={client.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full bg-slate-50 border border-slate-200 text-slate-700 font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 text-base shadow-sm shrink-0"
-              >
-                {client.nameAr || client.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Success Partners Section */}
+      <LazyClientLogos lang="ar" />
 
       {/* Features Section (Why Us) */}
       <section className="py-24 bg-slate-50">

@@ -113,11 +113,17 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Launch Package */}
             <div className="bg-white rounded-[2.5rem] p-8 md:p-10 border-2 border-slate-100 shadow-sm hover:border-blue-500 transition-all flex flex-col">
+               <div className="flex items-center justify-between mb-2">
+                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+                   {lang === 'en' ? 'FOR STARTUPS' : 'للمشاريع الناشئة'}
+                 </span>
+                 <Layout size={20} className="text-slate-400" />
+               </div>
                <h3 className="text-2xl font-black text-slate-900 mb-2">
                  {lang === 'en' ? 'Launch Package' : 'باقة الانطلاق'}
                </h3>
-               <p className="text-slate-500 font-medium mb-6">
-                 {lang === 'en' ? 'Create a landing page suitable for offering one or multiple services, including (Home - Services - Contact Us).' : 'إنشاء صفحة هبوط (Landing page) مناسبة لتقديم خدمة واحدة أو عدة خدمات، تشمل؛ (صفحة رئيسية - خدمات - تواصل معنا).'}
+               <p className="text-slate-500 font-medium mb-6 text-sm">
+                 {lang === 'en' ? 'Quick and effective digital presence to start attracting customers.' : 'حضور رقمي سريع وفعّال لبدء استقطاب العملاء.'}
                </p>
                <div className="mb-6">
                  <div className="flex items-baseline gap-2">
@@ -126,33 +132,66 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                  </div>
                </div>
                
-               <div className="space-y-4 mb-8 flex-1">
+               <div className="space-y-6 mb-8 flex-1">
                  {[
-                   lang === 'en' ? 'Create Google Ads campaign + 1 month free management' : 'تقديم خدمة إنشاء إعلان ممول على جوجل + متابعة لمدة شهر مجاناً',
-                   lang === 'en' ? 'One free landing page revision for one month' : 'تعديل واحد على صفحة الهبوط لمدة شهر مجاناً',
-                   lang === 'en' ? 'Hosting + Custom Domain with SSL for one year' : 'استضافة + دومين خاص مع حماية SSL لمدة سنة'
+                   {
+                     title: lang === 'en' ? 'Professional Landing Page' : 'صفحة هبوط احترافية',
+                     desc: lang === 'en' ? '3 integrated sections: Home, Services, and Contact Us — designed to convert visitors.' : '3 أقسام متكاملة: الرئيسية، الخدمات، وتواصل معنا — مصممة لتحويل الزوار إلى عملاء.'
+                   },
+                   {
+                     title: lang === 'en' ? 'Google Ads Campaign' : 'إعلان ممول على جوجل',
+                     desc: lang === 'en' ? 'Campaign setup + 1 month free management with keyword optimization.' : 'إنشاء حملة إعلانية مستهدفة + متابعة لمدة شهر مجاناً مع إعداد الكلمات المفتاحية.'
+                   },
+                   {
+                     title: lang === 'en' ? 'Free Revision' : 'تعديل مجاني',
+                     desc: lang === 'en' ? 'One comprehensive revision during the first month (texts, images, or colors).' : 'تعديل واحد شامل خلال الشهر الأول (نصوص، صور، أو ألوان).'
+                   },
+                   {
+                     title: lang === 'en' ? 'Hosting + Domain + SSL' : 'استضافة + دومين + SSL',
+                     desc: lang === 'en' ? 'Fast hosting, custom domain, and security certificate for one full year.' : 'استضافة سريعة، دومين خاص، وشهادة أمان للسنة الأولى.'
+                   }
                  ].map((feat, i) => (
-                   <div key={i} className="flex items-start gap-3">
-                     <CheckCircle2 size={20} className="text-blue-500 mt-0.5 shrink-0" />
-                     <span className="text-slate-700 font-medium leading-relaxed">{feat}</span>
+                   <div key={i} className="flex items-start gap-4">
+                     <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 mt-0.5">
+                       <CheckCircle2 size={16} className="text-blue-500" />
+                     </div>
+                     <div className="flex flex-col gap-1">
+                       <span className="text-slate-900 font-black text-sm">{feat.title}</span>
+                       <span className="text-slate-500 text-xs leading-relaxed font-medium">{feat.desc}</span>
+                     </div>
                    </div>
                  ))}
                </div>
                
+               <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 mb-6">
+                 <p className="text-[11px] text-slate-500 font-bold leading-relaxed italic">
+                   {lang === 'en' 
+                    ? 'Ideal for freelancers, restaurants, clinics, and projects that need a fast digital presence.' 
+                    : 'مثالية لأصحاب المهن الحرة، المطاعم، العيادات، والمشاريع التي تحتاج حضوراً رقمياً سريعاً.'}
+                 </p>
+               </div>
+
                <ContactButton lang={lang} packageName={lang === 'en' ? 'Launch Package' : 'باقة الانطلاق'} />
             </div>
 
             {/* Professional Package */}
-            <div className="bg-blue-50/50 rounded-[2.5rem] p-8 md:p-10 border-2 border-blue-500 shadow-lg relative flex flex-col transform md:-translate-y-4">
-               <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-blue-600 text-white text-[12px] font-black uppercase tracking-widest rounded-full shadow-lg whitespace-nowrap">
+            <div className="bg-white rounded-[2.5rem] p-8 md:p-10 border-2 border-blue-500 shadow-xl relative flex flex-col transform md:-translate-y-4">
+               <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg whitespace-nowrap">
                   {lang === 'en' ? 'Most Popular' : 'الأكثر طلباً'}
                </div>
                
-               <h3 className="text-2xl font-black text-slate-900 mb-2 mt-2">
+               <div className="flex items-center justify-between mb-2 mt-2">
+                 <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                   {lang === 'en' ? 'FOR BUSINESSES' : 'للشركات والمتاجر'}
+                 </span>
+                 <Target size={20} className="text-blue-400" />
+               </div>
+
+               <h3 className="text-2xl font-black text-slate-900 mb-2">
                  {lang === 'en' ? 'Professional Package' : 'باقة الاحتراف'}
                </h3>
-               <p className="text-slate-500 font-medium mb-6">
-                 {lang === 'en' ? 'Create a multi-page website or online store to present the content you want, whether services, products, or company profile.' : 'إنشاء موقع أو متجر إلكتروني متعدد الصفحات، يتيح لك تقديم المحتوى الذي تريده سواء كان خدمات، منتجات، أو محتوى تعريفي بشركتك.'}
+               <p className="text-slate-500 font-medium mb-6 text-sm">
+                 {lang === 'en' ? 'Complete website or store with unlimited content and SEO visibility.' : 'موقع أو متجر متكامل بمحتوى غير محدود وظهور في محركات البحث.'}
                </p>
                <div className="mb-6">
                  <div className="flex items-baseline gap-2">
@@ -161,17 +200,43 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                  </div>
                </div>
                
-               <div className="space-y-4 mb-8 flex-1">
+               <div className="space-y-6 mb-8 flex-1">
                  {[
-                   lang === 'en' ? '5 Free SEO Articles for one month' : 'تقديم 5 مقالات SEO لمدة شهر مجاناً',
-                   lang === 'en' ? '3 Free website revisions for one month' : 'تقديم 3 تعديلات على الموقع لمدة شهر مجاناً',
-                   lang === 'en' ? 'Hosting + Custom Domain with SSL for one year' : 'استضافة + دومين خاص مع حماية SSL لمدة سنة'
+                   {
+                     title: lang === 'en' ? 'Multi-page Website or Online Store' : 'موقع أو متجر إلكتروني متعدد الصفحات',
+                     desc: lang === 'en' ? 'Full structure (Home, About, Products, Blog, Contact) + easy control panel.' : 'بنية متكاملة (الرئيسية، من نحن، المنتجات، المدونة، تواصل) + لوحة تحكم سهلة.'
+                   },
+                   {
+                     title: lang === 'en' ? '5 Professional SEO Articles' : '5 مقالات SEO احترافية',
+                     desc: lang === 'en' ? 'SEO-optimized articles to help your site rank higher in Google search results.' : 'مقالات محسّنة للسيو تساعد موقعك على الظهور في نتائج جوجل الأولى.'
+                   },
+                   {
+                     title: lang === 'en' ? '3 Website Revisions' : '3 تعديلات على الموقع',
+                     desc: lang === 'en' ? 'Three separate revision requests during the first month for any content or design changes.' : '3 طلبات تعديل منفصلة خلال الشهر الأول لأي تغييرات في المحتوى أو التصميم.'
+                   },
+                   {
+                     title: lang === 'en' ? 'High Performance Hosting' : 'استضافة عالية الأداء',
+                     desc: lang === 'en' ? 'Optimized hosting for stores, custom domain, and SSL protection for 1 year.' : 'استضافة مهيأة للمتاجر، دومين مخصص، وحماية SSL لسنة كاملة.'
+                   }
                  ].map((feat, i) => (
-                   <div key={i} className="flex items-start gap-3">
-                     <CheckCircle2 size={20} className="text-blue-600 mt-0.5 shrink-0" />
-                     <span className="text-slate-800 font-bold leading-relaxed">{feat}</span>
+                   <div key={i} className="flex items-start gap-4">
+                     <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 mt-0.5">
+                       <CheckCircle2 size={16} className="text-blue-600" />
+                     </div>
+                     <div className="flex flex-col gap-1">
+                       <span className="text-slate-900 font-black text-sm">{feat.title}</span>
+                       <span className="text-slate-500 text-xs leading-relaxed font-medium">{feat.desc}</span>
+                     </div>
                    </div>
                  ))}
+               </div>
+
+               <div className="p-4 bg-blue-50 rounded-2xl border border-blue-100 mb-6">
+                 <p className="text-[11px] text-blue-600 font-bold leading-relaxed italic">
+                   {lang === 'en' 
+                    ? 'Ideal for companies, online stores, brands, and activities needing a strong digital presence.' 
+                    : 'مثالية للشركات، المتاجر الإلكترونية، العلامات التجارية، وأي نشاط يحتاج حضوراً رقمياً قوياً.'}
+                 </p>
                </div>
                
                <ContactButton lang={lang} packageName={lang === 'en' ? 'Professional Package' : 'باقة الاحتراف'} primary />
@@ -179,6 +244,17 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
           </div>
         </section>
         )}
+
+        <div className="max-w-5xl mx-auto mt-8 p-6 bg-slate-100/50 rounded-3xl border border-slate-200 flex items-center gap-4">
+           <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-slate-400 shrink-0 shadow-sm">
+             <CheckCircle2 size={20} />
+           </div>
+           <p className="text-xs text-slate-600 font-bold leading-relaxed">
+             {lang === 'en' 
+               ? 'All packages include: Responsive design for mobile and desktop — Optimized loading speed — Technical support during the warranty period.' 
+               : 'جميع الباقات تشمل: تصميم متجاوب للجوال والحاسوب — سرعة تحميل محسّنة — دعم فني خلال فترة الضمان.'}
+           </p>
+        </div>
 
         {/* Marketing Packages Grid */}
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto pt-8 border-t border-slate-200 mt-16 ${activeTab === 'all' || activeTab === 'ads' || activeTab === 'seo' ? 'animate-in fade-in slide-in-from-bottom-4 duration-500' : 'hidden'}`}>

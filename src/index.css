@@ -20,7 +20,7 @@
   --color-light-muted: #64748b;
 
   --animate-float: float 6s ease-in-out infinite;
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee: marquee 20s linear infinite;
   
   @keyframes float {
     0%, 100% { transform: translateY(0); }

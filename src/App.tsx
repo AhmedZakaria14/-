@@ -10,6 +10,7 @@ import { Language } from './types';
 const LazyGlobalCTA = lazy(() => import('@/components/GlobalCTA').then(m => ({ default: m.GlobalCTA })));
 const LazyFooter = lazy(() => import('@/components/Footer').then(m => ({ default: m.Footer })));
 const LazyBottomNav = lazy(() => import('@/components/BottomNav').then(m => ({ default: m.BottomNav })));
+const AdsResults = lazy(() => import('@/components/AdsResults').then(m => ({ default: m.AdsResults })));
 import { updateSEO } from '@/utils/seo';
 
 // Lazy load admin components
@@ -273,6 +274,7 @@ function App() {
               <Hero lang={lang} />
               <Suspense fallback={null}>
                 <LazyServices lang={lang} onSEOClick={handleSEOClick} onPaidAdsClick={handlePaidAdsClick} onWebDevClick={handleWebDevClick} />
+                <AdsResults lang={lang} />
                 <div id="packages" className="hidden md:block scroll-mt-20">
                   <PackagesWizard lang={lang} onBack={handleBackToMain} isPage={false} />
                 </div>
