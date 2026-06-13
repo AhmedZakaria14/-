@@ -62,16 +62,17 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
            
            .marquee-track { 
              display: flex; 
+             white-space: nowrap;
              gap: 16px; 
-             animation: marquee 45s linear infinite; 
+             animation: marquee 60s linear infinite; 
              width: max-content; 
              will-change: transform;
            }
            .marquee-track:hover { animation-play-state: paused; }
            
            @keyframes marquee { 
-             0% { transform: translateX(-33.3333333333%); } 
-             100% { transform: translateX(0); } 
+             0% { transform: translateX(0); } 
+             100% { transform: translateX(-50%); } 
            }
            
            .logo-card {
@@ -160,7 +161,7 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
 
          <div className="marquee-wrapper" ref={scrollRef}>
            <div className="marquee-track">
-             {[...CLIENTS, ...CLIENTS, ...CLIENTS].map((site, index) => (
+             {[...CLIENTS, ...CLIENTS].map((site, index) => (
                <a 
                  key={index}
                  href={`https://${site.d}`} 
