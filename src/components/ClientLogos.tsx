@@ -52,27 +52,26 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
            .marquee-wrapper { 
              overflow: hidden; 
              position: relative; 
-             padding: 40px 0; 
+             padding: 20px 0; 
            }
            .marquee-wrapper::before, .marquee-wrapper::after {
-             content: ''; position: absolute; top: 0; bottom: 0; width: 150px; z-index: 5; pointer-events: none;
+             content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 5; pointer-events: none;
            }
-           .marquee-wrapper::before { left: 0; background: linear-gradient(to right, #fff, transparent); }
-           .marquee-wrapper::after  { right: 0; background: linear-gradient(to left, #fff, transparent); }
+           .marquee-wrapper::before { left: 0; background: linear-gradient(to right, #fff 10%, transparent); }
+           .marquee-wrapper::after  { right: 0; background: linear-gradient(to left, #fff 10%, transparent); }
            
            .marquee-track { 
              display: flex; 
-             gap: 32px; 
-             animation: marquee 40s linear infinite; 
+             gap: 16px; 
+             animation: marquee 45s linear infinite; 
              width: max-content; 
              will-change: transform;
-             padding: 10px;
            }
            .marquee-track:hover { animation-play-state: paused; }
            
            @keyframes marquee { 
              0% { transform: translateX(0); } 
-             100% { transform: translateX(-33.33%); } 
+             100% { transform: translateX(-33.3333333333%); } 
            }
            
            .logo-card {
@@ -80,38 +79,37 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
              flex-direction: column; 
              align-items: center; 
              justify-content: center;
-             width: 160px; 
-             height: 110px; 
+             width: 140px; 
+             height: 100px; 
              background: #fff; 
              border: 1px solid #f1f5f9;
-             border-radius: 20px; 
+             border-radius: 12px; 
              text-decoration: none; 
-             padding: 16px;
-             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.04), 0 4px 6px -4px rgb(0 0 0 / 0.04);
-             backdrop-filter: blur(8px);
+             padding: 12px;
+             transition: all 0.3s ease;
+             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+             flex-shrink: 0;
            }
            .logo-card:hover { 
-             transform: translateY(-8px) scale(1.05); 
+             transform: translateY(-5px); 
              border-color: #3b82f6; 
-             box-shadow: 0 20px 25px -5px rgb(59 130 246 / 0.15), 0 8px 10px -6px rgb(59 130 246 / 0.1); 
+             box-shadow: 0 10px 15px -3px rgb(59 130 246 / 0.1); 
            }
            .logo-card img { 
              max-width: 100%; 
              max-height: 52px; 
              object-fit: contain; 
-             filter: grayscale(1);
-             transition: filter 0.3s ease;
-             opacity: 0.7;
-           }
-           .logo-card:hover img { 
-             filter: grayscale(0);
+             filter: none;
+             transition: transform 0.3s ease;
              opacity: 1;
            }
+           .logo-card:hover img { 
+             transform: scale(1.05);
+           }
            .logo-card span { 
-             font-size: 12px; 
+             font-size: 11px; 
              font-weight: 700; 
-             color: #64748b; 
+             color: #475569; 
              text-align: center; 
              margin-top: 12px; 
              white-space: nowrap;
