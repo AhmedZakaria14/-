@@ -62,8 +62,6 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
            
            .marquee-track { 
              display: flex; 
-             white-space: nowrap;
-             gap: 16px; 
              animation: marquee 60s linear infinite; 
              width: max-content; 
              will-change: transform;
@@ -159,23 +157,27 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
            </button>
          </div>
 
-         <div className="marquee-wrapper" ref={scrollRef}>
+         <div className="marquee-wrapper" ref={scrollRef} dir="ltr">
            <div className="marquee-track">
-             {[...CLIENTS, ...CLIENTS].map((site, index) => (
-               <a 
-                 key={index}
-                 href={`https://${site.d}`} 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="logo-card"
-               >
-                 <img 
-                   src={`https://www.google.com/s2/favicons?sz=128&domain_url=https://${site.d}`} 
-                   alt={site.l} 
-                   loading="lazy"
-                 />
-                 <span>{site.l}</span>
-               </a>
+             {[0, 1].map((setIndex) => (
+               <div key={setIndex} className="flex gap-4 pr-4">
+                 {CLIENTS.map((site, index) => (
+                   <a 
+                     key={`${setIndex}-${index}`}
+                     href={`https://${site.d}`} 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     className="logo-card"
+                   >
+                     <img 
+                       src={`https://www.google.com/s2/favicons?sz=128&domain_url=https://${site.d}`} 
+                       alt={site.l} 
+                       loading="lazy"
+                     />
+                     <span>{site.l}</span>
+                   </a>
+                 ))}
+               </div>
              ))}
            </div>
          </div>
