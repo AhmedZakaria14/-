@@ -13,18 +13,6 @@ const LazyBottomNav = lazy(() => import('@/components/BottomNav').then(m => ({ d
 const AdsResults = lazy(() => import('@/components/AdsResults').then(m => ({ default: m.AdsResults })));
 import { updateSEO } from '@/utils/seo';
 
-// Lazy load admin components
-const AdminLayout = lazy(() => import('@/admin/AdminLayout').then(m => ({ default: m.AdminLayout })));
-const AdminLogin = lazy(() => import('@/admin/Login').then(m => ({ default: m.AdminLogin })));
-const Dashboard = lazy(() => import('@/admin/Dashboard').then(m => ({ default: m.Dashboard })));
-const ClientsManagement = lazy(() => import('@/admin/ClientsManagement').then(m => ({ default: m.ClientsManagement })));
-const ClientDetails = lazy(() => import('@/admin/ClientDetails').then(m => ({ default: m.ClientDetails })));
-const CalendarPage = lazy(() => import('@/admin/Calendar').then(m => ({ default: m.CalendarPage })));
-const SettingsPage = lazy(() => import('@/admin/Settings').then(m => ({ default: m.SettingsPage })));
-const Tasks = lazy(() => import('@/admin/Tasks').then(m => ({ default: m.Tasks })));
-const Invoices = lazy(() => import('@/admin/Invoices').then(m => ({ default: m.Invoices })));
-const Leads = lazy(() => import('@/admin/Leads').then(m => ({ default: m.Leads })));
-
 // Lazy load other pages
 const SaudiLandingPage = lazy(() => import('@/components/SaudiLandingPage').then(m => ({ default: m.SaudiLandingPage })));
 const SEOServices = lazy(() => import('@/components/SEOServices').then(m => ({ default: m.SEOServices })));
@@ -240,16 +228,6 @@ function App() {
   return (
     <Suspense fallback={null}>
       <Routes>
-        <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminLayout />}><Route index element={<Dashboard />} /></Route>
-        <Route path="/admin/leads" element={<AdminLayout />}><Route index element={<Leads />} /></Route>
-        <Route path="/admin/clients" element={<AdminLayout />}><Route index element={<ClientsManagement />} /></Route>
-        <Route path="/admin/clients/:id" element={<AdminLayout />}><Route index element={<ClientDetails />} /></Route>
-        <Route path="/admin/tasks" element={<AdminLayout />}><Route index element={<Tasks />} /></Route>
-        <Route path="/admin/invoices" element={<AdminLayout />}><Route index element={<Invoices />} /></Route>
-        <Route path="/admin/calendar" element={<AdminLayout />}><Route index element={<CalendarPage />} /></Route>
-        <Route path="/admin/settings" element={<AdminLayout />}><Route index element={<SettingsPage />} /></Route>
-
         <Route element={<PublicLayout />}>
           <Route path="/saudi" element={<SaudiLandingPage />} />
           <Route path="/saudi/:city" element={<CityLandingPage lang={lang} onBack={handleBackToMain} />} />
