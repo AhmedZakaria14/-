@@ -53,10 +53,10 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const FAQS: FAQItem[] = [
   {
-    question: { en: 'What are the website design packages and their costs?', ar: 'ما هي باقات تصميم المواقع وتكلفتها؟' },
+    question: { en: 'What are the website design packages?', ar: 'ما هي باقات تصميم المواقع؟' },
     answer: { 
-      en: 'We offer two main packages: The Launch Package for 800 SAR, which includes a landing page (Home, Services, Contact), and the Professional Package for 1500 SAR, which includes a multi-page website or online store.', 
-      ar: 'نقدم باقتين رئيسيتين: باقة الانطلاق بسعر 800 ريال وتشمل تصميم صفحة هبوط (رئيسية، خدمات، تواصل)، وباقة الاحتراف بسعر 1500 ريال وتشمل تصميم موقع أو متجر إلكتروني متعدد الصفحات.' 
+      en: 'We offer two main packages: The Launch Package, which includes a landing page (Home, Services, Contact), and the Professional Package, which includes a multi-page website or online store.', 
+      ar: 'نقدم باقتين رئيسيتين: باقة الانطلاق وتشمل تصميم صفحة هبوط (رئيسية، خدمات، تواصل)، وباقة الاحتراف وتشمل تصميم موقع أو متجر إلكتروني متعدد الصفحات.' 
     }
   },
   {

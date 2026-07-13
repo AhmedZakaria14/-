@@ -7,7 +7,7 @@ interface ClientLogosProps {
   lang: Language;
 }
 
-export const CLIENTS = [
+export const CLIENTS: Array<{d: string, l: string, img?: string}> = [
   { d: "gorillaegyptkw.com", l: "Gorilla Egypt KW" },
   { d: "shbookalmamlaka.com", l: "شبوك المملكة" },
   { d: "dehanatmaka.com", l: "دهانات ماكا" },
@@ -30,6 +30,16 @@ export const CLIENTS = [
   { d: "valueadvagency.com", l: "Value Adv Agency" },
   { d: "najjarriyadh.com", l: "نجار الرياض" },
   { d: "riyadhwave.com", l: "Riyadh Wave" },
+  { d: "azelhail.com", l: "مؤسسة العازل الحديث", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1783930204/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9_%D8%A7%D9%84%D8%B9%D8%A7%D8%B2%D9%84_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB-removebg-preview_h2wf85.png" },
+  { d: "mandoubsalam5g.com", l: "مندوب سلام 5G", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879292/salam_5g_mandoub_logo_uyucr5.png" },
+  { d: "zain5gsaudi.com", l: "مندوب زين 5G", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1783750769/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5g_%D8%A7%D8%AE%D8%B1_%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB_gcjlva.png" },
+  { d: "haddad-jeddah.com", l: "حداد كريتال جدة", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1782240782/%D8%AD%D8%AF%D8%A7%D8%AF_%D9%83%D8%B1%D9%8A%D8%AA%D8%A7%D9%84_%D8%AC%D8%AF%D8%A9_ua2idm.png" },
+  { d: "grc-decor.com", l: "روائع الجي ار سي", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781979854/%D8%B1%D9%88%D8%A7%D8%A6%D8%B9_%D8%A7%D9%84%D8%AC%D9%8A_%D8%A7%D8%B1_%D8%B3%D9%8A_sqc6zf.png" },
+  { d: "jeddahfullrepair.com", l: "صيانة جدة", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781928647/%D8%B5%D9%8A%D8%A7%D8%AA%D8%A9_%D8%AC%D8%AF%D8%A9_lavi0o.png" },
+  { d: "fannicarpenteruae.com", l: "نجار دبي", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781715339/%D9%86%D8%AC%D8%A7%D8%B1_%D8%AF%D8%A8%D9%8A_sobbgv.png" },
+  { d: "taaqebkhadamat.com", l: "تعقيب خدمات", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781694327/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%AA%D8%B9%D9%82%D9%8A%D8%A8_koatju.png" },
+  { d: "fannielectricuae.com", l: "فني كهرباء دبي", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781707687/%D9%81%D9%86%D9%8A_%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1_%D8%AF%D8%A8%D9%8A_ufefpo.png" },
+  { d: "matabekhjeddah.com", l: "معلم مطابخ", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781442195/%D9%85%D8%B9%D9%84%D9%85_%D9%85%D8%B7%D8%A7%D8%A8%D8%AE_2-removebg-preview_lc4mso.png" },
 ];
 
 export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
@@ -170,7 +180,7 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
                      className="logo-card"
                    >
                      <img 
-                       src={`https://www.google.com/s2/favicons?sz=128&domain_url=https://${site.d}`} 
+                       src={site.img || `https://www.google.com/s2/favicons?sz=128&domain_url=https://${site.d}`} 
                        alt={site.l} 
                        loading="lazy"
                      />

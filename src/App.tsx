@@ -89,7 +89,7 @@ function App() {
     } else if (path === '/web-dev-services') {
       seoConfig.title = lang === 'en' ? 'Web Design & Ecommerce Development Saudi Arabia | Nashar Hub' : 'تصميم مواقع وتطوير متاجر إلكترونية في السعودية | نشار هب';
     } else if (path === '/packages') {
-      seoConfig.title = lang === 'en' ? 'Web & Ads Packages | Pricing in Saudi Arabia | Nashar Hub' : 'باقات إعلانات جوجل وتصميم المواقع | أسعار تنافسية | نشار هب';
+      seoConfig.title = lang === 'en' ? 'Web & Ads Packages | Nashar Hub' : 'باقات إعلانات جوجل وتصميم المواقع | نشار هب';
     } else if (path === '/blog') {
       seoConfig.title = lang === 'en' ? 'Marketing Blog & Strategy | Nashar Hub' : 'مدونة التسويق والاستراتيجية | نشار هب';
     }

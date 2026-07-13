@@ -30,11 +30,35 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
     if (isPage) {
       window.scrollTo(0, 0);
       updateSEO({
-        title: lang === 'en' ? 'Pricing Packages | Nashar Hub' : 'باقات الأسعار | نشار هب',
-        description: lang === 'en' ? 'Explore our flexible pricing packages for digital marketing and web development services.' : 'استكشف باقات الأسعار المرنة لخدمات التسويق الرقمي وتطوير المواقع.',
-        keywords: lang === 'en' ? 'Pricing, Packages, Digital Marketing Cost, Web Development Packages' : 'باقات الأسعار, تكلفة التسويق الرقمي, باقات تصميم المواقع',
+        title: lang === 'en' ? 'Our Packages | Nashar Hub' : 'الباقات | نشار هب',
+        description: lang === 'en' ? 'Explore our flexible packages for digital marketing and web development services.' : 'استكشف باقاتنا المرنة لخدمات التسويق الرقمي وتطوير المواقع.',
+        keywords: lang === 'en' ? 'Packages, Digital Marketing, Web Development Packages' : 'باقات, التسويق الرقمي, باقات تصميم المواقع',
         url: 'https://nasharhub.com/packages',
-        image: 'https://nasharhub.com/og-image.jpg'
+        image: 'https://nasharhub.com/og-image.jpg',
+        structuredData: {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Service",
+                "name": lang === 'en' ? 'Launch Package' : 'باقة الانطلاق',
+                "description": lang === 'en' ? 'Quick and effective digital presence to start attracting customers.' : 'حضور رقمي سريع وفعّال لبدء استقطاب العملاء.'
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Service",
+                "name": lang === 'en' ? 'Professional Package' : 'باقة الاحتراف',
+                "description": lang === 'en' ? 'Complete website or store with unlimited content and SEO visibility.' : 'موقع أو متجر متكامل بمحتوى غير محدود وظهور في محركات البحث.'
+              }
+            }
+          ]
+        }
       });
     }
   }, [lang, isPage]);
@@ -55,7 +79,7 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
             <div className="mb-4">
               <Breadcrumb 
                 lang={lang} 
-                items={[{ label: lang === 'en' ? 'Pricing Packages' : 'باقات الأسعار', href: '/packages' }]} 
+                items={[{ label: lang === 'en' ? 'Our Packages' : 'الباقات', href: '/packages' }]} 
               />
             </div>
           )}
@@ -76,7 +100,7 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
             {lang === 'en' ? 'Our Packages' : 'باقات الاعلانات والمواقع'}
           </HeadingTag>
           <p className="text-slate-500 text-lg font-medium mb-10">
-            {lang === 'en' ? 'Transparent pricing designed for the Saudi market.' : 'أسعار شفافة لضمان أفضل عائد على استثمارك في السوق السعودي.'}
+            {lang === 'en' ? 'Designed to deliver the best ROI for the Saudi market.' : 'مصممة لضمان أفضل عائد على استثمارك في السوق السعودي.'}
           </p>
 
           {/* Filter Tabs */}
@@ -125,12 +149,6 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                <p className="text-slate-500 font-medium mb-6 text-sm">
                  {lang === 'en' ? 'Quick and effective digital presence to start attracting customers.' : 'حضور رقمي سريع وفعّال لبدء استقطاب العملاء.'}
                </p>
-               <div className="mb-6">
-                 <div className="flex items-baseline gap-2">
-                   <span className="text-4xl font-black text-blue-600">800</span>
-                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR' : 'ريال'}</span>
-                 </div>
-               </div>
                
                <div className="space-y-6 mb-8 flex-1">
                  {[
@@ -193,12 +211,6 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                <p className="text-slate-500 font-medium mb-6 text-sm">
                  {lang === 'en' ? 'Complete website or store with unlimited content and SEO visibility.' : 'موقع أو متجر متكامل بمحتوى غير محدود وظهور في محركات البحث.'}
                </p>
-               <div className="mb-6">
-                 <div className="flex items-baseline gap-2">
-                   <span className="text-4xl font-black text-blue-600">1,500</span>
-                   <span className="text-lg font-bold text-slate-500">{lang === 'en' ? 'SAR' : 'ريال'}</span>
-                 </div>
-               </div>
                
                <div className="space-y-6 mb-8 flex-1">
                  {[
@@ -276,10 +288,6 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                 <h3 className="text-xl font-black text-slate-900 mb-2">
                   {lang === 'en' ? 'Google Ads Campaign' : 'حملة إعلانية علي جوجل'}
                 </h3>
-                <div className="flex items-baseline gap-2 mt-4 text-slate-600 font-medium">
-                   <span className="text-3xl font-black text-slate-900">500</span>
-                   <span className="text-base">{lang === 'en' ? 'SAR / month' : 'ريال شهريا'}</span>
-                 </div>
               </div>
             </div>
             <ContactButton lang={lang} packageName={lang === 'en' ? 'Google Ads Campaign' : 'حملة إعلانية علي جوجل'} />
@@ -303,15 +311,6 @@ export const PackagesWizard: React.FC<PackagesWizardProps> = ({ lang, onBack, is
                 <h3 className="text-xl font-black text-slate-900 mb-2">
                   {lang === 'en' ? 'Search Engine Optimization' : 'السيو'}
                 </h3>
-                <div className="mt-4">
-                  <span className="text-sm font-bold text-slate-400 block mb-1">
-                     {lang === 'en' ? 'Starts from' : 'يبدأ من'}
-                   </span>
-                  <div className="flex items-baseline gap-2 text-slate-600 font-medium">
-                     <span className="text-3xl font-black text-slate-900">700</span>
-                     <span className="text-base">{lang === 'en' ? 'SAR / month' : 'ريال شهريا'}</span>
-                   </div>
-                </div>
               </div>
             </div>
             <ContactButton lang={lang} packageName={lang === 'en' ? 'SEO Package' : 'باقة السيو'} />
