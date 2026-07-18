@@ -43,101 +43,8 @@ export const CLIENTS: Array<{d: string, l: string, img?: string}> = [
 ];
 
 export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
-  const half = Math.ceil(CLIENTS.length / 2);
-  const row1 = CLIENTS.slice(0, half);
-  const row2 = CLIENTS.slice(half);
-
   return (
-    <section className="py-28 bg-slate-50 border-y border-slate-100 w-full overflow-hidden relative" aria-label="Our Clients">
-       <style>
-         {`
-           .marquee-wrapper { 
-             overflow: hidden; 
-             position: relative; 
-             display: flex;
-             flex-direction: column;
-             gap: 24px;
-             padding: 20px 0; 
-           }
-           .marquee-wrapper::before, .marquee-wrapper::after {
-             content: ''; position: absolute; top: 0; bottom: 0; width: 150px; z-index: 5; pointer-events: none;
-           }
-           .marquee-wrapper::before { left: 0; background: linear-gradient(to right, #f8fafc 20%, transparent); }
-           .marquee-wrapper::after  { right: 0; background: linear-gradient(to left, #f8fafc 20%, transparent); }
-           
-           .marquee-track { 
-             display: flex; 
-             width: max-content; 
-             will-change: transform;
-           }
-           .marquee-track:hover { animation-play-state: paused; }
-           
-           .marquee-track.left {
-             animation: marquee-left 120s linear infinite; 
-           }
-           .marquee-track.right {
-             animation: marquee-right 120s linear infinite; 
-           }
-           
-           @keyframes marquee-left { 
-             0% { transform: translateX(0); } 
-             100% { transform: translateX(-50%); } 
-           }
-           @keyframes marquee-right { 
-             0% { transform: translateX(-50%); } 
-             100% { transform: translateX(0); } 
-           }
-           
-           .logo-card {
-             display: flex; 
-             flex-direction: column; 
-             align-items: center; 
-             justify-content: center;
-             width: 160px; 
-             height: 100px; 
-             background: #fff; 
-             border: 1px solid #e2e8f0;
-             border-radius: 16px; 
-             text-decoration: none; 
-             padding: 16px;
-             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.03);
-             flex-shrink: 0;
-           }
-           .logo-card:hover { 
-             transform: translateY(-8px); 
-             border-color: #3b82f6; 
-             box-shadow: 0 20px 25px -5px rgb(59 130 246 / 0.1), 0 8px 10px -6px rgb(59 130 246 / 0.05); 
-           }
-           .logo-card img { 
-             max-width: 100%; 
-             max-height: 40px; 
-             object-fit: contain; 
-             filter: grayscale(100%) opacity(0.6);
-             transition: all 0.4s ease;
-           }
-           .logo-card:hover img { 
-             transform: scale(1.05);
-             filter: grayscale(0%) opacity(1);
-           }
-           .logo-card span { 
-             font-size: 11px; 
-             font-weight: 700; 
-             color: #475569; 
-             text-align: center; 
-             margin-top: 12px; 
-             white-space: nowrap;
-             overflow: hidden;
-             text-overflow: ellipsis;
-             max-width: 100%;
-             transition: color 0.3s ease;
-           }
-           .logo-card:hover span {
-             color: #1e293b;
-           }
-         `}
-       </style>
-
+    <section className="py-28 bg-slate-50 border-y border-slate-100 w-full relative" aria-label="Our Clients">
        <div className="max-w-7xl mx-auto px-4 mb-20 text-center">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-slate-600 mb-6 shadow-sm">
@@ -157,52 +64,28 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
           </Reveal>
        </div>
        
-       <div className="marquee-wrapper" dir="ltr">
-         {/* Row 1: Left */}
-         <div className="marquee-track left">
-           {[0, 1].map((setIndex) => (
-             <div key={`row1-${setIndex}`} className="flex gap-6 pr-6">
-               {row1.map((site, index) => (
-                 <a 
-                   key={`row1-${setIndex}-${index}`}
-                   href={`https://${site.d}`} 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="logo-card"
-                 >
-                   <img 
-                     src={site.img || `https://www.google.com/s2/favicons?sz=128&domain_url=https://${site.d}`} 
-                     alt={site.l} 
-                     loading="lazy"
-                   />
-                   <span>{site.l}</span>
-                 </a>
-               ))}
-             </div>
-           ))}
-         </div>
-
-         {/* Row 2: Right */}
-         <div className="marquee-track right">
-           {[0, 1].map((setIndex) => (
-             <div key={`row2-${setIndex}`} className="flex gap-6 pr-6">
-               {row2.map((site, index) => (
-                 <a 
-                   key={`row2-${setIndex}-${index}`}
-                   href={`https://${site.d}`} 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="logo-card"
-                 >
-                   <img 
-                     src={site.img || `https://www.google.com/s2/favicons?sz=128&domain_url=https://${site.d}`} 
-                     alt={site.l} 
-                     loading="lazy"
-                   />
-                   <span>{site.l}</span>
-                 </a>
-               ))}
-             </div>
+       <div className="max-w-7xl mx-auto px-4">
+         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6" dir="ltr">
+           {CLIENTS.map((site, index) => (
+             <a 
+               key={index}
+               href={`https://${site.d}`} 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className="flex flex-col items-center justify-center bg-white border border-slate-200 rounded-xl p-4 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_10px_20px_-10px_rgba(59,130,246,0.2)] group"
+             >
+               <div className="h-14 flex items-center justify-center w-full mb-3">
+                 <img 
+                   src={site.img || `https://www.google.com/s2/favicons?sz=128&domain_url=https://${site.d}`} 
+                   alt={site.l} 
+                   loading="lazy"
+                   className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                 />
+               </div>
+               <span className="text-[11px] font-bold text-slate-500 text-center w-full truncate group-hover:text-slate-800 transition-colors duration-300">
+                 {site.l}
+               </span>
+             </a>
            ))}
          </div>
        </div>
