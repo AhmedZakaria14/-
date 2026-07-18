@@ -8,28 +8,28 @@ interface ClientLogosProps {
 }
 
 export const CLIENTS: Array<{d: string, l: string, img?: string}> = [
-  { d: "gorillaegyptkw.com", l: "Gorilla Egypt KW" },
+  { d: "gorillaegyptkw.com", l: "غوريلا مصر" },
   { d: "shbookalmamlaka.com", l: "شبوك المملكة" },
-  { d: "dehanatmaka.com", l: "دهانات ماكا" },
-  { d: "furniturefixuae.com", l: "Furniture Fix UAE" },
+  { d: "dehanatmaka.com", l: "دهانات مكة" },
+  { d: "furniturefixuae.com", l: "تصليح أثاث الإمارات" },
   { d: "moketfloor.com", l: "موكيت فلور" },
-  { d: "awazelriyadh.com", l: "أوازل الرياض" },
-  { d: "nasharhub.com", l: "Nashar Hub" },
-  { d: "finishingsriyadh.com", l: "Finishings Riyadh" },
-  { d: "arkaneliteevents.com", l: "Arkan Elite Events" },
-  { d: "vipeventsriyadh.com", l: "VIP Events Riyadh" },
+  { d: "awazelriyadh.com", l: "عوازل الرياض" },
+  { d: "nasharhub.com", l: "نشار هب" },
+  { d: "finishingsriyadh.com", l: "تشطيبات الرياض" },
+  { d: "arkaneliteevents.com", l: "أركان النخبة للفعاليات" },
+  { d: "vipeventsriyadh.com", l: "فعاليات كبار الشخصيات" },
   { d: "dahanat-riyadh.com", l: "دهانات الرياض" },
-  { d: "napoliovensksa.com", l: "Napolio Vens KSA" },
-  { d: "arjicontracting.com", l: "Arji Contracting" },
-  { d: "zain5grouter.com", l: "زين 5G روتر" },
+  { d: "napoliovensksa.com", l: "أفران نابولي السعودية" },
+  { d: "arjicontracting.com", l: "عرجي للمقاولات" },
+  { d: "zain5grouter.com", l: "راوتر زين 5G" },
   { d: "zain-fiber-riyadh.com", l: "زين فايبر الرياض" },
   { d: "moalemzujajmadina.com", l: "معلم زجاج المدينة" },
   { d: "xn--mgbpl2fh2f5d0a.com", l: "مندوب راوتر زين" },
   { d: "nazafariyadh.com", l: "نظافة الرياض" },
-  { d: "paintriyadh.com", l: "Paint Riyadh" },
-  { d: "valueadvagency.com", l: "Value Adv Agency" },
+  { d: "paintriyadh.com", l: "دهانات الرياض" },
+  { d: "valueadvagency.com", l: "وكالة فاليو الإعلانية" },
   { d: "najjarriyadh.com", l: "نجار الرياض" },
-  { d: "riyadhwave.com", l: "Riyadh Wave" },
+  { d: "riyadhwave.com", l: "أمواج الرياض" },
   { d: "azelhail.com", l: "مؤسسة العازل الحديث", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1783930204/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9_%D8%A7%D9%84%D8%B9%D8%A7%D8%B2%D9%84_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AB-removebg-preview_h2wf85.png" },
   { d: "mandoubsalam5g.com", l: "مندوب سلام 5G", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1780879292/salam_5g_mandoub_logo_uyucr5.png" },
   { d: "zain5gsaudi.com", l: "مندوب زين 5G", img: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1783750769/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5g_%D8%A7%D8%AE%D8%B1_%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB_gcjlva.png" },
@@ -73,10 +73,10 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
            .marquee-track:hover { animation-play-state: paused; }
            
            .marquee-track.left {
-             animation: marquee-left 50s linear infinite; 
+             animation: marquee-left 120s linear infinite; 
            }
            .marquee-track.right {
-             animation: marquee-right 50s linear infinite; 
+             animation: marquee-right 120s linear infinite; 
            }
            
            @keyframes marquee-left { 
@@ -93,13 +93,13 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
              flex-direction: column; 
              align-items: center; 
              justify-content: center;
-             width: 220px; 
-             height: 140px; 
+             width: 160px; 
+             height: 100px; 
              background: #fff; 
              border: 1px solid #e2e8f0;
-             border-radius: 20px; 
+             border-radius: 16px; 
              text-decoration: none; 
-             padding: 24px;
+             padding: 16px;
              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
              box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.03);
              flex-shrink: 0;
@@ -111,7 +111,7 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
            }
            .logo-card img { 
              max-width: 100%; 
-             max-height: 60px; 
+             max-height: 40px; 
              object-fit: contain; 
              filter: grayscale(100%) opacity(0.6);
              transition: all 0.4s ease;
@@ -121,11 +121,11 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
              filter: grayscale(0%) opacity(1);
            }
            .logo-card span { 
-             font-size: 13px; 
+             font-size: 11px; 
              font-weight: 700; 
              color: #475569; 
              text-align: center; 
-             margin-top: 16px; 
+             margin-top: 12px; 
              white-space: nowrap;
              overflow: hidden;
              text-overflow: ellipsis;
