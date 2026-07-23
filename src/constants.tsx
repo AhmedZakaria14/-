@@ -6,7 +6,6 @@ import { Globe, BarChart3, Code, Search, Zap, Target, Users, Mail, Phone, MapPin
 export const NAV_ITEMS: NavItem[] = [
   { key: 'home', label: { en: 'Home', ar: 'الرئيسية' }, href: '/#home' },
   { key: 'services', label: { en: 'Services', ar: 'الخدمات' }, href: '/#services' },
-  { key: 'packages', label: { en: 'Packages', ar: 'الباقات' }, href: '/#packages', desktopOnly: true },
   { key: 'process', label: { en: 'Process', ar: 'آلية العمل' }, href: '/#process' },
   { key: 'blog', label: { en: 'Blog', ar: 'المدونة' }, href: '/blog' },
   { key: 'stats', label: { en: 'Why Us', ar: 'لماذا نحن' }, href: '/#stats' },
@@ -53,45 +52,45 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const FAQS: FAQItem[] = [
   {
-    question: { en: 'What are the website design packages?', ar: 'ما هي باقات تصميم المواقع؟' },
+    question: { en: 'What website design services do you provide?', ar: 'ما هي خدمات تصميم المواقع التي تقدمونها؟' },
     answer: { 
-      en: 'We offer two main packages: The Launch Package, which includes a landing page (Home, Services, Contact), and the Professional Package, which includes a multi-page website or online store.', 
-      ar: 'نقدم باقتين رئيسيتين: باقة الانطلاق وتشمل تصميم صفحة هبوط (رئيسية، خدمات، تواصل)، وباقة الاحتراف وتشمل تصميم موقع أو متجر إلكتروني متعدد الصفحات.' 
+      en: 'We provide custom website development, high-converting landing pages, and multi-page corporate or ecommerce websites tailored for Saudi businesses.', 
+      ar: 'نقدم تصميم وتطوير مواقع إلكترونية مخصصة، صفحات هبوط ذات معدل تحويل عالي، ومتاجر إلكترونية متكاملة تناسب متطلبات السوق السعودي.' 
     }
   },
   {
-    question: { en: 'What is included in the website packages?', ar: 'ماذا تشمل باقات المواقع الإلكترونية؟' },
+    question: { en: 'What is included in website creation?', ar: 'ماذا تشمل خدمة تصميم المواقع الإلكترونية؟' },
     answer: { 
-      en: 'Both packages include hosting and a custom domain with an SSL certificate for one year. The Launch package includes setting up a Google Ads campaign with one month of free management, and the Professional package includes 5 free SEO articles for a month.', 
-      ar: 'تشمل جميع باقاتنا الاستضافة والدومين الخاص مع حماية SSL لمدة سنة. بالإضافة إلى تقديم خدمة إنشاء إعلان ممول على جوجل مع متابعة لمدة شهر مجاناً في باقة الانطلاق، و 5 مقالات SEO لمدة شهر مجاناً في باقة الاحتراف.' 
+      en: 'Our web design services include hosting setup, domain configuration, SSL encryption, mobile responsiveness, fast loading speed, and initial SEO setup.', 
+      ar: 'تشمل خدماتنا ضبط الاستضافة والدومين، حماية SSL، التصميم المتجاوب مع الجوال، سرعة التحميل الفائقة، والتهيئة الأولية لمحركات البحث SEO.' 
     }
   },
   {
-    question: { en: 'Do you offer modifications after the website is launched?', ar: 'هل توفرون تعديلات على الموقع بعد الإطلاق؟' },
+    question: { en: 'Do you offer support and updates after launching?', ar: 'هل توفرون الدعم والتعديلات بعد إطلاق الموقع؟' },
     answer: { 
-      en: 'Yes, the Launch package includes one free landing page revision for one month, while the Professional package includes up to 3 website revisions for a month.', 
-      ar: 'نعم، نوفر تعديلاً واحداً مجانياً لمدة شهر في باقة الانطلاق، ونوفر 3 تعديلات مجانية لمدة شهر في باقة الاحتراف.' 
+      en: 'Yes, we provide ongoing technical support, regular maintenance, and custom revisions to ensure your website operates flawlessly.', 
+      ar: 'نعم، نوفر الدعم الفني المستمر، الصيانة الدورية، والتعديلات اللازمة لضمان عمل موقعك بأعلى كفاءة وبدون أي انقطاع.' 
     }
   },
   {
     question: { en: 'How long does it take to see results from marketing activities?', ar: 'كم من الوقت يستغرق ظهور النتائج من التسويق؟' },
     answer: { 
-      en: 'For Paid Ads, you can see traffic immediately and leads within a few days. SEO and organic growth typically take a few months to build sustainable authority.', 
-      ar: 'بالنسبة للإعلانات الممولة (مثل إعلانات جوجل المشمولة في باقاتنا)، يمكنك رؤية الزيارات والتفاعلات بشكل فوري. أما تحسين محركات البحث والنمو الطبيعي فيستغرق عادة بضعة أشهر.' 
+      en: 'For Paid Ads (Google & Social), you can see traffic and leads within days. SEO and organic authority typically build sustainable top rankings over a few months.', 
+      ar: 'بالنسبة للإعلانات الممولة (إعلانات جوجل ومواقع التواصل)، يمكنك رؤية الزيارات والعملاء المهتمين خلال أيام قليلة. أما تحسين محركات البحث SEO فيستغرق بضعة أشهر لبناء تصدر مستدام.' 
     }
   },
   {
-    question: { en: 'Do you create the ad creatives and manage SEO?', ar: 'هل تقومون بإدارة الحملات الإعلانية ومقالات الـ SEO؟' },
+    question: { en: 'Do you manage ad campaign creation and SEO content?', ar: 'هل تقومون بإدارة الحملات الإعلانية ومحتوى الـ SEO؟' },
     answer: { 
-      en: 'Yes! We handle the ad creation and management, as well as SEO content writing as included in our respective packages.', 
-      ar: 'نعم! نقوم بإنشاء الإعلانات وإدارتها باحترافية، كما نقدم كتابة مقالات متوافقة مع الـ SEO حسب الباقة التي تختارها.' 
+      en: 'Yes! We handle creative ad campaign management across Google, Meta, Snapchat, and TikTok, alongside writing SEO-optimized content to boost your organic reach.', 
+      ar: 'نعم! نقوم بإدارة الحملات الإعلانية المباشرة عبر جوجل، ميتا، سناب شات، وتيك توك، بالإضافة إلى كتابة وإدارة المحتوى المتوافق مع الـ SEO لزيادة وصولك الطبيعي.' 
     }
   },
   {
-    question: { en: 'What is SEO and why is it important?', ar: 'ما هو الـ SEO ولماذا هو مهم؟' },
+    question: { en: 'What is SEO and why is it important for my business?', ar: 'ما هو الـ SEO ولماذا هو مهم لنشاطي التجاري؟' },
     answer: { 
-      en: 'SEO (Search Engine Optimization) is the process of improving your website to increase its visibility in search engines like Google. It helps you attract organic, high-quality traffic, building long-term authority and trust.', 
-      ar: 'الـ SEO (تحسين محركات البحث) هو عملية تحسين موقعك لزيادة ظهوره في محركات البحث مثل جوجل. إنه أمر بالغ الأهمية لأنه يساعدك على جذب زيارات طبيعية وعالية الجودة، مما يبني ثقة طويلة الأمد.' 
+      en: 'SEO (Search Engine Optimization) increases your website visibility on Google. It brings organic, high-intent clients actively searching for your services in Saudi Arabia.', 
+      ar: 'الـ SEO هو تحسين ظهور موقعك في نتائج البحث الأولى بـ جوجل. يساعدك على جذب عملاء مستهدفين يبحثون بالفعل عن خدماتك في المملكة العربية السعودية بدون تكلفة إعلانية مستمرة.' 
     }
   }
 ];

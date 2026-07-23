@@ -1,18 +1,19 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Home, Target, MessageCircle, X, Sparkles, Phone, Layout, Package } from 'lucide-react';
+import { Home, Target, MessageCircle, X, Phone, Layout, BookOpen } from 'lucide-react';
 import { Language } from '../types';
+import { useNavigate } from 'react-router-dom';
 
 interface BottomNavProps {
   lang: Language;
   onPlatformSelect?: (id: string) => void;
-  onPackagesClick?: () => void;
   onWebsiteClick?: () => void;
 }
 
-export const BottomNav: React.FC<BottomNavProps> = ({ lang, onPlatformSelect, onPackagesClick, onWebsiteClick }) => {
+export const BottomNav: React.FC<BottomNavProps> = ({ lang, onPlatformSelect, onWebsiteClick }) => {
   const [showContactMenu, setShowContactMenu] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
   const isRTL = lang === 'ar';
 
   const CONTACT_NUMBER = "+20 10 10742430";
@@ -34,13 +35,13 @@ export const BottomNav: React.FC<BottomNavProps> = ({ lang, onPlatformSelect, on
 
   const rightNavItems = [
     {
-      id: 'packages',
-      label: { en: 'Packages', ar: 'باقات الاعلانات والمواقع' },
-      icon: Package,
+      id: 'blog',
+      label: { en: 'Blog', ar: 'المدونة' },
+      icon: BookOpen,
       isAction: true,
       onClick: () => {
         setShowContactMenu(false);
-        if (onPackagesClick) onPackagesClick();
+        navigate('/blog');
       }
     },
     {

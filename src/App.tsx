@@ -19,7 +19,6 @@ const SEOServices = lazy(() => import('@/components/SEOServices').then(m => ({ d
 const PaidAdsServices = lazy(() => import('@/components/PaidAdsServices').then(m => ({ default: m.PaidAdsServices })));
 const WebDevServices = lazy(() => import('@/components/WebDevServices').then(m => ({ default: m.WebDevServices })));
 const WebsiteOnboarding = lazy(() => import('@/components/WebsiteOnboarding').then(m => ({ default: m.WebsiteOnboarding })));
-const PackagesWizard = lazy(() => import('@/components/PackagesWizard').then(m => ({ default: m.PackagesWizard })));
 import { Blog } from '@/components/Blog';
 import { BlogPost } from '@/components/BlogPost';
 const PlatformDetail = lazy(() => import('@/components/PlatformDetail').then(m => ({ default: m.PlatformDetail })));
@@ -81,17 +80,24 @@ function App() {
         ? 'Nashar Hub is your trusted partner for digital growth. We specialize in SEO, Google Ads, and professional web development in Saudi Arabia to drive high ROI.'
         : 'نشار هب للتسويق الرقمي في السعودية. نقدم استراتيجيات سيو، إعلانات جوجل، وتصميم مواقع ومتاجر احترافية لضمان أعلى عائد استثمار لعملك.';
     } else if (path === '/saudi') {
-      seoConfig.title = lang === 'en' ? 'Digital Marketing in Saudi Arabia | News & Insights | Nashar Hub' : 'التسويق الرقمي في السعودية | خدمات ونتائج ملموسة | نشار هب';
+      seoConfig.title = lang === 'en' ? 'Digital Marketing in Saudi Arabia | Services & Insights | Nashar Hub' : 'التسويق الرقمي في السعودية | خدمات ونتائج ملموسة | نشار هب';
+      seoConfig.description = lang === 'en' ? 'Comprehensive digital marketing solutions across Saudi Arabia including Riyadh, Jeddah, Dammam, Mecca, and Medina.' : 'حلول التسويق الرقمي المتكاملة في المملكة العربية السعودية: الرياض، جدة، الدمام، مكة، والمدينة المنورة.';
     } else if (path === '/seo-services') {
       seoConfig.title = lang === 'en' ? 'SEO Services in Saudi Arabia | Rank #1 on Google | Nashar Hub' : 'خدمات السيو في السعودية | تصدر نتائج بحث جوجل | نشار هب';
+      seoConfig.description = lang === 'en' ? 'Dominate Google search results in KSA with technical, on-page, and off-page SEO optimization services.' : 'تصدر نتائج بحث جوجل في المملكة العربية السعودية مع خدمات تحسين محركات البحث التقنية والمحتوى الداخلي والخارجي.';
     } else if (path === '/paid-ads-services') {
       seoConfig.title = lang === 'en' ? 'Google Ads Agency Saudi Arabia | High ROAS Campaigns | Nashar Hub' : 'وكالة إعلانات جوجل في السعودية | حملات بعائد استثمار مرتفع | نشار هب';
+      seoConfig.description = lang === 'en' ? 'Maximize your marketing ROAS with Google Ads, Meta, Snapchat, and TikTok PPC campaign management in KSA.' : 'حقق أقصى عائد على استثمارك الإعلاني مع خدمات إدارة حملات إعلانات جوجل، ميتا، سناب شات، وتيك توك بالسعودية.';
     } else if (path === '/web-dev-services') {
       seoConfig.title = lang === 'en' ? 'Web Design & Ecommerce Development Saudi Arabia | Nashar Hub' : 'تصميم مواقع وتطوير متاجر إلكترونية في السعودية | نشار هب';
-    } else if (path === '/packages') {
-      seoConfig.title = lang === 'en' ? 'Web & Ads Packages | Nashar Hub' : 'باقات إعلانات جوجل وتصميم المواقع | نشار هب';
+      seoConfig.description = lang === 'en' ? 'Custom web development and ecommerce solutions built for speed, SEO, and maximum conversion rates.' : 'تصميم وتطوير مواقع ومتاجر إلكترونية احترافية مخصصة للنمو والسرعة وأعلى معدل تحويل في السعودية.';
+    } else if (path === '/website-onboarding') {
+      seoConfig.title = lang === 'en' ? 'Build Your Website | Nashar Hub' : 'ابدأ مشروع تصميم موقعك | نشار هب';
+      seoConfig.description = lang === 'en' ? 'Get a custom web design quote and strategy tailored for your business in Saudi Arabia.' : 'احصل على عرض سعر واستراتيجية مخصصة لتصميم وتطوير موقعك الإلكتروني في السعودية.';
+    } else if (path === '/ai' || path === '/llm' || path === '/about-for-ai') {
+      seoConfig.title = lang === 'en' ? 'AI Agent Context & Agency Overview | Nashar Hub' : 'معلومات عن نشار هب لمحركات بحث الذكاء الاصطناعي | نشار هب';
     } else if (path === '/blog') {
-      seoConfig.title = lang === 'en' ? 'Marketing Blog & Strategy | Nashar Hub' : 'مدونة التسويق والاستراتيجية | نشار هب';
+      seoConfig.title = lang === 'en' ? 'Marketing Blog & Digital Strategy | Nashar Hub' : 'مدونة التسويق الرقمي واستراتيجيات النمو | نشار هب';
     }
 
     updateSEO(seoConfig);
@@ -170,10 +176,6 @@ function App() {
     navigate(`/services/${id}`);
   };
 
-  const handlePackagesClick = () => {
-    navigate('/packages');
-  };
-
   const handleWebsiteOnboardingClick = () => {
     navigate('/website-onboarding');
   };
@@ -217,7 +219,6 @@ function App() {
         <LazyBottomNav 
           lang={lang} 
           onPlatformSelect={handlePlatformClick} 
-          onPackagesClick={handlePackagesClick}
           onWebsiteClick={handleWebsiteOnboardingClick}
         />
         <LazyFooter lang={lang} onSEOClick={handleSEOClick} />
@@ -240,7 +241,6 @@ function App() {
           <Route path="/paid-ads-services" element={<PaidAdsServices lang={lang} onBack={handleBackToMain} />} />
           <Route path="/web-dev-services" element={<WebDevServices lang={lang} onBack={handleBackToMain} />} />
           <Route path="/website-onboarding" element={<WebsiteOnboarding lang={lang} onBack={handleBackToMain} />} />
-          <Route path="/packages" element={<PackagesWizard lang={lang} onBack={handleBackToMain} />} />
 
           <Route path="/blog" element={<Blog lang={lang} onBack={handleBackToMain} />} />
           <Route path="/blog/:slug" element={<BlogPost lang={lang} onBack={handleBackToMain} />} />
@@ -253,9 +253,6 @@ function App() {
               <Suspense fallback={null}>
                 <LazyServices lang={lang} onSEOClick={handleSEOClick} onPaidAdsClick={handlePaidAdsClick} onWebDevClick={handleWebDevClick} />
                 <AdsResults lang={lang} />
-                <div id="packages" className="hidden md:block scroll-mt-20">
-                  <PackagesWizard lang={lang} onBack={handleBackToMain} isPage={false} />
-                </div>
                 <LazyProcess lang={lang} />
                 <LazyWhyUs lang={lang} />
                 <LazyClientLogos lang={lang} />
