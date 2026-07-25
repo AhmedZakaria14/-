@@ -48,6 +48,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://nasharhub.com/policy</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Saudi Cities Landing Pages -->
   <url>
     <loc>https://nasharhub.com/saudi/riyadh</loc>

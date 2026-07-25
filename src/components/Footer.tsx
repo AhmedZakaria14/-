@@ -62,9 +62,9 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
                 <li><a href="#stats" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Why Nashar Hub?' : 'لماذا نشار هب؟'}</a></li>
                 <li><a href="#process" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Our Process' : 'كيف نعمل'}</a></li>
                 <li><a href="/blog" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Blog' : 'المدونة'}</a></li>
+                <li><a href="/policy" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block font-medium text-secondary">{lang === 'en' ? 'Work Policy & Transparency' : 'سياسة العمل والشفافية'}</a></li>
                 <li><a href="/ai" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'AI context' : 'معلومات الـ AI'}</a></li>
                 <li><a href="#contact" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Start a Project' : 'ابدأ مشروعك'}</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Careers' : 'الوظائف'}</a></li>
              </ul>
           </div>
 
@@ -124,6 +124,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
             © Nashar Hub Marketing Agency. {UI_TEXT.footerRights[lang]}.
           </p>
           <div className="flex gap-6 text-xs text-slate-500">
+             <a href="/policy" className="hover:text-white transition-colors font-medium text-slate-400">{lang === 'en' ? 'Work Policy & Transparency' : 'سياسة العمل والشفافية'}</a>
              <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Privacy Policy' : 'سياسة الخصوصية'}</a>
              <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Terms of Service' : 'شروط الاستخدام'}</a>
              <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Sitemap' : 'خريطة الموقع'}</a>

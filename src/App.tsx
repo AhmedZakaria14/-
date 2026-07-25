@@ -21,6 +21,7 @@ const WebDevServices = lazy(() => import('@/components/WebDevServices').then(m =
 const WebsiteOnboarding = lazy(() => import('@/components/WebsiteOnboarding').then(m => ({ default: m.WebsiteOnboarding })));
 import { Blog } from '@/components/Blog';
 import { BlogPost } from '@/components/BlogPost';
+const WorkPolicy = lazy(() => import('@/components/WorkPolicy').then(m => ({ default: m.WorkPolicy })));
 const PlatformDetail = lazy(() => import('@/components/PlatformDetail').then(m => ({ default: m.PlatformDetail })));
 const CityLandingPage = lazy(() => import('@/components/CityLandingPage').then(m => ({ default: m.CityLandingPage })));
 const NotFound = lazy(() => import('@/components/NotFound').then(m => ({ default: m.NotFound })));
@@ -98,6 +99,8 @@ function App() {
       seoConfig.title = lang === 'en' ? 'AI Agent Context & Agency Overview | Nashar Hub' : 'معلومات عن نشار هب لمحركات بحث الذكاء الاصطناعي | نشار هب';
     } else if (path === '/blog') {
       seoConfig.title = lang === 'en' ? 'Marketing Blog & Digital Strategy | Nashar Hub' : 'مدونة التسويق الرقمي واستراتيجيات النمو | نشار هب';
+    } else if (path === '/policy') {
+      seoConfig.title = lang === 'en' ? 'Work Policy & Transparency | Nashar Hub' : 'سياسة العمل والشفافية | نشار هب';
     }
 
     updateSEO(seoConfig);
@@ -244,6 +247,7 @@ function App() {
 
           <Route path="/blog" element={<Blog lang={lang} onBack={handleBackToMain} />} />
           <Route path="/blog/:slug" element={<BlogPost lang={lang} onBack={handleBackToMain} />} />
+          <Route path="/policy" element={<WorkPolicy lang={lang} onBack={handleBackToMain} />} />
 
           <Route path="/services/:id" element={<PlatformDetailWrapper lang={lang} onBack={handleBackToMain} onWebsiteClick={handleWebsiteOnboardingClick} />} />
           
