@@ -8,6 +8,7 @@ export const NAV_ITEMS: NavItem[] = [
   { key: 'services', label: { en: 'Services', ar: 'الخدمات' }, href: '/#services' },
   { key: 'process', label: { en: 'Process', ar: 'آلية العمل' }, href: '/#process' },
   { key: 'blog', label: { en: 'Blog', ar: 'المدونة' }, href: '/blog' },
+  { key: 'policy', label: { en: 'Work Policy', ar: 'سياسة العمل والشفافية' }, href: '/policy' },
   { key: 'stats', label: { en: 'Why Us', ar: 'لماذا نحن' }, href: '/#stats' },
 ];
 

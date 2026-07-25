@@ -80,12 +80,6 @@ export const WorkPolicy: React.FC<WorkPolicyProps> = ({ lang, onBack }) => {
                     desc: lang === 'en' 
                       ? 'All websites used for advertising or SEO are the exclusive property of NasharHub.' 
                       : 'جميع المواقع التي يتم الإعلان من خلالها أو أرشفتها (SEO) ملكٌ خالص لنشار هب.'
-                  },
-                  {
-                    title: lang === 'en' ? 'Contracts' : 'العقود',
-                    desc: lang === 'en' 
-                      ? 'Official contracts are signed to regulate the relationship and obligations between both parties.' 
-                      : 'يتم توقيع عقود رسمية تنظّم العلاقة والالتزامات بين الطرفين.'
                   }
                 ].map((item, idx) => (
                   <li key={idx} className="flex gap-4">
