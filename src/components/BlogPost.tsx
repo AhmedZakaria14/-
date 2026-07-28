@@ -22,12 +22,22 @@ const extractRawText = (node: any): string => {
   return '';
 };
 
-const slugifyHeading = (text: string) => {
+const normalizeArabic = (text: string) => {
+  if (!text) return '';
   return text
     .trim()
-    .replace(/[؟?!.,;:!#*`"']/g, '')
-    .replace(/\s+/g, '-')
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/[\u064B-\u0652]/g, '') // Remove tashkeel (tanween, fatha, damma, kasra, sukun, shadda)
+    .replace(/[أإآ]/g, 'ا') // Normalize alef variants
+    .replace(/ى/g, 'ي') // Normalize alef maqsura to ya
+    .replace(/ة/g, 'ه') // Normalize taa marbouta
+    .replace(/[*_~`#]/g, '')
+    .replace(/[؟?!.,;:!'"()\[\]\/]/g, '')
+    .replace(/\s+/g, '-');
+};
+
+const slugifyHeading = (text: string) => {
+  return normalizeArabic(text);
 };
 
 export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
@@ -173,8 +183,9 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
                   h2: ({ children }) => {
                     const raw = extractRawText(children);
                     const id = slugifyHeading(raw);
+                    const norm = normalizeArabic(raw);
                     return (
-                      <h2 id={id} className="text-2xl md:text-3xl font-bold text-slate-900 mt-10 mb-5 pb-2 border-b border-slate-100 scroll-mt-28 flex items-center gap-2">
+                      <h2 id={id} data-heading-raw={raw} data-heading-norm={norm} className="text-2xl md:text-3xl font-bold text-slate-900 mt-10 mb-5 pb-2 border-b border-slate-100 scroll-mt-28 flex items-center gap-2">
                         <span className="w-2 h-7 bg-primary rounded-full inline-block"></span>
                         {children}
                       </h2>
@@ -183,8 +194,9 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
                   h3: ({ children }) => {
                     const raw = extractRawText(children);
                     const id = slugifyHeading(raw);
+                    const norm = normalizeArabic(raw);
                     return (
-                      <h3 id={id} className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-4 scroll-mt-28">
+                      <h3 id={id} data-heading-raw={raw} data-heading-norm={norm} className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-4 scroll-mt-28">
                         {children}
                       </h3>
                     );
@@ -192,8 +204,9 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
                   h4: ({ children }) => {
                     const raw = extractRawText(children);
                     const id = slugifyHeading(raw);
+                    const norm = normalizeArabic(raw);
                     return (
-                      <h4 id={id} className="text-lg md:text-xl font-bold text-slate-800 mt-6 mb-3 scroll-mt-28">
+                      <h4 id={id} data-heading-raw={raw} data-heading-norm={norm} className="text-lg md:text-xl font-bold text-slate-800 mt-6 mb-3 scroll-mt-28">
                         {children}
                       </h4>
                     );
@@ -220,22 +233,63 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
                   ),
                   a: ({ href, children, ...props }) => {
                     const rawHref = href?.trim() || '';
-                    const isHash = rawHref.startsWith('#');
+                    const hashIndex = rawHref.indexOf('#');
+                    const isHashLink = hashIndex !== -1 && (
+                      rawHref.startsWith('#') ||
+                      rawHref.includes(post.slug + '#') ||
+                      rawHref.includes('nasharhub.com/blog/' + post.slug + '#')
+                    );
                     
-                    if (isHash) {
+                    if (isHashLink) {
                       return (
                         <a
                           {...props}
                           href={rawHref}
                           onClick={(e) => {
                             e.preventDefault();
-                            const targetId = rawHref.replace('#', '');
-                            let el = document.getElementById(targetId);
-                            if (!el) {
-                              try {
-                                el = document.getElementById(decodeURIComponent(targetId));
-                              } catch (err) {}
+                            e.stopPropagation();
+
+                            const hashPart = rawHref.substring(hashIndex + 1);
+                            if (!hashPart) return;
+
+                            let decodedHash = hashPart;
+                            try {
+                              decodedHash = decodeURIComponent(hashPart);
+                            } catch (err) {}
+
+                            const targetNorm = normalizeArabic(decodedHash);
+                            const targetSlug = slugifyHeading(decodedHash);
+
+                            // Strategy 1: Direct ID match
+                            let el = document.getElementById(hashPart) || 
+                                     document.getElementById(decodedHash) || 
+                                     document.getElementById(targetSlug) ||
+                                     document.getElementById(targetNorm);
+
+                            // Strategy 2: Search by data-heading-norm attribute
+                            if (!el && targetNorm) {
+                              const headings = document.querySelectorAll('[data-heading-norm]');
+                              headings.forEach((heading) => {
+                                const norm = heading.getAttribute('data-heading-norm');
+                                if (norm && (norm === targetNorm || norm.includes(targetNorm) || targetNorm.includes(norm))) {
+                                  el = heading as HTMLElement;
+                                }
+                              });
                             }
+
+                            // Strategy 3: Text content match on headings
+                            if (!el && targetNorm) {
+                              const allHeadings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+                              for (let i = 0; i < allHeadings.length; i++) {
+                                const h = allHeadings[i] as HTMLElement;
+                                const textNorm = normalizeArabic(h.textContent || '');
+                                if (textNorm && (textNorm === targetNorm || textNorm.includes(targetNorm) || targetNorm.includes(textNorm))) {
+                                  el = h;
+                                  break;
+                                }
+                              }
+                            }
+
                             if (el) {
                               el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }
