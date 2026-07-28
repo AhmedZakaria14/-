@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3 id="من-هو-خبير-إعلانات-جوجل">Test Heading</h3>
+  <script>
+    const encodedId = "%D9%85%D9%86-%D9%87%D9%88-%D8%AE%D8%A8%D9%8A%D8%B1-%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA-%D8%AC%D9%88%D8%AC%D9%84";
+    const decodedId = decodeURIComponent(encodedId);
+    console.log("Found encoded?", !!document.getElementById(encodedId));
+    console.log("Found decoded?", !!document.getElementById(decodedId));
+  </script>
+</body>
+</html>

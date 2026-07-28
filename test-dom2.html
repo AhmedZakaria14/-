@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="root"></div>
+  <script type="module">
+    import React from 'https://esm.sh/react@18';
+    import { createRoot } from 'https://esm.sh/react-dom@18/client';
+    import ReactMarkdown from 'https://esm.sh/react-markdown@9';
+    
+    const extractRawText = (node) => {
+      if (typeof node === 'string') return node;
+      if (typeof node === 'number') return String(node);
+      if (Array.isArray(node)) return node.map(extractRawText).join('');
+      if (node && node.props && node.props.children) return extractRawText(node.props.children);
+      return '';
+    };
+
+    const slugifyHeading = (text) => {
+      return text
+        .trim()
+        .replace(/[؟?!.,;:!#*`"']/g, '')
+        .replace(/\s+/g, '-')
+        .toLowerCase();
+    };
+
+    const markdown = `
+- [من هو خبير إعلانات جوجل؟](#من-هو-خبير-إعلانات-جوجل)
+
+### **من هو خبير إعلانات جوجل؟**
+    `;
+
+    const App = () => {
+      return React.createElement(ReactMarkdown, {
+        components: {
+          h3: ({ children }) => {
+            const raw = extractRawText(children);
+            const id = slugifyHeading(raw);
+            console.log("H3 ID Generated:", id);
+            return React.createElement('h3', { id }, children);
+          },
+          a: ({ href, children }) => {
+            console.log("A HREF:", href);
+            return React.createElement('a', {
+              href,
+              onClick: (e) => {
+                e.preventDefault();
+                const targetId = href.replace('#', '');
+                let el = document.getElementById(targetId);
+                if (!el) {
+                  try {
+                    const decodedId = decodeURIComponent(targetId);
+                    el = document.getElementById(decodedId);
+                  } catch (e) {}
+                }
+                console.log("Clicked! Target element found?", !!el);
+              }
+            }, children);
+          }
+        }
+      }, markdown);
+    };
+
+    const root = createRoot(document.getElementById('root'));
+    root.render(React.createElement(App));
+  </script>
+</body>
+</html>

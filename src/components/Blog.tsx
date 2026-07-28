@@ -69,7 +69,7 @@ export const Blog: React.FC<BlogProps> = ({ lang, onBack }) => {
                   <Link to={`/blog/${post.slug}`} className="block relative h-64 overflow-hidden shrink-0">
                     <img 
                       src={post.image} 
-                      alt={post.title[lang]} 
+                      alt={`${post.title[lang]} - ${post.tags.join(', ')}`} 
                       className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                     />
                 </Link>
