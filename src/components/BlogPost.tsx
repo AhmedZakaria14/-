@@ -127,86 +127,50 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
         </button>
 
         <article className="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
-          {/* Mobile Cover Header (< md) */}
-          <div className="md:hidden p-5 sm:p-6 space-y-4">
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2">
+          {/* Unified Article Header & Cover Image */}
+          <header className="p-6 sm:p-8 md:p-10 lg:p-12 pb-6 border-b border-slate-100">
+            {/* Category Tags */}
+            <div className="flex flex-wrap gap-2 mb-4">
               {post.tags.map(tag => (
-                <span key={tag} className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-semibold">
+                <span key={tag} className="bg-primary/10 text-primary text-xs sm:text-sm px-3.5 py-1.5 rounded-full font-semibold border border-primary/20">
                   {tag}
                 </span>
               ))}
             </div>
 
             {/* Article Title */}
-            <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-snug md:leading-tight tracking-tight mb-6">
               {post.title[lang]}
             </h1>
 
             {/* Article Meta */}
-            <div className="flex flex-wrap items-center text-slate-500 text-xs sm:text-sm gap-4 pb-1">
-              <span className="flex items-center">
-                <Calendar className="w-3.5 h-3.5 ml-1.5 text-primary" />
+            <div className="flex flex-wrap items-center text-slate-500 text-xs sm:text-sm md:text-base gap-6 pb-2">
+              <span className="flex items-center font-medium">
+                <Calendar className="w-4 h-4 ml-2 text-primary shrink-0" />
                 {new Date(post.date).toLocaleDateString(lang === 'ar' ? 'ar-SA' : 'en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
                 })}
               </span>
-              <span className="flex items-center">
-                <User className="w-3.5 h-3.5 ml-1.5 text-primary" />
+              <span className="flex items-center font-medium">
+                <User className="w-4 h-4 ml-2 text-primary shrink-0" />
                 {post.author}
               </span>
             </div>
 
-            {/* Uncropped Featured Image */}
-            <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-sm bg-slate-100 mt-3">
+            {/* Clean Featured Cover Image */}
+            <div className="relative w-full aspect-[16/9] max-h-[500px] rounded-2xl md:rounded-3xl overflow-hidden shadow-md border border-slate-100 bg-slate-100 mt-6 sm:mt-8">
               <img 
                 src={post.image} 
                 alt={`${post.title[lang]} - ${post.tags.join(', ')}`} 
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
               />
             </div>
-          </div>
-
-          {/* Desktop Cover Header (>= md) */}
-          <div className="hidden md:block relative h-[480px] w-full">
-            <img 
-              src={post.image} 
-              alt={`${post.title[lang]} - ${post.tags.join(', ')}`} 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12 text-white">
-              <div className="flex flex-wrap gap-2 mb-4">
-                {post.tags.map(tag => (
-                  <span key={tag} className="bg-primary/90 backdrop-blur-md text-white text-xs md:text-sm px-3.5 py-1 rounded-full font-medium shadow-sm">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
-                {post.title[lang]}
-              </h1>
-              <div className="flex items-center text-white/90 text-sm md:text-base gap-6">
-                <span className="flex items-center">
-                  <Calendar className="w-4 h-4 ml-2" />
-                  {new Date(post.date).toLocaleDateString(lang === 'ar' ? 'ar-SA' : 'en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
-                </span>
-                <span className="flex items-center">
-                  <User className="w-4 h-4 ml-2" />
-                  {post.author}
-                </span>
-              </div>
-            </div>
-          </div>
+          </header>
 
           {/* Excerpt Summary Box */}
-          <div className="mx-6 md:mx-12 my-8 p-6 bg-slate-50 rounded-2xl border-r-4 border-primary shadow-xs">
+          <div className={`mx-6 md:mx-12 my-8 p-6 bg-slate-50 rounded-2xl ${isRTL ? 'border-r-4' : 'border-l-4'} border-primary shadow-xs`}>
             <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium">
               {post.excerpt[lang]}
             </p>
@@ -360,6 +324,17 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
                     <blockquote className="bg-primary/5 border-r-4 border-primary p-6 my-6 rounded-l-xl text-slate-800 italic">
                       {children}
                     </blockquote>
+                  ),
+                  img: ({ src, alt }) => (
+                    <span className="block my-8 my-auto">
+                      <img 
+                        src={src} 
+                        alt={alt || ''} 
+                        className="w-full h-auto max-h-[500px] object-cover object-center rounded-2xl shadow-md border border-slate-100" 
+                        loading="lazy"
+                      />
+                      {alt && <span className="block text-center text-xs md:text-sm text-slate-500 mt-2 font-medium">{alt}</span>}
+                    </span>
                   )
                 }}
               >
