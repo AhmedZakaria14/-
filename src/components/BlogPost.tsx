@@ -127,15 +127,57 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
         </button>
 
         <article className="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
-          {/* Cover Header */}
-          <div className="relative h-[360px] md:h-[480px] w-full">
+          {/* Mobile Cover Header (< md) */}
+          <div className="md:hidden p-5 sm:p-6 space-y-4">
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2">
+              {post.tags.map(tag => (
+                <span key={tag} className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-semibold">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Article Title */}
+            <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight">
+              {post.title[lang]}
+            </h1>
+
+            {/* Article Meta */}
+            <div className="flex flex-wrap items-center text-slate-500 text-xs sm:text-sm gap-4 pb-1">
+              <span className="flex items-center">
+                <Calendar className="w-3.5 h-3.5 ml-1.5 text-primary" />
+                {new Date(post.date).toLocaleDateString(lang === 'ar' ? 'ar-SA' : 'en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </span>
+              <span className="flex items-center">
+                <User className="w-3.5 h-3.5 ml-1.5 text-primary" />
+                {post.author}
+              </span>
+            </div>
+
+            {/* Uncropped Featured Image */}
+            <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-sm bg-slate-100 mt-3">
+              <img 
+                src={post.image} 
+                alt={`${post.title[lang]} - ${post.tags.join(', ')}`} 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+
+          {/* Desktop Cover Header (>= md) */}
+          <div className="hidden md:block relative h-[480px] w-full">
             <img 
               src={post.image} 
               alt={`${post.title[lang]} - ${post.tags.join(', ')}`} 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-white">
+            <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12 text-white">
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.tags.map(tag => (
                   <span key={tag} className="bg-primary/90 backdrop-blur-md text-white text-xs md:text-sm px-3.5 py-1 rounded-full font-medium shadow-sm">
