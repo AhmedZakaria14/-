@@ -56,23 +56,9 @@ export interface BlogPost {
     en: string; // Markdown content
     ar: string; // Markdown content
   };
-  author: {
-    name: string;
-    role: {
-      en: string;
-      ar: string;
-    };
-    image: string;
-  };
+  author: string;
   date: string;
-  readTime: {
-    en: string;
-    ar: string;
-  };
-  category: {
-    en: string;
-    ar: string;
-  };
+  tags: string[];
   image: string;
 }
 
