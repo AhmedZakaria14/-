@@ -1,4 +1,6 @@
 import express from "express";
+import { blogPosts } from "./src/data/blog";
+
 import path from "path";
 import { existsSync } from "fs";
 import compression from "compression";
@@ -34,6 +36,61 @@ async function startServer() {
   });
 
   // API routes FIRST
+  // Sitemap generation
+  app.get("/sitemap.xml", (req, res) => {
+    const baseUrl = "https://nasharhub.com";
+    const staticUrls = [
+      "/",
+      "/seo-services",
+      "/paid-ads-services",
+      "/web-dev-services",
+      "/saudi",
+      "/blog",
+      "/website-onboarding",
+      "/ai",
+      "/policy",
+      "/saudi/riyadh",
+      "/saudi/jeddah",
+      "/saudi/dammam",
+      "/saudi/mecca",
+      "/saudi/medina",
+      "/services/google",
+      "/services/meta",
+      "/services/snapchat",
+      "/services/tiktok"
+    ];
+
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+    // Add static URLs
+    staticUrls.forEach(url => {
+      xml += `
+  <url>
+    <loc>${baseUrl}${url}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>${url === '/' ? '1.0' : '0.8'}</priority>
+  </url>`;
+    });
+
+    // Add blog posts
+    blogPosts.forEach(post => {
+      xml += `
+  <url>
+    <loc>${baseUrl}/blog/${post.slug}</loc>
+    <lastmod>${post.date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`;
+    });
+
+    xml += `
+</urlset>`;
+
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+  });
+
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok" });
   });

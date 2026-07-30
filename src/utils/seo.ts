@@ -50,10 +50,21 @@ export const updateSEO = ({ title, description, keywords, url, image, structured
   updateTwitterTag('twitter:title', title);
   updateTwitterTag('twitter:description', description);
 
+
   if (url) {
     updateOgTag('og:url', url);
     updateTwitterTag('twitter:url', url);
+    
+    // Add canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', url);
   }
+
   
   if (image) {
     updateOgTag('og:image', image);
