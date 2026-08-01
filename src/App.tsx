@@ -18,6 +18,7 @@ const SaudiLandingPage = lazy(() => import('@/components/SaudiLandingPage').then
 const SEOServices = lazy(() => import('@/components/SEOServices').then(m => ({ default: m.SEOServices })));
 const PaidAdsServices = lazy(() => import('@/components/PaidAdsServices').then(m => ({ default: m.PaidAdsServices })));
 const WebDevServices = lazy(() => import('@/components/WebDevServices').then(m => ({ default: m.WebDevServices })));
+const SnapchatWebDev = lazy(() => import('@/components/SnapchatWebDev').then(m => ({ default: m.SnapchatWebDev })));
 const WebsiteOnboarding = lazy(() => import('@/components/WebsiteOnboarding').then(m => ({ default: m.WebsiteOnboarding })));
 import { Blog } from '@/components/Blog';
 import { BlogPost } from '@/components/BlogPost';
@@ -243,6 +244,7 @@ function App() {
           <Route path="/seo-services" element={<SEOServices lang={lang} onBack={handleBackToMain} />} />
           <Route path="/paid-ads-services" element={<PaidAdsServices lang={lang} onBack={handleBackToMain} />} />
           <Route path="/web-dev-services" element={<WebDevServices lang={lang} onBack={handleBackToMain} />} />
+          <Route path="/lp/web-design" element={<SnapchatWebDev lang={lang} />} />
           <Route path="/website-onboarding" element={<WebsiteOnboarding lang={lang} onBack={handleBackToMain} />} />
 
           <Route path="/blog" element={<Blog lang={lang} onBack={handleBackToMain} />} />
