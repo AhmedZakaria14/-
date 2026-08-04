@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Language } from '../types';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
@@ -11,11 +11,33 @@ interface SnapchatWebDevProps {
 }
 
 export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
+
+  const slideImages = [
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845984/WhatsApp_Image_2026-08-04_at_3.17.16_PM_1_dny4la.jpg",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845984/WhatsApp_Image_2026-08-04_at_3.17.16_PM_zt43w0.jpg",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845985/WhatsApp_Image_2026-08-04_at_3.17.32_PM_1_ssoh8m.jpg",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845985/WhatsApp_Image_2026-08-04_at_3.17.33_PM_1_frdzkk.jpg",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845986/WhatsApp_Image_2026-08-04_at_3.17.32_PM_pjrxip.jpg",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845988/WhatsApp_Image_2026-08-04_at_3.17.32_PM_2_xap0d1.jpg",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845983/WhatsApp_Image_2026-08-04_at_3.17.33_PM_awtws7.jpg",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845983/WhatsApp_Image_2026-08-04_at_3.17.16_PM_2_g4g8fr.jpg",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845983/WhatsApp_Image_2026-08-04_at_3.17.32_PM_3_fsqymm.jpg"
+  ];
+
   const isRTL = lang === 'ar';
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const fontClass = isRTL ? 'font-arabic' : 'font-sans';
   const WHATSAPP_LINK = "https://wa.me/966505244583";
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -166,33 +188,34 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
             className="relative w-full max-w-2xl mx-auto mt-16"
           >
             <div className="relative mx-auto w-[280px] md:w-[320px] aspect-[9/19] bg-white rounded-[40px] border-[8px] border-slate-100 shadow-2xl overflow-hidden ring-1 ring-slate-900/5">
-              <div className="absolute inset-0 bg-slate-50 flex flex-col p-5 pt-12">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-100 rounded-b-2xl" />
+              <div className="absolute inset-0 bg-slate-900 flex flex-col">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-100 rounded-b-2xl z-20" />
                 
-                <div className="flex justify-between items-center mb-8">
-                  <div className="w-24 h-6 bg-slate-200 rounded-full" />
-                  <div className="w-8 h-8 bg-slate-200 rounded-full" />
+                <div className="relative w-full h-full bg-slate-900">
+                  {slideImages.map((src, index) => (
+                    <img 
+                      key={src}
+                      src={src} 
+                      className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${currentSlide === index ? 'opacity-100' : 'opacity-0'}`} 
+                      alt="Website Mockup" 
+                    />
+                  ))}
                 </div>
                 
-                <div className="w-3/4 h-8 bg-slate-300 rounded-lg mb-4" />
-                <div className="w-full h-4 bg-slate-200 rounded-lg mb-2" />
-                <div className="w-5/6 h-4 bg-slate-200 rounded-lg mb-8" />
-                
-                <div className="w-full aspect-square bg-slate-100 rounded-2xl mb-8 relative overflow-hidden border border-slate-200">
-                  <motion.div 
-                    animate={{ x: ["-100%", "100%"] }}
-                    transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent w-1/2 opacity-60"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center text-slate-300">
-                    <Palette className="w-12 h-12" />
-                  </div>
-                </div>
-                
-                <div className="mt-auto w-full h-14 bg-blue-600 rounded-xl flex items-center justify-center text-white text-sm font-bold">
-                  {lang === 'ar' ? 'تواصل معنا' : 'Contact Us'}
-                </div>
+                {/* Gradient overlay at bottom for smooth look if needed, or just let image fill */}
               </div>
+            </div>
+
+            <div className="mt-8 flex justify-center relative z-20">
+              <a 
+                href={WHATSAPP_LINK} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-slate-900 text-white hover:bg-slate-800 px-8 py-4 rounded-full font-bold text-lg transition-transform transform hover:scale-105 shadow-xl flex items-center justify-center gap-3"
+              >
+                <MessageCircle className="w-6 h-6 text-[#25D366]" />
+                {lang === 'ar' ? 'احجز موقعك الآن' : 'Book Your Site Now'}
+              </a>
             </div>
             
             <motion.div 
