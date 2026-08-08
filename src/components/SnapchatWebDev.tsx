@@ -13,8 +13,6 @@ interface SnapchatWebDevProps {
 export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
 
   const slideImages = [
-    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845984/WhatsApp_Image_2026-08-04_at_3.17.16_PM_1_dny4la.jpg",
-    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845984/WhatsApp_Image_2026-08-04_at_3.17.16_PM_zt43w0.jpg",
     "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845985/WhatsApp_Image_2026-08-04_at_3.17.32_PM_1_ssoh8m.jpg",
     "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845985/WhatsApp_Image_2026-08-04_at_3.17.33_PM_1_frdzkk.jpg",
     "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845986/WhatsApp_Image_2026-08-04_at_3.17.32_PM_pjrxip.jpg",
