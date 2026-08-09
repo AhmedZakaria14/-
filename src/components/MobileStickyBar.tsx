@@ -8,7 +8,7 @@ interface MobileStickyBarProps {
 }
 
 export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ lang }) => {
-  const CONTACT_NUMBER = "+20 10 10742430";
+  const CONTACT_NUMBER = "+20 15 51184914";
   const whatsappMsg = encodeURIComponent("مرحباً، مهتم بخدماتكم.");
 
   return (

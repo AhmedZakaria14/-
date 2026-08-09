@@ -18,7 +18,7 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
   const [wantsAds, setWantsAds] = useState<boolean | null>(null);
 
   const isRTL = lang === 'ar';
-  const CONTACT_NUMBER = "+20 10 10742430";
+  const CONTACT_NUMBER = "+20 15 51184914";
   const HeadingTag = isPage ? 'h1' : 'h2';
 
   useEffect(() => {

@@ -51,7 +51,7 @@ export const Contact: React.FC<ContactProps> = ({ lang, isPage = false }) => {
                 </a>
                 
                 <a 
-                  href="tel:+20 10 10742430" 
+                  href="tel:+20 15 51184914" 
                   className="flex items-start gap-4 md:gap-6 group hover:bg-slate-50 p-4 rounded-2xl transition-all focus:outline-none focus:ring-2 focus:ring-primary"
                 >
                   <div className="p-3 md:p-4 bg-primary/10 rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-colors" aria-hidden="true">
@@ -59,7 +59,7 @@ export const Contact: React.FC<ContactProps> = ({ lang, isPage = false }) => {
                   </div>
                   <div>
                     <h3 className="text-slate-900 font-bold text-lg mb-1">{lang === 'en' ? 'Call Us' : 'اتصل بنا'}</h3>
-                    <p className="text-slate-500 text-sm md:text-base" dir="ltr">+20 10 10742430</p>
+                    <p className="text-slate-500 text-sm md:text-base" dir="ltr">+20 15 51184914</p>
                   </div>
                 </a>
 

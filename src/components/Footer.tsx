@@ -81,7 +81,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
                 </li>
                 <li className="flex items-center gap-3 text-slate-400 text-sm">
                    <Phone size={18} className="text-secondary shrink-0" />
-                   <span dir="ltr">+20 10 10742430</span>
+                   <span dir="ltr">+20 15 51184914</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-400 text-sm">
                    <Mail size={18} className="text-secondary shrink-0" />

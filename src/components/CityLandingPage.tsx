@@ -46,7 +46,7 @@ export const CityLandingPage: React.FC<CityLandingPageProps> = ({ lang, onBack }
         "url": `https://nasharhub.com/saudi/${city}`,
         "logo": "https://nasharhub.com/logo.png",
         "description": data.seoDesc.en,
-        "telephone": "+201010742430",
+        "telephone": "+201551184914",
         "email": "Info@nasharhub.com",
         "address": {
           "@type": "PostalAddress",
@@ -83,7 +83,7 @@ export const CityLandingPage: React.FC<CityLandingPageProps> = ({ lang, onBack }
       ? `مرحباً، أود الاستفسار عن خدمات التسويق في ${data.name.ar}`
       : `Hello, I would like to inquire about marketing services in ${data.name.en}`
   );
-  const CONTACT_NUMBER = "+20 10 10742430"; // Main contact
+  const CONTACT_NUMBER = "+20 15 51184914"; // Main contact
 
   return (
     <div className={`min-h-screen bg-slate-50 ${isRTL ? 'font-arabic' : 'font-sans'}`} dir={isRTL ? 'rtl' : 'ltr'}>

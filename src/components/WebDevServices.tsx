@@ -239,7 +239,7 @@ export const WebDevServices: React.FC<WebDevServicesProps> = ({ lang, onBack, is
               : 'هل أنت مستعد لنقل عملك إلى المستوى التالي؟ اتصل بنا اليوم للحصول على استشارة مجانية ولنبني شيئاً مذهلاً معاً.'}
           </p>
         <a 
-          href={`https://wa.me/201010742430?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in Web Development services." : "مرحباً، أنا مهتم بخدمات تصميم وتطوير المواقع.")}`}
+          href={`https://wa.me/201551184914?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in Web Development services." : "مرحباً، أنا مهتم بخدمات تصميم وتطوير المواقع.")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:-translate-y-1"

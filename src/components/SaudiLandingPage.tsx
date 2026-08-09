@@ -27,7 +27,7 @@ export const SaudiLandingPage: React.FC = () => {
     });
   }, []);
 
-  const CONTACT_NUMBER = "+20 10 10742430";
+  const CONTACT_NUMBER = "+20 15 51184914";
   const whatsappMsg = encodeURIComponent("مرحباً، مهتم بخدمات تصميم المواقع والمتاجر الإلكترونية في السعودية.");
   
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -48,7 +48,7 @@ export const SaudiLandingPage: React.FC = () => {
             "image": "https://nasharhub.com/og-image.jpg",
             "description": "نشار هب هي أفضل شركة تسويق إلكتروني وتصميم مواقع بالسعودية. نقدم خدمات إعلانات جوجل، سيو، وبرمجة المتاجر في الرياض وكافة أنحاء المملكة.",
             "url": "https://nasharhub.com",
-            "telephone": "+201010742430",
+            "telephone": "+201551184914",
             "priceRange": "$$",
             "address": {
               "@type": "PostalAddress",

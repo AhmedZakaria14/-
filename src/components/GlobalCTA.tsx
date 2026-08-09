@@ -9,7 +9,7 @@ interface GlobalCTAProps {
 
 export const GlobalCTA: React.FC<GlobalCTAProps> = ({ lang }) => {
   const isRTL = lang === 'ar';
-  const whatsappNumber = "201010742430";
+  const whatsappNumber = "201551184914";
   const whatsappMsg = encodeURIComponent(
     lang === 'en' 
       ? "Hello, I'm interested in your digital marketing and web development services." 

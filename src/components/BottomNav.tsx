@@ -16,7 +16,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ lang, onPlatformSelect, on
   const navigate = useNavigate();
   const isRTL = lang === 'ar';
 
-  const CONTACT_NUMBER = "+20 10 10742430";
+  const CONTACT_NUMBER = "+20 15 51184914";
 
   const leftNavItems = [
     {
