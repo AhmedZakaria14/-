@@ -113,7 +113,7 @@ const ServiceCard: React.FC<{ service: Service; lang: Language; index: number; o
               ) : null}
 
               <a 
-                href={`https://wa.me/201551184914?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in " + service.title.en : "مرحباً، أنا مهتم بخدمة " + service.title.ar)}`}
+                href={`https://wa.me/201010742430?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in " + service.title.en : "مرحباً، أنا مهتم بخدمة " + service.title.ar)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}

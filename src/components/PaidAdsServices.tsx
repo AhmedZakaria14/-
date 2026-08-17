@@ -295,7 +295,7 @@ export const PaidAdsServices: React.FC<PaidAdsServicesProps> = ({ lang, onBack, 
               : 'توقف عن التخمين وابدأ في النمو. اتصل بنا اليوم لإجراء تدقيق مجاني لحسابك الإعلاني ولنبني استراتيجية إعلانية عالية الأداء لعلامتك التجارية.'}
           </p>
         <a 
-          href={`https://wa.me/201551184914?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in your Paid Ads Services." : "مرحباً، أنا مهتم بخدمات الإعلانات الممولة.")}`}
+          href={`https://wa.me/201010742430?text=${encodeURIComponent(lang === 'en' ? "Hi, I'm interested in your Paid Ads Services." : "مرحباً، أنا مهتم بخدمات الإعلانات الممولة.")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-purple-600 text-white rounded-full font-bold text-lg hover:bg-purple-700 transition-all shadow-lg shadow-purple-600/30 hover:-translate-y-1"

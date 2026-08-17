@@ -25,7 +25,7 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const fontClass = isRTL ? 'font-arabic' : 'font-sans';
-  const WHATSAPP_LINK = "https://wa.me/201551184914";
+  const WHATSAPP_LINK = "https://wa.me/201010742430";
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {

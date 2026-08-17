@@ -18,7 +18,7 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
   const [wantsAds, setWantsAds] = useState<boolean | null>(null);
 
   const isRTL = lang === 'ar';
-  const CONTACT_NUMBER = "+20 15 51184914";
+  const CONTACT_NUMBER = "01010742430";
   const HeadingTag = isPage ? 'h1' : 'h2';
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
       ? `Hi, I'd like to order a website.\n\nBusiness Field: ${businessField}\nInterested in Ads: ${wantsAds ? 'Yes' : 'No'}`
       : `مرحباً، أود طلب موقع إلكتروني.\n\nمجال العمل: ${businessField}\nمهتم بالإعلانات: ${wantsAds ? 'نعم' : 'لا'}`;
     
-    const url = `https://wa.me/${CONTACT_NUMBER.replace(/\s/g, '')}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/201010742430?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
 

@@ -176,7 +176,7 @@ export const PlatformDetail: React.FC<PlatformDetailProps> = ({ platformId, lang
       <footer className="fixed bottom-6 left-4 right-4 z-40">
         <div className="absolute inset-4 bg-white/50 blur-xl"></div>
         <a 
-          href={`https://wa.me/201551184914?text=${encodeURIComponent(lang === 'en' ? `Hi, I want to start ads on ${data.name}` : `مرحباً، أريد بدء إعلانات على ${data.name}`)}`}
+          href={`https://wa.me/201010742430?text=${encodeURIComponent(lang === 'en' ? `Hi, I want to start ads on ${data.name}` : `مرحباً، أريد بدء إعلانات على ${data.name}`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className={`relative block w-full py-4 rounded-2xl bg-gradient-to-r ${data.gradient} text-white font-black text-lg text-center shadow-2xl shadow-slate-900/20 active:scale-95 transition-transform overflow-hidden group`}

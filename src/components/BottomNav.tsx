@@ -16,7 +16,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ lang, onPlatformSelect, on
   const navigate = useNavigate();
   const isRTL = lang === 'ar';
 
-  const CONTACT_NUMBER = "+20 15 51184914";
+  const CONTACT_NUMBER = "01010742430";
 
   const leftNavItems = [
     {
@@ -125,7 +125,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ lang, onPlatformSelect, on
           <div className="grid grid-cols-1 gap-3">
              {/* WhatsApp Button */}
              <a
-               href={`https://wa.me/${CONTACT_NUMBER.replace(/[\s+]/g, '')}`}
+               href={`https://wa.me/201010742430`}
                target="_blank"
                rel="noopener noreferrer"
                className="flex items-center gap-4 p-4 rounded-2xl bg-[#25D366] text-white hover:bg-[#20bd5a] transition-all shadow-lg shadow-[#25D366]/20 group active:scale-95"

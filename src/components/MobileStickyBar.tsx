@@ -8,7 +8,7 @@ interface MobileStickyBarProps {
 }
 
 export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ lang }) => {
-  const CONTACT_NUMBER = "+20 15 51184914";
+  const CONTACT_NUMBER = "01010742430";
   const whatsappMsg = encodeURIComponent("مرحباً، مهتم بخدماتكم.");
 
   return (
@@ -23,7 +23,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ lang }) => {
           <span>{lang === 'en' ? 'Call Now' : 'اتصل الآن'}</span>
         </a>
         <a 
-          href={`https://wa.me/${CONTACT_NUMBER.replace(/[\s+]/g, '')}?text=${whatsappMsg}`}
+          href={`https://wa.me/201010742430?text=${whatsappMsg}`}
           onClick={() => Analytics.trackLead('whatsapp', 'mobile_sticky_bar')}
           target="_blank"
           rel="noopener noreferrer"

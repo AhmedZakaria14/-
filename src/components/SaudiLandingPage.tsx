@@ -27,13 +27,13 @@ export const SaudiLandingPage: React.FC = () => {
     });
   }, []);
 
-  const CONTACT_NUMBER = "+20 15 51184914";
+  const CONTACT_NUMBER = "01010742430";
   const whatsappMsg = encodeURIComponent("مرحباً، مهتم بخدمات تصميم المواقع والمتاجر الإلكترونية في السعودية.");
   
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = encodeURIComponent(`طلب جديد من الموقع:\nالاسم: ${formData.name}\nرقم الجوال: ${formData.phone}\nالخدمة المطلوبة: ${formData.service}`);
-    window.open(`https://wa.me/${CONTACT_NUMBER.replace(/\s/g, '')}?text=${msg}`, '_blank');
+    window.open(`https://wa.me/201010742430?text=${msg}`, '_blank');
   };
 
   return (
@@ -48,7 +48,7 @@ export const SaudiLandingPage: React.FC = () => {
             "image": "https://nasharhub.com/og-image.jpg",
             "description": "نشار هب هي أفضل شركة تسويق إلكتروني وتصميم مواقع بالسعودية. نقدم خدمات إعلانات جوجل، سيو، وبرمجة المتاجر في الرياض وكافة أنحاء المملكة.",
             "url": "https://nasharhub.com",
-            "telephone": "+201551184914",
+            "telephone": "+201010742430",
             "priceRange": "$$",
             "address": {
               "@type": "PostalAddress",
@@ -100,7 +100,7 @@ export const SaudiLandingPage: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up opacity-0 delay-300">
               <a 
-                href={`https://wa.me/${CONTACT_NUMBER.replace(/[\s+]/g, '')}?text=${whatsappMsg}`}
+                href={`https://wa.me/201010742430?text=${whatsappMsg}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-2xl font-bold text-lg transition-all shadow-xl shadow-green-500/20 flex items-center justify-center gap-2 group"
@@ -326,7 +326,7 @@ export const SaudiLandingPage: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
-              href={`https://wa.me/${CONTACT_NUMBER.replace(/[\s+]/g, '')}?text=${whatsappMsg}`}
+              href={`https://wa.me/201010742430?text=${whatsappMsg}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-2xl font-bold text-xl transition-all shadow-xl shadow-green-500/20 hover:-translate-y-1 group"
