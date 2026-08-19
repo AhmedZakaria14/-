@@ -73,43 +73,55 @@ const ServiceCard: React.FC<{ service: Service; lang: Language; index: number; o
             </div>
 
             <div className="w-full mt-auto flex flex-col gap-2">
-              {service.id === 'seo' && onSEOClick ? (
-                <button 
+              {service.id === 'seo' ? (
+                <a 
+                  href="/seo-services"
                   onClick={(e) => {
-                    e.stopPropagation();
-                    onSEOClick();
+                    if (onSEOClick) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      onSEOClick();
+                    }
                   }}
                   className="w-full py-3 bg-white text-primary rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors shadow-lg shadow-black/10"
                 >
                   {lang === 'en' ? 'View SEO Strategies' : 'عرض استراتيجيات السيو'}
                   <ArrowRight size={18} className={isRTL ? 'rotate-180' : ''} />
-                </button>
+                </a>
               ) : null}
 
-              {service.id === 'paid-ads' && onPaidAdsClick ? (
-                <button 
+              {service.id === 'paid-ads' ? (
+                <a 
+                  href="/paid-ads-services"
                   onClick={(e) => {
-                    e.stopPropagation();
-                    onPaidAdsClick();
+                    if (onPaidAdsClick) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      onPaidAdsClick();
+                    }
                   }}
                   className="w-full py-3 bg-white text-primary rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors shadow-lg shadow-black/10"
                 >
                   {lang === 'en' ? 'View Ad Strategies' : 'عرض استراتيجيات الإعلانات'}
                   <ArrowRight size={18} className={isRTL ? 'rotate-180' : ''} />
-                </button>
+                </a>
               ) : null}
 
-              {service.id === 'web-dev' && onWebDevClick ? (
-                <button 
+              {service.id === 'web-dev' ? (
+                <a 
+                  href="/web-dev-services"
                   onClick={(e) => {
-                    e.stopPropagation();
-                    onWebDevClick();
+                    if (onWebDevClick) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      onWebDevClick();
+                    }
                   }}
                   className="w-full py-3 bg-white text-primary rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors shadow-lg shadow-black/10"
                 >
                   {lang === 'en' ? 'View Web Solutions' : 'عرض حلول الويب'}
                   <ArrowRight size={18} className={isRTL ? 'rotate-180' : ''} />
-                </button>
+                </a>
               ) : null}
 
               <a 
