@@ -59,6 +59,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></span>
              </h4>
              <ul className="space-y-3">
+                <li><a href="https://portfolio.nasharhub.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Portfolio' : 'سابقة الأعمال'}</a></li>
                 <li><a href="#stats" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Why Nashar Hub?' : 'لماذا نشار هب؟'}</a></li>
                 <li><a href="#process" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Our Process' : 'كيف نعمل'}</a></li>
                 <li><a href="/blog" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Blog' : 'المدونة'}</a></li>

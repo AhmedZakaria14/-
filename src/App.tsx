@@ -10,7 +10,6 @@ import { Language } from './types';
 const LazyGlobalCTA = lazy(() => import('@/components/GlobalCTA').then(m => ({ default: m.GlobalCTA })));
 const LazyFooter = lazy(() => import('@/components/Footer').then(m => ({ default: m.Footer })));
 const LazyBottomNav = lazy(() => import('@/components/BottomNav').then(m => ({ default: m.BottomNav })));
-const AdsResults = lazy(() => import('@/components/AdsResults').then(m => ({ default: m.AdsResults })));
 import { updateSEO } from '@/utils/seo';
 
 // Lazy load other pages
@@ -32,7 +31,6 @@ const AIPage = lazy(() => import('@/components/AIPage').then(m => ({ default: m.
 const LazyServices = lazy(() => import('@/components/Services').then(m => ({ default: m.Services })));
 const LazyProcess = lazy(() => import('@/components/Process').then(m => ({ default: m.Process })));
 const LazyWhyUs = lazy(() => import('@/components/WhyUs').then(m => ({ default: m.WhyUs })));
-const LazyClientLogos = lazy(() => import('@/components/ClientLogos').then(m => ({ default: m.ClientLogos })));
 const LazyFAQ = lazy(() => import('@/components/FAQ').then(m => ({ default: m.FAQ })));
 const LazyContact = lazy(() => import('@/components/Contact').then(m => ({ default: m.Contact })));
 
@@ -258,10 +256,8 @@ function App() {
               <Hero lang={lang} />
               <Suspense fallback={null}>
                 <LazyServices lang={lang} onSEOClick={handleSEOClick} onPaidAdsClick={handlePaidAdsClick} onWebDevClick={handleWebDevClick} />
-                <AdsResults lang={lang} />
                 <LazyProcess lang={lang} />
                 <LazyWhyUs lang={lang} />
-                <LazyClientLogos lang={lang} />
                 <LazyFAQ lang={lang} />
                 <LazyContact lang={lang} />
               </Suspense>

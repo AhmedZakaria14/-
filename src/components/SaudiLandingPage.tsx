@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CheckCircle, Monitor, Smartphone, Zap, ArrowLeft, MessageCircle, Send, Users, Target, Award } from 'lucide-react';
 import { Logo } from './Logo';
-import { CLIENTS } from './ClientLogos';
-const LazyClientLogos = React.lazy(() => import('./ClientLogos').then(m => ({ default: m.ClientLogos })));
 import { updateSEO } from '../utils/seo';
 import { Breadcrumb } from './Breadcrumb';
 
@@ -201,9 +199,6 @@ export const SaudiLandingPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Success Partners Section */}
-      <LazyClientLogos lang="ar" />
 
       {/* Features Section (Why Us) */}
       <section className="py-24 bg-slate-50">

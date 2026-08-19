@@ -40,6 +40,11 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('http://') || href.startsWith('https://')) {
+      // External link: allow default navigation
+      setIsOpen(false);
+      return;
+    }
     if (href.startsWith('/')) {
       e.preventDefault();
       navigate(href);
@@ -85,16 +90,21 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-2 xl:gap-5">
             <div className="flex items-center space-x-1 xl:space-x-2 rtl:space-x-reverse">
-              {NAV_ITEMS.map((item) => (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-slate-700 hover:text-primary hover:bg-slate-50 focus:text-primary focus:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all px-3 xl:px-4 py-2 rounded-full text-sm font-bold xl:text-base whitespace-nowrap"
-                >
-                  {item.label[lang]}
-                </a>
-              ))}
+              {NAV_ITEMS.map((item) => {
+                const isExternal = item.href.startsWith('http://') || item.href.startsWith('https://');
+                return (
+                  <a
+                    key={item.key}
+                    href={item.href}
+                    target={isExternal ? '_blank' : undefined}
+                    rel={isExternal ? 'noopener noreferrer' : undefined}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="text-slate-700 hover:text-primary hover:bg-slate-50 focus:text-primary focus:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all px-3 xl:px-4 py-2 rounded-full text-sm font-bold xl:text-base whitespace-nowrap"
+                  >
+                    {item.label[lang]}
+                  </a>
+                );
+              })}
             </div>
             
             <div className="h-6 w-px bg-slate-200 mx-1 xl:mx-2" aria-hidden="true"></div>
@@ -165,16 +175,21 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
         aria-hidden={!isOpen}
       >
         <div className="px-4 pt-4 pb-6 space-y-2">
-            {NAV_ITEMS.filter(item => !item.desktopOnly).map((item) => (
-              <a
-                key={item.key}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="text-slate-600 hover:text-primary hover:bg-slate-50 focus:text-primary focus:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 block px-4 py-3 rounded-lg text-lg font-medium transition-colors"
-              >
-                {item.label[lang]}
-              </a>
-            ))}
+            {NAV_ITEMS.filter(item => !item.desktopOnly).map((item) => {
+              const isExternal = item.href.startsWith('http://') || item.href.startsWith('https://');
+              return (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="text-slate-600 hover:text-primary hover:bg-slate-50 focus:text-primary focus:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-primary/50 block px-4 py-3 rounded-lg text-lg font-medium transition-colors"
+                >
+                  {item.label[lang]}
+                </a>
+              );
+            })}
             <a 
               href="#contact" 
               onClick={(e) => handleNavClick(e, '#contact')}

@@ -6,6 +6,7 @@ import { Globe, BarChart3, Code, Search, Zap, Target, Users, Mail, Phone, MapPin
 export const NAV_ITEMS: NavItem[] = [
   { key: 'home', label: { en: 'Home', ar: 'الرئيسية' }, href: '/#home' },
   { key: 'services', label: { en: 'Services', ar: 'الخدمات' }, href: '/#services' },
+  { key: 'portfolio', label: { en: 'Portfolio', ar: 'سابقة الأعمال' }, href: 'https://portfolio.nasharhub.com' },
   { key: 'process', label: { en: 'Process', ar: 'آلية العمل' }, href: '/#process' },
   { key: 'blog', label: { en: 'Blog', ar: 'المدونة' }, href: '/blog' },
   { key: 'policy', label: { en: 'Work Policy', ar: 'سياسة العمل والشفافية' }, href: '/policy' },
