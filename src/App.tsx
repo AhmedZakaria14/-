@@ -104,7 +104,7 @@ function App() {
 
     updateSEO(seoConfig);
 
-    // Update canonical and hreflang tags for the current route
+    // Update canonical tag for the current route
     const currentUrl = seoConfig.url;
     
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -112,20 +112,8 @@ function App() {
       canonical.setAttribute('href', currentUrl);
     }
 
-    const updateHreflang = (hreflang: string) => {
-      let link = document.querySelector(`link[hreflang="${hreflang}"]`);
-      if (!link) {
-        link = document.createElement('link');
-        link.setAttribute('rel', 'alternate');
-        link.setAttribute('hreflang', hreflang);
-        document.head.appendChild(link);
-      }
-      link.setAttribute('href', currentUrl);
-    };
-
-    updateHreflang('ar-SA');
-    updateHreflang('en');
-    updateHreflang('x-default');
+    // Clean up any hreflang tags to prevent SEO duplicate/conflict errors
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
 
   }, [lang, location.pathname]);
 
