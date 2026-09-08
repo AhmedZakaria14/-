@@ -111,6 +111,12 @@ function serveStatic(app: express.Express) {
   
   // SPA fallback
   app.get('*all', (req, res) => {
+    const cleanPath = req.path.replace(/^\/+|\/+$/g, '');
+    const preRenderedPath = path.join(distPath, cleanPath, 'index.html');
+    if (cleanPath && existsSync(preRenderedPath)) {
+      return res.sendFile(preRenderedPath);
+    }
+
     const fallbackPath = path.join(distPath, 'fallback.html');
     const indexPath = path.join(distPath, 'index.html');
     
