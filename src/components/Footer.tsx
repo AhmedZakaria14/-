@@ -128,7 +128,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
              <a href="/policy" className="hover:text-white transition-colors font-medium text-slate-400">{lang === 'en' ? 'Work Policy & Transparency' : 'سياسة العمل والشفافية'}</a>
              <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Privacy Policy' : 'سياسة الخصوصية'}</a>
              <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Terms of Service' : 'شروط الاستخدام'}</a>
-             <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Sitemap' : 'خريطة الموقع'}</a>
+             <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{lang === 'en' ? 'Sitemap' : 'خريطة الموقع'}</a>
           </div>
         </div>
       </div>

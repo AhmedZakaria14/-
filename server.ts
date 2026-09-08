@@ -36,59 +36,17 @@ async function startServer() {
   });
 
   // API routes FIRST
-  // Sitemap generation
+  // Sitemap serving
   app.get("/sitemap.xml", (req, res) => {
-    const baseUrl = "https://nasharhub.com";
-    const staticUrls = [
-      "/",
-      "/seo-services",
-      "/paid-ads-services",
-      "/web-dev-services",
-      "/saudi",
-      "/blog",
-      "/website-onboarding",
-      "/ai",
-      "/policy",
-      "/saudi/riyadh",
-      "/saudi/jeddah",
-      "/saudi/dammam",
-      "/saudi/mecca",
-      "/saudi/medina",
-      "/services/google",
-      "/services/meta",
-      "/services/snapchat",
-      "/services/tiktok"
-    ];
+    const distSitemap = path.join(process.cwd(), 'dist', 'sitemap.xml');
+    const publicSitemap = path.join(process.cwd(), 'public', 'sitemap.xml');
+    const sitemapPath = existsSync(distSitemap) ? distSitemap : publicSitemap;
 
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
-
-    // Add static URLs
-    staticUrls.forEach(url => {
-      xml += `
-  <url>
-    <loc>${baseUrl}${url}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>${url === '/' ? '1.0' : '0.8'}</priority>
-  </url>`;
-    });
-
-    // Add blog posts
-    blogPosts.forEach(post => {
-      xml += `
-  <url>
-    <loc>${baseUrl}/blog/${post.slug}</loc>
-    <lastmod>${post.date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>`;
-    });
-
-    xml += `
-</urlset>`;
-
-    res.header('Content-Type', 'application/xml');
-    res.send(xml);
+    if (existsSync(sitemapPath)) {
+      res.header('Content-Type', 'application/xml; charset=utf-8');
+      return res.sendFile(sitemapPath);
+    }
+    res.status(404).send('Sitemap not found');
   });
 
   app.get("/api/health", (req, res) => {
