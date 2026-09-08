@@ -25,10 +25,18 @@ async function startServer() {
 
   app.use(express.json());
 
-  // Force HTTPS in production
+  // Force HTTPS and redirect www to non-www in production
   app.use((req, res, next) => {
     if (process.env.NODE_ENV === "production") {
-      if (req.headers["x-forwarded-proto"] !== "https" && req.hostname !== "localhost") {
+      const host = (req.headers["x-forwarded-host"] || req.headers.host || req.hostname) as string;
+      const isHttps = req.headers["x-forwarded-proto"] === "https";
+      
+      if (host && host.startsWith("www.")) {
+        const cleanHost = host.replace(/^www\./, "");
+        return res.redirect(301, `https://${cleanHost}${req.url}`);
+      }
+
+      if (!isHttps && req.hostname !== "localhost") {
         return res.redirect(301, `https://${req.hostname}${req.url}`);
       }
     }
