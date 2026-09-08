@@ -68,7 +68,7 @@ function App() {
     let seoConfig = {
       title: lang === 'en' ? 'Nashar Hub | Digital Marketing Agency in Saudi Arabia' : 'نشار هب | وكالة تسويق رقمي في السعودية',
       description: lang === 'en' ? 'Nashar Hub is a top digital marketing agency in Saudi Arabia specializing in Google Ads, SEO, and Ecommerce.' : 'نشار هب وكالة تسويق رقمي في الرياض وجدة. سيو، إعلانات جوجل، وتصميم مواقع. احصل على أعلى عائد استثمار لعملك مع أفضل شركة تسويق في السعودية. تواصل الآن!',
-      url: `https://nasharhub.com${path === '/' ? '' : path}`,
+      url: `https://nasharhub.com${path === '/' ? '/' : path}`,
       image: 'https://nasharhub.com/og-image.jpg'
     };
 
