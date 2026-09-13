@@ -108,9 +108,12 @@ function App() {
     const currentUrl = seoConfig.url;
     
     let canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', currentUrl);
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.setAttribute('href', currentUrl);
 
     // Clean up any hreflang tags to prevent SEO duplicate/conflict errors
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
