@@ -136,8 +136,16 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
 
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 p-6 md:px-12 flex justify-between items-center z-10 border-b border-white/5 bg-[#0b1020]/80 backdrop-blur-md">
-        <Link to="/" className="text-xl font-black tracking-widest text-[#f4f1e9]">
-          NASHAR<span className="text-[#9e7444]">HUB</span>
+        <Link to="/" className="text-xl font-black tracking-widest text-[#f4f1e9] flex items-center gap-2">
+          <img 
+            src="https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789590583/unnamed_1_mtjci9.png" 
+            alt="Nashar Hub" 
+            width={32}
+            height={32}
+            style={{ height: '32px', width: '32px', maxHeight: '32px', maxWidth: '32px', objectFit: 'contain' }}
+            className="h-8 w-8 object-contain block shrink-0"
+          />
+          <span>NASHAR<span className="text-[#58a8f3]">HUB</span></span>
         </Link>
         <Link 
           to="/"

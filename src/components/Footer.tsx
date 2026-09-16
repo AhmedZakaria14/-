@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
           {/* Brand Column */}
           <div className="md:col-span-1">
             <div className="mb-6">
-               <a href="#home" className="inline-flex items-center gap-2 group transition-opacity hover:opacity-90 max-h-[36px]">
+               <a href="#home" className="inline-flex items-center gap-2.5 group transition-opacity hover:opacity-90">
                  <img 
                    src="https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789590583/unnamed_1_mtjci9.png" 
                    alt="Nashar Hub" 
@@ -29,6 +29,9 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
                    style={{ height: '36px', width: '36px', maxHeight: '36px', maxWidth: '36px', objectFit: 'contain' }}
                    className="h-[36px] w-[36px] max-h-[36px] max-w-[36px] object-contain block shrink-0"
                  />
+                 <span className="text-xl sm:text-2xl font-black tracking-widest text-[#f4f1e9]">
+                   NASHAR<span className="text-[#58a8f3]">HUB</span>
+                 </span>
                </a>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6 font-normal">

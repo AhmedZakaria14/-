@@ -74,11 +74,11 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
         }`}>
           
           {/* Brand Logo Container */}
-          <div className="flex-shrink-0 flex items-center h-10 max-h-10 overflow-hidden">
+          <div className="flex-shrink-0 flex items-center">
              <a 
                href="/" 
                onClick={(e) => handleNavClick(e, '/')}
-               className="flex items-center gap-2.5 group transition-opacity hover:opacity-90 max-h-[34px] overflow-hidden"
+               className="flex items-center gap-2.5 group transition-opacity hover:opacity-90"
                aria-label={lang === 'en' ? 'Nashar Hub Home' : 'نشار هب الرئيسية'}
              >
                <img 
@@ -89,6 +89,9 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang }) => {
                  style={{ height: '34px', width: '34px', maxHeight: '34px', maxWidth: '34px', objectFit: 'contain' }}
                  className="h-[34px] w-[34px] max-h-[34px] max-w-[34px] object-contain block shrink-0"
                />
+               <span className="text-lg sm:text-xl font-black tracking-widest text-[#f4f1e9] select-none">
+                 NASHAR<span className="text-[#58a8f3]">HUB</span>
+               </span>
              </a>
           </div>
 
