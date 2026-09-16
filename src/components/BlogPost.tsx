@@ -106,78 +106,78 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
   if (!post) return null;
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-24 pb-16">
+    <div className="min-h-screen bg-[#f4f1e9] text-[#0b1020] pt-24 pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Navigation back button */}
         <button 
           onClick={() => navigate('/blog')}
-          className="flex items-center text-slate-600 hover:text-primary transition-colors mb-8 group font-medium"
+          className="flex items-center text-[#667078] hover:text-[#0b1020] transition-colors mb-6 font-mono text-xs uppercase tracking-wider font-bold cursor-pointer"
         >
           {isRTL ? (
             <>
-              <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 ml-2" />
               العودة لقائمة مدونة نشار هب
             </>
           ) : (
             <>
-              <ArrowLeft className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
+              <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Nashar Hub Blog
             </>
           )}
         </button>
 
-        <article className="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+        <article className="bg-white rounded-xl overflow-hidden shadow-sm border border-[#d1ccc0]">
           {/* Unified Article Header & Cover Image */}
-          <header className="p-6 sm:p-8 md:p-10 lg:p-12 pb-6 border-b border-slate-100">
+          <header className="p-6 sm:p-8 md:p-10 pb-6 border-b border-[#d1ccc0]">
             {/* Category Tags */}
             <div className="flex flex-wrap gap-2 mb-4">
               {post.tags.map(tag => (
-                <span key={tag} className="bg-primary/10 text-primary text-xs sm:text-sm px-3.5 py-1.5 rounded-full font-semibold border border-primary/20">
+                <span key={tag} className="bg-[#f4f1e9] text-[#0b1020] text-xs font-mono px-3 py-1 rounded border border-[#d1ccc0]">
                   {tag}
                 </span>
               ))}
             </div>
 
             {/* Article Title */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-snug md:leading-tight tracking-tight mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0b1020] leading-snug md:leading-tight tracking-tight mb-4">
               {post.title[lang]}
             </h1>
 
             {/* Article Meta */}
-            <div className="flex flex-wrap items-center text-slate-500 text-xs sm:text-sm md:text-base gap-6 pb-2">
-              <span className="flex items-center font-medium">
-                <Calendar className="w-4 h-4 ml-2 text-primary shrink-0" />
+            <div className="flex flex-wrap items-center text-[#667078] font-mono text-xs gap-6 pb-2">
+              <span className="flex items-center">
+                <Calendar className="w-3.5 h-3.5 ml-1.5 text-[#007d87] shrink-0" />
                 {new Date(post.date).toLocaleDateString(lang === 'ar' ? 'ar-SA' : 'en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
                 })}
               </span>
-              <span className="flex items-center font-medium">
-                <User className="w-4 h-4 ml-2 text-primary shrink-0" />
+              <span className="flex items-center">
+                <User className="w-3.5 h-3.5 ml-1.5 text-[#007d87] shrink-0" />
                 {post.author}
               </span>
             </div>
 
             {/* Clean Featured Cover Image */}
-            <div className="relative w-full aspect-[16/9] max-h-[500px] rounded-2xl md:rounded-3xl overflow-hidden shadow-md border border-slate-100 bg-slate-100 mt-6 sm:mt-8">
+            <div className="relative w-full aspect-[16/9] max-h-[460px] rounded-lg overflow-hidden border border-[#d1ccc0] bg-[#0b1020] mt-6">
               <img 
                 src={post.image} 
                 alt={`${post.title[lang]} - ${post.tags.join(', ')}`} 
-                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
+                className="w-full h-full object-cover object-center"
               />
             </div>
           </header>
 
           {/* Excerpt Summary Box */}
-          <div className={`mx-6 md:mx-12 my-8 p-6 bg-slate-50 rounded-2xl ${isRTL ? 'border-r-4' : 'border-l-4'} border-primary shadow-xs`}>
-            <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium">
+          <div className={`mx-6 md:mx-10 my-6 p-5 bg-[#f8f6f0] rounded-lg ${isRTL ? 'border-r-4' : 'border-l-4'} border-[#1677d2] text-[#0b1020]`}>
+            <p className="text-sm md:text-base leading-relaxed font-normal">
               {post.excerpt[lang]}
             </p>
           </div>
 
           {/* Markdown Main Body */}
-          <div className="p-6 md:p-12 lg:p-16 text-slate-800 leading-relaxed space-y-6">
+          <div className="p-6 md:p-10 text-[#0b1020] leading-relaxed space-y-6">
             <div className="markdown-body text-slate-800 leading-loose space-y-6" dir={isRTL ? 'rtl' : 'ltr'}>
               <ReactMarkdown
                 components={{
@@ -343,38 +343,38 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
             </div>
 
             {/* Call To Action Footer Banner */}
-            <div className="mt-16 bg-gradient-to-r from-primary to-slate-900 text-white rounded-3xl p-8 md:p-10 shadow-lg relative overflow-hidden">
+            <div className="mt-14 bg-[#0b1020] text-white rounded-xl p-6 md:p-8 border border-white/10 relative overflow-hidden">
               <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-secondary text-xs md:text-sm px-4 py-1.5 rounded-full font-semibold mb-4">
-                  <Sparkles className="w-4 h-4" />
-                  {isRTL ? 'خدمات إعلانات وجوجل من نشار هب' : 'Nashar Hub Google Ads Services'}
+                <div className="inline-flex items-center gap-2 text-[#58a8f3] font-mono text-xs uppercase tracking-widest font-bold mb-3">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  {isRTL ? 'خدمات إعلانات وجوجل من نشار هب' : 'Nashar Hub Growth Infrastructure'}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-extrabold mb-3 leading-snug">
-                  {isRTL ? 'جاهز لتحقيق أقصى عائد إعلاني لنشاطك التجاري؟' : 'Ready to maximize your return on ad spend?'}
+                <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">
+                  {isRTL ? 'جاهز لتحقيق أقصى عائد إعلاني لنشاطك التجاري؟' : 'Ready to scale commercial revenue?'}
                 </h3>
-                <p className="text-slate-200 text-base md:text-lg mb-8 max-w-2xl leading-relaxed">
+                <p className="text-white/70 text-sm mb-6 max-w-xl leading-relaxed">
                   {isRTL 
                     ? 'يتولى فريق نشار هب المتخصص التخطيط، والإعداد، والمتابعة اليومية لحملاتك الإعلانية عبر Google Ads لضمان نمو مبيعاتك وأعلى معدل تحويل.' 
                     : 'Our dedicated team plans, configures, and manages your Google Ads campaigns to drive sustainable business growth.'}
                 </p>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-3">
                   <a
                     href="https://nasharhub.com/#contact"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary text-slate-950 font-bold px-7 py-3.5 rounded-xl hover:bg-secondary/90 transition-all shadow-md inline-flex items-center gap-2"
+                    className="bg-[#1677d2] hover:bg-[#2c8de8] text-white font-mono font-bold text-xs uppercase tracking-wider px-5 py-3 rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
                   >
-                    <MessageCircle className="w-5 h-5" />
-                    {isRTL ? 'تواصل مع خبير الإعلانات' : 'Contact Ads Specialist'}
+                    <MessageCircle className="w-4 h-4" />
+                    {isRTL ? 'تواصل مع خبير الإعلانات' : 'Consult Ads Specialist'}
                   </a>
                   <a
                     href="https://nasharhub.com/paid-ads-services"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/10 border border-white/20 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-white/20 transition-all inline-flex items-center gap-2"
+                    className="border border-white/20 text-white hover:bg-white/10 font-mono text-xs uppercase tracking-wider px-5 py-3 rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
                   >
                     {isRTL ? 'تصفح خدمات الإعلانات' : 'View Ad Services'}
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>

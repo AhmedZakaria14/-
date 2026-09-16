@@ -52,15 +52,15 @@ function App() {
     document.documentElement.lang = lang;
     
     // Update font based on language
-    // 'Outfit' for English (font-sans), 'Cairo' for Arabic (font-arabic)
+    // 'Space Grotesk' for English, 'Almarai' / 'Noto Kufi Arabic' for Arabic
     if (lang === 'ar') {
       document.body.classList.remove('font-sans');
       document.body.classList.add('font-arabic');
-      document.body.style.fontFamily = '"Cairo", ui-sans-serif, system-ui, sans-serif';
+      document.body.style.fontFamily = '"Almarai", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif';
     } else {
       document.body.classList.remove('font-arabic');
       document.body.classList.add('font-sans');
-      document.body.style.fontFamily = '"Outfit", ui-sans-serif, system-ui, sans-serif';
+      document.body.style.fontFamily = '"Space Grotesk", "Almarai", ui-sans-serif, system-ui, sans-serif';
     }
 
     // Set page title and SEO metadata based on current path

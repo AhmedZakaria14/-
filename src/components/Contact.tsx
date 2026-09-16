@@ -17,59 +17,59 @@ export const Contact: React.FC<ContactProps> = ({ lang, isPage = false }) => {
   return (
     <section 
       id="contact" 
-      className="py-16 md:py-32 bg-white relative overflow-hidden"
+      className="py-16 md:py-28 bg-[#0b1020] text-white relative overflow-hidden border-t border-white/10"
       aria-labelledby="contact-heading"
     >
-      
-      {/* Background blobs */}
-      <div className="absolute top-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-secondary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           
           <Reveal>
             <div>
-              <HeadingTag id="contact-heading" className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
+              <div className="inline-flex items-center gap-2 text-[#007d87] font-mono text-xs uppercase tracking-widest font-bold mb-4">
+                 <span className="w-2 h-2 rounded-full bg-[#007d87]"></span>
+                 <span>{lang === 'en' ? 'DIRECT ACCESS' : 'قنوات التواصل المباشرة'}</span>
+              </div>
+              <HeadingTag id="contact-heading" className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
                 {UI_TEXT.contactTitle[lang]}
               </HeadingTag>
-              <p className="text-slate-600 text-lg md:text-xl mb-8 md:mb-12 leading-relaxed">
+              <p className="text-white/70 text-base md:text-lg mb-8 md:mb-12 leading-relaxed font-normal">
                 {UI_TEXT.contactSubtitle[lang]}
               </p>
 
-              <div className="space-y-6 md:space-y-8">
+              <div className="space-y-4">
                 <a 
                   href="mailto:Info@nasharhub.com" 
-                  className="flex items-start gap-4 md:gap-6 group hover:bg-slate-50 p-4 rounded-2xl transition-all focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 p-4 rounded-xl transition-all"
                 >
-                  <div className="p-3 md:p-4 bg-primary/10 rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-colors" aria-hidden="true">
-                    <Mail size={24} className="md:w-[28px] md:h-[28px]" />
+                  <div className="p-3 bg-[#1677d2]/20 rounded-lg text-[#58a8f3]">
+                    <Mail size={22} />
                   </div>
                   <div>
-                    <h3 className="text-slate-900 font-bold text-lg mb-1">{lang === 'en' ? 'Email Us' : 'راسلنا'}</h3>
-                    <p className="text-slate-500 text-sm md:text-base">Info@nasharhub.com</p>
+                    <h3 className="text-white font-bold text-sm">{lang === 'en' ? 'Official Inquiries' : 'البريد الرسمي'}</h3>
+                    <p className="text-white/60 text-xs font-mono">Info@nasharhub.com</p>
                   </div>
                 </a>
                 
                 <a 
                   href="tel:01010742430" 
-                  className="flex items-start gap-4 md:gap-6 group hover:bg-slate-50 p-4 rounded-2xl transition-all focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 p-4 rounded-xl transition-all"
                 >
-                  <div className="p-3 md:p-4 bg-primary/10 rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-colors" aria-hidden="true">
-                    <Phone size={24} className="md:w-[28px] md:h-[28px]" />
+                  <div className="p-3 bg-[#1677d2]/20 rounded-lg text-[#58a8f3]">
+                    <Phone size={22} />
                   </div>
                   <div>
-                    <h3 className="text-slate-900 font-bold text-lg mb-1">{lang === 'en' ? 'Call Us' : 'اتصل بنا'}</h3>
-                    <p className="text-slate-500 text-sm md:text-base" dir="ltr">01010742430</p>
+                    <h3 className="text-white font-bold text-sm">{lang === 'en' ? 'Direct Hotline' : 'الخط المباشر'}</h3>
+                    <p className="text-white/60 text-xs font-mono" dir="ltr">01010742430</p>
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4 md:gap-6 group p-4">
-                  <div className="p-3 md:p-4 bg-primary/10 rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-colors" aria-hidden="true">
-                    <MapPin size={24} className="md:w-[28px] md:h-[28px]" />
+                <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl">
+                  <div className="p-3 bg-[#1677d2]/20 rounded-lg text-[#58a8f3]">
+                    <MapPin size={22} />
                   </div>
                   <div>
-                    <h3 className="text-slate-900 font-bold text-lg mb-1">{lang === 'en' ? 'Visit Us' : 'زرنا'}</h3>
-                    <p className="text-slate-500 text-sm md:text-base mb-2">{lang === 'en' ? 'Cairo, Egypt' : 'القاهرة، مصر'}</p>
+                    <h3 className="text-white font-bold text-sm">{lang === 'en' ? 'Operations Base' : 'المقر والعمليات'}</h3>
+                    <p className="text-white/60 text-xs">{lang === 'en' ? 'Cairo, Egypt & Riyadh, KSA' : 'القاهرة، مصر والرياض، المملكة العربية السعودية'}</p>
                   </div>
                 </div>
               </div>
@@ -78,7 +78,7 @@ export const Contact: React.FC<ContactProps> = ({ lang, isPage = false }) => {
 
           <Reveal delay={200} direction={lang === 'ar' ? 'right' : 'left'}>
             <form 
-              className="bg-white p-6 md:p-10 rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-slate-100 relative" 
+              className="bg-[#f8f6f0] text-[#0b1020] p-7 md:p-10 rounded-2xl border border-[#d1ccc0] shadow-xl relative" 
               aria-label={lang === 'en' ? 'Contact form' : 'نموذج التواصل'}
               onSubmit={(e) => {
                 e.preventDefault();
@@ -87,20 +87,25 @@ export const Contact: React.FC<ContactProps> = ({ lang, isPage = false }) => {
                 setTimeout(() => setSent(false), 3000);
               }}
             >
-              <div className="space-y-4 md:space-y-6">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">
-                  {lang === 'en' ? 'Send a message' : 'أرسل رسالة'}
-                </h3>
+              <div className="space-y-4">
+                <div className="border-b border-[#d1ccc0] pb-3 mb-4">
+                  <span className="font-mono text-xs text-[#007d87] font-bold uppercase tracking-wider block mb-1">
+                    {lang === 'en' ? 'INITIATE CONSULTATION' : 'بدء جلسة الاستشارة'}
+                  </span>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#0b1020]">
+                    {lang === 'en' ? 'Send an Inquiry' : 'أرسل تفاصيل مشروعك'}
+                  </h3>
+                </div>
                 
                 {sent && (
-                  <div className="p-4 bg-emerald-50 text-emerald-700 rounded-xl flex items-center gap-3 font-medium">
-                    <CheckCircle className="w-5 h-5" />
-                    {lang === 'en' ? 'Message sent successfully!' : 'تم إرسال الرسالة بنجاح!'}
+                  <div className="p-3.5 bg-emerald-100 text-emerald-800 rounded-lg flex items-center gap-3 font-medium text-sm">
+                    <CheckCircle className="w-5 h-5 text-emerald-700" />
+                    {lang === 'en' ? 'Inquiry received. We will respond within 4 hours.' : 'تم استلام طلبك بنجاح! سيتواصل معك فريقنا خلال 4 ساعات.'}
                   </div>
                 )}
                 
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="name" className="block text-xs font-mono font-bold text-[#0b1020] mb-1.5 uppercase">
                     {UI_TEXT.contactName[lang]}
                   </label>
                   <input 
@@ -108,14 +113,14 @@ export const Contact: React.FC<ContactProps> = ({ lang, isPage = false }) => {
                     name="name"
                     type="text" 
                     autoComplete="name"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 md:px-5 md:py-4 text-slate-900 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-400" 
-                    placeholder={lang === 'en' ? 'John Doe' : 'الاسم'} 
+                    className="w-full bg-white border border-[#d1ccc0] rounded px-4 py-2.5 text-[#0b1020] focus:ring-1 focus:ring-[#1677d2] focus:border-[#1677d2] outline-none text-sm placeholder:text-[#667078]/60" 
+                    placeholder={lang === 'en' ? 'John Doe' : 'الاسم الكامل'} 
                     required
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="email" className="block text-xs font-mono font-bold text-[#0b1020] mb-1.5 uppercase">
                     {UI_TEXT.contactEmail[lang]}
                   </label>
                   <input 
@@ -123,30 +128,31 @@ export const Contact: React.FC<ContactProps> = ({ lang, isPage = false }) => {
                     name="email"
                     type="email" 
                     autoComplete="email"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 md:px-5 md:py-4 text-slate-900 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-400" 
+                    className="w-full bg-white border border-[#d1ccc0] rounded px-4 py-2.5 text-[#0b1020] focus:ring-1 focus:ring-[#1677d2] focus:border-[#1677d2] outline-none text-sm placeholder:text-[#667078]/60" 
                     placeholder="john@company.com" 
                     required
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label htmlFor="message" className="block text-xs font-mono font-bold text-[#0b1020] mb-1.5 uppercase">
                     {UI_TEXT.contactMessage[lang]}
                   </label>
                   <textarea 
                     id="message"
                     name="message"
                     rows={4} 
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 md:px-5 md:py-4 text-slate-900 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-400 resize-none"
+                    className="w-full bg-white border border-[#d1ccc0] rounded px-4 py-2.5 text-[#0b1020] focus:ring-1 focus:ring-[#1677d2] focus:border-[#1677d2] outline-none text-sm placeholder:text-[#667078]/60 resize-none"
+                    placeholder={lang === 'en' ? 'Briefly describe your objectives or challenges...' : 'صف باختصار أهدافك أو التحديات التسويقية والتقنية الحالية...'}
                     required
                   ></textarea>
                 </div>
                 
                 <button 
                   type="submit" 
-                  className="w-full py-4 md:py-5 bg-gradient-to-r from-primary to-primary-light hover:to-primary text-white font-bold rounded-xl transition-all shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 flex items-center justify-center gap-3 text-base md:text-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
+                  className="w-full py-3.5 bg-[#0b1020] hover:bg-[#1677d2] text-white font-mono font-bold text-xs uppercase tracking-wider rounded transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
-                  <Send size={18} className="md:w-[20px] md:h-[20px]" aria-hidden="true" />
+                  <Send size={15} />
                   {UI_TEXT.contactSend[lang]}
                 </button>
               </div>
@@ -156,5 +162,6 @@ export const Contact: React.FC<ContactProps> = ({ lang, isPage = false }) => {
         </div>
       </div>
     </section>
+
   );
 };

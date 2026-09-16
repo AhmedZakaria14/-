@@ -41,7 +41,7 @@ export const FAQ: React.FC<FAQProps> = ({ lang, isPage = false }) => {
   }, [isPage, lang]);
 
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-20 md:py-28 bg-[#f8f6f0] border-t border-[#d1ccc0] relative">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -49,61 +49,57 @@ export const FAQ: React.FC<FAQProps> = ({ lang, isPage = false }) => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Reveal>
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl text-primary mb-4">
-               <MessageCircleQuestion size={24} />
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 text-[#007d87] font-mono font-bold uppercase tracking-widest text-xs mb-3">
+               <span className="w-2 h-2 rounded-full bg-[#007d87]"></span>
+               <span>{lang === 'en' ? 'COMMON QUESTIONS & VERIFIED ANSWERS' : 'الأسئلة المتكررة والإجابات الواضحة'}</span>
             </div>
-            <HeadingTag className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
+            <HeadingTag className="text-3xl md:text-5xl font-extrabold text-[#0b1020] mb-4 tracking-tight">
               {UI_TEXT.faqTitle[lang]}
             </HeadingTag>
-            <p className="text-lg text-slate-500 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-[#667078] max-w-2xl mx-auto leading-relaxed font-normal">
               {lang === 'en'
-                ? 'Find answers to common questions about our digital marketing services, web development process, and how we help businesses achieve measurable growth. If you have a specific question that isn\'t covered here, feel free to reach out to our team directly.'
-                : 'ابحث عن إجابات للأسئلة الشائعة حول خدمات التسويق الرقمي لدينا، وعملية تطوير الويب، وكيف نساعد الشركات على تحقيق نمو ملموس. إذا كان لديك سؤال محدد لم يتم تغطيته هنا، فلا تتردد في التواصل مع فريقنا مباشرة.'}
-            </p>
-            <p className="text-base text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed">
-              {lang === 'en'
-                ? 'Our goal is to provide transparency and clarity at every stage of our partnership. We believe that informed clients are more successful, and we are committed to sharing our knowledge and expertise to help you make the best decisions for your business.'
-                : 'هدفنا هو توفير الشفافية والوضوح في كل مرحلة من مراحل شراكتنا. نحن نؤمن بأن العملاء المطلعين هم أكثر نجاحاً، ونحن ملتزمون بمشاركة معرفتنا وخبرتنا لمساعدتك في اتخاذ أفضل القرارات لعملك.'}
+                ? 'Find answers to common questions about our digital marketing methodologies, web architectures, and growth operations. Full transparency across all services.'
+                : 'إجابات مباشرة وواضحة على أكثر التساؤلات شيوعاً حول منهجيات التسويق الرقمي، وبرمجة المواقع، ونماذج تحقيق النمو بأعلى معايير الشفافية.'}
             </p>
           </div>
         
-          <div className="space-y-4">
+          <div className="space-y-3">
             {FAQS.map((faq, index) => (
               <div 
                 key={index}
-                className={`border rounded-2xl transition-all duration-300 ${
+                className={`rounded-xl border transition-all duration-200 overflow-hidden ${
                   openIndex === index 
-                    ? 'border-primary/30 bg-primary/5 shadow-sm' 
-                    : 'border-slate-100 bg-slate-50 hover:bg-white'
+                    ? 'border-[#007d87] bg-white shadow-sm' 
+                    : 'border-[#d1ccc0] bg-[#f4f1e9] hover:bg-white/80'
                 }`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
                   type="button"
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none select-none"
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left rtl:text-right focus:outline-none select-none cursor-pointer"
                   aria-expanded={openIndex === index}
                 >
-                  <span className={`font-bold text-lg transition-colors ${openIndex === index ? 'text-primary' : 'text-slate-800'}`}>
+                  <span className={`font-bold text-base md:text-lg transition-colors ${openIndex === index ? 'text-[#007d87]' : 'text-[#0b1020]'}`}>
                     {faq.question[lang]}
                   </span>
-                  <span className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${
+                  <span className={`flex items-center justify-center w-7 h-7 rounded shrink-0 transition-all duration-200 ${
                     openIndex === index 
-                      ? 'bg-primary text-white rotate-180' 
-                      : 'bg-slate-200 text-slate-500'
+                      ? 'bg-[#007d87] text-white' 
+                      : 'bg-black/5 text-[#0b1020]'
                   }`}>
-                    {openIndex === index ? <Minus size={16} /> : <Plus size={16} />}
+                    {openIndex === index ? <Minus size={15} /> : <Plus size={15} />}
                   </span>
                 </button>
                 
-                {/* Accordion Content - Simplified transition */}
+                {/* Accordion Content */}
                 <div 
-                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                  className={`grid transition-[grid-template-rows] duration-200 ease-in-out ${
                     openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="p-6 pt-0 text-slate-600 leading-relaxed">
+                    <div className="p-5 md:p-6 pt-0 text-[#667078] leading-relaxed text-sm md:text-base border-t border-[#d1ccc0]/60 mt-1">
                       {faq.answer[lang]}
                     </div>
                   </div>
@@ -115,5 +111,6 @@ export const FAQ: React.FC<FAQProps> = ({ lang, isPage = false }) => {
 
       </div>
     </section>
+
   );
 };

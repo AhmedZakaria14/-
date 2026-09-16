@@ -21,26 +21,28 @@ export const NotFound: React.FC<NotFoundProps> = ({ lang, onBack }) => {
   }, [lang]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#0b1020] text-white px-4">
       <meta name="robots" content="noindex, nofollow" />
-      <div className="text-center max-w-md">
-        <h1 className="text-9xl font-bold text-primary mb-4">404</h1>
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">
-          {isRTL ? 'عذراً، الصفحة غير موجودة' : 'Oops! Page not found'}
+      <div className="text-center max-w-md p-8 border border-white/10 rounded-2xl bg-white/5">
+        <span className="font-mono text-xs text-[#58a8f3] uppercase tracking-widest font-bold block mb-2">ERROR STATUS</span>
+        <h1 className="text-8xl font-extrabold text-white mb-2 tracking-tighter">404</h1>
+        <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
+          {isRTL ? 'عذراً، الصفحة غير موجودة' : 'Resource Not Found'}
         </h2>
-        <p className="text-slate-600 mb-8">
+        <p className="text-white/60 text-sm mb-6 leading-relaxed font-normal">
           {isRTL 
-            ? 'يبدو أن الصفحة التي تبحث عنها قد تم نقلها أو حذفها أو أن الرابط غير صحيح.' 
-            : 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.'}
+            ? 'يبدو أن الصفحة التي تبحث عنها قد تم نقلها أو تعديل مسارها.' 
+            : 'The requested route does not exist or has been relocated.'}
         </p>
         <button 
           onClick={onBack}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-bold hover:bg-primary-light transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#1677d2] hover:bg-[#2c8de8] text-white rounded font-mono font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
         >
-          {isRTL ? <ArrowRight className="w-5 h-5" /> : <ArrowLeft className="w-5 h-5" />}
-          {isRTL ? 'العودة للصفحة الرئيسية' : 'Back to Home'}
+          {isRTL ? <ArrowRight className="w-4 h-4" /> : <ArrowLeft className="w-4 h-4" />}
+          {isRTL ? 'العودة للرئيسية' : 'Return to Overview'}
         </button>
       </div>
     </div>
+
   );
 };

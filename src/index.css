@@ -1,23 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-arabic: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Space Grotesk", "Almarai", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Almarai", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Noto Kufi Arabic", "Almarai", sans-serif;
+  --font-mono: "Space Grotesk", monospace;
   
-  --color-primary: #001534;
-  --color-primary-light: #0f3a6e;
-  --color-primary-dark: #000a1a;
+  --color-primary: #0b1020;
+  --color-primary-light: #1677d2;
+  --color-primary-dark: #070a14;
   
-  --color-secondary: #0ea5e9;
-  --color-secondary-light: #38bdf8;
+  --color-secondary: #1677d2;
+  --color-secondary-light: #58a8f3;
   
-  --color-light-bg: #ffffff;
-  --color-light-card: #f8fafc;
-  --color-light-text: #0f172a;
-  --color-light-muted: #64748b;
+  --color-accent-teal: #007d87;
+  --color-accent-gold: #c9a85d;
+  --color-sand: #f4f1e9;
+  --color-sand-light: #f8f6f0;
+  --color-sand-border: #d1ccc0;
+  
+  --color-light-bg: #f4f1e9;
+  --color-light-card: #f8f6f0;
+  --color-light-text: #0b1020;
+  --color-light-muted: #667078;
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-marquee: marquee 20s linear infinite;
@@ -35,6 +43,11 @@
   @keyframes fade-in-up {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes atlas-orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 }
 
@@ -94,15 +107,90 @@
 .delay-500 { animation-delay: 500ms; }
 
 .gradient-text {
-  background: linear-gradient(to right, #001534, #0ea5e9);
+  background: linear-gradient(135deg, #1677d2, #58a8f3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-pattern {
-  background-color: #ffffff;
-  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-color: #0b1020;
+}
+
+/* Portfolio-style utility classes */
+.brand-lockup {
+  background: #fffffffa;
+  align-items: center;
+  gap: 10px;
+  min-width: 210px;
+  padding: 6px 12px;
+  display: flex;
+  box-shadow: 0 8px 24px #0000001f;
+  border-radius: 4px;
+}
+
+.eyebrow {
+  color: #56616c;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  direction: ltr;
+  align-items: center;
+  gap: 9px;
+  font: 700 11px "Space Grotesk", sans-serif;
+  display: inline-flex;
+}
+
+.eyebrow.light {
+  color: #ffffffa8;
+}
+
+.eyebrow-dot {
+  background: #c9a85d;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  display: inline-block;
+}
+
+.button-primary {
+  color: #fff;
+  background: #1677d2;
+  box-shadow: 0 10px 24px #1677d240;
+  transition: transform .18s cubic-bezier(.23,1,.32,1), background .18s, box-shadow .18s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.button-primary:hover {
+  background: #2c8de8;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px #1677d24d;
+}
+
+.button-dark {
+  color: #fff;
+  background: #0b1020;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform .18s, background .18s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.button-dark:hover {
+  background: #1677d2;
+  transform: translateY(-2px);
+}
+
+.evidence-shelf {
+  background: #f8f6f0;
+  border-top: 3px solid #007d87;
+  padding: 28px;
+  border-radius: 4px;
 }
 
 /* Scroll Behavior */
@@ -117,8 +205,10 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
-  background-color: #ffffff;
-  color: #0f172a;
+  background-color: #f4f1e9;
+  color: #0b1020;
+  font-family: "Almarai", sans-serif;
+  font-feature-settings: "kern" 1;
   padding-bottom: 5rem;
 }
 

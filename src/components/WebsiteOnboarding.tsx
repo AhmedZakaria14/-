@@ -79,20 +79,20 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
           <React.Fragment key={step.id}>
             <div className={`flex flex-col items-center relative z-10`}>
               <div 
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-mono font-bold transition-all duration-300 ${
                   index <= activeIndex 
-                    ? 'bg-primary text-white shadow-lg shadow-primary/30' 
-                    : 'bg-slate-100 text-slate-400'
+                    ? 'bg-[#0b1020] text-white shadow-md' 
+                    : 'bg-white border border-[#d1ccc0] text-[#667078]'
                 }`}
               >
                 {index + 1}
               </div>
-              <span className={`text-xs mt-2 font-medium ${index <= activeIndex ? 'text-primary' : 'text-slate-400'}`}>
+              <span className={`text-[11px] font-mono mt-2 font-bold uppercase tracking-wider ${index <= activeIndex ? 'text-[#0b1020]' : 'text-[#667078]'}`}>
                 {step.label}
               </span>
             </div>
             {index < steps.length - 1 && (
-              <div className={`w-12 h-0.5 -mt-6 mx-2 transition-colors duration-300 ${index < activeIndex ? 'bg-primary' : 'bg-slate-100'}`} />
+              <div className={`w-12 h-0.5 -mt-6 mx-2 transition-colors duration-300 ${index < activeIndex ? 'bg-[#0b1020]' : 'bg-[#d1ccc0]'}`} />
             )}
           </React.Fragment>
         ))}
@@ -101,7 +101,7 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col pt-24">
+    <div className="min-h-screen bg-[#f4f1e9] text-[#0b1020] flex flex-col pt-24">
       {/* Header */}
       <div className="bg-transparent">
         <div className="max-w-lg mx-auto px-4">
@@ -111,15 +111,15 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
               items={[{ label: lang === 'en' ? 'Order Website' : 'اطلب موقعك', href: '/website-onboarding' }]} 
             />
           </div>
-          <div className="h-16 flex items-center justify-between">
+          <div className="h-16 flex items-center justify-between border-b border-[#d1ccc0] mb-4">
             <button 
               onClick={handleBack}
-              className="p-2 hover:bg-slate-200 rounded-full transition-colors text-slate-600"
+              className="p-2 hover:bg-black/5 rounded transition-colors text-[#0b1020] cursor-pointer"
             >
               {isRTL ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
             </button>
-            <HeadingTag className="font-bold text-lg text-slate-900">
-              {lang === 'en' ? 'Order Your Website' : 'اطلب موقعك'}
+            <HeadingTag className="font-extrabold text-xl text-[#0b1020]">
+              {lang === 'en' ? 'Order Your Website' : 'اطلب موقعك الإلكتروني'}
             </HeadingTag>
             <div className="w-9" /> {/* Spacer for centering */}
           </div>
@@ -134,13 +134,13 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
           {currentStep === 'field' && (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-blue-600">
-                  <Globe size={32} />
+                <div className="w-14 h-14 bg-[#0b1020] rounded-xl flex items-center justify-center mx-auto mb-4 text-[#58a8f3]">
+                  <Globe size={28} />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">
+                <h2 className="text-2xl font-bold text-[#0b1020] mb-2">
                   {lang === 'en' ? 'What is your business field?' : 'ما هو مجال عملك؟'}
                 </h2>
-                <p className="text-slate-500">
+                <p className="text-[#667078] text-sm leading-relaxed">
                   {lang === 'en' 
                     ? 'Tell us about your industry so we can tailor the best solution for you.' 
                     : 'أخبرنا عن نشاطك التجاري لنقدم لك الحل الأنسب.'}
@@ -148,7 +148,7 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
               </div>
 
               <div className="space-y-4">
-                <label className="block text-sm font-medium text-slate-700">
+                <label className="block text-xs font-mono uppercase tracking-wider text-[#0b1020] font-bold">
                   {lang === 'en' ? 'Business Field / Industry' : 'مجال العمل / النشاط'}
                 </label>
                 <input
@@ -156,7 +156,7 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
                   value={businessField}
                   onChange={(e) => setBusinessField(e.target.value)}
                   placeholder={lang === 'en' ? 'e.g. Real Estate, E-commerce, Restaurant...' : 'مثال: عقارات، متجر إلكتروني، مطعم...'}
-                  className="w-full p-4 rounded-xl border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-lg bg-white"
+                  className="w-full p-4 rounded-xl border border-[#d1ccc0] focus:border-[#1677d2] focus:ring-1 focus:ring-[#1677d2] outline-none transition-all text-base bg-white text-[#0b1020]"
                   autoFocus
                   onKeyDown={(e) => e.key === 'Enter' && businessField.trim() && handleNext()}
                 />
@@ -168,13 +168,13 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
           {currentStep === 'ads' && (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-purple-600">
-                  <Megaphone size={32} />
+                <div className="w-14 h-14 bg-[#0b1020] rounded-xl flex items-center justify-center mx-auto mb-4 text-[#58a8f3]">
+                  <Megaphone size={28} />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">
+                <h2 className="text-2xl font-bold text-[#0b1020] mb-2">
                   {lang === 'en' ? 'Are you interested in ads?' : 'هل تريد إعلانات لموقعك؟'}
                 </h2>
-                <p className="text-slate-500">
+                <p className="text-[#667078] text-sm leading-relaxed">
                   {lang === 'en' 
                     ? 'Boost your new website with our Paid Ads services (Google, Meta, Snapchat) to maximize your ROI.' 
                     : 'هل تحتاج إلى إعلانات جوجل أو حملات ممولة (سناب شات، تيك توك) لمتجرك الجديد؟ عزز نتائجك بحملات إعلانية مصممة خصيصاً لك.'}
@@ -184,22 +184,22 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
               <div className="grid grid-cols-1 gap-4">
                 <button
                   onClick={() => { setWantsAds(true); setTimeout(() => setCurrentStep('review'), 300); }}
-                  className={`p-6 rounded-2xl border-2 transition-all flex items-center justify-between group ${
+                  className={`p-6 rounded-xl border transition-all flex items-center justify-between group cursor-pointer ${
                     wantsAds === true 
-                      ? 'border-primary bg-primary/5 ring-2 ring-primary/20' 
-                      : 'border-slate-200 bg-white hover:border-primary/50 hover:bg-slate-50'
+                      ? 'border-[#1677d2] bg-white ring-2 ring-[#1677d2]' 
+                      : 'border-[#d1ccc0] bg-white hover:border-[#1677d2]'
                   }`}
                 >
                   <div className="flex flex-col items-start">
-                    <span className="font-bold text-lg text-slate-900">
+                    <span className="font-bold text-base text-[#0b1020]">
                       {lang === 'en' ? 'Yes, add Paid Ads' : 'نعم، أريد إعلانات ممولة'}
                     </span>
-                    <span className="text-sm text-slate-500 mt-1">
+                    <span className="text-xs text-[#667078] mt-1">
                       {lang === 'en' ? 'Drive instant traffic and sales' : 'لجلب زيارات ومبيعات فورية'}
                     </span>
                   </div>
-                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${
-                    wantsAds === true ? 'border-primary bg-primary text-white' : 'border-slate-300'
+                  <div className={`w-6 h-6 rounded-full border flex items-center justify-center shrink-0 ${
+                    wantsAds === true ? 'border-[#1677d2] bg-[#1677d2] text-white' : 'border-[#d1ccc0]'
                   }`}>
                     {wantsAds === true && <Check size={14} />}
                   </div>
@@ -207,17 +207,17 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
 
                 <button
                   onClick={() => { setWantsAds(false); setTimeout(() => setCurrentStep('review'), 300); }}
-                  className={`p-6 rounded-2xl border-2 transition-all flex items-center justify-between group ${
+                  className={`p-6 rounded-xl border transition-all flex items-center justify-between group cursor-pointer ${
                     wantsAds === false 
-                      ? 'border-primary bg-primary/5 ring-2 ring-primary/20' 
-                      : 'border-slate-200 bg-white hover:border-primary/50 hover:bg-slate-50'
+                      ? 'border-[#1677d2] bg-white ring-2 ring-[#1677d2]' 
+                      : 'border-[#d1ccc0] bg-white hover:border-[#1677d2]'
                   }`}
                 >
-                  <span className="font-bold text-lg text-slate-900">
+                  <span className="font-bold text-base text-[#0b1020]">
                     {lang === 'en' ? 'No, just the website' : 'لا، فقط تصميم الموقع'}
                   </span>
-                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${
-                    wantsAds === false ? 'border-primary bg-primary text-white' : 'border-slate-300'
+                  <div className={`w-6 h-6 rounded-full border flex items-center justify-center shrink-0 ${
+                    wantsAds === false ? 'border-[#1677d2] bg-[#1677d2] text-white' : 'border-[#d1ccc0]'
                   }`}>
                     {wantsAds === false && <Check size={14} />}
                   </div>
@@ -230,28 +230,28 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
           {currentStep === 'review' && (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-green-600">
-                  <Send size={32} />
+                <div className="w-14 h-14 bg-[#0b1020] rounded-xl flex items-center justify-center mx-auto mb-4 text-[#58a8f3]">
+                  <Send size={28} />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">
+                <h2 className="text-2xl font-bold text-[#0b1020] mb-2">
                   {lang === 'en' ? 'Ready to send?' : 'جاهز للإرسال؟'}
                 </h2>
-                <p className="text-slate-500">
+                <p className="text-[#667078] text-sm leading-relaxed">
                   {lang === 'en' 
                     ? 'Review your details and continue to WhatsApp to finalize your request.' 
                     : 'راجع تفاصيل طلبك وتابع عبر واتساب لإتمام الطلب.'}
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-8 shadow-sm">
+              <div className="bg-white rounded-xl border border-[#d1ccc0] p-6 mb-8 shadow-sm">
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center pb-4 border-b border-slate-100">
-                    <span className="text-slate-500 text-sm">{lang === 'en' ? 'Business Field' : 'مجال العمل'}</span>
-                    <span className="font-bold text-slate-900">{businessField}</span>
+                  <div className="flex justify-between items-center pb-4 border-b border-[#d1ccc0]">
+                    <span className="text-[#667078] text-xs font-mono uppercase">{lang === 'en' ? 'Business Field' : 'مجال العمل'}</span>
+                    <span className="font-bold text-[#0b1020]">{businessField}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-500 text-sm">{lang === 'en' ? 'Interested in Ads' : 'مهتم بالإعلانات'}</span>
-                    <span className={`font-bold ${wantsAds ? 'text-green-600' : 'text-slate-900'}`}>
+                    <span className="text-[#667078] text-xs font-mono uppercase">{lang === 'en' ? 'Interested in Ads' : 'مهتم بالإعلانات'}</span>
+                    <span className={`font-bold ${wantsAds ? 'text-[#007d87]' : 'text-[#0b1020]'}`}>
                       {wantsAds 
                         ? (lang === 'en' ? 'Yes' : 'نعم') 
                         : (lang === 'en' ? 'No' : 'لا')}
@@ -262,10 +262,10 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
 
               <button
                 onClick={handleWhatsAppRedirect}
-                className="w-full py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-xl font-bold text-lg shadow-lg shadow-green-500/20 transition-all active:scale-95 flex items-center justify-center gap-2"
+                className="w-full py-3.5 bg-[#1677d2] hover:bg-[#2c8de8] text-white rounded font-mono font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Send size={20} />
-                {lang === 'en' ? 'Send via WhatsApp' : 'إرسال عبر واتساب'}
+                <Send size={16} />
+                {lang === 'en' ? 'Send Request via WhatsApp' : 'إرسال الطلب عبر واتساب'}
               </button>
             </div>
           )}
@@ -277,14 +277,15 @@ export const WebsiteOnboarding: React.FC<WebsiteOnboardingProps> = ({ lang, onBa
             <button
               onClick={handleNext}
               disabled={!businessField.trim()}
-              className="w-full py-4 bg-primary text-white rounded-xl font-bold text-lg shadow-lg shadow-primary/20 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-[#1677d2] hover:bg-[#2c8de8] text-white rounded font-mono font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
             >
-              {lang === 'en' ? 'Next' : 'التالي'}
-              {isRTL ? <ArrowLeft size={20} /> : <ArrowRight size={20} />}
+              {lang === 'en' ? 'Next Step' : 'الخطوة التالية'}
+              {isRTL ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
             </button>
           </div>
         )}
       </div>
     </div>
+
   );
 };

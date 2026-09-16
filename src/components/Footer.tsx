@@ -13,79 +13,84 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
   const isRTL = lang === 'ar';
 
   return (
-    <footer className="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800" role="contentinfo">
+    <footer className="bg-[#0b1020] text-white pt-20 pb-10 border-t border-white/10" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           
           {/* Brand Column */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-               <a href="#home" className="block focus:outline-none focus:ring-2 focus:ring-white rounded-xl">
-                 <span className="font-extrabold text-3xl tracking-tighter text-white">
-                   Nashar<span className="text-secondary">Hub</span>
-                 </span>
+            <div className="mb-6">
+               <a href="#home" className="inline-flex items-center gap-2 group transition-opacity hover:opacity-90 max-h-[36px]">
+                 <img 
+                   src="https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789590583/unnamed_1_mtjci9.png" 
+                   alt="Nashar Hub" 
+                   width={36}
+                   height={36}
+                   style={{ height: '36px', width: '36px', maxHeight: '36px', maxWidth: '36px', objectFit: 'contain' }}
+                   className="h-[36px] w-[36px] max-h-[36px] max-w-[36px] object-contain block shrink-0"
+                 />
                </a>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+            <p className="text-white/60 text-sm leading-relaxed mb-6 font-normal">
               {UI_TEXT.heroSubtitle[lang]}
             </p>
             <div className="flex gap-3">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-all text-slate-300 hover:text-white" aria-label="Follow us on Facebook"><Facebook size={18}/></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-all text-slate-300 hover:text-white" aria-label="Follow us on Instagram"><Instagram size={18}/></a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-all text-slate-300 hover:text-white" aria-label="Connect on LinkedIn"><Linkedin size={18}/></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-all text-slate-300 hover:text-white" aria-label="Follow us on Twitter"><Twitter size={18}/></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1677d2] hover:border-[#1677d2] transition-all text-white/70 hover:text-white" aria-label="Follow us on Facebook"><Facebook size={16}/></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1677d2] hover:border-[#1677d2] transition-all text-white/70 hover:text-white" aria-label="Follow us on Instagram"><Instagram size={16}/></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1677d2] hover:border-[#1677d2] transition-all text-white/70 hover:text-white" aria-label="Connect on LinkedIn"><Linkedin size={16}/></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1677d2] hover:border-[#1677d2] transition-all text-white/70 hover:text-white" aria-label="Follow us on Twitter"><Twitter size={16}/></a>
             </div>
           </div>
 
           {/* SEO Optimized Services Links (Strong Internal Linking) */}
           <div className="col-span-1">
-             <h4 className="text-lg font-bold text-white mb-6 relative inline-block">
+             <h4 className="text-sm font-bold text-white mb-6 uppercase tracking-wider font-mono flex items-center gap-2">
+               <span className="w-2 h-2 rounded-full bg-[#1677d2]"></span>
                {lang === 'en' ? 'Growth Solutions' : 'حلول النمو'}
-               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></span>
              </h4>
              <ul className="space-y-3">
-                <li><a href="/paid-ads-services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'PPC Management Services' : 'إدارة الحملات الإعلانية - إعلانات جوجل'}</a></li>
-                <li><a href="/seo-services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Professional SEO Services' : 'خدمات تحسين محركات البحث SEO'}</a></li>
-                <li><a href="/web-dev-services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Custom Web Development' : 'تصميم وتطوير المواقع والمتاجر'}</a></li>
-                <li><a href="#services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Social Media Strategy' : 'استراتيجيات التواصل الاجتماعي'}</a></li>
-                <li><a href="#services" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Content Marketing' : 'تسويق بالمحتوى'}</a></li>
+                <li><a href="/paid-ads-services" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'PPC Management Services' : 'إدارة الحملات الإعلانية - إعلانات جوجل'}</a></li>
+                <li><a href="/seo-services" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'Professional SEO Services' : 'خدمات تحسين محركات البحث SEO'}</a></li>
+                <li><a href="/web-dev-services" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'Custom Web Development' : 'تصميم وتطوير المواقع والمتاجر'}</a></li>
+                <li><a href="#services" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'Social Media Strategy' : 'استراتيجيات التواصل الاجتماعي'}</a></li>
+                <li><a href="#services" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'Content Marketing' : 'تسويق بالمحتوى'}</a></li>
              </ul>
           </div>
 
           {/* Quick Links */}
           <div className="col-span-1">
-             <h4 className="text-lg font-bold text-white mb-6 relative inline-block">
+             <h4 className="text-sm font-bold text-white mb-6 uppercase tracking-wider font-mono flex items-center gap-2">
+               <span className="w-2 h-2 rounded-full bg-[#c9a85d]"></span>
                {lang === 'en' ? 'Agency' : 'الوكالة'}
-               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></span>
              </h4>
              <ul className="space-y-3">
-                <li><a href="https://portfolio.nasharhub.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Portfolio' : 'سابقة الأعمال'}</a></li>
-                <li><a href="#stats" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Why Nashar Hub?' : 'لماذا نشار هب؟'}</a></li>
-                <li><a href="#process" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Our Process' : 'كيف نعمل'}</a></li>
-                <li><a href="/blog" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Blog' : 'المدونة'}</a></li>
-                <li><a href="/policy" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block font-medium text-secondary">{lang === 'en' ? 'Work Policy & Transparency' : 'سياسة العمل والشفافية'}</a></li>
-                <li><a href="/ai" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'AI context' : 'معلومات الـ AI'}</a></li>
-                <li><a href="#contact" className="text-slate-400 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all text-sm block">{lang === 'en' ? 'Start a Project' : 'ابدأ مشروعك'}</a></li>
+                <li><a href="https://portfolio.nasharhub.com" target="_blank" rel="noopener noreferrer" className="text-[#58a8f3] hover:text-white font-bold transition-all text-sm block">{lang === 'en' ? 'Portfolio Site ↗' : 'سابقة الأعمال ↗'}</a></li>
+                <li><a href="#stats" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'Why Nashar Hub?' : 'لماذا نشار هب؟'}</a></li>
+                <li><a href="#process" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'Our Process' : 'كيف نعمل'}</a></li>
+                <li><a href="/blog" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'Blog' : 'المدونة'}</a></li>
+                <li><a href="/policy" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'Work Policy & Transparency' : 'سياسة العمل والشفافية'}</a></li>
+                <li><a href="/ai" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'AI context' : 'معلومات الـ AI'}</a></li>
+                <li><a href="#contact" className="text-white/65 hover:text-white transition-all text-sm block">{lang === 'en' ? 'Start a Project' : 'ابدأ مشروعك'}</a></li>
              </ul>
           </div>
 
           {/* Contact Info (Local SEO) */}
           <div className="col-span-1">
-             <h4 className="text-lg font-bold text-white mb-6 relative inline-block">
+             <h4 className="text-sm font-bold text-white mb-6 uppercase tracking-wider font-mono flex items-center gap-2">
+               <span className="w-2 h-2 rounded-full bg-[#007d87]"></span>
                {lang === 'en' ? 'Contact Us' : 'معلومات التواصل'}
-               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></span>
              </h4>
              <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-slate-400 text-sm">
-                   <MapPin size={18} className="text-secondary shrink-0 mt-1" />
-                   <span>{lang === 'en' ? 'Cairo, Egypt' : 'القاهرة، مصر'}</span>
+                <li className="flex items-start gap-3 text-white/65 text-sm">
+                   <MapPin size={17} className="text-[#58a8f3] shrink-0 mt-0.5" />
+                   <span>{lang === 'en' ? 'Cairo, Egypt & Riyadh, KSA' : 'القاهرة، مصر والرياض، السعودية'}</span>
                 </li>
-                <li className="flex items-center gap-3 text-slate-400 text-sm">
-                   <Phone size={18} className="text-secondary shrink-0" />
+                <li className="flex items-center gap-3 text-white/65 text-sm">
+                   <Phone size={17} className="text-[#58a8f3] shrink-0" />
                    <span dir="ltr">01010742430</span>
                 </li>
-                <li className="flex items-center gap-3 text-slate-400 text-sm">
-                   <Mail size={18} className="text-secondary shrink-0" />
+                <li className="flex items-center gap-3 text-white/65 text-sm">
+                   <Mail size={17} className="text-[#58a8f3] shrink-0" />
                    <span>Info@nasharhub.com</span>
                 </li>
              </ul>
@@ -94,9 +99,9 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
         </div>
         
         {/* Areas We Serve (Local SEO) */}
-        <div className="border-t border-slate-800 pt-8 pb-4 mt-8">
-          <h4 className="text-sm font-bold text-slate-300 mb-4">{lang === 'en' ? 'Areas We Serve in Saudi Arabia' : 'مناطق نخدمها في المملكة العربية السعودية'}</h4>
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-slate-500">
+        <div className="border-t border-white/10 pt-8 pb-4 mt-8">
+          <h4 className="text-xs font-mono font-bold text-white/50 uppercase tracking-wider mb-4">{lang === 'en' ? 'Areas We Serve in Saudi Arabia' : 'مناطق نخدمها في المملكة العربية السعودية'}</h4>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-white/40">
             <span>{lang === 'en' ? 'Digital Marketing in Riyadh' : 'شركة تسويق بالرياض'}</span>
             <span>•</span>
             <span>{lang === 'en' ? 'Web Design in Jeddah' : 'تصميم مواقع بجدة'}</span>
@@ -120,18 +125,19 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-xs">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-white/40 text-xs font-mono">
             © Nashar Hub Marketing Agency. {UI_TEXT.footerRights[lang]}.
           </p>
-          <div className="flex gap-6 text-xs text-slate-500">
-             <a href="/policy" className="hover:text-white transition-colors font-medium text-slate-400">{lang === 'en' ? 'Work Policy & Transparency' : 'سياسة العمل والشفافية'}</a>
-             <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Privacy Policy' : 'سياسة الخصوصية'}</a>
-             <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Terms of Service' : 'شروط الاستخدام'}</a>
+          <div className="flex gap-6 text-xs text-white/40">
+             <a href="/policy" className="hover:text-white transition-colors">{lang === 'en' ? 'Work Policy' : 'سياسة العمل'}</a>
+             <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Privacy' : 'الخصوصية'}</a>
+             <a href="#" className="hover:text-white transition-colors">{lang === 'en' ? 'Terms' : 'الشروط'}</a>
              <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{lang === 'en' ? 'Sitemap' : 'خريطة الموقع'}</a>
           </div>
         </div>
       </div>
     </footer>
+
   );
 }

@@ -86,18 +86,18 @@ export const CityLandingPage: React.FC<CityLandingPageProps> = ({ lang, onBack }
   const CONTACT_NUMBER = "01010742430"; // Main contact
 
   return (
-    <div className={`min-h-screen bg-slate-50 ${isRTL ? 'font-arabic' : 'font-sans'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen bg-[#f4f1e9] text-[#0b1020] ${isRTL ? 'font-arabic' : 'font-sans'}`} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
-            <MapPin className="w-5 h-5" />
-            <span className="font-semibold">{data.name[lang]}</span>
+      <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="bg-[#0b1020] rounded-2xl p-8 md:p-14 text-center max-w-4xl mx-auto border border-white/10 shadow-2xl relative overflow-hidden">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 text-[#58a8f3] mb-6 font-mono text-xs uppercase tracking-wider">
+            <MapPin className="w-4 h-4" />
+            <span>{data.name[lang]} REGION</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
             {data.heroTitle[lang]}
           </h1>
-          <p className="text-xl text-slate-600 mb-10 leading-relaxed">
+          <p className="text-base md:text-lg text-white/70 mb-8 leading-relaxed max-w-2xl mx-auto font-normal">
             {data.heroSubtitle[lang]}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -105,47 +105,50 @@ export const CityLandingPage: React.FC<CityLandingPageProps> = ({ lang, onBack }
               href={`https://wa.me/201010742430?text=${whatsappMsg}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="inline-flex justify-center items-center px-8 py-3.5 rounded bg-[#1677d2] hover:bg-[#2c8de8] text-white font-mono font-bold text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer"
             >
-              {lang === 'ar' ? 'تواصل معنا الآن' : 'Contact Us Now'}
+              {lang === 'ar' ? 'تواصل معنا في هذه المنطقة' : 'Consult Local Specialist'}
             </a>
           </div>
         </div>
       </section>
 
       {/* Content Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                {lang === 'ar' ? `لماذا تختارنا في ${data.name.ar}؟` : `Why Choose Us in ${data.name.en}?`}
-              </h2>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                {data.description[lang]}
-              </p>
-              
-              <div className="space-y-6">
-                {[
-                  { icon: Target, title: lang === 'ar' ? 'استهداف دقيق' : 'Precise Targeting', desc: lang === 'ar' ? 'نصل لعملائك المحتملين في مدينتك بدقة عالية.' : 'We reach your potential customers in your city with high precision.' },
-                  { icon: TrendingUp, title: lang === 'ar' ? 'زيادة المبيعات' : 'Increase Sales', desc: lang === 'ar' ? 'حملات مصممة خصيصاً لزيادة التحويلات والمبيعات مع تقارير شفافة لنتائجك.' : 'Campaigns specifically designed to increase conversions and sales.' },
-                  { icon: Globe, title: lang === 'ar' ? 'سيو محلي' : 'Local SEO', desc: lang === 'ar' ? 'تصدر نتائج البحث المحلية في خرائط جوجل ومحرك البحث.' : 'Dominate local search results in Google Maps and Search.' }
-                ].map((feature, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                      <feature.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">{feature.title}</h3>
-                      <p className="text-slate-600">{feature.desc}</p>
-                    </div>
+      <section className="py-16 bg-white border-t border-[#d1ccc0]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 text-[#007d87] font-mono text-xs uppercase tracking-widest font-bold mb-3">
+               <span className="w-2 h-2 rounded-full bg-[#007d87]"></span>
+               <span>{lang === 'ar' ? 'الميزة التنافسية الإقليمية' : 'REGIONAL EDGE'}</span>
+            </div>
+            <h2 className="text-2xl md:text-4xl font-extrabold text-[#0b1020] mb-4">
+              {lang === 'ar' ? `لماذا تختارنا في ${data.name.ar}؟` : `Why Choose Us in ${data.name.en}?`}
+            </h2>
+            <p className="text-base md:text-lg text-[#667078] mb-10 leading-relaxed font-normal">
+              {data.description[lang]}
+            </p>
+            
+            <div className="space-y-4">
+              {[
+                { icon: Target, title: lang === 'ar' ? 'استهداف دقيق' : 'Precise Targeting', desc: lang === 'ar' ? 'نصل لعملائك المحتملين في مدينتك بدقة عالية.' : 'We reach your potential customers in your city with high precision.' },
+                { icon: TrendingUp, title: lang === 'ar' ? 'زيادة المبيعات' : 'Increase Sales', desc: lang === 'ar' ? 'حملات مصممة خصيصاً لزيادة التحويلات والمبيعات مع تقارير شفافة لنتائجك.' : 'Campaigns specifically designed to increase conversions and sales.' },
+                { icon: Globe, title: lang === 'ar' ? 'سيو محلي' : 'Local SEO', desc: lang === 'ar' ? 'تصدر نتائج البحث المحلية في خرائط جوجل ومحرك البحث.' : 'Dominate local search results in Google Maps and Search.' }
+              ].map((feature, idx) => (
+                <div key={idx} className="flex gap-4 p-5 rounded-xl bg-[#f8f6f0] border border-[#d1ccc0]">
+                  <div className="shrink-0 w-10 h-10 rounded bg-[#0b1020] text-[#58a8f3] flex items-center justify-center">
+                    <feature.icon className="w-5 h-5" />
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <h3 className="text-base font-bold text-[#0b1020] mb-1">{feature.title}</h3>
+                    <p className="text-sm text-[#667078] leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
     </div>
+
   );
 };

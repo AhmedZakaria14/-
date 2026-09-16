@@ -1,9 +1,8 @@
 
 import React from 'react';
-import { ArrowRight, CheckCircle2, TrendingUp, Rocket, Zap } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 import { Language } from '../types';
 import { UI_TEXT } from '../constants';
-import { Reveal } from './Reveal';
 
 interface HeroProps {
   lang: Language;
@@ -15,136 +14,106 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-12 md:pt-40 md:pb-0 hero-pattern"
+      className="relative min-h-[720px] lg:min-h-[780px] bg-[#0b1020] text-white flex items-center overflow-hidden pt-28 pb-20 md:pt-36 md:pb-24"
       aria-label={lang === 'en' ? 'Introduction' : 'مقدمة'}
     >
-      
-      {/* Background Elements - CSS Animation Only (No Scroll Listeners) */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        {/* Animated Blob 1 */}
-        <div 
-          className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-secondary/10 rounded-full blur-[80px] md:blur-[120px] mix-blend-multiply animate-float"
-          style={{ animationDuration: '15s' }}
-        ></div>
-        {/* Animated Blob 2 */}
-        <div 
-          className="absolute bottom-0 left-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/10 rounded-full blur-[80px] md:blur-[120px] mix-blend-multiply animate-float"
-          style={{ animationDuration: '20s', animationDelay: '-5s' }}
-        ></div>
+      {/* Background Gradients & Glow matching portfolio */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(22,119,210,0.25),rgba(11,16,32,0))]"></div>
+        <div className="absolute -top-40 right-[-10%] w-[500px] h-[500px] bg-[#1677d2]/15 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-0 left-[-10%] w-[450px] h-[450px] bg-[#c9a85d]/10 rounded-full blur-[130px]"></div>
+        {/* Subtle grid lines */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          <div className={`text-center ${isRTL ? 'lg:text-right' : 'lg:text-left'}`}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-md mb-8 mx-auto lg:mx-0 animate-fade-in-up opacity-0 hover:scale-105 transition-transform cursor-default">
-              <span className="flex h-2.5 w-2.5 rounded-full bg-secondary animate-pulse" aria-hidden="true"></span>
-              <span className="text-sm font-bold text-slate-700 flex items-center gap-2">
-                <Zap size={16} className="text-yellow-500 fill-yellow-500" />
-                {lang === 'en' ? '#1 ROI-First Digital Agency' : 'الوكالة الرقمية الأولى في العائد الربحي'}
-              </span>
+          {/* Main Hero Copy (Col 8) */}
+          <div className={`lg:col-span-8 text-center ${isRTL ? 'lg:text-right' : 'lg:text-left'}`}>
+            
+            {/* Portfolio Eyebrow */}
+            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded bg-white/5 border border-white/10 text-[#c9a85d] mb-6 tracking-wider text-xs font-mono font-bold uppercase">
+              <span className="w-2 h-2 rounded-full bg-[#c9a85d] animate-pulse"></span>
+              <span>{lang === 'en' ? 'NASHAR HUB • DIGITAL PERFORMANCE & GROWTH' : 'نشار هب • وكالة النمو والأداء الرقمي'}</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-8 leading-[1.1] text-slate-900 animate-fade-in-up opacity-0 delay-100 drop-shadow-sm">
-              {UI_TEXT.heroTitle[lang]} <br />
-              <span className="gradient-text inline-flex items-center gap-2 flex-wrap justify-center lg:justify-start">
-                 {lang === 'en' ? 'Growth Without Limits' : 'النمو بلا حدود'}
-                 <Rocket className="text-primary animate-bounce-slow" size={48} strokeWidth={2.5} />
-              </span>
+            {/* Massive Heading matching portfolio */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.2] text-white">
+              {lang === 'en' ? (
+                <>
+                  Driving Scalable Growth With <em className="text-[#58a8f3] not-italic">Engineered Precision</em>
+                </>
+              ) : (
+                <>
+                  نبني حضورك الرقمي ونضاعف مبيعاتك عبر <em className="text-[#58a8f3] not-italic">حلول تسويقية دقيقة</em>
+                </>
+              )}
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 md:px-0 font-medium animate-fade-in-up opacity-0 delay-200">
-              {lang === 'en' ? UI_TEXT.heroSubtitle.en : 'وكالة تسويق رقمي رائدة في السعودية. متخصصون في إطلاق إعلانات جوجل، منصات التواصل، وتصميم مواقع إلكترونية احترافية. معنا ستحصل على نمو مستدام لزيادة مبيعاتك وتعزيز تواجدك الرقمي.'}
+            {/* Lede Paragraph */}
+            <p className="text-base sm:text-lg md:text-xl text-white/70 mb-8 max-w-2xl leading-relaxed font-normal">
+              {lang === 'en' 
+                ? 'From bespoke web engineering and Technical SEO to precision-targeted Google & social advertising across Saudi Arabia and the GCC.'
+                : 'وكالة رائدة في المملكة العربية السعودية والخليج. متخصصون في تطوير المواقع السريعة، تحسين محركات البحث SEO، وإدارة الحملات الإعلانية الممولة بعائد استثماري مضمون.'}
             </p>
 
-            <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'} animate-fade-in-up opacity-0 delay-300`}>
+            {/* Action Buttons */}
+            <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'lg:justify-start' : 'lg:justify-start'}`}>
               <a 
                 href="#contact" 
-                className="group w-full sm:w-auto px-10 py-4 bg-primary hover:bg-primary-dark rounded-full font-bold text-white transition-all duration-300 shadow-xl shadow-primary/30 hover:shadow-primary/50 hover:scale-105 active:scale-95 flex items-center justify-center gap-3 focus:outline-none focus:ring-4 focus:ring-primary/30 text-lg"
+                className="button-primary px-8 py-3.5 rounded text-sm md:text-base font-bold shadow-xl"
                 aria-label={UI_TEXT.getStarted[lang]}
               >
-                {UI_TEXT.getStarted[lang]}
-                <ArrowRight className={`group-hover:translate-x-1 transition-transform ${isRTL ? 'rotate-180 group-hover:-translate-x-1' : ''}`} size={22} aria-hidden="true" />
+                <span>{lang === 'en' ? 'Start Your Project' : 'ابدأ مشروعك الآن'}</span>
+                {isRTL ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
               </a>
+
               <a 
                 href="#services" 
-                className="w-full sm:w-auto px-10 py-4 bg-white hover:bg-slate-50 border-2 border-slate-200 text-slate-700 rounded-full font-bold transition-all hover:shadow-lg hover:border-primary/30 flex items-center justify-center gap-2 focus:outline-none focus:ring-4 focus:ring-slate-200 text-lg"
+                className="button-dark px-8 py-3.5 rounded text-sm md:text-base font-bold text-white/90 hover:text-white"
                 aria-label={UI_TEXT.viewServices[lang]}
               >
-                {UI_TEXT.viewServices[lang]}
+                <span>{lang === 'en' ? 'Explore Services' : 'استعرض الخدمات'}</span>
               </a>
             </div>
 
-            <Reveal delay={400} className="mt-12">
-               <div className={`flex items-center gap-4 md:gap-6 justify-center ${isRTL ? 'lg:justify-end' : 'lg:justify-start'}`}>
-                  <div className="flex -space-x-3 md:-space-x-4 rtl:space-x-reverse" role="img" aria-label={lang === 'en' ? 'User avatars' : 'صور المستخدمين'}>
-                    <img className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=1" alt="Nashar Hub Client 1" width="48" height="48" fetchPriority="high" decoding="async" />
-                    <img className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=2" alt="Nashar Hub Client 2" width="48" height="48" fetchPriority="high" decoding="async" />
-                    <img className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=3" alt="Nashar Hub Client 3" width="48" height="48" fetchPriority="high" decoding="async" />
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600 shadow-sm" aria-hidden="true">+500</div>
-                  </div>
-                  <div className="text-sm text-slate-600 font-bold">
-                    {lang === 'en' ? 'Trusted by 500+ Market Leaders' : 'موثوق من قبل +500 من قادة السوق'}
-                  </div>
-               </div>
-            </Reveal>
+            {/* Trust Badges matching portfolio proof bar */}
+            <div className={`mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-white/60 font-mono ${isRTL ? 'justify-center lg:justify-start' : 'justify-center lg:justify-start'}`}>
+              <div className="flex items-center gap-2">
+                <ShieldCheck size={16} className="text-[#58a8f3]" />
+                <span>{lang === 'en' ? 'VERIFIED BUSINESS PARTNER' : 'شريك أعمال معتمد في الخليج'}</span>
+              </div>
+              <span className="hidden sm:inline text-white/20">•</span>
+              <div className="flex items-center gap-2">
+                <Sparkles size={16} className="text-[#c9a85d]" />
+                <span>{lang === 'en' ? '100% TRANSPARENT ROI & REPORTING' : 'تقارير أداء وعائد استثماري شفاف'}</span>
+              </div>
+            </div>
           </div>
 
-          {/* Visual Side */}
-          <div className="relative hidden lg:block" aria-hidden="true">
-             <div className="relative z-10 animate-float animate-fade-in-up opacity-0 delay-300">
-                {/* Main Card */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-100 bg-white transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                    <img 
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" 
-                      alt={lang === 'en' ? "Digital marketing analytics dashboard for a Saudi agency" : "لوحة تحليلات التسويق الرقمي توضح نمو الأرباح لشركة سعودية مع نشار هب"} 
-                      className="w-full h-auto object-cover opacity-95"
-                      width="600"
-                      height="400"
-                      fetchPriority="high"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  </div>
+          {/* Right Hero Aside - Atlas Orbit Mark from portfolio (Col 4) */}
+          <div className="lg:col-span-4 hidden lg:flex flex-col items-center justify-center relative">
+            {/* Center Orbit Mark wrap */}
+            <div className="relative w-44 h-44 rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/20 grid place-items-center shadow-2xl">
+              {/* Outer Orbit Rings */}
+              <div className="absolute -inset-3 rounded-2xl border border-[#58a8f3]/40 animate-[atlas-orbit_12s_linear_infinite]" pointer-events-none="true"></div>
+              <div className="absolute -inset-6 rounded-3xl border border-[#58a8f3]/20 animate-[atlas-orbit_18s_linear_infinite_reverse]" pointer-events-none="true"></div>
+              
+              <img 
+                src="https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789590583/unnamed_1_mtjci9.png" 
+                alt="Nashar Hub" 
+                className="w-24 h-24 sm:w-28 sm:h-28 object-contain filter drop-shadow-[0_0_25px_rgba(88,168,243,0.4)]"
+              />
+            </div>
 
-                  {/* Floating Stats Card */}
-                  <div className="absolute top-10 -right-12 bg-white p-6 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-slate-100 animate-[float_4s_ease-in-out_infinite] delay-1000 hidden xl:block">
-                    <div className="flex items-center gap-4">
-                      <div className="p-4 bg-secondary/10 text-secondary rounded-xl">
-                        <TrendingUp size={32} />
-                      </div>
-                      <div>
-                        <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">ROAS Increase</p>
-                        <p className="text-3xl font-black text-slate-900">+340%</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Floating Checklist */}
-                  <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-slate-100 animate-[float_5s_ease-in-out_infinite] delay-500">
-                     <div className="space-y-4">
-                        <div className="flex items-center gap-3">
-                           <div className="bg-emerald-100 p-1 rounded-full">
-                             <CheckCircle2 size={20} className="text-emerald-600" />
-                           </div>
-                           <span className="font-bold text-slate-800 text-lg">Strategic Performance</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                           <div className="bg-emerald-100 p-1 rounded-full">
-                             <CheckCircle2 size={20} className="text-emerald-600" />
-                           </div>
-                           <span className="font-bold text-slate-800 text-lg">ROI Maximization</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                           <div className="bg-emerald-100 p-1 rounded-full">
-                             <CheckCircle2 size={20} className="text-emerald-600" />
-                           </div>
-                           <span className="font-bold text-slate-800 text-lg">Digital Dominance</span>
-                        </div>
-                     </div>
-                  </div>
-
-               </div>
+            {/* Metric Lockup underneath */}
+            <div className="mt-8 text-center bg-white/[0.03] border border-white/10 rounded-lg p-4 w-full max-w-[280px]">
+              <div className="text-2xl font-black text-[#c9a85d] font-mono tracking-wider">+340%</div>
+              <div className="text-xs text-white/70 mt-1 leading-normal font-sans">
+                {lang === 'en' ? 'Average Client Revenue Acceleration' : 'متوسط مضاعفة عوائد عملاء نشار هب'}
+              </div>
+            </div>
           </div>
 
         </div>
@@ -152,3 +121,4 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
     </section>
   );
 };
+

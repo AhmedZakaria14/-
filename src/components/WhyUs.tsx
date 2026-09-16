@@ -80,56 +80,55 @@ export const WhyUs: React.FC<WhyUsProps> = ({ lang, isPage = false }) => {
   return (
     <section 
       id="stats" 
-      className="py-20 md:py-32 bg-white border-y border-slate-100 overflow-hidden"
+      className="py-20 md:py-28 bg-[#0b1020] text-white border-t border-white/10 overflow-hidden"
       aria-labelledby="stats-heading"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           
           <div className={`${isRTL ? 'lg:order-1' : 'lg:order-0'}`}>
             <Reveal>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-widest mb-6">
-                 <ArrowUpRight size={14} className="text-primary" />
+              <div className="inline-flex items-center gap-2 text-[#58a8f3] font-mono text-xs uppercase tracking-widest font-bold mb-4">
+                 <span className="w-2 h-2 rounded-full bg-[#1677d2]"></span>
                  {UI_TEXT.statsTitle[lang]}
               </div>
               <HeadingTag 
                 id="stats-heading" 
-                className="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight tracking-tighter"
+                className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight"
               >
                 {lang === 'en' 
                   ? 'Results Backed by Data That Speaks for Itself.'
                   : 'نتائج مدعومة ببيانات تتحدث عن نفسها.'}
               </HeadingTag>
-              <p className="text-lg md:text-xl text-slate-500 mb-8 leading-relaxed">
+              <p className="text-base md:text-lg text-white/70 mb-6 leading-relaxed font-normal">
                 {lang === 'en'
-                  ? 'We don\'t make empty promises. We deliver measurable growth using performance metrics that define success for your specific industry. Our approach is rooted in deep data analysis and a relentless pursuit of excellence. We understand that every business is unique, which is why we tailor our strategies to meet your specific goals and challenges.'
-                  : 'نحن لا نقدم وعوداً فارغة. نحن نحقق نمواً ملموساً باستخدام مقاييس أداء تحدد معايير النجاح في مجالك الخاص. نهجنا متجذر في تحليل البيانات العميق والسعي الدؤوب للتميز. نحن ندرك أن كل عمل تجاري فريد من نوعه، ولهذا السبب نصمم استراتيجياتنا لتلبية أهدافك وتحدياتك المحددة.'}
+                  ? 'We don\'t make empty promises. We deliver measurable growth using performance metrics that define success for your specific industry. Our approach is rooted in deep data analysis and a relentless pursuit of excellence.'
+                  : 'نحن لا نقدم وعوداً فارغة. نحن نحقق نمواً ملموساً باستخدام مقاييس أداء تحدد معايير النجاح في مجالك الخاص. نهجنا متجذر في تحليل البيانات العميق والسعي الدؤوب للتميز.'}
               </p>
-              <p className="text-base text-slate-500 mb-12 leading-relaxed">
+              <p className="text-sm text-white/50 mb-10 leading-relaxed font-normal">
                 {lang === 'en'
-                  ? 'By combining cutting-edge technology with creative marketing strategies, we help our clients dominate their respective markets. Whether you are a startup looking to make a mark or an established enterprise aiming for further expansion, our team of experts is here to guide you every step of the way. We pride ourselves on transparency, integrity, and delivering results that exceed expectations.'
-                  : 'من خلال الجمع بين أحدث التقنيات واستراتيجيات التسويق الإبداعية، نساعد عملائنا على السيطرة على أسواقهم الخاصة. سواء كنت شركة ناشئة تتطلع إلى ترك بصمة أو مؤسسة قائمة تهدف إلى مزيد من التوسع، فإن فريق الخبراء لدينا هنا لإرشادك في كل خطوة على الطريق لتحصل على نجاحك المرجو. نحن نفخر بالشفافية والنزاهة وتقديم النتائج التي تتجاوز التوقعات.'}
+                  ? 'By combining cutting-edge technology with creative marketing strategies, we help our clients dominate their respective markets with total transparency and engineering precision.'
+                  : 'من خلال الجمع بين أحدث التقنيات واستراتيجيات التسويق الإبداعية، نساعد عملائنا على السيطرة على أسواقهم بنزاهة وشفافية وهندسة دقيقة لكل مؤشر نمو.'}
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" role="list">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="list">
                 {stats.map((stat, idx) => {
                   const Icon = stat.icon;
                   return (
-                    <Reveal key={idx} delay={idx * 150} direction={isRTL ? 'right' : 'left'}>
-                      <li className="bg-slate-50/50 p-6 md:p-8 rounded-[2rem] border border-slate-100 hover:border-primary/20 hover:bg-white hover:shadow-2xl hover:shadow-primary/5 transition-all group list-none">
-                        <div 
-                          className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 ${stat.color}`}
-                          aria-hidden="true"
-                        >
-                          <Icon size={28} />
+                    <Reveal key={idx} delay={idx * 120} direction={isRTL ? 'right' : 'left'}>
+                      <li className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-[#58a8f3] transition-all group list-none">
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-3xl md:text-4xl font-extrabold text-white font-mono tracking-tight">
+                            <CountUp value={stat.value} />
+                          </span>
+                          <div className="w-10 h-10 rounded-lg bg-[#1677d2]/20 text-[#58a8f3] flex items-center justify-center">
+                            <Icon size={20} />
+                          </div>
                         </div>
-                        <div className="text-4xl md:text-5xl font-black text-slate-900 mb-2 tracking-tight">
-                          <CountUp value={stat.value} />
-                        </div>
-                        <div className="text-sm font-bold text-slate-900 mb-1">
+                        <div className="text-sm font-bold text-white mb-1">
                           {stat.label[lang]}
                         </div>
-                        <div className="text-xs text-slate-400">
+                        <div className="text-xs text-white/50">
                           {stat.description[lang]}
                         </div>
                       </li>
@@ -142,42 +141,37 @@ export const WhyUs: React.FC<WhyUsProps> = ({ lang, isPage = false }) => {
 
           <Reveal delay={400} direction={isRTL ? 'left' : 'right'} className="relative">
              <div className="relative z-10">
-                <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-[3rem] blur-2xl opacity-50"></div>
-                <div className="relative rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl">
+                <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-white/5 shadow-2xl p-2">
                    <img 
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" 
                     alt={lang === 'en' ? 'Detailed digital marketing performance metrics chart showing organic traffic growth for Saudi business' : 'رسم بياني يوضح نمو الزيارات المجانية وتحليلات الأداء لشركة سعودية مع نشار هب'}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-auto object-cover rounded-xl"
                     width="600"
                     height="800"
                     loading="lazy"
                     decoding="async"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
                   
                   {/* Floating Metric */}
-                  <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl animate-float">
+                  <div className="absolute bottom-6 left-6 right-6 bg-[#0b1020]/95 backdrop-blur-md p-5 rounded-xl border border-white/15 shadow-2xl">
                      <div className="flex items-center justify-between">
                         <div>
-                           <p className="text-[10px] font-black uppercase text-slate-400 mb-1">{lang === 'en' ? 'Conversion Rate' : 'معدل التحويل'}</p>
-                           <p className="text-2xl font-black text-primary">+24.8%</p>
+                           <p className="text-xs font-mono uppercase tracking-wider text-[#007d87] font-bold mb-1">{lang === 'en' ? 'Verified Conversion Spike' : 'معدل نمو التحويلات المحقق'}</p>
+                           <p className="text-2xl font-black text-white font-mono">+24.8% <span className="text-xs text-white/50 font-normal">QoQ</span></p>
                         </div>
-                        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white">
-                           <ArrowUpRight size={24} />
+                        <div className="w-10 h-10 bg-[#007d87] rounded-lg flex items-center justify-center text-white">
+                           <ArrowUpRight size={20} />
                         </div>
                      </div>
                   </div>
                 </div>
              </div>
-             
-             {/* Decorative Background Circles */}
-             <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
-             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
           </Reveal>
 
         </div>
       </div>
     </section>
+
   );
 };
