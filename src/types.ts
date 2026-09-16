@@ -60,6 +60,7 @@ export interface BlogPost {
   date: string;
   tags: string[];
   image: string;
+  isHtml?: boolean;
 }
 
 export interface Testimonial {

@@ -138,10 +138,12 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
               ))}
             </div>
 
-            {/* Article Title */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0b1020] leading-snug md:leading-tight tracking-tight mb-4">
-              {post.title[lang]}
-            </h1>
+            {/* Article Title - only rendered in header if not an HTML article that provides its own semantic H1 */}
+            {!post.isHtml && (
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0b1020] leading-snug md:leading-tight tracking-tight mb-4">
+                {post.title[lang]}
+              </h1>
+            )}
 
             {/* Article Meta */}
             <div className="flex flex-wrap items-center text-[#667078] font-mono text-xs gap-6 pb-2">
@@ -176,16 +178,39 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
             </p>
           </div>
 
-          {/* Markdown Main Body */}
+          {/* Main Body (HTML or Markdown) */}
           <div className="p-6 md:p-10 text-[#0b1020] leading-relaxed space-y-6">
-            <div className="markdown-body text-slate-800 leading-loose space-y-6" dir={isRTL ? 'rtl' : 'ltr'}>
-              <ReactMarkdown
-                components={{
-                  h1: ({ children }) => (
-                    <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mt-10 mb-6 pb-3 border-b border-slate-200">
-                      {children}
-                    </h1>
-                  ),
+            {post.isHtml ? (
+              <div 
+                className="article-html-content"
+                dir={isRTL ? 'rtl' : 'ltr'}
+                dangerouslySetInnerHTML={{ __html: post.content[lang] }}
+                onClick={(e) => {
+                  const link = (e.target as HTMLElement).closest('a');
+                  if (!link) return;
+                  const href = link.getAttribute('href');
+                  if (!href) return;
+                  
+                  if (href.startsWith('#')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const targetId = href.substring(1);
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }
+                }}
+              />
+            ) : (
+              <div className="markdown-body text-slate-800 leading-loose space-y-6" dir={isRTL ? 'rtl' : 'ltr'}>
+                <ReactMarkdown
+                  components={{
+                    h1: ({ children }) => (
+                      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mt-10 mb-6 pb-3 border-b border-slate-200">
+                        {children}
+                      </h1>
+                    ),
                   h2: ({ children }) => {
                     const raw = extractRawText(children);
                     const id = slugifyHeading(raw);
@@ -341,6 +366,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
                 {post.content[lang]}
               </ReactMarkdown>
             </div>
+          )}
 
             {/* Call To Action Footer Banner */}
             <div className="mt-14 bg-[#0b1020] text-white rounded-xl p-6 md:p-8 border border-white/10 relative overflow-hidden">
