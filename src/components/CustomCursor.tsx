@@ -76,14 +76,6 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <>
-      <style>{`
-        @media (pointer: fine) {
-          body, a, button, input, textarea, select, [role="button"], .yarl__root, .yarl__root * {
-            cursor: none !important;
-          }
-        }
-      `}</style>
-      
       {/* Inner Dot */}
       <div 
         ref={cursorRef}

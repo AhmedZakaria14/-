@@ -41,6 +41,42 @@ const PlatformDetailWrapper: React.FC<{ lang: Language, onBack: () => void, onWe
   return <PlatformDetail platformId={id} lang={lang} onBack={onBack} onWebsiteClick={onWebsiteClick} />;
 };
 
+interface PublicLayoutProps {
+  lang: Language;
+  setLang: (lang: Language) => void;
+  onPlatformClick: (id: string) => void;
+  onWebsiteOnboardingClick: () => void;
+  onSEOClick: () => void;
+}
+
+const PublicLayout: React.FC<PublicLayoutProps> = ({
+  lang,
+  setLang,
+  onPlatformClick,
+  onWebsiteOnboardingClick,
+  onSEOClick,
+}) => (
+  <>
+    <CustomCursor />
+    <Navbar lang={lang} setLang={setLang} />
+    
+    <main className="min-h-screen">
+      <Outlet />
+    </main>
+
+    <Suspense fallback={null}>
+      <LazyGlobalCTA lang={lang} />
+      
+      <LazyBottomNav 
+        lang={lang} 
+        onPlatformSelect={onPlatformClick} 
+        onWebsiteClick={onWebsiteOnboardingClick}
+      />
+      <LazyFooter lang={lang} onSEOClick={onSEOClick} />
+    </Suspense>
+  </>
+);
+
 function App() {
   const [lang, setLang] = useState<Language>('ar');
   const location = useLocation();
@@ -197,32 +233,18 @@ function App() {
     import('@vercel/analytics').then(({ inject }) => inject());
   }, []);
 
-  const PublicLayout = () => (
-    <>
-      <CustomCursor />
-      <Navbar lang={lang} setLang={setLang} />
-      
-      <main className="min-h-screen">
-        <Outlet />
-      </main>
-
-      <Suspense fallback={null}>
-        <LazyGlobalCTA lang={lang} />
-        
-        <LazyBottomNav 
-          lang={lang} 
-          onPlatformSelect={handlePlatformClick} 
-          onWebsiteClick={handleWebsiteOnboardingClick}
-        />
-        <LazyFooter lang={lang} onSEOClick={handleSEOClick} />
-      </Suspense>
-    </>
-  );
-
   return (
     <Suspense fallback={null}>
       <Routes>
-        <Route element={<PublicLayout />}>
+        <Route element={
+          <PublicLayout 
+            lang={lang} 
+            setLang={setLang} 
+            onPlatformClick={handlePlatformClick} 
+            onWebsiteOnboardingClick={handleWebsiteOnboardingClick} 
+            onSEOClick={handleSEOClick} 
+          />
+        }>
           <Route path="/saudi" element={<SaudiLandingPage />} />
           <Route path="/saudi/:city" element={<CityLandingPage lang={lang} onBack={handleBackToMain} />} />
           
