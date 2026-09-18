@@ -3,7 +3,7 @@ import { Language } from '../types';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
 import { updateSEO } from '../utils/seo';
-import { Smartphone, Zap, Palette, ArrowLeft, ArrowRight, ShieldCheck, Rocket, MousePointerClick, Gauge, Code2, Users, CheckCircle2, MessageCircle, BarChart3, Globe, Target } from 'lucide-react';
+import { Smartphone, Zap, Palette, ArrowLeft, ArrowRight, ShieldCheck, Rocket, MousePointerClick, Gauge, Code2, Users, CheckCircle2, MessageCircle, BarChart3, Globe, Target, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface SnapchatWebDevProps {
@@ -207,57 +207,115 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
             </div>
           </motion.div>
 
-          {/* Device Mockup Showcase with Auto-sliding preview */}
+          {/* Mobile Device Mockup Showcase with Auto-sliding preview */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-16 w-full max-w-4xl relative"
+            className="mt-16 w-full max-w-4xl relative flex flex-col items-center"
           >
-            <div className="relative mx-auto border-8 border-[#182035] bg-[#121829] rounded-[2.5rem] shadow-2xl overflow-hidden aspect-[16/10] md:aspect-[16/9] w-full max-w-3xl">
-              <div className="absolute top-0 left-0 right-0 h-8 bg-[#182035] flex items-center px-4 gap-2 z-20">
-                <div className="w-3 h-3 rounded-full bg-red-400" />
-                <div className="w-3 h-3 rounded-full bg-amber-400" />
-                <div className="w-3 h-3 rounded-full bg-green-400" />
-                <div className="mx-auto text-[11px] font-mono text-[#f4f1e9]/50 bg-[#0b1020] px-4 py-0.5 rounded-full">
-                  nasharhub.com
+            {/* Ambient backlight glow behind phone */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 h-[500px] bg-[#9e7444]/15 blur-[100px] rounded-full pointer-events-none -z-10" />
+
+            {/* Phone Showcase Container */}
+            <div className="relative z-10 flex items-center justify-center">
+              {/* Previous Arrow Button */}
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev - 1 + slideImages.length) % slideImages.length)}
+                className="hidden sm:flex absolute -left-6 md:-left-16 z-30 w-11 h-11 rounded-full bg-[#121829]/90 hover:bg-[#9e7444] text-[#f4f1e9] border border-white/10 items-center justify-center transition-all shadow-xl hover:scale-110 active:scale-95"
+                aria-label="Previous Slide"
+              >
+                {isRTL ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
+              </button>
+
+              {/* Smartphone Frame */}
+              <div className="relative border-[10px] sm:border-[12px] border-[#182035] bg-[#0c101c] rounded-[2.8rem] sm:rounded-[3.2rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_40px_rgba(158,116,68,0.18)] ring-1 ring-white/10 overflow-hidden w-[280px] sm:w-[320px] md:w-[340px] aspect-[720/1600]">
+                {/* Dynamic Island / Speaker */}
+                <div className="absolute top-2.5 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center pointer-events-none">
+                  <div className="h-4 w-24 sm:w-28 bg-[#0c101c] rounded-full flex items-center justify-between px-3 border border-white/10 shadow-sm">
+                    <div className="w-2 h-2 rounded-full bg-[#182035] flex items-center justify-center">
+                      <div className="w-1 h-1 rounded-full bg-blue-400/60" />
+                    </div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#182035]" />
+                  </div>
                 </div>
-              </div>
-              
-              <div className="w-full h-full pt-8 relative overflow-hidden bg-[#0b1020]">
-                {slideImages.map((src, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    animate={{ 
-                      opacity: currentSlide === index ? 1 : 0,
-                      scale: currentSlide === index ? 1 : 1.05
-                    }}
-                    transition={{ duration: 0.7 }}
-                    className="absolute inset-0 pt-8"
-                  >
-                    <img 
-                      src={src} 
-                      alt="Website Showcase" 
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </motion.div>
-                ))}
-                
-                {/* Slide Indicators */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-30 bg-[#0b1020]/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                  {slideImages.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setCurrentSlide(i)}
-                      className={`w-2 h-2 rounded-full transition-all ${currentSlide === i ? 'w-6 bg-[#9e7444]' : 'bg-white/30'}`}
-                      aria-label={`Slide ${i+1}`}
-                    />
+
+                {/* Screen Content */}
+                <div className="w-full h-full relative overflow-hidden bg-[#0c101c]">
+                  {slideImages.map((src, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{ 
+                        opacity: currentSlide === index ? 1 : 0,
+                        scale: currentSlide === index ? 1 : 1.02
+                      }}
+                      transition={{ duration: 0.6 }}
+                      className="absolute inset-0 w-full h-full"
+                    >
+                      <img 
+                        src={src} 
+                        alt={`تصميم موقع متجاوب للجوال - نموذج ${index + 1}`} 
+                        className="w-full h-full object-cover object-top"
+                        loading={index === 0 ? "eager" : "lazy"}
+                      />
+                    </motion.div>
                   ))}
+
+                  {/* Subtle Screen Gloss Effect */}
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.06] z-20" />
+
+                  {/* Phone Home Bar */}
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
+                    <div className="w-28 sm:w-32 h-1 bg-white/40 rounded-full backdrop-blur-sm shadow-sm" />
+                  </div>
                 </div>
               </div>
+
+              {/* Next Arrow Button */}
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev + 1) % slideImages.length)}
+                className="hidden sm:flex absolute -right-6 md:-right-16 z-30 w-11 h-11 rounded-full bg-[#121829]/90 hover:bg-[#9e7444] text-[#f4f1e9] border border-white/10 items-center justify-center transition-all shadow-xl hover:scale-110 active:scale-95"
+                aria-label="Next Slide"
+              >
+                {isRTL ? <ChevronLeft className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
+              </button>
             </div>
 
+            {/* Slide Indicators Below Phone */}
+            <div className="mt-6 flex items-center gap-2 z-20 bg-[#121829]/90 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-md">
+              {slideImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentSlide(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${currentSlide === i ? 'w-6 bg-[#9e7444]' : 'w-2 bg-white/30 hover:bg-white/60'}`}
+                  aria-label={`نموذج ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Mobile Previous/Next Touch Helpers */}
+            <div className="flex sm:hidden items-center justify-center gap-4 mt-3 z-20">
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev - 1 + slideImages.length) % slideImages.length)}
+                className="px-4 py-1.5 rounded-full bg-[#121829] text-xs font-bold text-[#f4f1e9] border border-white/10 flex items-center gap-1 active:scale-95"
+              >
+                {isRTL ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+                <span>{lang === 'ar' ? 'السابق' : 'Prev'}</span>
+              </button>
+              <span className="text-xs font-mono text-[#f4f1e9]/60">
+                {currentSlide + 1} / {slideImages.length}
+              </span>
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev + 1) % slideImages.length)}
+                className="px-4 py-1.5 rounded-full bg-[#121829] text-xs font-bold text-[#f4f1e9] border border-white/10 flex items-center gap-1 active:scale-95"
+              >
+                <span>{lang === 'ar' ? 'التالي' : 'Next'}</span>
+                {isRTL ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+              </button>
+            </div>
+
+            {/* CTA Button */}
             <div className="mt-8 flex justify-center relative z-20">
               <a 
                 href={WHATSAPP_LINK} 
@@ -270,24 +328,25 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
               </a>
             </div>
             
+            {/* Desktop Floating Badges */}
             <motion.div 
               style={{ y }}
-              className="absolute top-1/4 -left-4 md:-left-12 bg-[#121829] border border-white/10 p-4 rounded-2xl shadow-xl hidden md:flex items-center gap-4"
+              className="absolute top-1/3 -left-4 md:-left-10 lg:-left-20 bg-[#121829]/95 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-xl hidden md:flex items-center gap-4 z-20"
             >
-              <div className="w-12 h-12 bg-[#9e7444]/15 text-[#9e7444] rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#9e7444]/15 text-[#9e7444] rounded-xl flex items-center justify-center border border-[#9e7444]/20">
                 <Gauge className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-xs text-[#f4f1e9]/60 font-bold">{lang === 'ar' ? 'سرعة التحميل' : 'Load Time'}</p>
+                <p className="text-xs text-[#f4f1e9]/60 font-bold">{lang === 'ar' ? 'سرعة التحميل للجوال' : 'Mobile Load Speed'}</p>
                 <p className="text-xl font-black text-[#f4f1e9]">0.8s</p>
               </div>
             </motion.div>
 
             <motion.div 
               style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
-              className="absolute bottom-1/4 -right-4 md:-right-12 bg-[#121829] border border-white/10 p-4 rounded-2xl shadow-xl hidden md:flex items-center gap-4"
+              className="absolute bottom-1/3 -right-4 md:-right-10 lg:-right-20 bg-[#121829]/95 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-xl hidden md:flex items-center gap-4 z-20"
             >
-              <div className="w-12 h-12 bg-[#9e7444]/15 text-[#9e7444] rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-green-500/15 text-green-400 rounded-xl flex items-center justify-center border border-green-500/20">
                 <Users className="w-6 h-6" />
               </div>
               <div>
