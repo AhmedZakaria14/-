@@ -13,12 +13,12 @@ interface SnapchatWebDevProps {
 export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
 
   const slideImages = [
-    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845985/WhatsApp_Image_2026-08-04_at_3.17.32_PM_1_ssoh8m.jpg",
-    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845985/WhatsApp_Image_2026-08-04_at_3.17.33_PM_1_frdzkk.jpg",
-    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845986/WhatsApp_Image_2026-08-04_at_3.17.32_PM_pjrxip.jpg",
-    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845988/WhatsApp_Image_2026-08-04_at_3.17.32_PM_2_xap0d1.jpg",
-    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845983/WhatsApp_Image_2026-08-04_at_3.17.33_PM_awtws7.jpg",
-    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1785845983/WhatsApp_Image_2026-08-04_at_3.17.32_PM_3_fsqymm.jpg"
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789763470/ChatGPT_Image_Sep_18_2026_11_30_32_PM_1_pjhiek.png",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789763470/ChatGPT_Image_Sep_18_2026_11_30_33_PM_3_cg3ztk.png",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789763472/ChatGPT_Image_Sep_18_2026_11_30_33_PM_2_svoogv.png",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789763469/ChatGPT_Image_Sep_18_2026_11_30_33_PM_4_is2xzd.png",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789763469/ChatGPT_Image_Sep_18_2026_11_30_33_PM_5_ednk14.png",
+    "https://res.cloudinary.com/ddrsmtsvj/image/upload/v1789763454/ChatGPT_Image_Sep_18_2026_11_30_33_PM_6_d5jg7a.png"
   ];
 
   const isRTL = lang === 'ar';
@@ -228,18 +228,8 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
                 {isRTL ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
               </button>
 
-              {/* Smartphone Frame */}
-              <div className="relative border-[10px] sm:border-[12px] border-[#182035] bg-[#0c101c] rounded-[2.8rem] sm:rounded-[3.2rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_40px_rgba(158,116,68,0.18)] ring-1 ring-white/10 overflow-hidden w-[280px] sm:w-[320px] md:w-[340px] aspect-[720/1600]">
-                {/* Dynamic Island / Speaker */}
-                <div className="absolute top-2.5 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center pointer-events-none">
-                  <div className="h-4 w-24 sm:w-28 bg-[#0c101c] rounded-full flex items-center justify-between px-3 border border-white/10 shadow-sm">
-                    <div className="w-2 h-2 rounded-full bg-[#182035] flex items-center justify-center">
-                      <div className="w-1 h-1 rounded-full bg-blue-400/60" />
-                    </div>
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#182035]" />
-                  </div>
-                </div>
-
+              {/* Showcase Mockup Frame */}
+              <div className="relative border-4 sm:border-[6px] border-[#182035] bg-[#0c101c] rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_40px_rgba(158,116,68,0.18)] ring-1 ring-white/10 overflow-hidden w-[300px] sm:w-[380px] md:w-[440px] lg:w-[480px] aspect-[1122/1402]">
                 {/* Screen Content */}
                 <div className="w-full h-full relative overflow-hidden bg-[#0c101c]">
                   {slideImages.map((src, index) => (
@@ -255,20 +245,15 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
                     >
                       <img 
                         src={src} 
-                        alt={`تصميم موقع متجاوب للجوال - نموذج ${index + 1}`} 
-                        className="w-full h-full object-cover object-top"
+                        alt={`نموذج تصميم موقع احترافي - نشار هب ${index + 1}`} 
+                        className="w-full h-full object-cover object-center"
                         loading={index === 0 ? "eager" : "lazy"}
                       />
                     </motion.div>
                   ))}
 
                   {/* Subtle Screen Gloss Effect */}
-                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.06] z-20" />
-
-                  {/* Phone Home Bar */}
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
-                    <div className="w-28 sm:w-32 h-1 bg-white/40 rounded-full backdrop-blur-sm shadow-sm" />
-                  </div>
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.05] z-20" />
                 </div>
               </div>
 
