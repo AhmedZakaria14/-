@@ -54,8 +54,13 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
     }
 
     window.scrollTo(0, 0);
+    const rawPostTitle = post.title[lang];
+    const cleanPostTitle = rawPostTitle.includes('نشار هب') || rawPostTitle.includes('Nashar Hub')
+      ? rawPostTitle
+      : `${rawPostTitle} | ${lang === 'ar' ? 'نشار هب' : 'Nashar Hub'}`;
+
     updateSEO({
-      title: `${post.title[lang]} | Nashar Hub`,
+      title: cleanPostTitle,
       description: post.excerpt[lang],
       keywords: post.tags.join(', '),
       url: `https://nasharhub.com/blog/${post.slug}`,

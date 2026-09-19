@@ -18,9 +18,9 @@ export const Blog: React.FC<BlogProps> = ({ lang, onBack }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     updateSEO({
-      title: lang === 'en' ? 'Digital Marketing Blog | Nashar Hub' : 'مدونة التسويق الرقمي | نشار هب',
-      description: lang === 'en' ? 'Read the latest insights, strategies, and tips on digital marketing, SEO, and web development in Saudi Arabia.' : 'اقرأ أحدث الرؤى والاستراتيجيات والنصائح حول التسويق الرقمي والسيو وتطوير المواقع في السعودية.',
-      keywords: lang === 'en' ? 'Digital Marketing Blog, SEO Tips, Saudi Arabia Marketing, E-commerce UX' : 'مدونة التسويق الرقمي, نصائح سيو, التسويق في السعودية, تجربة المستخدم للمتاجر',
+      title: lang === 'en' ? 'Digital Marketing Blog & Growth Insights | Nashar Hub' : 'مدونة التسويق الرقمي واستراتيجيات النمو | نشار هب',
+      description: lang === 'en' ? 'Read the latest insights, practical strategies, and tips on SEO, Google Ads, and ecommerce development.' : 'اقرأ أحدث المقالات والأدلة العملية حول التسويق الرقمي، إعلانات جوجل، السيو وتصميم المواقع والمتاجر للشركات في السعودية والخليج ومختلف الأسواق.',
+      keywords: lang === 'en' ? 'Digital Marketing Blog, SEO Tips, Google Ads Guide, E-commerce UX, Web Design, Nashar Hub' : 'مدونة التسويق الرقمي, نصائح سيو, اعلانات جوجل, تصميم مواقع, متجر الكتروني, نشار هب',
       url: 'https://nasharhub.com/blog',
       image: 'https://nasharhub.com/og-image.jpg'
     });

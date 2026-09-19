@@ -1,5 +1,6 @@
 {
   "name": "Al-Nashar Marketing Agency",
-  "description": "A high-performance Digital Marketing Agency website optimized for SEO in Saudi Arabia (Riyadh). Features landing pages for Google Ads, Web Design, and SEO services.",
-  "requestFramePermissions": []
+  "description": "A high-performance Digital Marketing & Web Development Agency website (Nashar Hub) offering SEO, Google Ads, and custom web design across Saudi Arabia, GCC, and global markets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
