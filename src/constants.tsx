@@ -56,8 +56,8 @@ export const FAQS: FAQItem[] = [
   {
     question: { en: 'What website design services do you provide?', ar: 'ما هي خدمات تصميم المواقع التي تقدمونها؟' },
     answer: { 
-      en: 'We provide custom website development, high-converting landing pages, and multi-page corporate or ecommerce websites tailored for Saudi businesses.', 
-      ar: 'نقدم تصميم وتطوير مواقع إلكترونية مخصصة، صفحات هبوط ذات معدل تحويل عالي، ومتاجر إلكترونية متكاملة تناسب متطلبات السوق السعودي.' 
+      en: 'We provide custom website development, high-converting landing pages, and multi-page corporate or ecommerce websites tailored for businesses across Saudi Arabia, the GCC, and international markets.', 
+      ar: 'نقدم تصميم وتطوير مواقع إلكترونية مخصصة، صفحات هبوط ذات معدل تحويل عالي، ومتاجر إلكترونية متكاملة تناسب متطلبات مختلف الأنشطة في السعودية، الخليج، ومختلف الأسواق.' 
     }
   },
   {
@@ -91,8 +91,8 @@ export const FAQS: FAQItem[] = [
   {
     question: { en: 'What is SEO and why is it important for my business?', ar: 'ما هو الـ SEO ولماذا هو مهم لنشاطي التجاري؟' },
     answer: { 
-      en: 'SEO (Search Engine Optimization) increases your website visibility on Google. It brings organic, high-intent clients actively searching for your services in Saudi Arabia.', 
-      ar: 'الـ SEO هو تحسين ظهور موقعك في نتائج البحث الأولى بـ جوجل. يساعدك على جذب عملاء مستهدفين يبحثون بالفعل عن خدماتك في المملكة العربية السعودية بدون تكلفة إعلانية مستمرة.' 
+      en: 'SEO (Search Engine Optimization) increases your website visibility on Google. It brings organic, high-intent clients actively searching for your services across Saudi Arabia, the GCC, and target regions.', 
+      ar: 'الـ SEO هو تحسين ظهور موقعك في نتائج البحث الأولى بـ جوجل. يساعدك على جذب عملاء مستهدفين يبحثون بالفعل عن خدماتك في السعودية والخليج ومختلف الأسواق المستهدفة بدون تكلفة إعلانية مستمرة.' 
     }
   }
 ];
@@ -203,12 +203,12 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const UI_TEXT: Translation = {
   heroTitle: {
-    en: "The Leading Digital Marketing Agency in Saudi Arabia",
-    ar: "أفضل شركة تسويق إلكتروني بالسعودية"
+    en: "Nashar Hub | Premier Digital Marketing & Web Solutions Agency",
+    ar: "وكالة نشار هب للتسويق الرقمي وتطوير المواقع والحلول البرمجية"
   },
   heroSubtitle: {
-    en: "We are a top-tier digital marketing agency serving Riyadh, Jeddah, Dammam, and all of KSA. We specialize in high-ROI paid ads, custom web design, and Salla store creation to multiply your sales.",
-    ar: "وكالة تسويق رقمي رائدة في السعودية. متخصصون في إطلاق الحملات الإعلانية، وتصميم مواقع إلكترونية احترافية. معنا ستحصل على نمو مستدام لزيادة مبيعاتك وتعزيز تواجدك الرقمي."
+    en: "We are a premier full-service digital marketing agency serving businesses across Saudi Arabia, the GCC, Egypt, and internationally. We specialize in high-ROI paid ads, custom web design, and advanced SEO to multiply your sales.",
+    ar: "وكالة تسويق رقمي رائدة وحلول برمجية متكاملة. نخدم عملاءنا في السعودية، دول الخليج، مصر، والوطن العربي وعالمياً، متخصصون في إطلاق الحملات الإعلانية، تصميم المواقع المتقدمة، وتهيئة محركات البحث لتحقيق نمو مستدام وزيادة المبيعات."
   },
   getStarted: {
     en: "Start Your Growth",

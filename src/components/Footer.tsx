@@ -29,8 +29,8 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
                    style={{ height: '36px', width: '36px', maxHeight: '36px', maxWidth: '36px', objectFit: 'contain' }}
                    className="h-[36px] w-[36px] max-h-[36px] max-w-[36px] object-contain block shrink-0"
                  />
-                 <span className="text-xl sm:text-2xl font-black tracking-widest text-[#f4f1e9]">
-                   NASHAR<span className="text-[#58a8f3]">HUB</span>
+                 <span className="text-xl sm:text-2xl font-black tracking-tight text-[#f4f1e9] font-sans">
+                   Nashar<span className="text-[#38bdf8]">HUB</span>
                  </span>
                </a>
             </div>
@@ -101,11 +101,11 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
 
         </div>
         
-        {/* Areas We Serve (Local SEO) */}
+        {/* Areas We Serve (Local & Regional SEO) */}
         <div className="border-t border-white/10 pt-8 pb-4 mt-8">
-          <h4 className="text-xs font-mono font-bold text-white/50 uppercase tracking-wider mb-4">{lang === 'en' ? 'Areas We Serve in Saudi Arabia' : 'مناطق نخدمها في المملكة العربية السعودية'}</h4>
+          <h4 className="text-xs font-mono font-bold text-white/50 uppercase tracking-wider mb-4">{lang === 'en' ? 'Target Markets & Regions' : 'الأسواق والمناطق المستهدفة'}</h4>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-white/40">
-            <span>{lang === 'en' ? 'Digital Marketing in Riyadh' : 'شركة تسويق بالرياض'}</span>
+            <span>{lang === 'en' ? 'Digital Marketing in Riyadh' : 'تسويق رقمي بالرياض'}</span>
             <span>•</span>
             <span>{lang === 'en' ? 'Web Design in Jeddah' : 'تصميم مواقع بجدة'}</span>
             <span>•</span>
@@ -116,6 +116,10 @@ export const Footer: React.FC<FooterProps> = ({ lang, onSEOClick }) => {
             <span>{lang === 'en' ? 'Ads in Medina' : 'إعلانات في المدينة المنورة'}</span>
             <span>•</span>
             <span>{lang === 'en' ? 'Web Development in Khobar' : 'برمجة مواقع بالخبر'}</span>
+            <span>•</span>
+            <span>{lang === 'en' ? 'Marketing in Dubai & UAE' : 'تسويق في دبي والإمارات'}</span>
+            <span>•</span>
+            <span>{lang === 'en' ? 'Digital Agency in Cairo & Egypt' : 'وكالة تسويق بالقاهرة ومصر'}</span>
             <span>•</span>
             <span>{lang === 'en' ? 'Marketing in Abha' : 'تسويق في أبها'}</span>
             <span>•</span>

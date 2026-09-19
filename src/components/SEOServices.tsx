@@ -17,9 +17,9 @@ export const SEOServices: React.FC<SEOServicesProps> = ({ lang, onBack, isPage =
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const title = lang === 'en' ? 'Advanced SEO Services & Organic Growth | Nashar Hub' : 'خدمات السيو SEO في السعودية | نشار هب - تصدر جوجل';
-    const description = lang === 'en' ? 'Dominate search rankings with our comprehensive SEO strategies including On-Page, Off-Page, and Technical SEO. Serving all of KSA.' : 'خدمات تحسين محركات البحث SEO المتكاملة في السعودية. سيو داخلي وخارجي وتقني لتصدر نتائج جوجل وزيادة الزيارات المجانية.';
-    const keywords = lang === 'en' ? 'SEO Services, On-Page SEO, Off-Page SEO, Technical SEO, SEO Case Study, Organic Growth, Search Engine Optimization' : 'شركة سيو, خدمات سيو, تحسين محركات البحث, سيو داخلي, سيو خارجي, تصدر نتائج البحث, خبير سيو الرياض, سيو جدة, سيو الدمام, شركة سيو السعودية, سيو';
+    const title = lang === 'en' ? 'Advanced SEO Services & Organic Search Dominance | Nashar Hub' : 'خدمات السيو وتصدر نتائج بحث جوجل | نشار هب - تحسين محركات البحث';
+    const description = lang === 'en' ? 'Dominate search rankings with comprehensive SEO strategies: On-Page, Off-Page, and Technical SEO. Serving businesses in Saudi Arabia, UAE, the GCC, and globally.' : 'خدمات تحسين محركات البحث SEO المتكاملة من وكالة نشار هب. سيو داخلي وتقني وبناء روابط لتصدر نتائج جوجل ومضاعفة الزيارات المجانية في السعودية، الخليج، ومختلف الأسواق.';
+    const keywords = lang === 'en' ? 'SEO Services, Search Engine Optimization, Technical SEO, On-Page SEO, Backlinks, Organic Growth, Saudi Arabia SEO, UAE SEO, GCC SEO' : 'خدمات سيو, شركة سيو, تحسين محركات البحث, خبير سيو, سيو داخلي وخارجي, تصدر نتائج بحث جوجل, سيو السعودية, سيو الامارات, سيو الخليج, سيو مصر, نشار هب';
 
     const faqSchema = {
       "@context": "https://schema.org",
@@ -138,8 +138,8 @@ export const SEOServices: React.FC<SEOServicesProps> = ({ lang, onBack, isPage =
       icon: <Target className="text-emerald-500" size={32} />,
       title: { en: 'Off-Page SEO', ar: 'السيو الخارجي (Off-Page)' },
       desc: {
-        en: 'Building authority in the digital space requires a strategic approach to Off-Page SEO. We execute sophisticated link-building campaigns that focus on quality over quantity, acquiring backlinks from high-authority, relevant websites that pass real ranking power. Our digital PR strategies help build brand mentions and social signals that reinforce your website\'s reputation as a leader in your industry within the Saudi market.',
-        ar: 'يتطلب بناء السلطة في الفضاء الرقمي نهجاً استراتيجياً للسيو الخارجي. نحن ننفذ حملات بناء روابط متطورة تركز على الجودة بدلاً من الكمية، ونحصل على روابط خلفية من مواقع ذات سلطة عالية وصلة تمرر قوة تصنيف حقيقية. تساعد استراتيجيات العلاقات العامة الرقمية لدينا في بناء إشارات العلامة التجارية والإشارات الاجتماعية التي تعزز سمعة موقعك كقائد في صناعتك داخل السوق السعودي.'
+        en: 'Building authority in the digital space requires a strategic approach to Off-Page SEO. We execute sophisticated link-building campaigns that focus on quality over quantity, acquiring backlinks from high-authority, relevant websites that pass real ranking power. Our digital PR strategies help build brand mentions and social signals that reinforce your website\'s reputation as a leader in your industry within Saudi Arabia, the GCC, and target markets.',
+        ar: 'يتطلب بناء السلطة في الفضاء الرقمي نهجاً استراتيجياً للسيو الخارجي. نحن ننفذ حملات بناء روابط متطورة تركز على الجودة بدلاً من الكمية، ونحصل على روابط خلفية من مواقع ذات سلطة عالية وصلة تمرر قوة تصنيف حقيقية. تساعد استراتيجيات العلاقات العامة الرقمية لدينا في بناء إشارات العلامة التجارية والإشارات الاجتماعية التي تعزز سمعة موقعك كقائد في صناعتك داخل السعودية والخليج ومختلف الأسواق.'
       },
       features: {
         en: ['High-Authority Niche Link Building', 'Strategic Digital PR & Outreach', 'Advanced Local SEO & GMB Optimization', 'Brand Reputation Management', 'In-Depth Competitor Backlink Analysis'],
@@ -168,8 +168,8 @@ export const SEOServices: React.FC<SEOServicesProps> = ({ lang, onBack, isPage =
     industry: { en: 'Fragrance & Perfumes', ar: 'العطور والبخور' },
     duration: { en: '6 Months', ar: '6 أشهر' },
     challenge: {
-      en: 'The client had a beautiful website but struggled with low organic traffic and high dependency on paid ads. They ranked on page 4 for their main money keywords, missing out on thousands of potential customers searching for high-end fragrances in Saudi Arabia.',
-      ar: 'كان لدى العميل موقع جميل ولكنه عانى من انخفاض الزيارات المجانية والاعتماد الكبير على الإعلانات الممولة. كانوا في الصفحة الرابعة للكلمات المفتاحية الرئيسية، مما أدى إلى ضياع آلاف العملاء المحتملين الذين يبحثون عن عطور فاخرة في السعودية.'
+      en: 'The client had a beautiful website but struggled with low organic traffic and high dependency on paid ads. They ranked on page 4 for their main money keywords, missing out on thousands of potential customers searching for high-end fragrances in Saudi Arabia and the GCC.',
+      ar: 'كان لدى العميل موقع جميل ولكنه عانى من انخفاض الزيارات المجانية والاعتماد الكبير على الإعلانات الممولة. كانوا في الصفحة الرابعة للكلمات المفتاحية الرئيسية، مما أدى إلى ضياع آلاف العملاء المحتملين الذين يبحثون عن عطور فاخرة في السعودية والخليج.'
     },
     solution: {
       en: 'We conducted a comprehensive technical audit, fixed 120+ crawl errors, optimized category pages with long-tail keywords, and acquired 45 high-authority backlinks from relevant niche sites. We also implemented a content strategy focused on fragrance guides and reviews.',

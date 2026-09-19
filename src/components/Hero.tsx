@@ -54,8 +54,8 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
             {/* Lede Paragraph */}
             <p className="text-base sm:text-lg md:text-xl text-white/70 mb-8 max-w-2xl leading-relaxed font-normal">
               {lang === 'en' 
-                ? 'From bespoke web engineering and Technical SEO to precision-targeted Google & social advertising across Saudi Arabia and the GCC.'
-                : 'وكالة رائدة في المملكة العربية السعودية والخليج. متخصصون في تطوير المواقع السريعة، تحسين محركات البحث SEO، وإدارة الحملات الإعلانية الممولة بعائد استثماري مضمون.'}
+                ? 'From bespoke web engineering and Technical SEO to precision-targeted Google & social advertising across Saudi Arabia, the GCC, and international markets.'
+                : 'وكالة نشار هب الرائدة في الحلول الرقمية المتكاملة. متخصصون في تطوير المواقع السريعة، تحسين محركات البحث SEO، وإدارة الحملات الإعلانية الممولة للشركات في السعودية والخليج ومختلف الأسواق.'}
             </p>
 
             {/* Action Buttons */}
@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
             <div className={`mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-white/60 font-mono ${isRTL ? 'justify-center lg:justify-start' : 'justify-center lg:justify-start'}`}>
               <div className="flex items-center gap-2">
                 <ShieldCheck size={16} className="text-[#58a8f3]" />
-                <span>{lang === 'en' ? 'VERIFIED BUSINESS PARTNER' : 'شريك أعمال معتمد في الخليج'}</span>
+                <span>{lang === 'en' ? 'VERIFIED BUSINESS PARTNER' : 'شريك أعمال رقمي معتمد'}</span>
               </div>
               <span className="hidden sm:inline text-white/20">•</span>
               <div className="flex items-center gap-2">

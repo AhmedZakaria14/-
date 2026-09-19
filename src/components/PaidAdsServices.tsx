@@ -17,9 +17,9 @@ export const PaidAdsServices: React.FC<PaidAdsServicesProps> = ({ lang, onBack, 
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const title = lang === 'en' ? 'Paid Ads Services & PPC Management | Nashar Hub' : 'شركة إدارة حملات إعلانية ممولة في السعودية | نشار هب';
-    const description = lang === 'en' ? 'Scale your revenue with high-performance Google Ads, Meta Ads, TikTok, and Snapchat campaigns.' : 'شركة إدارة إعلانات ممولة في السعودية. ندير حملات إعلانات جوجل، سناب شات، تيك توك، وميتا لزيادة المبيعات وعائد الاستثمار.';
-    const keywords = lang === 'en' ? 'Paid Ads, PPC Management, Google Ads Agency, Social Media Ads' : 'اعلانات ممولة, ادارة حملات اعلانية, إعلانات جوجل, سناب شات, تيك توك, شركة تسويق, السعودية';
+    const title = lang === 'en' ? 'Paid Ads & PPC Campaign Management | Nashar Hub' : 'إدارة الحملات الإعلانية الممولة وإعلانات جوجل | نشار هب';
+    const description = lang === 'en' ? 'Scale your revenue with high-performance Google Ads, Meta Ads, TikTok, and Snapchat campaigns across Saudi Arabia, the GCC, and global markets.' : 'إدارة حملات إعلانية ممولة باحترافية مع وكالة نشار هب. ندير إعلانات جوجل، سناب شات، تيك توك، وميتا لمضاعفة المبيعات وعائد الاستثمار في السعودية والخليج ومختلف الأسواق.';
+    const keywords = lang === 'en' ? 'Paid Ads, PPC Management, Google Ads Agency, Social Media Ads, Saudi Arabia Ads, GCC PPC, Performance Marketing' : 'اعلانات ممولة, ادارة حملات اعلانية, إعلانات جوجل, سناب شات, تيك توك, شركة تسويق, اعلانات السعودية, اعلانات الخليج, اعلانات مصر, نشار هب';
 
     const faqSchema = {
       "@context": "https://schema.org",
@@ -27,12 +27,12 @@ export const PaidAdsServices: React.FC<PaidAdsServicesProps> = ({ lang, onBack, 
       "mainEntity": [
         {
           "@type": "Question",
-          "name": lang === 'en' ? "What is the best advertising platform in Saudi Arabia?" : "ما هي أفضل منصة إعلانية في السعودية؟",
+          "name": lang === 'en' ? "What is the best advertising platform for my business?" : "ما هي أفضل منصة إعلانية لمشروعي؟",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": lang === 'en' 
-              ? "The best platform depends on your target audience and goals. Google Ads is excellent for high-intent searches, while Snapchat and TikTok are highly effective for reaching younger demographics and driving brand awareness in Saudi Arabia. Meta (Instagram/Facebook) remains a strong all-rounder." 
-              : "تعتمد أفضل منصة على جمهورك المستهدف وأهدافك. إعلانات جوجل ممتازة لعمليات البحث ذات النية العالية، بينما سناب شات وتيك توك فعالان للغاية للوصول إلى الفئات العمرية الشابة وزيادة الوعي بالعلامة التجارية في السعودية. تظل ميتا (إنستغرام/فيسبوك) خياراً قوياً شاملاً."
+              ? "The best platform depends on your target audience, industry, and goals. Google Ads is unmatched for high-intent search traffic, while Snapchat and TikTok are extraordinarily powerful for younger demographics and rapid viral engagement in Saudi Arabia and the GCC. Meta (Instagram & Facebook) remains a versatile conversion engine across all regions." 
+              : "تعتمد أفضل منصة على طبيعة نشاطك وجمهورك المستهدف وسوقك. إعلانات جوجل ممتازة لعمليات البحث ذات النية العالية في الشراء، بينما سناب شات وتيك توك فعالان للغاية في السعودية ودول الخليج للوصول للجمهور النشط وزيادة المبيعات والوعي بالعلامة التجارية. وتظل منصات ميتا (إنستغرام وفيسبوك) خياراً شاملاً ومؤثراً لمختلف الأسواق."
           }
         },
         {
@@ -80,10 +80,10 @@ export const PaidAdsServices: React.FC<PaidAdsServicesProps> = ({ lang, onBack, 
 
   const faqs = [
     {
-      q: { en: "What is the best advertising platform in Saudi Arabia?", ar: "ما هي أفضل منصة إعلانية في السعودية؟" },
+      q: { en: "What is the best advertising platform for my business?", ar: "ما هي أفضل منصة إعلانية لمشروعي؟" },
       a: { 
-        en: "The best platform depends on your target audience and goals. Google Ads is excellent for high-intent searches, while Snapchat and TikTok are highly effective for reaching younger demographics and driving brand awareness in Saudi Arabia. Meta (Instagram/Facebook) remains a strong all-rounder.", 
-        ar: "تعتمد أفضل منصة على جمهورك المستهدف وأهدافك. إعلانات جوجل ممتازة لعمليات البحث ذات النية العالية، بينما سناب شات وتيك توك فعالان للغاية للوصول إلى الفئات العمرية الشابة وزيادة الوعي بالعلامة التجارية في السعودية. تظل ميتا (إنستغرام/فيسبوك) خياراً قوياً شاملاً." 
+        en: "The best platform depends on your target audience, industry, and goals. Google Ads is unmatched for high-intent search traffic, while Snapchat and TikTok are extraordinarily powerful for younger demographics and rapid viral engagement in Saudi Arabia and the GCC. Meta (Instagram & Facebook) remains a versatile conversion engine across all regions.", 
+        ar: "تعتمد أفضل منصة على طبيعة نشاطك وجمهورك المستهدف وسوقك. إعلانات جوجل ممتازة لعمليات البحث ذات النية العالية في الشراء، بينما سناب شات وتيك توك فعالان للغاية في السعودية ودول الخليج للوصول للجمهور النشط وزيادة المبيعات والوعي بالعلامة التجارية. وتظل منصات ميتا (إنستغرام وفيسبوك) خياراً شاملاً ومؤثراً لمختلف الأسواق." 
       }
     },
     {

@@ -1,27 +1,33 @@
 import fs from 'fs';
 import path from 'path';
+import { blogPosts } from './src/data/blog';
 
-// All routes from sitemap with their SEO metadata
+// Core static routes with their SEO metadata
 const routes = [
   {
     path: '/paid-ads-services',
-    title: 'وكالة إعلانات جوجل في السعودية | حملات بعائد استثمار مرتفع | نشار هب',
-    description: 'حقق أقصى عائد على استثمارك الإعلاني مع خدمات إدارة حملات إعلانات جوجل، ميتا، سناب شات، وتيك توك بالسعودية.'
+    title: 'إدارة الحملات الإعلانية الممولة وإعلانات جوجل | نشار هب',
+    description: 'حقق أقصى عائد على استثمارك الإعلاني مع وكالة نشار هب عبر إدارة حملات إعلانات جوجل، ميتا، سناب شات، وتيك توك في السعودية والخليج ومختلف الأسواق.'
   },
   {
     path: '/seo-services',
-    title: 'خدمات السيو في السعودية | تصدر نتائج بحث جوجل | نشار هب',
-    description: 'تصدر نتائج بحث جوجل في المملكة العربية السعودية مع خدمات تحسين محركات البحث التقنية والمحتوى الداخلي والخارجي.'
+    title: 'خدمات السيو وتصدر نتائج بحث جوجل | نشار هب SEO',
+    description: 'تصدر نتائج بحث جوجل مع وكالة نشار هب عبر خدمات تحسين محركات البحث التقنية والمحتوى للشركات في السعودية والخليج ومختلف الأسواق.'
   },
   {
     path: '/web-dev-services',
-    title: 'تصميم مواقع وتطوير متاجر إلكترونية في السعودية | نشار هب',
-    description: 'تصميم وتطوير مواقع ومتاجر إلكترونية احترافية مخصصة للنمو والسرعة وأعلى معدل تحويل في السعودية.'
+    title: 'تصميم مواقع وتطوير متاجر إلكترونية احترافية | نشار هب',
+    description: 'تصميم وتطوير مواقع ومتاجر إلكترونية احترافية مخصصة للسرعة والنمو وأعلى معدل تحويل في السعودية والخليج والوطن العربي.'
+  },
+  {
+    path: '/ai',
+    title: 'معلومات وكالة نشار هب لمحركات بحث الذكاء الاصطناعي | نشار هب',
+    description: 'معلومات رسمية موجهة لنماذج ومحركات الذكاء الاصطناعي (ChatGPT, Perplexity, Claude, Gemini) حول خدمات وكالة نشار هب للتسويق الرقمي والسيو.'
   },
   {
     path: '/saudi',
-    title: 'التسويق الرقمي في السعودية | خدمات ونتائج ملموسة | نشار هب',
-    description: 'حلول التسويق الرقمي المتكاملة في المملكة العربية السعودية: الرياض، جدة، الدمام، مكة، والمدينة المنورة.'
+    title: 'التسويق الرقمي وتصميم المواقع في السعودية | نشار هب',
+    description: 'حلول التسويق الرقمي المتكاملة من وكالة نشار هب لخدمة الشركات في المملكة العربية السعودية: الرياض، جدة، الدمام، مكة، والمدينة المنورة.'
   },
   {
     path: '/saudi/riyadh',
@@ -45,33 +51,33 @@ const routes = [
   },
   {
     path: '/services/google',
-    title: 'إعلانات جوجل Google Ads بالسعودية | نشار هب',
-    description: 'إدارة حملات إعلانات جوجل الاحترافية (Search, Performance Max, Display) لتحقيق أعلى عائد على الإنفاق الإعلاني في السعودية.'
+    title: 'إدارة إعلانات جوجل Google Ads الاحترافية | نشار هب',
+    description: 'إدارة حملات إعلانات جوجل الاحترافية (Search, Performance Max, Display) لتحقيق أعلى عائد على الإنفاق الإعلاني في السعودية والخليج ومختلف الأسواق.'
   },
   {
     path: '/services/meta',
-    title: 'إعلانات فيسبوك وانستقرام Meta Ads بالسعودية | نشار هب',
-    description: 'حملات إعلانات ميتا الاحترافية لاستهداف العملاء وتحقيق أعلى معدل تحويل ومبيعات في السوق السعودي.'
+    title: 'إعلانات فيسبوك وانستقرام Meta Ads | نشار هب',
+    description: 'حملات إعلانات ميتا الاحترافية لاستهداف العملاء وتحقيق أعلى معدل تحويل ومبيعات في السعودية والخليج ومختلف الأسواق.'
   },
   {
     path: '/services/tiktok',
-    title: 'إعلانات تيك توك TikTok Ads بالسعودية | نشار هب',
-    description: 'إنشاء وإدارة حملات إعلانية مبتكرة على تيك توك لجذب جمهور الشباب وزيادة المبيعات في السعودية.'
+    title: 'إعلانات تيك توك TikTok Ads | نشار هب',
+    description: 'إنشاء وإدارة حملات إعلانية مبتكرة على تيك توك لجذب الجمهور المستهدف وزيادة المبيعات في السعودية والخليج والشرق الأوسط.'
   },
   {
     path: '/services/snapchat',
-    title: 'إعلانات سناب شات Snapchat Ads بالسعودية | نشار هب',
-    description: 'استهدف الجمهور السعودي بأعلى كفاءة عبر إعلانات سناب شات التفاعلية وحقق أعلى عائد استثماري.'
+    title: 'إعلانات سناب شات Snapchat Ads | نشار هب',
+    description: 'استهدف الجمهور بأعلى كفاءة عبر إعلانات سناب شات التفاعلية وحقق أعلى عائد استثماري في السعودية ودول الخليج.'
   },
   {
     path: '/services/linkedin',
-    title: 'إعلانات لينكد إن LinkedIn Ads بالسعودية | نشار هب',
-    description: 'حملات B2B متخصصة على لينكد إن للوصول إلى صناع القرار وأصحاب الشركات في السعودية والخليج.'
+    title: 'إعلانات لينكد إن LinkedIn Ads للشركات | نشار هب',
+    description: 'حملات B2B متخصصة على لينكد إن للوصول إلى صناع القرار وأصحاب الشركات في السعودية والخليج ومختلف القطاعات.'
   },
   {
     path: '/blog',
     title: 'مدونة التسويق الرقمي واستراتيجيات النمو | نشار هب',
-    description: 'مقالات وأدلة عملية في تحسين محركات البحث، إعلانات جوجل، والتسويق الرقمي في السعودية.'
+    description: 'مقالات وأدلة عملية في تحسين محركات البحث، إعلانات جوجل، والتسويق الرقمي في السعودية والخليج والوطن العربي.'
   },
   {
     path: '/policy',
@@ -81,14 +87,52 @@ const routes = [
   {
     path: '/website-onboarding',
     title: 'ابدأ مشروع تصميم موقعك | نشار هب',
-    description: 'احصل على استشارة وعرض سعر مخصص لتصميم وتطوير موقعك الإلكتروني أو متجرك في السعودية.'
+    description: 'احصل على استشارة وعرض سعر مخصص لتصميم وتطوير موقعك الإلكتروني أو متجرك في السعودية ومختلف الدول.'
   },
   {
     path: '/lp/web-design',
-    title: 'تصميم مواقع ومتاجر احترافية في السعودية | نشار هب',
-    description: 'احصل على موقع أو متجر إلكتروني سريع ومتوافق مع محركات البحث بأعلى معايير التصميم في السعودية.'
+    title: 'تصميم مواقع ومتاجر إلكترونية احترافية | نشار هب',
+    description: 'احصل على موقع أو متجر إلكتروني سريع ومتوافق مع محركات البحث بأعلى معايير التصميم في السعودية والخليج وكافة الأسواق.'
   }
 ];
+
+// Dynamically add all blog post articles for SEO pre-rendering
+blogPosts.forEach(post => {
+  const rawTitle = post.title?.ar || 'مدونة نشار هب';
+  const title = rawTitle.includes('نشار هب') ? rawTitle : `${rawTitle} | نشار هب`;
+  const description = post.excerpt?.ar || '';
+  routes.push({
+    path: `/blog/${post.slug}`,
+    title,
+    description,
+    image: post.image,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title?.ar,
+      "description": description,
+      "image": post.image,
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "author": {
+        "@type": "Organization",
+        "name": post.author || "وكالة نشار هب"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "وكالة نشار هب للتسويق الرقمي",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nasharhub.com/favicon.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://nasharhub.com/blog/${post.slug}`
+      }
+    }
+  });
+});
 
 const distDir = path.resolve(process.cwd(), 'dist');
 const templatePath = path.join(distDir, 'index.html');
@@ -153,6 +197,24 @@ routes.forEach(route => {
       /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/i,
       `<meta name="twitter:description" content="${route.description}" />`
     );
+  }
+
+  // Replace Image if provided
+  if (route.image) {
+    html = html.replace(
+      /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i,
+      `<meta property="og:image" content="${route.image}" />`
+    );
+    html = html.replace(
+      /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/i,
+      `<meta name="twitter:image" content="${route.image}" />`
+    );
+  }
+
+  // Inject route schema if provided
+  if (route.schema) {
+    const schemaScript = `    <script type="application/ld+json">\n${JSON.stringify(route.schema, null, 2)}\n    </script>\n`;
+    html = html.replace('</head>', `${schemaScript}</head>`);
   }
 
   // Write out directory and index.html

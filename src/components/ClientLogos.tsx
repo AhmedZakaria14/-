@@ -58,8 +58,8 @@ export const ClientLogos: React.FC<ClientLogosProps> = ({ lang }) => {
             </h2>
             <p className="mt-6 text-slate-500 font-medium max-w-2xl mx-auto text-lg">
               {lang === 'en' 
-                ? 'We help businesses across various sectors achieve digital dominance in Saudi Arabia and beyond.' 
-                : 'نساعد الشركات في مختلف القطاعات على تحقيق الهيمنة الرقمية في المملكة العربية السعودية وخارجها.'}
+                ? 'We help businesses across various sectors achieve digital dominance in Saudi Arabia, the GCC, and international markets.' 
+                : 'نساعد الشركات في مختلف القطاعات على تحقيق النمو الرقمي وتوسيع أعمالها في السعودية، الخليج، ومختلف الأسواق.'}
             </p>
           </Reveal>
        </div>

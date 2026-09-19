@@ -17,9 +17,9 @@ export const WebDevServices: React.FC<WebDevServicesProps> = ({ lang, onBack, is
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const title = lang === 'en' ? 'Web Design & Development Company in Saudi Arabia | Nashar Hub' : 'شركة تصميم مواقع ومتاجر إلكترونية في السعودية | نشار هب';
-    const description = lang === 'en' ? 'Build a high-performance website that converts. We specialize in custom React/Next.js development, Salla/Zid store customization, and corporate websites across KSA.' : 'شركة تصميم مواقع وبرمجة متاجر إلكترونية في السعودية. متخصصون في المتاجر (سلة، زد) والمواقع التعريفية وبرمجة React/Next.js في الرياض وجدة.';
-    const keywords = lang === 'en' ? 'Web Design Saudi Arabia, E-commerce Development, Salla Store Design, React Developers Riyadh, Corporate Website Design, UI/UX Design Agency' : 'شركة تصميم مواقع, برمجة مواقع, تصميم متاجر الكترونية, تصميم متجر سلة, متجر زد, تصميم موقع تعريفي, الرياض, السعودية, ويب ديفلوبر';
+    const title = lang === 'en' ? 'Custom Web Design & Development Agency | Nashar Hub' : 'شركة تصميم مواقع ومتاجر إلكترونية احترافية | نشار هب';
+    const description = lang === 'en' ? 'Build a high-performance website that converts. We specialize in custom React/Next.js development, modern e-commerce stores, and corporate websites across Saudi Arabia, the GCC, and globally.' : 'شركة تصميم مواقع وتطوير متاجر إلكترونية احترافية من وكالة نشار هب. حلول برمجية ومواقع مخصصة بـ React وسلة وزد للشركات في السعودية والخليج ومختلف الأسواق.';
+    const keywords = lang === 'en' ? 'Web Design Agency, E-commerce Development, Salla Store Design, React Developers, Corporate Website Design, UI/UX Design Agency, Saudi Arabia Web Design, GCC Web Development' : 'شركة تصميم مواقع, برمجة مواقع, تصميم متاجر الكترونية, تطوير مواقع, نشار هب, تصميم متجر الكتروني, تصميم متجر سلة, متجر زد, تصميم موقع تعريفي, الرياض, السعودية, الخليج';
 
     const serviceSchema = {
       "@context": "https://schema.org",
@@ -30,12 +30,15 @@ export const WebDevServices: React.FC<WebDevServicesProps> = ({ lang, onBack, is
         "@id": "https://nasharhub.com/#organization"
       },
       "areaServed": [
-        {"@type": "Country", "name": "Saudi Arabia"}
+        {"@type": "Country", "name": "Saudi Arabia"},
+        {"@type": "Country", "name": "United Arab Emirates"},
+        {"@type": "Country", "name": "Egypt"},
+        {"@type": "AdministrativeArea", "name": "GCC & Middle East"}
       ],
       "description": description,
       "offers": {
         "@type": "Offer",
-        "description": lang === 'en' ? "Custom web development and e-commerce solutions in Saudi Arabia" : "خدمات تصميم الويب وتطوير المتاجر الإلكترونية في السعودية"
+        "description": lang === 'en' ? "Custom web development and e-commerce solutions for businesses across Saudi Arabia, the GCC, and globally" : "خدمات تصميم الويب وتطوير المتاجر الإلكترونية للشركات في السعودية والخليج ومختلف الأسواق"
       }
     };
 
@@ -54,8 +57,8 @@ export const WebDevServices: React.FC<WebDevServicesProps> = ({ lang, onBack, is
       icon: <Layout className="text-blue-500" size={32} />,
       title: { en: 'Custom Web Design', ar: 'تصميم مواقع مخصص' },
       desc: { 
-        en: 'Our custom web design services focus on creating unique, pixel-perfect interfaces that align perfectly with your brand identity. We don\'t believe in one-size-fits-all templates. Instead, we dive deep into your brand values and target audience to craft a visual experience that stands out in the competitive Saudi market. Every element is carefully considered to ensure maximum engagement and brand recall.',
-        ar: 'تركز خدمات تصميم المواقع المخصصة لدينا على إنشاء واجهات فريدة ومتقنة تتماشى تماماً مع هوية علامتك التجارية. نحن لا نؤمن بالقوالب الجاهزة التي تناسب الجميع. بدلاً من ذلك، نغوص في قيم علامتك التجارية وجمهورك المستهدف لصياغة تجربة بصرية تبرز في السوق السعودي التنافسي. يتم دراسة كل عنصر بعناية لضمان أقصى قدر من التفاعل وتذكر العلامة التجارية.'
+        en: 'Our custom web design services focus on creating unique, pixel-perfect interfaces that align perfectly with your brand identity. We don\'t believe in one-size-fits-all templates. Instead, we dive deep into your brand values and target audience to craft a visual experience that stands out in competitive markets across Saudi Arabia, the Gulf, and internationally. Every element is carefully considered to ensure maximum engagement and brand recall.',
+        ar: 'تركز خدمات تصميم المواقع المخصصة لدينا على إنشاء واجهات فريدة ومتقنة تتماشى تماماً مع هوية علامتك التجارية. نحن لا نؤمن بالقوالب الجاهزة التي تناسب الجميع. بدلاً من ذلك، نغوص في قيم علامتك التجارية وجمهورك المستهدف لصياغة تجربة بصرية تبرز في السوق السعودي ومختلف الأسواق التنافسية. يتم دراسة كل عنصر بعناية لضمان أقصى قدر من التفاعل وتذكر العلامة التجارية.'
       },
       list: {
         en: ['UI/UX Design Strategy', 'Interactive High-Fidelity Prototypes', 'Brand Consistency & Visual Language', 'Accessibility Compliance (WCAG)'],
@@ -66,8 +69,8 @@ export const WebDevServices: React.FC<WebDevServicesProps> = ({ lang, onBack, is
       icon: <ShoppingCart className="text-purple-500" size={32} />,
       title: { en: 'E-Commerce Solutions', ar: 'حلول التجارة الإلكترونية' },
       desc: {
-        en: 'Launch a powerful, high-converting online store optimized for the Saudi consumer. Whether you need a customized Salla or Zid store or a completely bespoke headless commerce solution using React, we provide the technical expertise to scale your sales. We handle everything from seamless payment gateway integrations (Mada, Apple Pay) to complex inventory management systems.',
-        ar: 'أطلق متجراً إلكترونياً قوياً وعالي التحويل ومحسناً للمستهلك السعودي. سواء كنت بحاجة إلى متجر سلة أو زد مخصص أو حل تجارة إلكترونية خاص بالكامل باستخدام React، فنحن نوفر الخبرة التقنية لزيادة مبيعاتك. نحن نتعامل مع كل شيء من تكامل بوابات الدفع السلسة (مدى، آبل باي) إلى أنظمة إدارة المخزون المعقدة.'
+        en: 'Launch a powerful, high-converting online store optimized for peak conversions. Whether you need a customized Salla or Zid store or a completely bespoke headless commerce solution using React, we provide the technical expertise to scale your sales. We handle seamless local and international payment gateway integrations (Mada, Apple Pay, Visa, Mastercard) and complex inventory management systems.',
+        ar: 'أطلق متجراً إلكترونياً قوياً وعالي التحويل ومحسناً لتجربة المستخدم. سواء كنت بحاجة إلى متجر سلة أو زد مخصص أو حل تجارة إلكترونية خاص بالكامل باستخدام React، فنحن نوفر الخبرة التقنية لزيادة مبيعاتك. نحن نتعامل مع تكامل بوابات الدفع السلسة محلياً ودولياً (مدى، آبل باي، فيزا، ماستركارد) وأنظمة إدارة المخزون المعقدة.'
       },
       list: {
         en: ['Salla & Zid Advanced Customization', 'Headless Commerce with React/Next.js', 'Mada & Local Payment Integration', 'Seamless Product & Data Migration'],

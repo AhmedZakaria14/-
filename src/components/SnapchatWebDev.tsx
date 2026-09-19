@@ -145,7 +145,7 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
             style={{ height: '32px', width: '32px', maxHeight: '32px', maxWidth: '32px', objectFit: 'contain' }}
             className="h-8 w-8 object-contain block shrink-0"
           />
-          <span>NASHAR<span className="text-[#58a8f3]">HUB</span></span>
+          <span className="font-extrabold tracking-tight text-white font-sans text-lg sm:text-xl">Nashar<span className="text-[#38bdf8]">HUB</span></span>
         </Link>
         <Link 
           to="/"
@@ -228,8 +228,8 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
                 {isRTL ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
               </button>
 
-              {/* Showcase Mockup Frame */}
-              <div className="relative border-4 sm:border-[6px] border-[#182035] bg-[#0c101c] rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_40px_rgba(158,116,68,0.18)] ring-1 ring-white/10 overflow-hidden w-[300px] sm:w-[380px] md:w-[440px] lg:w-[480px] aspect-[1122/1402]">
+              {/* Showcase Mockup Frame - Scaled precisely for mobile website screenshots */}
+              <div className="relative border-4 sm:border-[6px] border-[#1e2738] bg-[#0c101c] rounded-2xl sm:rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_40px_rgba(88,168,243,0.15)] ring-1 ring-white/15 overflow-hidden w-[280px] min-[360px]:w-[320px] sm:w-[380px] md:w-[440px] lg:w-[480px] max-w-[94vw] aspect-[1122/1402]">
                 {/* Screen Content */}
                 <div className="w-full h-full relative overflow-hidden bg-[#0c101c]">
                   {slideImages.map((src, index) => (
@@ -240,20 +240,20 @@ export const SnapchatWebDev: React.FC<SnapchatWebDevProps> = ({ lang }) => {
                         opacity: currentSlide === index ? 1 : 0,
                         scale: currentSlide === index ? 1 : 1.02
                       }}
-                      transition={{ duration: 0.6 }}
+                      transition={{ duration: 0.5 }}
                       className="absolute inset-0 w-full h-full"
                     >
                       <img 
                         src={src} 
-                        alt={`نموذج تصميم موقع احترافي - نشار هب ${index + 1}`} 
-                        className="w-full h-full object-cover object-center"
+                        alt={`نموذج تصميم موقع احترافي متجاوب للهاتف - نشار هب ${index + 1}`} 
+                        className="w-full h-full object-cover object-center block select-none"
                         loading={index === 0 ? "eager" : "lazy"}
                       />
                     </motion.div>
                   ))}
 
                   {/* Subtle Screen Gloss Effect */}
-                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.05] z-20" />
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/[0.01] to-white/[0.04] z-20" />
                 </div>
               </div>
 
