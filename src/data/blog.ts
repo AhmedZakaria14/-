@@ -7,11 +7,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "how-to-choose-google-ads-expert",
     "title": {
       "en": "How to Choose the Right Google Ads Expert for Your Business",
-      "ar": "كيف تختار خبير إعلانات جوجل المناسب لإدارة نشاطك؟"
+      "ar": "كيف تختار خبير إعلانات جوجل المناسب لنشاطك؟ | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "A comprehensive guide to selecting a certified Google Ads expert, understanding key metrics, and maximizing your ad spend ROI in Saudi Arabia.",
-      "ar": "دليل شامل لمساعدتك في اختيار متخصص إعلانات جوجل الاحترافي، والمهام التي يتولاها، وكيفية تجنب الوعود الزائفة لضمان أفضل عائد على الاستثمار الإعلاني."
+      "ar": "دليل شامل لاختيار متخصص إعلانات جوجل الاحترافي والمهام التي يتولاها لضمان أعلى عائد وتفادي هدر الميزانية. تواصل مع نشار هب: 01010742430."
     },
     "date": "2026-07-28",
     "author": "فريق نشار هب",
@@ -32,11 +32,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "google-ads-step-by-step-guide",
     "title": {
       "en": "Step-by-Step Guide to Creating a Google Ad Without Wasting Your Budget",
-      "ar": "طريقة عمل اعلان على جوجل خطوة بخطوة دون إهدار ميزانيتك"
+      "ar": "طريقة عمل اعلان على جوجل خطوة بخطوة | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Learn how to set up a paid Google ad campaign step-by-step, from defining objectives and budgets to drafting ad copy and choosing match types.",
-      "ar": "تعلم كيفية إعداد وتجهيز إعلان ممول على جوجل خطوة بخطوة، بدءاً من اختيار الهدف والميزانية وحتى كتابة النص واختيار نوع المطابقة لتفادي إهدار الميزانية."
+      "ar": "تعلم كيفية إعداد وتجهيز إعلان ممول على جوجل خطوة بخطوة وتفادي إهدار الميزانية مع استهداف دقيق. اتصل بنا في نشار هب: 01010742430."
     },
     "date": "2026-07-27",
     "author": "فريق نشار هب",
@@ -57,11 +57,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "how-to-create-engaging-google-ads",
     "title": {
       "en": "How to Create a Google Ad That Reaches the Right Audience and Drives Engagement",
-      "ar": "كيفية عمل اعلان على جوجل يصل إلى الجمهور المناسب ويشجعه على التفاعل"
+      "ar": "كيفية عمل اعلان ممول على جوجل يصل لجمهورك | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Discover how to craft high-converting Google ads that match user intent across search, shopping, video, and Performance Max channels.",
-      "ar": "اكتشف أسرار صياغة إعلانات جوجل المؤثرة التي تخاطب نية المستخدم، وتختار القناة المناسبة (بحث، تسوق، فيديو)، وتدفع العملاء للتحويل والتفاعل الفعلي."
+      "ar": "اكتشف أسرار صياغة إعلانات جوجل المؤثرة التي تخاطب نية المستخدم وتزيد المبيعات والتحويلات. تواصل مع خبراء نشار هب: 01010742430."
     },
     "date": "2026-07-26",
     "author": "فريق نشار هب",
@@ -82,11 +82,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "steps-to-create-google-ad-and-avoid-errors",
     "title": {
       "en": "Steps to Create a Google Ad Correctly and Avoid Common Beginner Mistakes",
-      "ar": "خطوات انشاء اعلان على جوجل بطريقة صحيحة وتجنب أخطاء البداية"
+      "ar": "خطوات انشاء اعلان على جوجل وتجنب أخطاء البداية | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Practical guidelines for launching your first Google Ads campaign successfully while avoiding common targeting, budget, and keyword matching errors.",
-      "ar": "شواهد وإرشادات عملية لتأسيس حملتك الأولى على إعلانات جوجل بنجاح، وتفادي الأخطاء الشائعة في الكلمات المفتاحية، والاستهداف، وإعدادات الشبكة."
+      "ar": "شواهد وإرشادات عملية لتأسيس حملتك الأولى على إعلانات جوجل بنجاح وتفادي أخطاء الاستهداف والميزانية. للتواصل المباشر مع نشار هب: 01010742430."
     },
     "date": "2026-07-25",
     "author": "فريق نشار هب",
@@ -107,11 +107,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "how-to-choose-digital-marketing-company",
     "title": {
       "en": "How to Choose a Digital Marketing Agency to Drive Business Growth",
-      "ar": "كيف تختار شركة تسويق الكتروني تساعدك على تحقيق النمو؟"
+      "ar": "كيف تختار أفضل شركة تسويق الكتروني لمشروعك؟ | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "A comprehensive guide to selecting a professional digital marketing agency, evaluating strategy, services, and reporting to scale your business.",
-      "ar": "دليل شامل يوضح لك معايير اختيار شركة تسويق الكتروني احترافية، وكيفية تقييم خطة العمل والخدمات والتقارير لضمان تحقيق أهداف نمو مشروعك."
+      "ar": "دليل شامل يوضح لك معايير اختيار شركة تسويق الكتروني احترافية لضمان تحقيق أهداف نمو مشروعك ومضاعفة مبيعاتك. تواصل معنا: 01010742430."
     },
     "date": "2026-07-28",
     "author": "فريق نشار هب",
@@ -132,11 +132,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "digital-marketing-company-in-riyadh-growth",
     "title": {
       "en": "How a Digital Marketing Agency in Riyadh Can Scale Your Business",
-      "ar": "كيف تساعدك شركة تسويق إلكتروني في الرياض على تنمية مشروعك؟"
+      "ar": "أفضل شركة تسويق إلكتروني في الرياض لتنمية مشروعك | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Discover how top marketing agencies in Riyadh navigate the Saudi market, reach high-intent local customers, and maximize commercial growth.",
-      "ar": "اكتشف كيف تساعدك شركات التسويق الإلكتروني في الرياض على فهم السوق السعودي، وبناء استراتيجية تسويق رقمي تناسب عملائك وتزيد من المبيعات."
+      "ar": "اكتشف كيف تساعدك نشار هب كأفضل شركة تسويق إلكتروني في الرياض على بناء استراتيجية تسويق رقمي تزيد المبيعات. اتصل بنا: 01010742430."
     },
     "date": "2026-07-28",
     "author": "فريق نشار هب",
@@ -157,11 +157,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "best-digital-marketing-company-for-your-needs",
     "title": {
       "en": "How to Identify the Best Digital Marketing Company for Your Unique Business Needs",
-      "ar": "أفضل شركة تسويق الكتروني وفق احتياجات مشروعك"
+      "ar": "أفضل شركة تسويق الكتروني وفق احتياجات مشروعك | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Key criteria for comparing digital marketing agencies, asking critical questions before hiring, and avoiding pitfalls to ensure a successful ROI.",
-      "ar": "معايير دقيقة تساعدك في المقارنة بين شركات التسويق الإلكتروني، وطرح الأسئلة الصحيحة قبل التعاقد، وتجنب الأخطاء الشائعة لضمان نجاح شراكتك."
+      "ar": "معايير دقيقة للمقارنة بين شركات التسويق الإلكتروني وطرح الأسئلة الصحيحة قبل التعاقد لضمان نجاح شراكتك وتحقيق أرباحك: 01010742430."
     },
     "date": "2026-07-28",
     "author": "فريق نشار هب",
@@ -182,11 +182,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "best-marketing-company-in-riyadh-for-your-goals",
     "title": {
       "en": "Top Digital Marketing Agency in Riyadh to Achieve Your Commercial Objectives",
-      "ar": "افضل شركة تسويق في الرياض تساعدك في تحقيق أهدافك"
+      "ar": "افضل شركة تسويق في الرياض لتحقيق أهدافك | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Learn why Nashar Hub stands out as a leading marketing agency in Riyadh, offering integrated digital services that align with your growth objectives.",
-      "ar": "تعرف على المقومات التي تجعل نشار هب أفضل شركة تسويق في الرياض، والخدمات المترابطة التي نقدمها لتنمية حضورك الرقمي وزيادة مبيعاتك."
+      "ar": "تعرف على المقومات التي تجعل نشار هب أفضل شركة تسويق في الرياض لتنمية حضورك الرقمي وزيادة مبيعاتك. تواصل مع خبرائنا: 01010742430."
     },
     "date": "2026-07-28",
     "author": "فريق نشار هب",
@@ -207,11 +207,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "importance-of-digital-marketing-agency-in-business",
     "title": {
       "en": "The Vital Role of a Digital Marketing Agency in Driving Business Growth",
-      "ar": "أهمية شركة التسويق الرقمي في دعم الأعمال"
+      "ar": "أهمية شركة التسويق الرقمي في دعم الأعمال ونموها | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Discover how partnering with a specialized digital marketing agency saves time, unlocks expert multi-channel marketing, and maximizes your return on investment.",
-      "ar": "وضح أهم الفوائد التي تجنيها المؤسسات عند التعامل مع شركة تسويق رقمي متخصصة، بدءاً من الوصول للخبرات والمعدات وحتى قياس النتائج بدقة."
+      "ar": "أهم الفوائد التي تجنيها المؤسسات عند التعامل مع شركة تسويق رقمي متخصصة، من إدارة الإعلانات والسيو إلى قياس النتائج بدقة: 01010742430."
     },
     "date": "2026-07-28",
     "author": "فريق نشار هب",
@@ -232,11 +232,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "medical-marketing-company-for-healthcare-growth",
     "title": {
       "en": "Medical Marketing Agency: Driving Healthcare Reach and Patient Bookings",
-      "ar": "شركة التسويق الطبي ودورها في زيادة انتشار منشأتك الصحية وحجوزاتها"
+      "ar": "أفضل شركة تسويق طبي لزيادة انتشار منشأتك وحجوزاتها | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "A specialized guide for clinics and medical centers on leveraging healthcare marketing, building patient trust, and converting inquiries into verified appointments.",
-      "ar": "دليل متقدم للعيادات والمراكز الصحية حول أهمية التسويق الطبي المتخصص، وكيفية بناء ثقة المرضى وتحويل الاستفسارات إلى حجوزات معتمدة."
+      "ar": "دليل متقدم للعيادات والمراكز الصحية حول أهمية التسويق الطبي المتخصص وبناء ثقة المرضى وتحويل الاستفسارات إلى حجوزات معتمدة: 01010742430."
     },
     "date": "2026-07-28",
     "author": "فريق نشار هب",
@@ -257,11 +257,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "why-you-need-web-design-company",
     "title": {
       "en": "Why Do You Need a Web Design Company?",
-      "ar": "لماذا تحتاج إلى شركة تصميم مواقع؟"
+      "ar": "لماذا تحتاج إلى أفضل شركة تصميم مواقع لمشروعك؟ | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "A professional web design company helps transform your project's goals into a clear, functional digital experience that attracts customers and builds trust.",
-      "ar": "تساعدك شركة تصميم المواقع على تحويل أهداف مشروعك إلى تجربة رقمية واضحة وجذابة تبني الثقة مع عملائك وتزيد من تفاعلهم."
+      "ar": "تساعدك شركة تصميم المواقع نشار هب على تحويل أهداف مشروعك إلى تجربة رقمية واضحة وجذابة تبني الثقة وتزيد من طلبات العملاء: 01010742430."
     },
     "content": {
       "en": "Why Do You Need a Web Design Company? - Full content available in Arabic.",
@@ -282,11 +282,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "web-design-company-in-riyadh",
     "title": {
       "en": "Web Design Company in Riyadh to Execute Your Project",
-      "ar": "شركة تصميم مواقع في الرياض تنفذ مشروعك وفق احتياجات السوق السعودي"
+      "ar": "أفضل شركة تصميم مواقع في الرياض للسوق السعودي | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Discover how a local web design company in Riyadh understands the Saudi market and builds a digital presence that reaches your target audience effectively.",
-      "ar": "تعرف على أهمية اختيار شركة تصميم مواقع في الرياض تفهم احتياجات السوق السعودي وتساعدك على بناء حضور رقمي يجذب عملاءك بكفاءة."
+      "ar": "تعرف على أهمية اختيار شركة تصميم مواقع في الرياض تفهم السوق السعودي وتبني حضوراً رقمياً جذاباً وسريعاً مع نشار هب: 01010742430."
     },
     "content": {
       "en": "Web Design Company in Riyadh to Execute Your Project - Full content available in Arabic.",
@@ -307,11 +307,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "why-you-need-web-programming-company",
     "title": {
       "en": "Why Do You Need a Specialized Web Programming Company?",
-      "ar": "لماذا تحتاج إلى شركة متخصصة في برمجة المواقع؟"
+      "ar": "أفضل شركة متخصصة في برمجة المواقع والتطبيقات | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Web programming converts your ideas into a stable system. Discover the role of specialized web developers in building complex and functional websites.",
-      "ar": "برمجة المواقع تحول أفكارك إلى نظام مستقر. تعرف على أهمية الشركة المتخصصة في بناء أنظمة الحجوزات ولوحات التحكم ومواقع الشركات بطريقة احترافية."
+      "ar": "برمجة المواقع المخصصة تحول أفكارك إلى منصات آمنة وسريعة الاستجابة. اكتشف خدمات نشار هب في برمجة الأنظمة والمواقع: 01010742430."
     },
     "content": {
       "en": "Why Do You Need a Specialized Web Programming Company? - Full content available in Arabic.",
@@ -332,11 +332,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "best-web-design-company",
     "title": {
       "en": "Best Web Design Company to Create a Website That Expresses Your Project",
-      "ar": "أفضل شركة تصميم مواقع لإنشاء موقع يعبر عن مشروعك ويجذب عملائك"
+      "ar": "أفضل شركة تصميم مواقع لإنشاء موقع يعبر عن مشروعك | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Partner with the best web design company to build a digital presence that perfectly reflects your brand identity, engages your audience, and drives business growth.",
-      "ar": "تعرف على أهمية العمل مع أفضل شركة تصميم مواقع لبناء واجهة رقمية تعكس هوية علامتك التجارية، وتقدم تجربة مستخدم سلسة تحول الزوار إلى عملاء."
+      "ar": "تعرف على أهمية العمل مع نشار هب كأفضل شركة تصميم مواقع لبناء واجهة رقمية تعكس هويتك وتقدم تجربة مستخدم تحول الزوار إلى مشترين: 01010742430."
     },
     "content": {
       "en": "Best Web Design Company to Create a Website That Expresses Your Project - Full content available in Arabic.",
@@ -359,11 +359,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "e-commerce-design-company-builds-your-project",
     "title": {
       "en": "How an E-commerce Design Company Builds Your Project from Idea to Receiving Orders",
-      "ar": "كيف تبني شركة تصميم المتاجر مشروعك من الفكرة إلى استقبال الطلبات؟"
+      "ar": "كيف تبني شركة تصميم المتاجر مشروعك من الفكرة للبيع؟ | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Discover the essential steps a specialized design company takes to transform your e-commerce idea into a fully functional store ready to receive orders.",
-      "ar": "تعرف على الخطوات التي تتبعها شركة تصميم المتاجر لتحويل فكرتك إلى متجر إلكتروني متكامل جاهز لاستقبال الطلبات، والمعايير لاختيار الشركة الأنسب."
+      "ar": "خطوات تحويل فكرتك التجارية إلى متجر إلكتروني متكامل جاهز لاستقبال الطلبات والدفع والشحن مع نشار هب. ابدأ متجرك اليوم: 01010742430."
     },
     "date": "2026-07-30",
     "author": "فريق نشار هب",
@@ -383,11 +383,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "what-website-creation-company-offers",
     "title": {
       "en": "What Does a Website Creation Company Offer Your Project?",
-      "ar": "ما الذي تقدمه شركة إنشاء موقع إلكتروني لمشروعك؟"
+      "ar": "ما تقدمه شركة إنشاء موقع إلكتروني احترافي لمشروعك | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Learn how a web development company organizes your content, designs user-friendly interfaces, and builds the right features to achieve your business goals.",
-      "ar": "اكتشف كيف تقوم شركة إنشاء المواقع بتنظيم محتواك، وتصميم واجهات سهلة الاستخدام، وبناء الوظائف المناسبة لتحقيق أهداف نشاطك التجاري."
+      "ar": "اكتشف كيف تقوم شركة إنشاء المواقع نشار هب بتنظيم المحتوى وتصميم واجهات سهلة الاستخدام تحقق أعلى مبيعات. تواصل معنا: 01010742430."
     },
     "date": "2026-07-30",
     "author": "فريق نشار هب",
@@ -407,11 +407,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "affordable-professional-web-design-company",
     "title": {
       "en": "The Cheapest Web Design Company Offering Professional Sites at Affordable Prices",
-      "ar": "أرخص شركة تصميم مواقع تقدم لك موقعًا احترافيًا بسعر مناسب"
+      "ar": "أرخص شركة تصميم مواقع احترافية بسعر مناسب | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Find out how to get a high-quality, professional website that fits your budget without compromising on essential features or user experience.",
-      "ar": "تعرف على كيفية الحصول على موقع إلكتروني احترافي وعالي الجودة يناسب ميزانيتك دون التنازل عن الميزات الأساسية أو تجربة المستخدم."
+      "ar": "احصل على موقع إلكتروني احترافي وعالي الجودة يناسب ميزانيتك دون التنازل عن الميزات الأساسية أو تجربة المستخدم وسرعة التصفح: 01010742430."
     },
     "date": "2026-07-30",
     "author": "فريق نشار هب",
@@ -431,11 +431,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "importance-of-hiring-seo-company",
     "title": {
       "en": "The Importance of Hiring an SEO Company for Your Website",
-      "ar": "أهمية الاستعانة بشركة سيو لموقعك"
+      "ar": "أهمية الاستعانة بشركة سيو لموقعك وتصدر نتائج جوجل | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Understand why partnering with an SEO company is crucial for improving your website's visibility, attracting the right audience, and growing your business.",
-      "ar": "افهم لماذا يعتبر التعاون مع شركة سيو خطوة حاسمة لتحسين ظهور موقعك، وجذب الجمهور المناسب، وتنمية نشاطك التجاري."
+      "ar": "افهم لماذا يعتبر التعاون مع أفضل شركة سيو نشار هب خطوة حاسمة لتحسين ظهور موقعك وتصدر محركات البحث وجذب عملاء مستهدفين: 01010742430."
     },
     "date": "2026-07-30",
     "author": "فريق نشار هب",
@@ -455,11 +455,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "best-seo-specialist-for-your-website",
     "title": {
       "en": "The Best SEO Specialist to Help Your Website Reach Service Seekers",
-      "ar": "أفضل متخصص سيو يساعد موقعك على الوصول إلى الباحثين عن خدماتك"
+      "ar": "أفضل متخصص سيو لتصدر نتائج البحث وجلب العملاء | نشار هب 01010742430"
     },
     "excerpt": {
       "en": "Learn how an expert SEO specialist analyzes data, fixes technical issues, and builds a content strategy that drives targeted traffic to your services.",
-      "ar": "اكتشف كيف يقوم متخصص السيو بتحليل البيانات، ومعالجة المشكلات التقنية، وبناء استراتيجية محتوى تجلب زيارات مستهدفة لخدماتك."
+      "ar": "اكتشف كيف يقوم متخصص السيو في نشار هب بتحليل البيانات ومعالجة المشكلات التقنية وبناء استراتيجية محتوى تجلب زيارات مستهدفة لخدماتك: 01010742430."
     },
     "date": "2026-07-30",
     "author": "فريق نشار هب",

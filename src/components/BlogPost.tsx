@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Language } from '../types';
 import { updateSEO } from '../utils/seo';
 import { blogPosts } from '../data/blog';
-import { ArrowRight, ArrowLeft, Calendar, User, Tag, ExternalLink, Sparkles, MessageCircle } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Calendar, User, Tag, ExternalLink, Sparkles, MessageCircle, Phone } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 interface BlogPostProps {
@@ -74,24 +74,42 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
     schemaScript.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": post.title[lang],
+      "headline": cleanPostTitle,
+      "name": cleanPostTitle,
       "image": [post.image],
       "datePublished": post.date,
       "dateModified": post.date,
-      "author": [{
+      "telephone": "+201010742430",
+      "author": {
         "@type": "Organization",
-        "name": post.author,
+        "name": "فريق خبراء نشار هب",
+        "alternateName": "Nashar Hub Team",
+        "telephone": "+201010742430",
         "url": "https://nasharhub.com"
-      }],
+      },
       "publisher": {
         "@type": "Organization",
-        "name": "Nashar Hub",
+        "name": "وكالة نشار هب للتسويق الرقمي",
+        "alternateName": "Nashar Hub",
+        "url": "https://nasharhub.com",
+        "telephone": "+201010742430",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+201010742430",
+          "contactType": "customer service",
+          "areaServed": ["SA", "AE", "EG", "GCC"],
+          "availableLanguage": ["Arabic", "English"]
+        },
         "logo": {
           "@type": "ImageObject",
-          "url": "https://nasharhub.com/logo.png"
+          "url": "https://nasharhub.com/favicon.svg"
         }
       },
-      "description": post.excerpt[lang]
+      "description": post.excerpt[lang],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://nasharhub.com/blog/${post.slug}`
+      }
     });
 
     const existingSchema = document.getElementById('article-schema');
@@ -175,6 +193,50 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
               />
             </div>
           </header>
+
+          {/* Quick Contact & WhatsApp Action Banner */}
+          <div className="mx-6 md:mx-10 mt-6 p-4 rounded-xl bg-gradient-to-r from-[#003366] to-[#0b1020] text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm border border-[#1677d2]/30">
+            <div className="flex items-center gap-3 text-right w-full sm:w-auto">
+              <div className="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/40">
+                <Phone className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <p className="text-xs text-slate-300 font-mono">
+                  {lang === 'ar' ? 'استشارة فورية ومباشرة مع فريق نشار هب' : 'Direct Consultation with Nashar Hub Team'}
+                </p>
+                <div className="flex items-center gap-2 mt-0.5">
+                  <a 
+                    href="tel:+201010742430" 
+                    className="font-bold text-base sm:text-lg text-emerald-400 font-mono tracking-wider hover:underline" 
+                    dir="ltr"
+                  >
+                    01010742430
+                  </a>
+                  <span className="text-[11px] bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800">
+                    {lang === 'ar' ? 'متاح اتصال وواتساب' : 'Call & WhatsApp'}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
+              <a 
+                href="tel:+201010742430" 
+                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-all border border-white/20"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                {lang === 'ar' ? 'اتصال مباشر' : 'Call Now'}
+              </a>
+              <a 
+                href="https://wa.me/201010742430" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-sm"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                {lang === 'ar' ? 'واتساب مباشر' : 'WhatsApp'}
+              </a>
+            </div>
+          </div>
 
           {/* Excerpt Summary Box */}
           <div className={`mx-6 md:mx-10 my-6 p-5 bg-[#f8f6f0] rounded-lg ${isRTL ? 'border-r-4' : 'border-l-4'} border-[#1677d2] text-[#0b1020]`}>

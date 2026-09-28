@@ -101,26 +101,42 @@ blogPosts.forEach(post => {
   const rawTitle = post.title?.ar || 'مدونة نشار هب';
   const title = rawTitle.includes('نشار هب') ? rawTitle : `${rawTitle} | نشار هب`;
   const description = post.excerpt?.ar || '';
+  const keywords = post.tags ? post.tags.join(', ') : 'نشار هب, تسويق الكتروني, سيو, برمجة مواقع, اعلانات جوجل';
   routes.push({
     path: `/blog/${post.slug}`,
     title,
     description,
+    keywords,
     image: post.image,
     schema: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": post.title?.ar,
+      "headline": title,
+      "name": title,
       "description": description,
       "image": post.image,
       "datePublished": post.date,
       "dateModified": post.date,
+      "telephone": "+201010742430",
       "author": {
         "@type": "Organization",
-        "name": post.author || "وكالة نشار هب"
+        "name": "فريق خبراء نشار هب",
+        "telephone": "+201010742430",
+        "url": "https://nasharhub.com"
       },
       "publisher": {
         "@type": "Organization",
         "name": "وكالة نشار هب للتسويق الرقمي",
+        "alternateName": "Nashar Hub",
+        "url": "https://nasharhub.com",
+        "telephone": "+201010742430",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+201010742430",
+          "contactType": "customer service",
+          "areaServed": ["SA", "AE", "EG", "GCC"],
+          "availableLanguage": ["Arabic", "English"]
+        },
         "logo": {
           "@type": "ImageObject",
           "url": "https://nasharhub.com/favicon.svg"
@@ -209,6 +225,18 @@ routes.forEach(route => {
       /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/i,
       `<meta name="twitter:image" content="${route.image}" />`
     );
+  }
+
+  // Replace Keywords if provided
+  if (route.keywords) {
+    if (html.includes('name="keywords"')) {
+      html = html.replace(
+        /<meta\s+name="keywords"\s+content="[^"]*"\s*\/?>/i,
+        `<meta name="keywords" content="${route.keywords}" />`
+      );
+    } else {
+      html = html.replace('</head>', `    <meta name="keywords" content="${route.keywords}" />\n  </head>`);
+    }
   }
 
   // Inject route schema if provided

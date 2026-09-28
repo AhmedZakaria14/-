@@ -94,8 +94,8 @@ export const batch3Articles: BlogPost[] = [
     slug: "advertising-and-marketing-companies-in-saudi",
     isHtml: true,
     title: {
-      ar: "شركات اعلان وتسويق في السعودية 2026 | 01010742430",
-      en: "Advertising and Marketing Companies in Saudi Arabia 2026 | Nashar Hub"
+      ar: "شركات اعلان وتسويق في السعودية 2026 | نشار هب 01010742430",
+      en: "Advertising and Marketing Companies in Saudi Arabia 2026 | Nashar Hub 01010742430"
     },
     excerpt: {
       ar: "تعرف على أفضل شركات اعلان وتسويق في السعودية والرياض مع نشار هب لتحقيق نتائج حقيقية وعائد استثمار مضمون، تواصل الآن عبر 01010742430.",
@@ -113,7 +113,7 @@ export const batch3Articles: BlogPost[] = [
     content: {
       en: "Top advertising and marketing companies in Saudi Arabia for 2026. Partner with Nashar Hub for high-return advertising campaigns. Call 01010742430.",
       ar: `<article lang="ar" dir="rtl">
-<h1 id="article-11-section-01">شركات اعلان وتسويق في السعودية 2026 | 01010742430</h1>
+<h1 id="article-11-section-01">شركات اعلان وتسويق في السعودية 2026 | نشار هب 01010742430</h1>
 <nav aria-label="فهرس المحتويات">
 <h2>فهرس المحتويات</h2>
 <ul>
