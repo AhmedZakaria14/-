@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { Routes, Route, useLocation, useNavigate, useParams, Outlet } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate, useParams, Outlet, Navigate } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { CustomCursor } from '@/components/CustomCursor';
@@ -262,6 +262,8 @@ function App() {
           <Route path="/seo-services" element={<SEOServices lang={lang} onBack={handleBackToMain} />} />
           <Route path="/paid-ads-services" element={<PaidAdsServices lang={lang} onBack={handleBackToMain} />} />
           <Route path="/web-dev-services" element={<WebDevServices lang={lang} onBack={handleBackToMain} />} />
+          <Route path="/web-development-services" element={<Navigate to="/web-dev-services" replace />} />
+          <Route path="/google-ads-services" element={<Navigate to="/paid-ads-services" replace />} />
           <Route path="/lp/web-design" element={<SnapchatWebDev lang={lang} />} />
           <Route path="/website-onboarding" element={<WebsiteOnboarding lang={lang} onBack={handleBackToMain} />} />
 
