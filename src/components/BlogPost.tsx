@@ -129,25 +129,34 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
   if (!post) return null;
 
   return (
-    <div className="min-h-screen bg-[#f4f1e9] text-[#0b1020] pt-24 pb-16">
+    <div className="min-h-screen bg-[#f4f1e9] text-[#0b1020] pt-28 sm:pt-32 md:pt-36 pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        {/* Navigation back button */}
-        <button 
-          onClick={() => navigate('/blog')}
-          className="flex items-center text-[#667078] hover:text-[#0b1020] transition-colors mb-6 font-mono text-xs uppercase tracking-wider font-bold cursor-pointer"
-        >
-          {isRTL ? (
-            <>
-              <ArrowRight className="w-4 h-4 ml-2" />
-              العودة لقائمة مدونة نشار هب
-            </>
-          ) : (
-            <>
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Nashar Hub Blog
-            </>
-          )}
-        </button>
+        {/* Navigation back button & breadcrumbs */}
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+          <button 
+            onClick={() => navigate('/blog')}
+            className="group inline-flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-xl bg-white hover:bg-[#003366] text-[#0b1020] hover:text-white border border-[#d1ccc0] hover:border-[#003366] shadow-sm hover:shadow-md transition-all duration-200 text-xs sm:text-sm font-bold font-sans cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1677d2] focus:ring-offset-2"
+            aria-label={isRTL ? "العودة لقائمة مدونة نشار هب" : "Back to Nashar Hub Blog"}
+          >
+            {isRTL ? (
+              <>
+                <ArrowRight className="w-4 h-4 text-[#1677d2] group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0" />
+                <span>العودة لقائمة مدونة نشار هب</span>
+              </>
+            ) : (
+              <>
+                <ArrowLeft className="w-4 h-4 text-[#1677d2] group-hover:text-white transition-transform group-hover:-translate-x-1 shrink-0" />
+                <span>Back to Nashar Hub Blog</span>
+              </>
+            )}
+          </button>
+
+          <nav aria-label="Breadcrumb" className="hidden sm:flex items-center gap-2 text-xs font-mono text-[#667078]">
+            <Link to="/" className="hover:text-[#0b1020] transition-colors">{isRTL ? 'الرئيسية' : 'Home'}</Link>
+            <span className="text-[#d1ccc0]">/</span>
+            <Link to="/blog" className="hover:text-[#0b1020] transition-colors">{isRTL ? 'المدونة' : 'Blog'}</Link>
+          </nav>
+        </div>
 
         <article className="bg-white rounded-xl overflow-hidden shadow-sm border border-[#d1ccc0]">
           {/* Unified Article Header & Cover Image */}
@@ -471,6 +480,37 @@ export const BlogPost: React.FC<BlogPostProps> = ({ lang, onBack }) => {
                   </a>
                 </div>
               </div>
+            </div>
+
+            {/* Bottom Return To Blog Button & Top Scroll */}
+            <div className="mt-10 pt-6 border-t border-[#d1ccc0] flex flex-wrap items-center justify-between gap-4">
+              <button 
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  navigate('/blog');
+                }}
+                className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-[#f4f1e9] hover:bg-[#003366] text-[#0b1020] hover:text-white border border-[#d1ccc0] hover:border-[#003366] shadow-sm hover:shadow transition-all duration-200 text-xs sm:text-sm font-bold font-sans cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1677d2]"
+                aria-label={isRTL ? "العودة لقائمة مدونة نشار هب" : "Back to Nashar Hub Blog"}
+              >
+                {isRTL ? (
+                  <>
+                    <ArrowRight className="w-4 h-4 text-[#1677d2] group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0" />
+                    <span>العودة لقائمة مدونة نشار هب</span>
+                  </>
+                ) : (
+                  <>
+                    <ArrowLeft className="w-4 h-4 text-[#1677d2] group-hover:text-white transition-transform group-hover:-translate-x-1 shrink-0" />
+                    <span>Back to Nashar Hub Blog</span>
+                  </>
+                )}
+              </button>
+
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-xs font-mono text-[#667078] hover:text-[#0b1020] transition-colors cursor-pointer"
+              >
+                {isRTL ? '↑ الصعود لأعلى المقال' : '↑ Back to Top'}
+              </button>
             </div>
 
           </div>
